@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html dir="ltr" lang="en-US">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:book="https://ogp.me/ns/book#" xmlns:og="http://ogp.me/ns#">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Errors</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="external/wtamu-pretext-theme/wtamu-theme.css" rel="stylesheet" type="text/css"/>
+<link href="external/ai-course-policy-badges/templates/pretext/ai-badge-problem-document.css" rel="stylesheet" type="text/css"/>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta content="Authored in PreTeXt" name="Keywords"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="book" property="og:type"/>
+<meta content="MATH 4362: Introduction to Numerical Analysis" name="twitter:title"/>
+<meta content="MATH 4362: Introduction to Numerical Analysis" property="og:title"/>
+<meta content="MATH 4362: Introduction to Numerical Analysis" property="book:title"/>
+<meta content="Fall 2026 Course Notes" name="twitter:description"/>
+<meta content="Fall 2026 Course Notes" property="og:description"/>
+<meta content="summary" name="twitter:card"/>
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.43"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link href="_static/prefix-926.229729d09512acc9.css" rel="stylesheet" type="text/css"/>
+<link href="_static/prefix-runestone.efe427683fc41f98.css" rel="stylesheet" type="text/css"/>
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script crossorigin="anonymous" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js"></script><script crossorigin="anonymous" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js"></script><script crossorigin="anonymous" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script><script async="" src="lunr-pretext-search-index.js"></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header class="ptx-masthead" id="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="math-4362-introduction-to-numerical-analysis.html"><span class="title">MATH 4362: Introduction to Numerical Analysis</span> <span class="subtitle">Fall 2026 Course Notes</span></a></h1>
+<p class="byline">Nicholas S. Moore, PhD</p>
+</div></div></header><nav class="ptx-navbar navbar" id="ptx-navbar"><div class="ptx-navbar-contents">
+<button aria-controls="ptx-sidebar" class="toc-toggle button" id="ptx-toc-toggle" title="Contents" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button class="ptx-search-button button" id="ptx-search-button" title="Search Book" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Search Book</span></button></div>
+<dialog class="ptx-dialog ptx-search-dialog" id="ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" class="ptx-search-terms" id="ptx-search-terms" name="terms" placeholder="Search terms" type="text"/><button aria-label="Close" class="ptx-search-close" id="ptx-search-close"><span aria-hidden="true" class="icon material-symbols-outlined"></span></button>
+</div>
+<div aria-atomic="true" aria-live="polite" class="ptx-search-status" id="ptx-search-status"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div class="ptx-search-empty" id="ptx-search-empty"><span>No results.</span></div>
+<ol class="ptx-search-results" id="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button class="ptx-embed-button button" id="ptx-embed-button" title="Embed this page"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span aria-hidden="true" class="icon material-symbols-outlined"></span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea aria-label="Embed" class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly="">&lt;iframe src="https://example.com/embed" width="100%" height="1000"&gt;&lt;/iframe&gt;</textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Copy</span></button>
+</div></dialog><button class="ptx-readability-options-button button" id="ptx-readability-options-button" title="Readability settings"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span aria-hidden="true" class="icon material-symbols-outlined"></span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Line height</span><output for="ptx-readability-line-height" id="ptx-readability-line-height-value">1.35</output></label><input id="ptx-readability-line-height" max="3" min="1.10" step="0.05" type="range" value="1.35"/>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Content font size</span><output for="ptx-readability-font-size" id="ptx-readability-font-size-value">100%</output></label><input id="ptx-readability-font-size" max="1.5" min="0.8" step="0.05" type="range" value="1"/>
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input id="ptx-readability-theme-system" name="ptx-readability-theme" type="radio" value="system"/><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>System</span></label><label for="ptx-readability-theme-light"><input id="ptx-readability-theme-light" name="ptx-readability-theme" type="radio" value="light"/><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Light</span></label><label for="ptx-readability-theme-dark"><input id="ptx-readability-theme-dark" name="ptx-readability-theme" type="radio" value="dark"/><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input id="ptx-readability-accessible-permalinks" type="checkbox"/><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button class="ptx-readability-reset-button button" id="ptx-readability-reset-button" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="week-02-root-finding.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="up-button button" href="week-02-root-finding.html" title="Up"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Up</span></a><a class="next-button button" href="week02-bisection-method.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></span>
+</div></nav><div class="hidden-content process-math" id="latex-macros" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div class="ptx-sidebar" id="ptx-sidebar" role="complementary"><nav aria-label="Contents" class="ptx-toc depth2 focused" data-max-levels="2" data-preexpanded-levels="0" id="ptx-toc" tabindex="-1"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a class="internal" href="frontmatter.html"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="week-01-python.html"><span class="codenumber">1</span> <span class="title">Week 1: Python for Numerical Mathematics</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-01-python">
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-install-python-uv.html"><span class="codenumber">1.1</span> <span class="title">Installing Python and uv</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html"><span class="codenumber">1.2</span> <span class="title">Getting Started with Jupyter Notebooks</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-01-jupyter-basics">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html#week-01-jupyter-basics-3"><span class="title">How to Open a .ipynb File</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html#week-01-jupyter-basics-4"><span class="title">Understanding the Interface and Running Code</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week-01-python-basics.html"><span class="codenumber">1.3</span> <span class="title">Python Basics</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-01-python-basics">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-3"><span class="title">Variables and Basic Data Types</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-4"><span class="title">Mathematical Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-5"><span class="title">Lists</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-6"><span class="title">Tuples and Dictionaries in Python</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-7"><span class="title">Boolean Logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-8"><span class="title">If Statements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-9"><span class="title">For Loops</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-10"><span class="title">While Loops</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-11"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-12"><span class="title">Help System in Jupyter Notebooks</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-13"><span class="title">Round-Off Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-14"><span class="title">Python Exceptions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week-01-numpy-basics.html"><span class="codenumber">1.4</span> <span class="title">Introduction to NumPy</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-01-numpy-basics">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-numpy-basics.html#week-01-numpy-basics-3"><span class="title">Basic Array Operations in NumPy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-numpy-basics.html#week-01-numpy-basics-4"><span class="title">Indexing and Slicing in NumPy</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-plotly.html"><span class="codenumber">1.5</span> <span class="title">Plotting with Plotly</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a class="internal" href="week-02-root-finding.html"><span class="codenumber">2</span> <span class="title">Week 2: Errors and Bisection Method</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-week-02-root-finding">
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a class="internal" href="week02-errors.html"><span class="codenumber">2.1</span> <span class="title">Errors</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-week02-errors">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week02-errors.html#week02-absolute-and-relative-error"><span class="title">Absolute and Relative Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week02-errors.html#week02-order-of-convergence"><span class="title">Order of Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week02-errors.html#week02-stopping-criteria"><span class="title">Stopping Criteria</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week02-bisection-method.html"><span class="codenumber">2.2</span> <span class="title">Bisection Method</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week02-bisection-method">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week02-bisection-method.html#week02-the-method"><span class="title">The Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week02-bisection-method.html#week02-error-analysis"><span class="title">Error Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week02-bisection-method.html#week02-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="week-03-newton-secant-methods.html"><span class="codenumber">3</span> <span class="title">Week 3: Newton’s Method and Secant Method</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-03-newton-secant-methods">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week03-newtons-method.html"><span class="codenumber">3.1</span> <span class="title">Newton’s Method</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week03-newtons-method">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week03-newtons-method.html#week03-newton-method"><span class="title">The Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week03-newtons-method.html#week03-newton-error-analysis"><span class="title">Error Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week03-newtons-method.html#week03-newton-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week03-secant-method.html"><span class="codenumber">3.2</span> <span class="title">Secant Method</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week03-secant-method">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week03-secant-method.html#week03-secant-method-description"><span class="title">The Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week03-secant-method.html#week03-secant-error-analysis"><span class="title">Error Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week03-secant-method.html#week03-secant-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-ai-use-policy.html"><span class="codenumber">A</span> <span class="title">AI Use Policy</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-troubleshooting.html"><span class="codenumber">B</span> <span class="title">Troubleshooting</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-author-ai-disclosure.html"><span class="codenumber">C</span> <span class="title">Author AI-Use Disclosure</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div class="ptx-content" id="ptx-content">
+<section class="section" id="week02-errors">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Errors</span>
+</h2>
+<section class="introduction" id="week02-errors-2">
+<div class="para" id="week02-errors-2-1">Before diving into numerical methods, let’s establish some fundamental concepts.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-errors-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="week02-errors-2-2">An <dfn class="terminology">iterative method</dfn> generates a sequence of approximations <span class="process-math">\(p_1, p_2, p_3, \dots\)</span> that ideally converge to the true value <span class="process-math">\(p\)</span> as <span class="process-math">\(n \to \infty\text{,}\)</span> meaning<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-errors-2-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="week02-errors-2-3">
+\begin{equation*}
+\lim_{n\rightarrow\infty} p_n = p
+\end{equation*}
+</div>
+<div class="para" id="week02-errors-2-4">Since we cannot compute the exact limit, we stop the iteration at some finite step <span class="process-math">\(n\)</span> and take <span class="process-math">\(p_n\)</span> as an approximation of <span class="process-math">\(p\text{.}\)</span> But how can we assess the quality of this approximation?<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-errors-2-4" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="week02-errors-2-5">To do so, we measure the <dfn class="terminology">approximation error</dfn>, which quantifies how close <span class="process-math">\(p_n\)</span> is to <span class="process-math">\(p\text{.}\)</span> There are in general two basic types of measured error, absolute error and relative error.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-errors-2-5" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="week02-absolute-and-relative-error">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Absolute and Relative Error</span>
+</h3>
+<div class="interactive-iframe-container"><div aria-live="polite" class="panopto-placeholder" role="status"><p><strong>Video placeholder — PANOPTO_ID required.</strong></p><p>Replace the sentinel ID with the assigned Panopto video before publishing.</p></div></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week02-absolute-and-relative-error-2.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<article class="definition definition-like" id="week02-absolute-and-relative-error-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Absolute and Relative Error.</span>
+</h4>
+<div class="para logical" id="week02-absolute-and-relative-error-3-2">
+<div class="para">Suppose <span class="process-math">\(p_n\)</span> is an approximation of <span class="process-math">\(p\text{,}\)</span> the quantity</div>
+<div class="displaymath process-math" id="week02-absolute-and-relative-error-3-2-3">
+\begin{equation*}
+\epsilon_n = \left| p_n - p \right|
+\end{equation*}
+</div>
+<div class="para">is called the <dfn class="terminology">absolute error</dfn>, and</div>
+<div class="displaymath process-math" id="week02-absolute-and-relative-error-3-2-5">
+\begin{equation*}
+\delta_n = \frac{\epsilon_n}{ \left | p \right| }
+\end{equation*}
+</div>
+<div class="para">is called the <dfn class="terminology">relative error</dfn>, provided that <span class="process-math">\(p \neq 0\text{.}\)</span>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-absolute-and-relative-error-3-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Definition 2.1.1: Absolute and Relative Error"><a aria-label="Copy heading and permalink for Definition 2.1.1: Absolute and Relative Error" href="#week02-absolute-and-relative-error-3" tabindex="-1" title="Copy heading and permalink for Definition 2.1.1: Absolute and Relative Error">🔗</a></div>
+</article>
+<article class="example example-like" id="week02-absolute-and-relative-error-4"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="week02-absolute-and-relative-error-4-1">In an approximation, if the true value is <span class="process-math">\(-10\)</span> and the approximate value is <span class="process-math">\(-9.9\text{,}\)</span> then what is the absolute error and relative error?<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-absolute-and-relative-error-4-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details class="solution solution-like born-hidden-knowl" id="week02-absolute-and-relative-error-4-2"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="week02-absolute-and-relative-error-4-2-1">By definition, it is easy to find that the absolute error is <span class="process-math">\(\epsilon=|(-9.9)-(-10)|=0.1\)</span> and the relative error is <span class="process-math">\(\delta = \dfrac{0.1}{|-10|}=0.01=1\%\text{.}\)</span><div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-absolute-and-relative-error-4-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Solution 2.1.2.1"><a aria-label="Copy heading and permalink for Solution 2.1.2.1" href="#week02-absolute-and-relative-error-4-2" tabindex="-1" title="Copy heading and permalink for Solution 2.1.2.1">🔗</a></div>
+</div></details><div aria-hidden="true" class="autopermalink" data-description="Example 2.1.2"><a aria-label="Copy heading and permalink for Example 2.1.2" href="#week02-absolute-and-relative-error-4" tabindex="-1" title="Copy heading and permalink for Example 2.1.2">🔗</a></div>
+</article>
+<div class="para" id="week02-absolute-and-relative-error-5">Knowing how errors are typically measured, we now move to discuss the <dfn class="terminology">order of convergence</dfn>, which describes how quickly an iterative method approaches the true solution.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-absolute-and-relative-error-5" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Subsection: Absolute and Relative Error"><a aria-label="Copy heading and permalink for Subsection: Absolute and Relative Error" href="#week02-absolute-and-relative-error" tabindex="-1" title="Copy heading and permalink for Subsection: Absolute and Relative Error">🔗</a></div>
+</section>
+<section class="subsection" id="week02-order-of-convergence">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Order of Convergence</span>
+</h3>
+<div class="interactive-iframe-container"><div aria-live="polite" class="panopto-placeholder" role="status"><p><strong>Video placeholder — PANOPTO_ID required.</strong></p><p>Replace the sentinel ID with the assigned Panopto video before publishing.</p></div></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week02-order-of-convergence-2.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<article class="definition definition-like" id="week02-order-of-convergence-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Order of Convergence.</span>
+</h4>
+<div class="para logical" id="week02-order-of-convergence-3-2">
+<div class="para">Let <span class="process-math">\(\{p_n\}\)</span> be a sequence that converges to <span class="process-math">\(p\text{.}\)</span> If there exist constants <span class="process-math">\(C &gt; 0\)</span> and <span class="process-math">\(\alpha \ge 1\)</span> such that</div>
+<div class="displaymath process-math" id="week02-order-of-convergence-equation">
+\begin{equation}
+\left|p_{n+1} - p\right| \leq C \left|p_n - p\right|^\alpha\tag{2.1.1}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(n \geq 1\text{,}\)</span> then we say that <span class="process-math">\(\{p_n\}\)</span> converges to <span class="process-math">\(p\)</span> with order <span class="process-math">\(\alpha\text{.}\)</span>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-order-of-convergence-3-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Definition 2.1.3: Order of Convergence"><a aria-label="Copy heading and permalink for Definition 2.1.3: Order of Convergence" href="#week02-order-of-convergence-3" tabindex="-1" title="Copy heading and permalink for Definition 2.1.3: Order of Convergence">🔗</a></div>
+</article>
+<article class="remark remark-like" id="week02-order-of-convergence-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<ul class="disc" id="week02-order-of-convergence-4-1">
+<li id="week02-order-of-convergence-4-1-1">
+<div class="para" id="week02-order-of-convergence-4-1-1-1">It is easy to see <a class="xref" data-close-label="Close" data-knowl="./knowl/xref/week02-order-of-convergence-equation.html" data-reveal-label="Reveal" href="week02-errors.html#week02-order-of-convergence-equation" title="Equation 2.1.1">(2.1.1)</a> can be written as <span class="process-math">\(\epsilon_{n+1} \leq C \epsilon_n^\alpha\text{.}\)</span><div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-order-of-convergence-4-1-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#week02-order-of-convergence-4-1-1" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="week02-order-of-convergence-4-1-2">
+<div class="para logical" id="week02-order-of-convergence-4-1-2-1">
+<div class="para">If <span class="process-math">\(\alpha = 1\)</span> and <span class="process-math">\(C \lt 1\text{,}\)</span> the sequence <span class="process-math">\(\{p_n\}\)</span> is said to <dfn class="terminology">converge linearly</dfn>, with a <dfn class="terminology">rate of convergence</dfn> given by <span class="process-math">\(C\text{.}\)</span> In this case, using induction, we can show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/week02-order-of-convergence-equation.html" id="week02-order-of-convergence-4-1-2-1-7">
+\begin{equation*}
+\left|p_{n+1} - p\right| \leq C^n \left|p_1 - p\right|
+\end{equation*}
+</div>
+<div class="para">Some methods satisfy this bound but do not satisfy <a class="xref" data-close-label="Close" data-knowl="./knowl/xref/week02-order-of-convergence-equation.html" data-reveal-label="Reveal" href="week02-errors.html#week02-order-of-convergence-equation" title="Equation 2.1.1">(2.1.1)</a> for any <span class="process-math">\(C \lt 1\text{.}\)</span> These methods are still classified as <dfn class="terminology">linearly convergent</dfn>. A notable example of this is the <dfn class="terminology">bisection method</dfn>.</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-order-of-convergence-4-1-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#week02-order-of-convergence-4-1-2" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="week02-order-of-convergence-4-1-3">
+<div class="para" id="week02-order-of-convergence-4-1-3-1">If <span class="process-math">\(\alpha \gt 1\text{,}\)</span> the convergence is said to be <dfn class="terminology">superlinear</dfn>. In particular, when <span class="process-math">\(\alpha = 2\text{,}\)</span> the convergence is called <dfn class="terminology">quadratic convergence</dfn>.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-order-of-convergence-4-1-3-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#week02-order-of-convergence-4-1-3" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div aria-hidden="true" class="autopermalink" data-description="Remark 2.1.4"><a aria-label="Copy heading and permalink for Remark 2.1.4" href="#week02-order-of-convergence-4" tabindex="-1" title="Copy heading and permalink for Remark 2.1.4">🔗</a></div>
+</article>
+<article class="example example-like" id="week02-order-of-convergence-5"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="week02-order-of-convergence-5-1">
+<div class="para">Suppose you apply an iterative method and obtain the following errors from the first four steps:</div>
+<div class="displaymath process-math" id="week02-order-of-convergence-5-1-1">
+\begin{equation*}
+10^{-2}, \; 10^{-3}, \; 10^{-4}, \; 10^{-5}, \;\dots
+\end{equation*}
+</div>
+<div class="para">How would you characterize the order of convergence of this method?</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-order-of-convergence-5-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details class="solution solution-like born-hidden-knowl" id="week02-order-of-convergence-5-2"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="week02-order-of-convergence-5-2-1">The error <span class="process-math">\(\epsilon_n\)</span> is reduced by a factor of 10 in every iteration and so can be written <span class="process-math">\(\epsilon_{n+1} = 0.1 \epsilon_n\text{.}\)</span> According to the definition of Order of Convergence, this is linear (<span class="process-math">\(\alpha = 1\)</span>) convergence with a rate of 0.1.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-order-of-convergence-5-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Solution 2.1.5.1"><a aria-label="Copy heading and permalink for Solution 2.1.5.1" href="#week02-order-of-convergence-5-2" tabindex="-1" title="Copy heading and permalink for Solution 2.1.5.1">🔗</a></div>
+</div></details><div aria-hidden="true" class="autopermalink" data-description="Example 2.1.5"><a aria-label="Copy heading and permalink for Example 2.1.5" href="#week02-order-of-convergence-5" tabindex="-1" title="Copy heading and permalink for Example 2.1.5">🔗</a></div>
+</article>
+<article class="example example-like" id="week02-order-of-convergence-6"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="week02-order-of-convergence-6-1">
+<div class="para">Suppose you apply an iterative method and obtain the following errors from the first four steps:</div>
+<div class="displaymath process-math" id="week02-order-of-convergence-6-1-1">
+\begin{equation*}
+10^{-2}, \; 10^{-4}, \; 10^{-8}, \; 10^{-16}, \;\dots
+\end{equation*}
+</div>
+<div class="para">How would you characterize the order of convergence of this method?</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-order-of-convergence-6-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details class="solution solution-like born-hidden-knowl" id="week02-order-of-convergence-6-2"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="week02-order-of-convergence-6-2-1">The error <span class="process-math">\(\epsilon_n\)</span> is squared in every iteration and so can be written <span class="process-math">\(\epsilon_{n+1} = \epsilon_n^2\text{.}\)</span> According to the definition of Order of Convergence, this is quadratic (<span class="process-math">\(\alpha = 2\)</span>) convergence. Note that it can also be classified as superlinear convergence since <span class="process-math">\(\alpha \gt 1\text{.}\)</span><div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-order-of-convergence-6-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Solution 2.1.6.1"><a aria-label="Copy heading and permalink for Solution 2.1.6.1" href="#week02-order-of-convergence-6-2" tabindex="-1" title="Copy heading and permalink for Solution 2.1.6.1">🔗</a></div>
+</div></details>
+<section class="paragraphs" id="week02-order-of-convergence-6-3"><h5 class="heading"><span class="title">Video: Explanation of Example.</span></h5>
+<div class="interactive-iframe-container"><div aria-live="polite" class="panopto-placeholder" role="status"><p><strong>Video placeholder — PANOPTO_ID required.</strong></p><p>Replace the sentinel ID with the assigned Panopto video before publishing.</p></div></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week02-order-of-convergence-6-3-2.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraphs: Video: Explanation of Example"><a aria-label="Copy heading and permalink for Paragraphs: Video: Explanation of Example" href="#week02-order-of-convergence-6-3" tabindex="-1" title="Copy heading and permalink for Paragraphs: Video: Explanation of Example">🔗</a></div>
+</section><div aria-hidden="true" class="autopermalink" data-description="Example 2.1.6"><a aria-label="Copy heading and permalink for Example 2.1.6" href="#week02-order-of-convergence-6" tabindex="-1" title="Copy heading and permalink for Example 2.1.6">🔗</a></div>
+</article>
+<article class="example example-like" id="week02-order-of-convergence-7"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.1.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="week02-order-of-convergence-7-1">If an iterative method approximately squares the error in every <em class="emphasis">two</em> iterations then what is its order of convergence?<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-order-of-convergence-7-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details class="solution solution-like born-hidden-knowl" id="week02-order-of-convergence-7-2"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="week02-order-of-convergence-7-2-1">We’re given that the error in step <span class="process-math">\(n\)</span> satisfies <span class="process-math">\(\epsilon_n \approx \epsilon_{n-2}^2\text{.}\)</span> But from the definition of convergence, for a method of order <span class="process-math">\(\alpha\text{,}\)</span> the error in step <span class="process-math">\(n\)</span> also satisfies <span class="process-math">\(\epsilon_{n} \leq C_1 \epsilon_{n-1}^\alpha \leq C_2 \epsilon_{n-2}^{\alpha^2}\text{.}\)</span> Comparing these two expressions, it suggests that <span class="process-math">\(C_2=1\)</span> and <span class="process-math">\(\alpha^2 = 2\text{,}\)</span> that is, <span class="process-math">\(\alpha=\sqrt{2}\text{.}\)</span><div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-order-of-convergence-7-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Solution 2.1.7.1"><a aria-label="Copy heading and permalink for Solution 2.1.7.1" href="#week02-order-of-convergence-7-2" tabindex="-1" title="Copy heading and permalink for Solution 2.1.7.1">🔗</a></div>
+</div></details>
+<section class="paragraphs" id="week02-order-of-convergence-7-3"><h5 class="heading"><span class="title">Video: Explanation of Example.</span></h5>
+<div class="interactive-iframe-container"><div aria-live="polite" class="panopto-placeholder" role="status"><p><strong>Video placeholder — PANOPTO_ID required.</strong></p><p>Replace the sentinel ID with the assigned Panopto video before publishing.</p></div></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week02-order-of-convergence-7-3-2.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraphs: Video: Explanation of Example"><a aria-label="Copy heading and permalink for Paragraphs: Video: Explanation of Example" href="#week02-order-of-convergence-7-3" tabindex="-1" title="Copy heading and permalink for Paragraphs: Video: Explanation of Example">🔗</a></div>
+</section><div aria-hidden="true" class="autopermalink" data-description="Example 2.1.7"><a aria-label="Copy heading and permalink for Example 2.1.7" href="#week02-order-of-convergence-7" tabindex="-1" title="Copy heading and permalink for Example 2.1.7">🔗</a></div>
+</article><div aria-hidden="true" class="autopermalink" data-description="Subsection: Order of Convergence"><a aria-label="Copy heading and permalink for Subsection: Order of Convergence" href="#week02-order-of-convergence" tabindex="-1" title="Copy heading and permalink for Subsection: Order of Convergence">🔗</a></div>
+</section>
+<section class="subsection" id="week02-stopping-criteria">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Stopping Criteria</span>
+</h3>
+<div class="interactive-iframe-container"><div aria-live="polite" class="panopto-placeholder" role="status"><p><strong>Video placeholder — PANOPTO_ID required.</strong></p><p>Replace the sentinel ID with the assigned Panopto video before publishing.</p></div></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week02-stopping-criteria-2.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div class="para logical" id="week02-stopping-criteria-3">
+<div class="para">A key challenge in any iterative method is determining when to stop since the true value <span class="process-math">\(p\)</span> is unknown. Given a predefined error tolerance <span class="process-math">\(atol \gt 0\text{,}\)</span> we commonly use one of the following stopping criteria:</div>
+<ul class="disc" id="week02-stopping-criteria-3-3">
+<li id="week02-stopping-criteria-3-3-1">
+<div class="para logical" id="week02-stopping-criteria-3-3-1-1">
+<div class="para"><em class="emphasis">Successive approximations are sufficiently close:</em></div>
+<div class="displaymath process-math" id="week02-stopping-criteria-3-3-1-1-2">
+\begin{equation*}
+\left|p_n - p_{n-1}\right| \lt atol
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-stopping-criteria-3-3-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#week02-stopping-criteria-3-3-1" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="week02-stopping-criteria-3-3-2">
+<div class="para logical" id="week02-stopping-criteria-3-3-2-1">
+<div class="para"><em class="emphasis">Relative change in approximations is small (when <span class="process-math">\(p_n \neq 0\)</span>):</em></div>
+<div class="displaymath process-math" id="week02-stopping-criteria-3-3-2-1-2">
+\begin{equation*}
+\left| \frac{p_n - p_{n-1}}{p_n} \right| \lt atol 
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-stopping-criteria-3-3-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#week02-stopping-criteria-3-3-2" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="week02-stopping-criteria-3-3-3">
+<div class="para logical" id="week02-stopping-criteria-3-3-3-1">
+<div class="para"><em class="emphasis">Function value is near zero (indicating a good root approximation):</em></div>
+<div class="displaymath process-math" id="week02-stopping-criteria-3-3-3-1-2">
+\begin{equation*}
+|f(p_n)| \lt atol 
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-stopping-criteria-3-3-3-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#week02-stopping-criteria-3-3-3" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="week02-stopping-criteria-3-3-4">
+<div class="para logical" id="week02-stopping-criteria-3-3-4-1">
+<div class="para"><em class="emphasis">Maximum number of iterations:</em></div>
+<div class="displaymath process-math" id="week02-stopping-criteria-3-3-4-1-2">
+\begin{equation*}
+n_{iter} \gt N_{max}
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-stopping-criteria-3-3-4-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#week02-stopping-criteria-3-3-4" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-stopping-criteria-3" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="week02-stopping-criteria-4">Throughout our numerical experiments, we will test different stopping criteria.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week02-stopping-criteria-4" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Subsection: Stopping Criteria"><a aria-label="Copy heading and permalink for Subsection: Stopping Criteria" href="#week02-stopping-criteria" tabindex="-1" title="Copy heading and permalink for Subsection: Stopping Criteria">🔗</a></div>
+</section><div aria-hidden="true" class="autopermalink" data-description="Section 2.1: Errors"><a aria-label="Copy heading and permalink for Section 2.1: Errors" href="#week02-errors" tabindex="-1" title="Copy heading and permalink for Section 2.1: Errors">🔗</a></div>
+</section>
+</div>
+<div class="ptx-content-footer" id="ptx-content-footer">
+<a class="previous-button button" href="week-02-root-finding.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Top</span></a><a class="next-button button" href="week02-bisection-method.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer" id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg height="100%" role="img" viewbox="338 3000 8772 6866" xmlns="http://www.w3.org/2000/svg"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path d="M 4724,9448 A 4660 4660  0  0  1  8598  9259" style="stroke-width:126;stroke-linecap:butt;"></path><path d="M 4488,9685 A 4228 4228  0  0  0   472  9732" style="stroke-width:174;stroke-linecap:butt;"></path><path d="M 4724,3590 A 4241 4241  0  0  1  8598  3496" style="stroke-width:126;stroke-linecap:butt;"></path><path d="M 850,3496  A 4241 4241  0  0  1  4724  3590" style="stroke-width:126;stroke-linecap:round;"></path><path d="M 850,9259  A 4507 4507  0  0  1  4724  9448" style="stroke-width:126;stroke-linecap:round;"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path d="M 4960,9685 A 4228 4228  0  0  1  8976  9732" style="stroke-width:174;stroke-linecap:butt;"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img alt="Runstone Academy logo" class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"/></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img alt="MathJax logo" class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"/></a>
+</div>
+</body>
+</html>
