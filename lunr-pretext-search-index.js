@@ -100,6 +100,195 @@ var ptx_lunr_docs = [
   "body": " Plotting with Plotly  For this section, you should be able to find the plotly-plotting-introduction.ipynb notebook in the demo directory of the course environment folder.   "
 },
 {
+  "id": "unit-02-errors",
+  "level": "1",
+  "url": "unit-02-errors.html",
+  "type": "Section",
+  "number": "2.1",
+  "title": "Errors",
+  "body": "Errors   Before diving into numerical methods, let’s establish some fundamental concepts.  An iterative method generates a sequence of approximations that ideally converge to the true value as , meaning   Since we cannot compute the exact limit, we stop the iteration at some finite step and take as an approximation of . But how can we assess the quality of this approximation?  To do so, we measure the approximation error , which quantifies how close is to . There are in general two basic types of measured error, absolute error and relative error.   Absolute and Relative Error   Absolute and Relative Error  Suppose is an approximation of , the quantity is called the absolute error , and is called the relative error , provided that .    In an approximation, if the true value is and the approximate value is , then what is the absolute error and relative error?  By definition, it is easy to find that the absolute error is and the relative error is .   Knowing how errors are typically measured, we now move to discuss the order of convergence , which describes how quickly an iterative method approaches the true solution.   Order of Convergence   Order of Convergence  Let be a sequence that converges to . If there exist constants and such that for all , then we say that converges to with order .    It is easy to see can be written as .  If and , the sequence is said to converge linearly , with a rate of convergence given by . In this case, using induction, we can show that Some methods satisfy this bound but do not satisfy for any . These methods are still classified as linearly convergent . A notable example of this is the bisection method .  If , the convergence is said to be superlinear . In particular, when , the convergence is called quadratic convergence .    Suppose you apply an iterative method and obtain the following errors from the first four steps: How would you characterize the order of convergence of this method?  The error is reduced by a factor of 10 in every iteration and so can be written . According to the definition of Order of Convergence, this is linear ( ) convergence with a rate of 0.1.    Suppose you apply an iterative method and obtain the following errors from the first four steps: How would you characterize the order of convergence of this method?  The error is squared in every iteration and so can be written . According to the definition of Order of Convergence, this is quadratic ( ) convergence. Note that it can also be classified as superlinear convergence since .  Video Breakdown      If an iterative method approximately squares the error in every two iterations then what is its order of convergence?  We're given that the error in step satisfies . But from the definition of convergence, for a method of order , the error in step also satisfies . Comparing these two expressions, it suggests that and , that is, .  Video Breakdown      Stopping Criteria   A key challenge in any iterative method is determining when to stop since the true value is unknown. Given a predefined error tolerance , we commonly use one of the following stopping criteria:  Successive approximations are sufficiently close:    Relative change in approximations is small (when ):    Function value is near zero (indicating a good root approximation):    Maximum number of iterations:      Throughout our numerical experiments, we will test different stopping criteria.   "
+},
+{
+  "id": "unit-02-errors-2-2",
+  "level": "2",
+  "url": "unit-02-errors.html#unit-02-errors-2-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "iterative method "
+},
+{
+  "id": "unit-02-errors-2-5",
+  "level": "2",
+  "url": "unit-02-errors.html#unit-02-errors-2-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "approximation error "
+},
+{
+  "id": "unit-02-absolute-and-relative-error-3",
+  "level": "2",
+  "url": "unit-02-errors.html#unit-02-absolute-and-relative-error-3",
+  "type": "Definition",
+  "number": "2.1.1",
+  "title": "Absolute and Relative Error.",
+  "body": "Absolute and Relative Error  Suppose is an approximation of , the quantity is called the absolute error , and is called the relative error , provided that .  "
+},
+{
+  "id": "unit-02-absolute-and-relative-error-4",
+  "level": "2",
+  "url": "unit-02-errors.html#unit-02-absolute-and-relative-error-4",
+  "type": "Example",
+  "number": "2.1.2",
+  "title": "",
+  "body": " In an approximation, if the true value is and the approximate value is , then what is the absolute error and relative error?  By definition, it is easy to find that the absolute error is and the relative error is .  "
+},
+{
+  "id": "unit-02-absolute-and-relative-error-5",
+  "level": "2",
+  "url": "unit-02-errors.html#unit-02-absolute-and-relative-error-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "order of convergence "
+},
+{
+  "id": "unit-02-order-of-convergence-3",
+  "level": "2",
+  "url": "unit-02-errors.html#unit-02-order-of-convergence-3",
+  "type": "Definition",
+  "number": "2.1.3",
+  "title": "Order of Convergence.",
+  "body": "Order of Convergence  Let be a sequence that converges to . If there exist constants and such that for all , then we say that converges to with order .  "
+},
+{
+  "id": "unit-02-order-of-convergence-4",
+  "level": "2",
+  "url": "unit-02-errors.html#unit-02-order-of-convergence-4",
+  "type": "Remark",
+  "number": "2.1.4",
+  "title": "",
+  "body": " It is easy to see can be written as .  If and , the sequence is said to converge linearly , with a rate of convergence given by . In this case, using induction, we can show that Some methods satisfy this bound but do not satisfy for any . These methods are still classified as linearly convergent . A notable example of this is the bisection method .  If , the convergence is said to be superlinear . In particular, when , the convergence is called quadratic convergence .  "
+},
+{
+  "id": "unit-02-order-of-convergence-5",
+  "level": "2",
+  "url": "unit-02-errors.html#unit-02-order-of-convergence-5",
+  "type": "Example",
+  "number": "2.1.5",
+  "title": "",
+  "body": " Suppose you apply an iterative method and obtain the following errors from the first four steps: How would you characterize the order of convergence of this method?  The error is reduced by a factor of 10 in every iteration and so can be written . According to the definition of Order of Convergence, this is linear ( ) convergence with a rate of 0.1.  "
+},
+{
+  "id": "unit-02-order-of-convergence-6",
+  "level": "2",
+  "url": "unit-02-errors.html#unit-02-order-of-convergence-6",
+  "type": "Example",
+  "number": "2.1.6",
+  "title": "",
+  "body": " Suppose you apply an iterative method and obtain the following errors from the first four steps: How would you characterize the order of convergence of this method?  The error is squared in every iteration and so can be written . According to the definition of Order of Convergence, this is quadratic ( ) convergence. Note that it can also be classified as superlinear convergence since .  Video Breakdown    "
+},
+{
+  "id": "unit-02-order-of-convergence-7",
+  "level": "2",
+  "url": "unit-02-errors.html#unit-02-order-of-convergence-7",
+  "type": "Example",
+  "number": "2.1.7",
+  "title": "",
+  "body": " If an iterative method approximately squares the error in every two iterations then what is its order of convergence?  We're given that the error in step satisfies . But from the definition of convergence, for a method of order , the error in step also satisfies . Comparing these two expressions, it suggests that and , that is, .  Video Breakdown    "
+},
+{
+  "id": "unit-02-bisection-method",
+  "level": "1",
+  "url": "unit-02-bisection-method.html",
+  "type": "Section",
+  "number": "2.2",
+  "title": "Bisection Method",
+  "body": "Bisection Method  Let’s explore the bisection method , a simple and reliable technique that makes minimal assumptions about the function . This method is rooted in the Intermediate Value Theorem , a fundamental result you may recall from Calculus I. Before diving into the method itself, let’s briefly revisit the theorem: Intermediate Value Theorem  If and is any number between and , then there exists with .    The Method   According to the Intermediate Value Theorem, if a continuous function is defined on the interval and satisfies , then there exists such that . This principle forms the foundation of the bisection method. At each step, the interval is divided into two halves by computing the midpoint. The value of is then evaluated at the midpoint, and we determine which subinterval contains the root based on the sign of the function. The subinterval that does not contain the root is discarded, and the process is repeated on the remaining interval.   Apply the bisection method to find the root of the function starting from the interval . Calculate , , and .  First, we need to verify there exist a root in the interval , where and , Since , then there exists such that . Hence, is the midpoint of the interval, that is, Then we evaluate the function at , Therefore, the root is in the left subinterval since the function has different signs at the endpoints ( and ) of left subinterval. Then, is the midpoint of left subinterval, that is, Since the root is between and , therefore,   Video Breakdown       Error Analysis  Now, let’s perform an error analysis for the bisection method to understand how accurately it approximates the root at each step.    Suppose that and . The bisection method generates a sequence approximating a zero of with   Let the sequences and denote the left-end and right-end points of the subintervals generated by the bisection method. Since at each step the interval is halved, we have By mathematical induction, we get Therefore,    The bisection method converges linearly with a rate of convergence by this theorem and the definition of the Order of Convergence.  The bisection method takes iterations to obtain a value that satisfies , where is a predefined error tolerance.   Let’s revisit last example of applying the bisection method to find the root of the function starting from the interval . If the allowed approximation tolerance is , how many iterations at least are required?   By , we have Therefore, it requires at least 3 iterations such that .  Video Breakdown       This example suggests that we need at least 3 iterations to achieve an error tolerance of . We can confirm this using Example 6 , where the first three approximations were computed, with .  For the simple function , the exact positive root is . Therefore, the absolute error at the third iteration is which verifies that the desired accuracy is indeed achieved after 3 iterations.    Algorithm and Coding  Next, we’ll summarize the steps of the bisection algorithm, illustrate its process with a flowchart, and then implement it using Python code.  Bisection Method   Define .  If , then accept as the root and stop.  If , then set . Otherwise, set . Return to step 1.       Bisection Flow Chart   Bisection Flow Chart    def bisection(f, a, b, atol, max_iter): root_found = False if f(a)*f(b) \\le 0: for i in range(max_iter): p = (a+b)\/2 if b-p \\le atol: root_found = True return p elif f(b)*f(p) \\le 0: a = p else: b = p if not root_found: raise Exception( \"Bisection did not converge \" f\"within {max_iter} iterations. \" \"Try a greater max_iter.\" ) else: raise Exception( \"Bisection is not applicable for this problem.\" )  Let’s apply the bisection method to find a root of the function within the interval , using error tolerance of . We also set max_iter = 20 , as we expect the method to converge to a root within 20 iterations.  p = bisection( f=lambda x: x*x*x + 2*x*x + 5*x - 2, a=0, b=2, atol=1e-3, max_iter=20, ) print(f\"The root found by bisection method is {p}.\")  You will see the output as follows:  The root found by bisection method is 0.3447265625.  The code will be given in Canvas.   "
+},
+{
+  "id": "unit-02-bisection-method-2-1",
+  "level": "2",
+  "url": "unit-02-bisection-method.html#unit-02-bisection-method-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "bisection method Intermediate Value Theorem "
+},
+{
+  "id": "unit-02-the-method-4",
+  "level": "2",
+  "url": "unit-02-bisection-method.html#unit-02-the-method-4",
+  "type": "Example",
+  "number": "2.2.2",
+  "title": "",
+  "body": " Apply the bisection method to find the root of the function starting from the interval . Calculate , , and .  First, we need to verify there exist a root in the interval , where and , Since , then there exists such that . Hence, is the midpoint of the interval, that is, Then we evaluate the function at , Therefore, the root is in the left subinterval since the function has different signs at the endpoints ( and ) of left subinterval. Then, is the midpoint of left subinterval, that is, Since the root is between and , therefore,   Video Breakdown     "
+},
+{
+  "id": "unit-02-error-analysis-4",
+  "level": "2",
+  "url": "unit-02-bisection-method.html#unit-02-error-analysis-4",
+  "type": "Theorem",
+  "number": "2.2.3",
+  "title": "",
+  "body": " Suppose that and . The bisection method generates a sequence approximating a zero of with   Let the sequences and denote the left-end and right-end points of the subintervals generated by the bisection method. Since at each step the interval is halved, we have By mathematical induction, we get Therefore,   "
+},
+{
+  "id": "unit-02-error-analysis-5",
+  "level": "2",
+  "url": "unit-02-bisection-method.html#unit-02-error-analysis-5",
+  "type": "Remark",
+  "number": "2.2.4",
+  "title": "",
+  "body": "The bisection method converges linearly with a rate of convergence by this theorem and the definition of the Order of Convergence. "
+},
+{
+  "id": "unit-02-error-analysis-6",
+  "level": "2",
+  "url": "unit-02-bisection-method.html#unit-02-error-analysis-6",
+  "type": "Remark",
+  "number": "2.2.5",
+  "title": "",
+  "body": "The bisection method takes iterations to obtain a value that satisfies , where is a predefined error tolerance. "
+},
+{
+  "id": "unit-02-error-analysis-7",
+  "level": "2",
+  "url": "unit-02-bisection-method.html#unit-02-error-analysis-7",
+  "type": "Example",
+  "number": "2.2.6",
+  "title": "",
+  "body": " Let’s revisit last example of applying the bisection method to find the root of the function starting from the interval . If the allowed approximation tolerance is , how many iterations at least are required?   By , we have Therefore, it requires at least 3 iterations such that .  Video Breakdown     "
+},
+{
+  "id": "unit-02-error-analysis-8",
+  "level": "2",
+  "url": "unit-02-bisection-method.html#unit-02-error-analysis-8",
+  "type": "Remark",
+  "number": "2.2.7",
+  "title": "",
+  "body": " This example suggests that we need at least 3 iterations to achieve an error tolerance of . We can confirm this using Example 6 , where the first three approximations were computed, with .  For the simple function , the exact positive root is . Therefore, the absolute error at the third iteration is which verifies that the desired accuracy is indeed achieved after 3 iterations.  "
+},
+{
+  "id": "unit-02-algorithm-and-coding-3",
+  "level": "2",
+  "url": "unit-02-bisection-method.html#unit-02-algorithm-and-coding-3",
+  "type": "Algorithm",
+  "number": "2.2.8",
+  "title": "Bisection Method.",
+  "body": "Bisection Method   Define .  If , then accept as the root and stop.  If , then set . Otherwise, set . Return to step 1.    "
+},
+{
+  "id": "unit-02-algorithm-and-coding-4",
+  "level": "2",
+  "url": "unit-02-bisection-method.html#unit-02-algorithm-and-coding-4",
+  "type": "Figure",
+  "number": "2.2.9",
+  "title": "",
+  "body": "  Bisection Flow Chart   Bisection Flow Chart  "
+},
+{
   "id": "appendix-troubleshooting",
   "level": "1",
   "url": "appendix-troubleshooting.html",
