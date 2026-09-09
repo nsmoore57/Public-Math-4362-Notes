@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html dir="ltr" lang="en-US">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:book="https://ogp.me/ns/book#" xmlns:og="http://ogp.me/ns#">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Gaussian Elimination with Backward Substitution</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css"/>
+<link href="external/wtamu-pretext-theme/wtamu-theme.css" rel="stylesheet" type="text/css"/>
+<link href="external/ai-course-policy-badges/templates/pretext/ai-badge-problem-document.css" rel="stylesheet" type="text/css"/>
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta content="Authored in PreTeXt" name="Keywords"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="book" property="og:type"/>
+<meta content="MATH 4362: Introduction to Numerical Analysis" name="twitter:title"/>
+<meta content="MATH 4362: Introduction to Numerical Analysis" property="og:title"/>
+<meta content="MATH 4362: Introduction to Numerical Analysis" property="book:title"/>
+<meta content="Fall 2026 Course Notes" name="twitter:description"/>
+<meta content="Fall 2026 Course Notes" property="og:description"/>
+<meta content="summary" name="twitter:card"/>
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.52"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.52"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.10';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link href="_static/prefix-926.229729d09512acc9.css" rel="stylesheet" type="text/css"/>
+<link href="_static/prefix-runestone.efe427683fc41f98.css" rel="stylesheet" type="text/css"/>
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script crossorigin="anonymous" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js"></script><script crossorigin="anonymous" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js"></script><script crossorigin="anonymous" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script><script async="" src="lunr-pretext-search-index.js"></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header class="ptx-masthead" id="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="math-4362-introduction-to-numerical-analysis.html"><span class="title">MATH 4362: Introduction to Numerical Analysis</span> <span class="subtitle">Fall 2026 Course Notes</span></a></div>
+<p class="byline">Nicholas S. Moore, PhD</p>
+</div></div></header><nav class="ptx-navbar navbar" id="ptx-navbar"><div class="ptx-navbar-contents">
+<button aria-controls="ptx-sidebar" class="toc-toggle button" id="ptx-toc-toggle" title="Contents" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button class="ptx-search-button button" id="ptx-search-button" title="Search Book" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Search Book</span></button></div>
+<dialog class="ptx-dialog ptx-search-dialog" id="ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" class="ptx-search-terms" id="ptx-search-terms" name="terms" placeholder="Search terms" type="text"/><button aria-label="Close" class="ptx-search-close" id="ptx-search-close"><span aria-hidden="true" class="icon material-symbols-outlined"></span></button>
+</div>
+<div aria-atomic="true" aria-live="polite" class="ptx-search-status" id="ptx-search-status"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div class="ptx-search-empty" id="ptx-search-empty"><span>No results.</span></div>
+<ol class="ptx-search-results" id="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button class="ptx-embed-button button" id="ptx-embed-button" title="Embed this page"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span aria-hidden="true" class="icon material-symbols-outlined"></span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea aria-label="Embed" class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly="">&lt;iframe src="https://example.com/embed" width="100%" height="1000"&gt;&lt;/iframe&gt;</textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Copy</span></button>
+</div></dialog><button aria-expanded="false" class="ptx-read-aloud-button button" id="ptx-read-aloud-button" title="Read aloud"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Read aloud</span></button><div aria-label="Read aloud" class="ptx-read-aloud-player" hidden="hidden" id="ptx-read-aloud-player" role="group">
+<button class="button" id="ptx-read-aloud-prev" title="Previous sentence"><span aria-hidden="true" class="icon material-symbols-outlined"></span></button><button class="ptx-read-aloud-toggle button" id="ptx-read-aloud-toggle" title="Play"><span class="ptx-read-aloud-icon-play"><span aria-hidden="true" class="icon material-symbols-outlined"></span></span><span class="ptx-read-aloud-icon-pause"><span aria-hidden="true" class="icon material-symbols-outlined"></span></span></button><button class="button" id="ptx-read-aloud-next" title="Next sentence"><span aria-hidden="true" class="icon material-symbols-outlined"></span></button><a class="ptx-read-aloud-continue button" hidden="hidden" id="ptx-read-aloud-continue">Continue<span aria-hidden="true" class="icon material-symbols-outlined"></span></a><button class="ptx-read-aloud-settings-button button" id="ptx-read-aloud-settings-button" title="Reading settings"><span aria-hidden="true" class="icon material-symbols-outlined"></span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span aria-hidden="true" class="icon material-symbols-outlined"></span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Reading speed</span><output for="ptx-read-aloud-rate" id="ptx-read-aloud-rate-value">1×</output></label><input id="ptx-read-aloud-rate" max="2" min="0.5" step="0.1" type="range" value="1"/><label for="ptx-read-aloud-asides"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input checked="" id="ptx-read-aloud-autoscroll" type="checkbox"/><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input id="ptx-read-aloud-autocontinue" type="checkbox"/><span>Continue to the next page automatically</span></label>
+</div></dialog><button class="ptx-readability-options-button button" id="ptx-readability-options-button" title="Readability settings"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span aria-hidden="true" class="icon material-symbols-outlined"></span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Line height</span><output for="ptx-readability-line-height" id="ptx-readability-line-height-value">1.35</output></label><input id="ptx-readability-line-height" max="3" min="1.10" step="0.05" type="range" value="1.35"/>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Content font size</span><output for="ptx-readability-font-size" id="ptx-readability-font-size-value">100%</output></label><input id="ptx-readability-font-size" max="1.5" min="0.8" step="0.05" type="range" value="1"/>
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input id="ptx-readability-theme-system" name="ptx-readability-theme" type="radio" value="system"/><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>System</span></label><label for="ptx-readability-theme-light"><input id="ptx-readability-theme-light" name="ptx-readability-theme" type="radio" value="light"/><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Light</span></label><label for="ptx-readability-theme-dark"><input id="ptx-readability-theme-dark" name="ptx-readability-theme" type="radio" value="dark"/><span aria-hidden="true" class="icon material-symbols-outlined"></span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input id="ptx-readability-accessible-permalinks" type="checkbox"/><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button class="ptx-readability-reset-button button" id="ptx-readability-reset-button" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="unit-05-review-linear-algebra.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="up-button button" href="unit-05-gaussian-elimination-lu.html" title="Up"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Up</span></a><a class="next-button button" href="unit-05-lu-decomposition.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></span>
+</div></nav><div class="hidden-content process-math" id="latex-macros" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div class="ptx-sidebar" id="ptx-sidebar" role="complementary"><nav aria-label="Contents" class="ptx-toc depth2 focused" data-max-levels="2" data-preexpanded-levels="0" id="ptx-toc" tabindex="-1"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a class="internal" href="frontmatter.html"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="unit-01-python.html"><span class="codenumber">1</span> <span class="title">Unit 1: Python for Numerical Mathematics</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-01-python">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-01-python-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-install-python-uv.html"><span class="codenumber">1.1</span> <span class="title">Installing Python and uv</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html"><span class="codenumber">1.2</span> <span class="title">Getting Started with Jupyter Notebooks</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-01-jupyter-basics">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html#week-01-jupyter-basics-3"><span class="title">How to Open a .ipynb File</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html#week-01-jupyter-basics-4"><span class="title">Understanding the Interface and Running Code</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week-01-python-basics.html"><span class="codenumber">1.3</span> <span class="title">Python Basics</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-01-python-basics">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-3"><span class="title">Variables and Basic Data Types</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-4"><span class="title">Mathematical Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-5"><span class="title">Lists</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-6"><span class="title">Tuples and Dictionaries in Python</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-7"><span class="title">Boolean Logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-8"><span class="title">If Statements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-9"><span class="title">For Loops</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-10"><span class="title">While Loops</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-11"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-12"><span class="title">Help System in Jupyter Notebooks</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-13"><span class="title">Round-Off Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-14"><span class="title">Python Exceptions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week-01-numpy-basics.html"><span class="codenumber">1.4</span> <span class="title">Introduction to NumPy</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-01-numpy-basics">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-numpy-basics.html#week-01-numpy-basics-3"><span class="title">Basic Array Operations in NumPy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-numpy-basics.html#week-01-numpy-basics-4"><span class="title">Indexing and Slicing in NumPy</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-plotly.html"><span class="codenumber">1.5</span> <span class="title">Plotting with Plotly</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="unit-02-root-finding.html"><span class="codenumber">2</span> <span class="title">Unit 2: Errors and Bisection Method</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-02-root-finding">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-02-root-finding-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="unit-02-errors.html"><span class="codenumber">2.1</span> <span class="title">Errors</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-02-errors">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-errors.html#unit-02-absolute-and-relative-error"><span class="title">Absolute and Relative Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-errors.html#unit-02-order-of-convergence"><span class="title">Order of Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-errors.html#unit-02-stopping-criteria"><span class="title">Stopping Criteria</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html"><span class="codenumber">2.2</span> <span class="title">Bisection Method</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-02-bisection-method">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-the-method"><span class="title">The Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-error-analysis"><span class="title">Error Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="unit-03-newton-secant-methods.html"><span class="codenumber">3</span> <span class="title">Unit 3: Newton’s Method and Secant Method</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-03-newton-secant-methods">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-03-newton-secant-methods-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="unit-03-newtons-method.html"><span class="codenumber">3.1</span> <span class="title">Newton’s Method</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-03-newtons-method">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-newtons-method.html#unit-03-newton-method"><span class="title">The Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-newtons-method.html#unit-03-newton-error-analysis"><span class="title">Error Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-newtons-method.html#unit-03-newton-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="unit-03-secant-method.html"><span class="codenumber">3.2</span> <span class="title">Secant Method</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-03-secant-method">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-secant-method.html#unit-03-secant-method-description"><span class="title">The Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-secant-method.html#unit-03-secant-error-analysis"><span class="title">Error Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-secant-method.html#unit-03-secant-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-iteration.html"><span class="codenumber">4</span> <span class="title">Unit 4: Fixed Point Iteration</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-04-fixed-point-iteration">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-iteration-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-introduction-fixed-point-iteration.html"><span class="codenumber">4.1</span> <span class="title">Introduction to Fixed-Point Iteration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-choose-g.html"><span class="codenumber">4.2</span> <span class="title">How To Choose <span class="process-math">\(g(x)\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-theorem.html"><span class="codenumber">4.3</span> <span class="title">Fixed Point Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-convergence-fixed-point-iteration.html"><span class="codenumber">4.4</span> <span class="title">Convergence of the Fixed Point Iteration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-algo-coding.html"><span class="codenumber">4.5</span> <span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination-lu.html"><span class="codenumber">5</span> <span class="title">Unit 5: Gaussian Elimination and LU Decomposition</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-unit-05-gaussian-elimination-lu">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination-lu-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-05-review-linear-algebra.html"><span class="codenumber">5.1</span> <span class="title">Review of Linear Algebra</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination.html"><span class="codenumber">5.2</span> <span class="title">Gaussian Elimination with Backward Substitution</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-unit-05-gaussian-elimination">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-3"><span class="title">Backward Substitution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-4"><span class="title">Gaussian Elimination</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-5"><span class="title">Pivoting Strategies</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-6"><span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-05-lu-decomposition.html"><span class="codenumber">5.3</span> <span class="title">LU Decomposition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="unit-06-iterative-methods.html"><span class="codenumber">6</span> <span class="title">Unit 6: Iterative Methods</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-06-iterative-methods">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-06-iterative-methods-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-jacobi-method.html"><span class="codenumber">6.1</span> <span class="title">Jacobi Method</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-gauss-seidel-method.html"><span class="codenumber">6.2</span> <span class="title">Gauss-Seidel Method</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-iteration-methods-convergence.html"><span class="codenumber">6.3</span> <span class="title">Convergence of Iterative Methods</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-iterative-methods-coding.html"><span class="codenumber">6.4</span> <span class="title">Algorithms and Coding for Iterative Methods</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-troubleshooting.html"><span class="codenumber">A.</span> <span class="title">Troubleshooting</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div class="ptx-content" id="ptx-content">
+<section class="section" id="unit-05-gaussian-elimination">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gaussian Elimination with Backward Substitution</span>
+</h1>
+<section class="introduction" id="unit-05-gaussian-elimination-2">
+<div class="para logical" id="unit-05-gaussian-elimination-2-1">
+<div class="para">The fundamental direct method for solving systems of linear equations is <dfn class="terminology">Gaussian elimination</dfn>. In this section, we will cover two key steps of the process:</div>
+<ul class="disc" id="unit-05-gaussian-elimination-2-1-2">
+<li id="unit-05-gaussian-elimination-2-1-2-1">
+<div class="para" id="unit-05-gaussian-elimination-2-1-2-1-1">First, how to solve a linear system when the coefficient matrix <span class="process-math">\(A\)</span> is already in <dfn class="terminology">upper triangular form</dfn>. This step is known as <dfn class="terminology">backward substitution</dfn>.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-2-1-2-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-05-gaussian-elimination-2-1-2-1" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="unit-05-gaussian-elimination-2-1-2-2">
+<div class="para" id="unit-05-gaussian-elimination-2-1-2-2-1">Second, how to transform a general linear system into an upper triangular form so that backward substitution can be applied. This transformation process is known as <dfn class="terminology">Gaussian elimination</dfn>.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-2-1-2-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-05-gaussian-elimination-2-1-2-2" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="unit-05-gaussian-elimination-3">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Backward Substitution</span>
+</h2>
+<div class="para" id="unit-05-gaussian-elimination-3-2">Sometimes, the matrix <span class="process-math">\(A\)</span> has a special structure that simplifies the solution process. For example, if <span class="process-math">\(A\)</span> is an <dfn class="terminology">upper triangular matrix</dfn>, then solving the system becomes straightforward.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-3-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="unit-05-gaussian-elimination-3-3"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="unit-05-gaussian-elimination-3-3-1-1">
+<div class="para">Solve the linear system</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-3-3-1-1-1">
+\begin{equation*}
+\begin{bmatrix}
+2 &amp; 4 &amp; 10 \\
+0 &amp; -4 &amp; -16 \\
+0 &amp; 0 &amp; 4
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ x_3
+\end{bmatrix}
+=\begin{bmatrix}
+-22 \\ 48 \\ -20
+\end{bmatrix}
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-3-3-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl" id="unit-05-gaussian-elimination-3-3-2"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="unit-05-gaussian-elimination-3-3-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=VID-2026-0104" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="unit-05-gaussian-elimination-3-3-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div class="para logical" id="unit-05-gaussian-elimination-3-3-2-2">
+<div class="para">Note that the coefficient matrix <span class="process-math">\(A\)</span> is upper triangular, we can solve the system using <dfn class="terminology">backward substitution</dfn>. Starting from the last equation,</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-3-3-2-2-3">
+\begin{equation*}
+4x_3=-20 \implies x_3=-5
+\end{equation*}
+</div>
+<div class="para">Then substituting the value of <span class="process-math">\(x_3\)</span> in the second equation,</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-3-3-2-2-5">
+\begin{equation*}
+-4x_2-16x_3=48 \implies -4x_2-16(-5)=48 \implies x_2=8
+\end{equation*}
+</div>
+<div class="para">Similarly, solving the first equation for <span class="process-math">\(x_1\)</span> by substituting the values of <span class="process-math">\(x_3\)</span> and <span class="process-math">\(x_2\text{,}\)</span> we have</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-3-3-2-2-9">
+\begin{equation*}
+2x_1+4x_2+10x_3=-22 \implies 2x_1+4(8)+10(-5)=-22 \implies x_1=-2
+\end{equation*}
+</div>
+<div class="para">Therefore, the solution is <span class="process-math">\(\begin{cases}  x_1 = -2\\x_2 = 8\\x_3 = -5  \end{cases}\text{.}\)</span>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-3-3-2-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Solution 5.2.1.1"><a aria-label="Copy heading and permalink for Solution 5.2.1.1" href="#unit-05-gaussian-elimination-3-3-2" tabindex="-1" title="Copy heading and permalink for Solution 5.2.1.1">🔗</a></div>
+</div></details>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Example 5.2.1"><a aria-label="Copy heading and permalink for Example 5.2.1" href="#unit-05-gaussian-elimination-3-3" tabindex="-1" title="Copy heading and permalink for Example 5.2.1">🔗</a></div>
+</article><div aria-hidden="true" class="autopermalink" data-description="Subsection: Backward Substitution"><a aria-label="Copy heading and permalink for Subsection: Backward Substitution" href="#unit-05-gaussian-elimination-3" tabindex="-1" title="Copy heading and permalink for Subsection: Backward Substitution">🔗</a></div>
+</section>
+<section class="subsection" id="unit-05-gaussian-elimination-4">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gaussian Elimination</span>
+</h2>
+<div class="para" id="unit-05-gaussian-elimination-4-2">Now, suppose the matrix <span class="process-math">\(A\)</span> does not have any special zero structure. <dfn class="terminology">Gaussian elimination</dfn> is a general method that uses elementary row operations to transform the system into an equivalent upper triangular form. Once in this form, the system can be solved using backward substitution.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-4-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="unit-05-gaussian-elimination-4-3" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=VID-2026-0131" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="unit-05-gaussian-elimination-4-3.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div class="para logical" id="unit-05-gaussian-elimination-4-4">
+<div class="para">Recall there are three types of elementary row operations:</div>
+<ul class="disc" id="unit-05-gaussian-elimination-4-4-1">
+<li id="unit-05-gaussian-elimination-4-4-1-1">
+<div class="para" id="unit-05-gaussian-elimination-4-4-1-1-1">Exchange two rows.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-4-4-1-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-05-gaussian-elimination-4-4-1-1" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="unit-05-gaussian-elimination-4-4-1-2">
+<div class="para" id="unit-05-gaussian-elimination-4-4-1-2-1">Multiply a row by a nonzero constant.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-4-4-1-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-05-gaussian-elimination-4-4-1-2" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="unit-05-gaussian-elimination-4-4-1-3">
+<div class="para" id="unit-05-gaussian-elimination-4-4-1-3-1">Add a multiple of a row to another row.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-4-4-1-3-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-05-gaussian-elimination-4-4-1-3" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-4-4" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="unit-05-gaussian-elimination-4-5">
+<div class="para">Gaussian elimination are as follows:</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-4-5-1">
+\begin{align*}
+\begin{bmatrix}
+a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}&amp;b_1 \\
+a_{21}&amp;a_{22}&amp;a_{23}&amp;\cdots&amp;a_{2n}&amp;b_2 \\
+a_{31}&amp;a_{32}&amp;a_{33}&amp;\cdots&amp;a_{3n}&amp;b_3 \\
+\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots&amp;\vdots \\
+a_{n1}&amp;a_{n2}&amp;a_{n3}&amp;\cdots&amp;a_{nn}&amp;b_n
+\end{bmatrix} &amp; \xrightarrow{
+\begin{gathered}
+R_2 - \frac{a_{21}}{a_{11}}R_1 \\
+R_3 - \frac{a_{31}}{a_{11}}R_1 \\
+\vdots
+\end{gathered}
+}
+\begin{bmatrix}
+a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}&amp;b_1 \\
+0&amp;a_{22}^{(1)}&amp;a_{23}^{(1)}&amp;\cdots&amp;a_{2n}^{(1)}&amp;b_2^{(1)} \\
+0&amp;a_{32}^{(1)}&amp;a_{33}^{(1)}&amp;\cdots&amp;a_{3n}^{(1)}&amp;b_3^{(1)} \\
+\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots&amp;\vdots \\
+0&amp;a_{n2}^{(1)}&amp;a_{n3}^{(1)}&amp;\cdots&amp;a_{nn}^{(1)}&amp;b_n^{(1)}
+\end{bmatrix}\\
+&amp; \xrightarrow{
+\begin{gathered}
+R_3 - \frac{a_{32}^{(1)}}{a_{22}^{(1)}}R_2 \\
+R_4 - \frac{a_{42}^{(1)}}{a_{22}^{(1)}}R_2 \\
+\vdots
+\end{gathered}
+}
+\begin{bmatrix}
+a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}&amp;b_1 \\
+0&amp;a_{22}^{(1)}&amp;a_{23}^{(1)}&amp;\cdots&amp;a_{2n}^{(1)}&amp;b_2^{(1)} \\
+0&amp;0           &amp;a_{33}^{(2)}&amp;\cdots&amp;a_{3n}^{(2)}&amp;b_3^{(2)} \\
+\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots&amp;\vdots \\
+0&amp;0           &amp;a_{n3}^{(2)}&amp;\cdots&amp;a_{nn}^{(2)}&amp;b_n^{(2)}
+\end{bmatrix}\\
+&amp; \qquad \vdots\\
+&amp; \xrightarrow{ \qquad \qquad }
+\begin{bmatrix}
+a_{11}&amp;a_{12}&amp;a_{13}&amp;\cdots&amp;a_{1n}&amp;b_1 \\
+0&amp;a_{22}^{(1)}&amp;a_{23}^{(1)}&amp;\cdots&amp;a_{2n}^{(1)}&amp;b_2^{(1)} \\
+0&amp;0           &amp;a_{33}^{(2)}&amp;\cdots&amp;a_{3n}^{(2)}&amp;b_3^{(2)} \\
+\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots&amp;\vdots \\
+0&amp;0           &amp;\cdots&amp;0&amp;a_{nn}^{(n-1)}&amp;b_n^{(n-1)}
+\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">The diagonal elements <span class="process-math">\(a_{11}\text{,}\)</span> <span class="process-math">\(a_{22}^{(1)}\text{,}\)</span> <span class="process-math">\(a_{33}^{(2)}\text{,}\)</span> <span class="process-math">\(\ldots\text{,}\)</span> <span class="process-math">\(a_{nn}^{(n-1)}\)</span> are called <dfn class="terminology">pivot elements</dfn>.</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-4-5" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="unit-05-gaussian-elimination-4-6"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="unit-05-gaussian-elimination-4-6-1-1">
+<div class="para">Solve the linear system by Gaussian elimination and backward substitution.</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-4-6-1-1-1">
+\begin{equation*}
+\begin{cases}
+2x_1 + 4x_2 + 10x_3 = -22 \\
+-x_1 - 6x_2 - 21x_3 = 59 \\
+3x_1 + 3x_2 + 7x_3 = -17
+\end{cases}
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-4-6-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl" id="unit-05-gaussian-elimination-4-6-2"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="unit-05-gaussian-elimination-4-6-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=VID-2026-0145" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="unit-05-gaussian-elimination-4-6-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div class="para logical" id="unit-05-gaussian-elimination-4-6-2-2">
+<div class="para">Apply Gaussian elimination to reduce the augmented matrix of the system into an equivalent upper triangular form,</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-4-6-2-2-1">
+\begin{align*}
+\begin{bmatrix}
+2 &amp; 4 &amp; 10 &amp; -22 \\
+-1 &amp; -6 &amp; -21 &amp; 59 \\
+3 &amp; 3 &amp; 7 &amp; -17
+\end{bmatrix}
+&amp; \xrightarrow{
+\begin{gathered}
+R_2 - \frac{-1}{2}R_1 \\
+R_3 - \frac{3}{2}R_1
+\end{gathered}
+}
+\begin{bmatrix}
+2 &amp; 4 &amp; 10 &amp; -22 \\
+0 &amp; -4 &amp; -16 &amp; 48 \\
+0 &amp; -3 &amp; -8 &amp; 16
+\end{bmatrix}\\
+&amp; \xrightarrow{ \begin{gathered} R_3 - \frac{-3}{-4}R_2 \end{gathered} }
+\begin{bmatrix}
+2 &amp; 4 &amp; 10 &amp; -22 \\
+0 &amp; -4 &amp; -16 &amp; 48 \\
+0 &amp; 0 &amp; 4 &amp; -20
+\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">After we get the equivalent upper triangular form, we can use backward substitution (see last example) to find the solution is <span class="process-math">\(x_1 = -2\text{,}\)</span> <span class="process-math">\(x_2 = 8\text{,}\)</span> and <span class="process-math">\(x_3 = -5\text{.}\)</span>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-4-6-2-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Solution 5.2.2.1"><a aria-label="Copy heading and permalink for Solution 5.2.2.1" href="#unit-05-gaussian-elimination-4-6-2" tabindex="-1" title="Copy heading and permalink for Solution 5.2.2.1">🔗</a></div>
+</div></details>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Example 5.2.2"><a aria-label="Copy heading and permalink for Example 5.2.2" href="#unit-05-gaussian-elimination-4-6" tabindex="-1" title="Copy heading and permalink for Example 5.2.2">🔗</a></div>
+</article><div aria-hidden="true" class="autopermalink" data-description="Subsection: Gaussian Elimination"><a aria-label="Copy heading and permalink for Subsection: Gaussian Elimination" href="#unit-05-gaussian-elimination-4" tabindex="-1" title="Copy heading and permalink for Subsection: Gaussian Elimination">🔗</a></div>
+</section>
+<section class="subsection" id="unit-05-gaussian-elimination-5">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pivoting Strategies</span>
+</h2>
+<div class="para logical" id="unit-05-gaussian-elimination-5-2">
+<div class="para">To enhance the stability of Gaussian elimination, it’s important to choose pivot elements that are as large as possible. This minimizes the size of the multipliers, reducing the risk of significant round-off errors caused by finite precision. When a small pivot is multiplied by a large number, it can distort other rows and degrade accuracy. A common strategy is to compare the absolute values of the pivot and the entries below it, and then swap the current row with the one containing the largest value in magnitude, if different. This approach is known as <dfn class="terminology">partial pivoting</dfn>. It works as follows: as the elimination proceeds for <span class="process-math">\(k = 1,\ldots,n −1\text{,}\)</span> at each stage <span class="process-math">\(k\text{,}\)</span> choose <span class="process-math">\(q = q(k)\)</span> as the smallest integer for which</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-5-2-5">
+\begin{equation*}
+\left|a_{qk}^{(k-1)}\right|=\max_{k\le i\le n} \left|a_{ik}^{(k-1)}\right|
+\end{equation*}
+</div>
+<div class="para">and interchange rows <span class="process-math">\(k\)</span> and <span class="process-math">\(q\text{.}\)</span> Then proceed with the elimination process.</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-5-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="unit-05-gaussian-elimination-5-3"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h3>
+<div class="para logical" id="unit-05-gaussian-elimination-5-3-1-1">
+<div class="para">Apply Gaussian elimination with partial pivoting to solve the following linear system.</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-5-3-1-1-1">
+\begin{equation*}
+\begin{cases}
+x_1 - 2.5x_2 + x_3 +2.5x_4 = 9.5 \\
+-x_1 + x_2 - 0.5x_3 + 8x_4 = 8.5 \\
+-x_1 + 2.5x_2 + 3.5x_4 = -2.5 \\
+2x_1+x_2+4x_3+3x_4 = 7
+\end{cases}
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-5-3-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl" id="unit-05-gaussian-elimination-5-3-2"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="unit-05-gaussian-elimination-5-3-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=1ba1aa18-8988-4d79-9723-b33301150fb8" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="unit-05-gaussian-elimination-5-3-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div class="para logical" id="unit-05-gaussian-elimination-5-3-2-2">
+<div class="para">Apply Gaussian elimination with partial pivoting to reduce the augmented matrix of the system into an equivalent upper triangular form,</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-5-3-2-2-1">
+\begin{align*}
+&amp;
+\begin{bmatrix}
+1 &amp; -2.5 &amp;    1 &amp; 2.5 &amp;  9.5 \\
+-1 &amp;    1 &amp; -0.5 &amp;   8 &amp;  8.5 \\
+-1 &amp;  2.5 &amp;    0 &amp; 3.5 &amp; -2.5 \\
+2 &amp;    1 &amp;    4 &amp;   3 &amp;    7
+\end{bmatrix}\\
+&amp;\xrightarrow{ \begin{gathered} R_1 \leftrightarrow R_4 \end{gathered} }
+\begin{bmatrix}
+2 &amp;    1 &amp;    4 &amp;   3 &amp;    7 \\
+-1 &amp;    1 &amp; -0.5 &amp;   8 &amp;  8.5 \\
+-1 &amp;  2.5 &amp;    0 &amp; 3.5 &amp; -2.5 \\
+1 &amp; -2.5 &amp;    1 &amp; 2.5 &amp;  9.5
+\end{bmatrix}
+\xrightarrow{
+\begin{gathered}
+R_2 - \frac{-1}{2}R_1 \\
+R_3 - \frac{-1}{2}R_1 \\
+R_4 - \frac{1}{2}R_1
+\end{gathered}
+}
+\begin{bmatrix}
+2 &amp;   1 &amp;   4 &amp;   3 &amp;  7 \\
+0 &amp; 1.5 &amp; 1.5 &amp; 9.5 &amp; 12 \\
+0 &amp;   3 &amp;   2 &amp;   5 &amp;  1 \\
+0 &amp;  -3 &amp;  -1 &amp;   1 &amp;  6
+\end{bmatrix}\\
+&amp;\xrightarrow{ \begin{gathered} R_2 \leftrightarrow R_3 \end{gathered} }
+\begin{bmatrix}
+2 &amp;   1 &amp;   4 &amp;   3 &amp;  7 \\
+0 &amp;   3 &amp;   2 &amp;   5 &amp;  1 \\
+0 &amp; 1.5 &amp; 1.5 &amp; 9.5 &amp; 12 \\
+0 &amp;  -3 &amp;  -1 &amp;   1 &amp;  6
+\end{bmatrix}
+\xrightarrow{
+\begin{gathered}
+R_3 - \frac{1.5}{3}R_2 \\
+R_4 - \frac{-3}{3}R_2
+\end{gathered} }
+\begin{bmatrix}
+2 &amp; 1 &amp;   4 &amp; 3 &amp;    7 \\
+0 &amp; 3 &amp;   2 &amp; 5 &amp;    1 \\
+0 &amp; 0 &amp; 0.5 &amp; 7 &amp; 11.5 \\
+0 &amp; 0 &amp;   1 &amp; 6 &amp;    7
+\end{bmatrix}\\
+&amp;\xrightarrow{ \begin{gathered} R_3 \leftrightarrow R_4 \end{gathered} }
+\begin{bmatrix}
+2 &amp; 1 &amp;   4 &amp; 3 &amp;    7 \\
+0 &amp; 3 &amp;   2 &amp; 5 &amp;    1 \\
+0 &amp; 0 &amp;   1 &amp; 6 &amp;    7 \\
+0 &amp; 0 &amp; 0.5 &amp; 7 &amp; 11.5
+\end{bmatrix}
+\xrightarrow{
+\begin{gathered}
+R_4 - \frac{0.5}{1}R_3
+\end{gathered} }
+\begin{bmatrix}
+2 &amp; 1 &amp;   4 &amp; 3 &amp;    7 \\
+0 &amp; 3 &amp;   2 &amp; 5 &amp;    1 \\
+0 &amp; 0 &amp;   1 &amp; 6 &amp;    7 \\
+0 &amp; 0 &amp;   0 &amp; 4 &amp; 8
+\end{bmatrix}
+\end{align*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-5-3-2-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="unit-05-gaussian-elimination-5-3-2-3">
+<div class="para">After we get the equivalent upper triangular form, we can use backward substitution to find the solution. Starting from the last equation,</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-5-3-2-3-1">
+\begin{equation*}
+4x_4=8 \implies x_4=2
+\end{equation*}
+</div>
+<div class="para">Then substituting the value of <span class="process-math">\(x_4\)</span> in the last second equation,</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-5-3-2-3-3">
+\begin{equation*}
+x_3+6x_4=7 \implies x_3+6(2)=7 \implies x_3=-5
+\end{equation*}
+</div>
+<div class="para">Similarly, solve the second equation for <span class="process-math">\(x_2\)</span> and the first equation for <span class="process-math">\(x_1\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="unit-05-gaussian-elimination-5-3-2-3-6">
+\begin{gather*}
+3x_2+2x_3+5x_4=1 \implies 3x_2+2(-5)+5(2)=1 \implies x_2=\frac{1}{3}\\
+2x_1+x_2+4x_3+3x_4=7 \implies 2x_1+\left(\frac{1}{3}\right)+4(-5)+3(2)=7 \implies x_1=\frac{31}{3}
+\end{gather*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-5-3-2-3" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="unit-05-gaussian-elimination-5-3-2-4">Therefore, the solution is <span class="process-math">\(x_1 = \frac{31}{3}\text{,}\)</span> <span class="process-math">\(x_2 = \frac{1}{3}\text{,}\)</span> <span class="process-math">\(x_3 = -5\text{,}\)</span> and <span class="process-math">\(x_4=2\text{.}\)</span><div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-5-3-2-4" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Solution 5.2.3.1"><a aria-label="Copy heading and permalink for Solution 5.2.3.1" href="#unit-05-gaussian-elimination-5-3-2" tabindex="-1" title="Copy heading and permalink for Solution 5.2.3.1">🔗</a></div>
+</div></details>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Example 5.2.3"><a aria-label="Copy heading and permalink for Example 5.2.3" href="#unit-05-gaussian-elimination-5-3" tabindex="-1" title="Copy heading and permalink for Example 5.2.3">🔗</a></div>
+</article><div aria-hidden="true" class="autopermalink" data-description="Subsection: Pivoting Strategies"><a aria-label="Copy heading and permalink for Subsection: Pivoting Strategies" href="#unit-05-gaussian-elimination-5" tabindex="-1" title="Copy heading and permalink for Subsection: Pivoting Strategies">🔗</a></div>
+</section>
+<section class="subsection" id="unit-05-gaussian-elimination-6">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Algorithm and Coding</span>
+</h2>
+<div class="para" id="unit-05-gaussian-elimination-6-2">Let’s implement <dfn class="terminology">Gaussian elimination with backward substitution</dfn> without pivoting in Python to solve a system of linear equations step by step. You can add partial pivoting by yourself.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-6-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="unit-05-gaussian-elimination-6-3" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=VID-2026-0055" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="unit-05-gaussian-elimination-6-3.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div class="code-box"><pre class="program clipboardable"><code class="language-py">import numpy as np
+def gaussian_elimination(A, b):
+    """Performs Gaussian elimination without pivoting"""
+
+    A = np.array(A, dtype=np.float64)
+    b = np.array(b, dtype=np.float64)
+    n = b.size
+
+    for k in range(n-1):
+        for i in range(k+1, n):
+            m = A[i, k] / A[k, k]
+            A[i, k:] = A[i, k:] - m * A[k, k:]
+            b[i] = b[i] - m * b[k]
+
+    return A, b
+
+def backward_substitution(U, y):
+    """Solves Ux = y for upper triangular matrix U"""
+
+    U = np.array(U, dtype=np.float64)
+    y = np.array(y, dtype=np.float64)
+    n = y.size
+    x = np.zeros_like(y)
+
+    for i in range(n-1, -1, -1):
+        x[i] = (y[i] - np.dot(U[i, i+1:], x[i+1:])) / U[i, i]
+
+    return x
+</code></pre></div>
+<div class="para" id="unit-05-gaussian-elimination-6-5">Now, let’s use this implementation to solve the linear system given in Example 2: <div class="code-box"><pre class="program clipboardable"><code class="language-py">A=[[2,4,10], [-1,-6, -21], [3,3,7]]
+b=[-22, 59, -17]
+
+U, y = gaussian_elimination(A, b)
+x = backward_substitution(U, y)
+print("Solution x =", x)
+</code></pre></div> Running this code will produce: <div class="code-box"><pre class="console clipboardable">Solution x = [-2.  8. -5.]
+</pre></div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-6-5" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="unit-05-gaussian-elimination-6-6">This confirms our implementation works correctly. Alternatively, you can solve the same system more easily using NumPy’s built-in solver: <div class="code-box"><pre class="program clipboardable"><code class="language-py">x = np.linalg.solve(A, b)
+print("Solution x =", x)
+</code></pre></div> This gives the same output: <div class="code-box"><pre class="console clipboardable">Solution x = [-2.  8. -5.]
+</pre></div> This built-in method is optimized and should be preferred for general-purpose use unless you’re explicitly learning or implementing algorithms manually.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-6-6" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="unit-05-gaussian-elimination-6-7">You can download the from Canvas.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-05-gaussian-elimination-6-7" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Subsection: Algorithm and Coding"><a aria-label="Copy heading and permalink for Subsection: Algorithm and Coding" href="#unit-05-gaussian-elimination-6" tabindex="-1" title="Copy heading and permalink for Subsection: Algorithm and Coding">🔗</a></div>
+</section><div aria-hidden="true" class="autopermalink" data-description="Section 5.2: Gaussian Elimination with Backward Substitution"><a aria-label="Copy heading and permalink for Section 5.2: Gaussian Elimination with Backward Substitution" href="#unit-05-gaussian-elimination" tabindex="-1" title="Copy heading and permalink for Section 5.2: Gaussian Elimination with Backward Substitution">🔗</a></div>
+</section>
+</div>
+<div class="ptx-content-footer" id="ptx-content-footer">
+<a class="previous-button button" href="unit-05-review-linear-algebra.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Top</span></a><a class="next-button button" href="unit-05-lu-decomposition.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer" id="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg height="100%" role="img" viewbox="338 3000 8772 6866" xmlns="http://www.w3.org/2000/svg"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path d="M 4724,9448 A 4660 4660  0  0  1  8598  9259" style="stroke-width:126;stroke-linecap:butt;"></path><path d="M 4488,9685 A 4228 4228  0  0  0   472  9732" style="stroke-width:174;stroke-linecap:butt;"></path><path d="M 4724,3590 A 4241 4241  0  0  1  8598  3496" style="stroke-width:126;stroke-linecap:butt;"></path><path d="M 850,3496  A 4241 4241  0  0  1  4724  3590" style="stroke-width:126;stroke-linecap:round;"></path><path d="M 850,9259  A 4507 4507  0  0  1  4724  9448" style="stroke-width:126;stroke-linecap:round;"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path d="M 4960,9685 A 4228 4228  0  0  1  8976  9732" style="stroke-width:174;stroke-linecap:butt;"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img alt="Runstone Academy logo" class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"/></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img alt="MathJax logo" class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"/></a>
+</div>
+</body>
+</html>
