@@ -121,7 +121,7 @@ eBookConfig.enable_chatcodes =  false;
 <legend>Assistive technologies</legend>
 <label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
 </fieldset>
-<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="unit-02-root-finding.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="unit-02-root-finding.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="unit-02-errors.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="unit-04-fixed-point-iteration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="unit-04-fixed-point-iteration.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="unit-04-introduction-fixed-point-iteration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -174,10 +174,10 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="week-01-plotly.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Plotting with Plotly</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="unit-02-root-finding.html" class="internal"><span class="codenumber">2</span> <span class="title">Unit 2: Errors and Bisection Method</span></a></div>
-<ul class="structural toc-item-list contains-active" id="ptx-toc-group-unit-02-root-finding">
-<li class="toc-item toc-introduction active"><div class="toc-title-box"><a href="unit-02-root-finding-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<ul id="ptx-toc-group-unit-02-root-finding" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-02-root-finding-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="unit-02-errors.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Errors</span></a></div>
 <ul id="ptx-toc-group-unit-02-errors" class="structural toc-item-list">
@@ -218,10 +218,10 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="unit-04-fixed-point-iteration.html" class="internal"><span class="codenumber">4</span> <span class="title">Unit 4: Fixed Point Iteration</span></a></div>
-<ul id="ptx-toc-group-unit-04-fixed-point-iteration" class="structural toc-item-list">
-<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-04-fixed-point-iteration-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-unit-04-fixed-point-iteration">
+<li class="toc-item toc-introduction active"><div class="toc-title-box"><a href="unit-04-fixed-point-iteration-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-04-introduction-fixed-point-iteration.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Introduction to Fixed-Point Iteration</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-04-fixed-point-choose-g.html" class="internal"><span class="codenumber">4.2</span> <span class="title">How To Choose <span class="process-math">\(g(x)\)</span></span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-04-fixed-point-theorem.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Fixed Point Theorem</span></a></div></li>
@@ -232,32 +232,12 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-troubleshooting.html" class="internal"><span class="codenumber">A.</span> <span class="title">Troubleshooting</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="introduction" id="unit-02-root-finding-2"><h1 class="heading">Introduction</h1>
-<div class="para" id="unit-02-root-finding-2-1">This week, we will start exploring numerical iterative methods for finding the roots of equations - values of <span class="process-math">\(x\)</span> that satisfy <span class="process-math">\(f(x) = 0\text{.}\)</span> Many equations encountered in science, engineering, and mathematics do not have closed-form solutions or are too complex to solve algebraically. In such cases, numerical techniques provide effective and efficient ways to approximate the roots with high accuracy.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#unit-02-root-finding-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<ul class="disc" id="unit-02-root-finding-2-2">
-<li id="unit-02-root-finding-2-2-1">
-<div class="para" id="p-derived-unit-02-root-finding-2-2-1">We will begin with the <dfn class="terminology">bisection method</dfn>, a simple yet robust technique based on the intermediate value theorem. This method guarantees convergence to a root if the function is continuous and changes sign over an interval.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#unit-02-root-finding-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="unit-02-root-finding-2-2-2">
-<div class="para" id="p-derived-unit-02-root-finding-2-2-2">Next week, we will introduce <dfn class="terminology">Newton’s method</dfn>, a powerful approach that uses the function’s derivative to iteratively refine root approximations.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#unit-02-root-finding-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="unit-02-root-finding-2-2-3">
-<div class="para" id="p-derived-unit-02-root-finding-2-2-3">While Newton’s method converges rapidly under suitable conditions, it has limitations, such as the requirement of differentiability. To address this issue, we will also study the <dfn class="terminology">secant method</dfn>, a variation of Newton’s method that approximates the derivative using finite differences, making it more practical when derivative computations are expensive.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#unit-02-root-finding-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li id="unit-02-root-finding-2-2-4">
-<div class="para" id="p-derived-unit-02-root-finding-2-2-4">Beyond these methods, we will examine <dfn class="terminology">fixed-point iteration</dfn>, a general iterative technique that transforms the root-finding problem into solving <span class="process-math">\(x = g(x)\)</span> for a suitable function <span class="process-math">\(g(x)\text{.}\)</span> Understanding how and when fixed-point iteration converges is crucial for designing effective numerical algorithms.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#unit-02-root-finding-2-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-</ul>
-<div class="para" id="unit-02-root-finding-2-3">By the end of the root-finding section, you will have a solid grasp of these fundamental numerical methods, their theoretical foundations, and practical applications. You will also gain insight into their advantages, limitations, and how to choose the most suitable method for different types of equations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#unit-02-root-finding-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="introduction" id="unit-04-fixed-point-iteration-2"><h1 class="heading">Introduction</h1>
+<div class="para" id="unit-04-fixed-point-iteration-2-1">This unit, we will continue exploring numerical iterative methods for finding the roots of equations. In particular, we will focus on <dfn class="terminology">fixed-point iteration</dfn>, which is a simple and widely used framework for rootfinding.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#unit-04-fixed-point-iteration-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="unit-02-root-finding.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="unit-02-errors.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="unit-04-fixed-point-iteration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="unit-04-introduction-fixed-point-iteration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

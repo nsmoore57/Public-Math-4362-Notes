@@ -219,6 +219,17 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-iteration.html"><span class="codenumber">4</span> <span class="title">Unit 4: Fixed Point Iteration</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-04-fixed-point-iteration">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-iteration-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-introduction-fixed-point-iteration.html"><span class="codenumber">4.1</span> <span class="title">Introduction to Fixed-Point Iteration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-choose-g.html"><span class="codenumber">4.2</span> <span class="title">How To Choose <span class="process-math">\(g(x)\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-theorem.html"><span class="codenumber">4.3</span> <span class="title">Fixed Point Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-convergence-fixed-point-iteration.html"><span class="codenumber">4.4</span> <span class="title">Convergence of the Fixed Point Iteration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-algo-coding.html"><span class="codenumber">4.5</span> <span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-troubleshooting.html"><span class="codenumber">A.</span> <span class="title">Troubleshooting</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div class="ptx-content" id="ptx-content">
@@ -440,36 +451,39 @@ p_{n+1} = p_n - \frac{f(p_n)}{f'(p_n)}
            p0=1, atol=1e-3, max_iter=20)
 print(f"The root found by Newton's method is {p}.")
 </code></pre></div>
-<div class="para" id="unit-03-newton-algorithm-and-coding-9">You will see output like the following (the last few digits may differ due to variations in computing precision across different machines): <div class="code-box"><pre class="console clipboardable">The root found by Newton's method is 0.34438923796780624.
-</pre></div> You can download the accompanying Newton Code notebook from Canvas.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-03-newton-algorithm-and-coding-9" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="assemblage assemblage-like" id="unit-03-newton-algorithm-and-coding-9"><div class="code-box"><pre class="console clipboardable">The root found by Newton's method is 0.34438923796780624.
+</pre></div>
+<div aria-hidden="true" class="autopermalink" data-description="Assemblage"><a aria-label="Copy heading and permalink for Assemblage" href="#unit-03-newton-algorithm-and-coding-9" tabindex="-1" title="Copy heading and permalink for Assemblage">🔗</a></div>
+</article>
+<div class="para" id="unit-03-newton-algorithm-and-coding-10">The last few digits of your answer may differ due to variations in computing precision across different machines):<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-03-newton-algorithm-and-coding-10" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="remark remark-like" id="unit-03-newton-algorithm-and-coding-10"><h3 class="heading">
+<article class="remark remark-like" id="unit-03-newton-algorithm-and-coding-11"><h3 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Tips for Choosing an Initial Guess.</span>
 </h3>
-<div class="para logical" id="unit-03-newton-algorithm-and-coding-10-2">
+<div class="para logical" id="unit-03-newton-algorithm-and-coding-11-2">
 <div class="para">A good initial guess for Newton’s method is one that is <em class="emphasis">close to the actual root</em>. To choose one:</div>
-<ul class="disc" id="unit-03-newton-algorithm-and-coding-10-2-2">
-<li id="unit-03-newton-algorithm-and-coding-10-2-2-1">
-<div class="para" id="p-derived-unit-03-newton-algorithm-and-coding-10-2-2-1">Try <em class="emphasis">graphing</em> the function to visually identify where it crosses the <span class="process-math">\(x\)</span>-axis.</div>
-<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-03-newton-algorithm-and-coding-10-2-2-1" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+<ul class="disc" id="unit-03-newton-algorithm-and-coding-11-2-2">
+<li id="unit-03-newton-algorithm-and-coding-11-2-2-1">
+<div class="para" id="p-derived-unit-03-newton-algorithm-and-coding-11-2-2-1">Try <em class="emphasis">graphing</em> the function to visually identify where it crosses the <span class="process-math">\(x\)</span>-axis.</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-03-newton-algorithm-and-coding-11-2-2-1" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="unit-03-newton-algorithm-and-coding-10-2-2-2">
-<div class="para" id="p-derived-unit-03-newton-algorithm-and-coding-10-2-2-2">Look for an interval where the function changes sign (like in the bisection method), and pick a point near that change.</div>
-<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-03-newton-algorithm-and-coding-10-2-2-2" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+<li id="unit-03-newton-algorithm-and-coding-11-2-2-2">
+<div class="para" id="p-derived-unit-03-newton-algorithm-and-coding-11-2-2-2">Look for an interval where the function changes sign (like in the bisection method), and pick a point near that change.</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-03-newton-algorithm-and-coding-11-2-2-2" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="unit-03-newton-algorithm-and-coding-10-2-2-3">
-<div class="para" id="p-derived-unit-03-newton-algorithm-and-coding-10-2-2-3">If possible, use <em class="emphasis">physical context</em> or <em class="emphasis">analytical insight</em> to estimate where a root might be.</div>
-<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-03-newton-algorithm-and-coding-10-2-2-3" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+<li id="unit-03-newton-algorithm-and-coding-11-2-2-3">
+<div class="para" id="p-derived-unit-03-newton-algorithm-and-coding-11-2-2-3">If possible, use <em class="emphasis">physical context</em> or <em class="emphasis">analytical insight</em> to estimate where a root might be.</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-03-newton-algorithm-and-coding-11-2-2-3" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="unit-03-newton-algorithm-and-coding-10-2-2-4">
-<div class="para" id="p-derived-unit-03-newton-algorithm-and-coding-10-2-2-4">Avoid points where the derivative <span class="process-math">\(f'(x)\)</span> is zero or very small, as this can cause the method to diverge or behave unpredictably.</div>
-<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-03-newton-algorithm-and-coding-10-2-2-4" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+<li id="unit-03-newton-algorithm-and-coding-11-2-2-4">
+<div class="para" id="p-derived-unit-03-newton-algorithm-and-coding-11-2-2-4">Avoid points where the derivative <span class="process-math">\(f'(x)\)</span> is zero or very small, as this can cause the method to diverge or behave unpredictably.</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#unit-03-newton-algorithm-and-coding-11-2-2-4" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
 </ul>
 <div class="para">Starting with a reasonable guess increases the chances of fast and reliable convergence.</div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-03-newton-algorithm-and-coding-10-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-03-newton-algorithm-and-coding-11-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Remark 3.1.8: Tips for Choosing an Initial Guess"><a aria-label="Copy heading and permalink for Remark 3.1.8: Tips for Choosing an Initial Guess" href="#unit-03-newton-algorithm-and-coding-10" tabindex="-1" title="Copy heading and permalink for Remark 3.1.8: Tips for Choosing an Initial Guess">🔗</a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Remark 3.1.8: Tips for Choosing an Initial Guess"><a aria-label="Copy heading and permalink for Remark 3.1.8: Tips for Choosing an Initial Guess" href="#unit-03-newton-algorithm-and-coding-11" tabindex="-1" title="Copy heading and permalink for Remark 3.1.8: Tips for Choosing an Initial Guess">🔗</a></div>
 </article><div aria-hidden="true" class="autopermalink" data-description="Subsection: Algorithm and Coding"><a aria-label="Copy heading and permalink for Subsection: Algorithm and Coding" href="#unit-03-newton-algorithm-and-coding" tabindex="-1" title="Copy heading and permalink for Subsection: Algorithm and Coding">🔗</a></div>
 </section><div aria-hidden="true" class="autopermalink" data-description="Section 3.1: Newton’s Method"><a aria-label="Copy heading and permalink for Section 3.1: Newton’s Method" href="#unit-03-newtons-method" tabindex="-1" title="Copy heading and permalink for Section 3.1: Newton’s Method">🔗</a></div>
 </section>

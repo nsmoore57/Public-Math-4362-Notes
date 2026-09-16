@@ -15,7 +15,7 @@
 <!--******************************************-->
 <head xmlns:book="https://ogp.me/ns/book#" xmlns:og="http://ogp.me/ns#">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>Python Basics</title>
+<title>Fixed Point Theorem</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
@@ -122,7 +122,7 @@ eBookConfig.enable_chatcodes =  false;
 <legend>Assistive technologies</legend>
 <label for="ptx-readability-accessible-permalinks"><input id="ptx-readability-accessible-permalinks" type="checkbox"/><span>🔗</span><span>Expose permalinks</span></label>
 </fieldset>
-<div class="ptx-readability-options-group"><button class="ptx-readability-reset-button button" id="ptx-readability-reset-button" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="week-01-jupyter-basics.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="up-button button" href="unit-01-python.html" title="Up"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Up</span></a><a class="next-button button" href="week-01-numpy-basics.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></span>
+<div class="ptx-readability-options-group"><button class="ptx-readability-reset-button button" id="ptx-readability-reset-button" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="unit-04-fixed-point-choose-g.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="up-button button" href="unit-04-fixed-point-iteration.html" title="Up"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Up</span></a><a class="next-button button" href="unit-04-convergence-fixed-point-iteration.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></span>
 </div></nav><div class="hidden-content process-math" id="latex-macros" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -136,9 +136,9 @@ eBookConfig.enable_chatcodes =  false;
 <div class="ptx-page">
 <div class="ptx-sidebar" id="ptx-sidebar" role="complementary"><nav aria-label="Contents" class="ptx-toc depth2 focused" data-max-levels="2" data-preexpanded-levels="0" id="ptx-toc" tabindex="-1"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a class="internal" href="frontmatter.html"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a class="internal" href="unit-01-python.html"><span class="codenumber">1</span> <span class="title">Unit 1: Python for Numerical Mathematics</span></a></div>
-<ul class="structural toc-item-list contains-active" id="ptx-toc-group-unit-01-python">
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-01-python">
 <li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-01-python-2.html"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-install-python-uv.html"><span class="codenumber">1.1</span> <span class="title">Installing Python and uv</span></a></div></li>
 <li class="toc-item toc-section">
@@ -148,9 +148,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html#week-01-jupyter-basics-4"><span class="title">Understanding the Interface and Running Code</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section contains-active">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a class="internal" href="week-01-python-basics.html"><span class="codenumber">1.3</span> <span class="title">Python Basics</span></a></div>
-<ul class="structural toc-item-list active" id="ptx-toc-group-week-01-python-basics">
+<ul class="structural toc-item-list" id="ptx-toc-group-week-01-python-basics">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-3"><span class="title">Variables and Basic Data Types</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-4"><span class="title">Mathematical Operations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-5"><span class="title">Lists</span></a></div></li>
@@ -219,13 +219,13 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-iteration.html"><span class="codenumber">4</span> <span class="title">Unit 4: Fixed Point Iteration</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-04-fixed-point-iteration">
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-unit-04-fixed-point-iteration">
 <li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-iteration-2.html"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-introduction-fixed-point-iteration.html"><span class="codenumber">4.1</span> <span class="title">Introduction to Fixed-Point Iteration</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-choose-g.html"><span class="codenumber">4.2</span> <span class="title">How To Choose <span class="process-math">\(g(x)\)</span></span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-theorem.html"><span class="codenumber">4.3</span> <span class="title">Fixed Point Theorem</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-theorem.html"><span class="codenumber">4.3</span> <span class="title">Fixed Point Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-convergence-fixed-point-iteration.html"><span class="codenumber">4.4</span> <span class="title">Convergence of the Fixed Point Iteration</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-algo-coding.html"><span class="codenumber">4.5</span> <span class="title">Algorithm and Coding</span></a></div></li>
 </ul>
@@ -233,149 +233,72 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-troubleshooting.html"><span class="codenumber">A.</span> <span class="title">Troubleshooting</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div class="ptx-content" id="ptx-content">
-<section class="section" id="week-01-python-basics">
+<section class="section" id="unit-04-fixed-point-theorem">
 <h1 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Python Basics</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fixed Point Theorem</span>
 </h1>
-<section class="introduction" id="week-01-python-basics-2">
-<div class="para" id="week-01-python-basics-2-1">Here we learn the ABCs of Python: doing math, comparing things, and storing information. Think of this as learning to use a calculator that can remember numbers and make decisions. For this section, you should be able to find the <code class="code-inline tex2jax_ignore">PythonTutorial.ipynb</code> notebook in the <code class="code-inline tex2jax_ignore">demo</code> directory of the course environment folder.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section>
-<section class="subsection" id="week-01-python-basics-3">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Variables and Basic Data Types</span>
-</h2>
-<div class="para" id="week-01-python-basics-3-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-3-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=818dc17f-75d6-4ac8-a682-b4aa0136500b" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-3-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-3-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="unit-04-fixed-point-theorem-2" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f543640a-e824-499c-80a8-b4c7012e89e1" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="unit-04-fixed-point-theorem-2.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div class="para" id="unit-04-fixed-point-theorem-3">To prove that a unique fixed point exists in the interval <span class="process-math">\([a,b]\text{,}\)</span> we introduce the Fixed Point Theorem. Before stating it, let’s first recall the Mean Value Theorem from Calculus I, as it will play a key role in the proof.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-04-fixed-point-theorem-3" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: Variables and Basic Data Types"><a aria-label="Copy heading and permalink for Subsection: Variables and Basic Data Types" href="#week-01-python-basics-3" tabindex="-1" title="Copy heading and permalink for Subsection: Variables and Basic Data Types">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-4">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mathematical Operations</span>
+<article class="theorem theorem-like" id="unit-04-fixed-point-theorem-4"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mean Value Theorem.</span>
 </h2>
-<div class="para" id="week-01-python-basics-4-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-4-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=d7fc9a23-4047-462f-8206-b4aa01367da0" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-4-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-4-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="unit-04-fixed-point-theorem-4-2-1">
+<div class="para">Suppose that <span class="process-math">\(f\)</span> is a continuous function on a closed interval <span class="process-math">\([a,b]\)</span> and differentiable on its interior <span class="process-math">\((a,b)\text{.}\)</span> Then there is at least one number <span class="process-math">\(\xi\)</span> in <span class="process-math">\((a,b)\)</span> such that</div>
+<div class="displaymath process-math" id="unit-04-fixed-point-theorem-4-2-1-6">
+\begin{equation*}
+f(b)-f(a) = f'(\xi)(b-a)\text{.}
+\end{equation*}
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: Mathematical Operations"><a aria-label="Copy heading and permalink for Subsection: Mathematical Operations" href="#week-01-python-basics-4" tabindex="-1" title="Copy heading and permalink for Subsection: Mathematical Operations">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-5">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lists</span>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-04-fixed-point-theorem-4-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Theorem 4.3.1: Mean Value Theorem"><a aria-label="Copy heading and permalink for Theorem 4.3.1: Mean Value Theorem" href="#unit-04-fixed-point-theorem-4" tabindex="-1" title="Copy heading and permalink for Theorem 4.3.1: Mean Value Theorem">🔗</a></div>
+</article>
+<div class="para" id="unit-04-fixed-point-theorem-5">Now let’s dive into the Fixed Point Theorem.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-04-fixed-point-theorem-5" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="unit-04-fixed-point-theorem-6"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.3.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fixed Point Theorem.</span>
 </h2>
-<div class="para" id="week-01-python-basics-5-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-5-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ba3c5f49-f965-4a10-a680-b4aa0136aaef" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-5-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-5-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="unit-04-fixed-point-theorem-6-2-1">If <span class="process-math">\(g\)</span> is a continuous function on <span class="process-math">\([a,b]\)</span> and <span class="process-math">\(a\le g(x) \le b\)</span> for all <span class="process-math">\(x\in[a,b]\text{,}\)</span> then <span class="process-math">\(g\)</span> has at least one fixed point in <span class="process-math">\([a,b]\text{.}\)</span> If, in addition, the derivative <span class="process-math">\(g'\)</span> exists and <span class="process-math">\(|g'(x)| \le \lambda\)</span> for all <span class="process-math">\(x\in(a,b)\)</span> where <span class="process-math">\(0&lt;\lambda&lt;1\text{,}\)</span> then the fixed point is unique.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-04-fixed-point-theorem-6-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: Lists"><a aria-label="Copy heading and permalink for Subsection: Lists" href="#week-01-python-basics-5" tabindex="-1" title="Copy heading and permalink for Subsection: Lists">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-6">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Tuples and Dictionaries in Python</span>
-</h2>
-<div class="para" id="week-01-python-basics-6-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-6-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ddd408c3-e642-4a56-a759-b4aa01379042" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-6-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-6-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Theorem 4.3.2: Fixed Point Theorem"><a aria-label="Copy heading and permalink for Theorem 4.3.2: Fixed Point Theorem" href="#unit-04-fixed-point-theorem-6" tabindex="-1" title="Copy heading and permalink for Theorem 4.3.2: Fixed Point Theorem">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl" id="unit-04-fixed-point-theorem-6-3"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="unit-04-fixed-point-theorem-6-3-1">
+<div class="para">First, we will proof the existence of fixed point. By hypothesis, we have <span class="process-math">\(g(a)\ge a\)</span> and <span class="process-math">\(g(b)\le b\text{.}\)</span> If <span class="process-math">\(g(a)=a\)</span> or <span class="process-math">\(g(b)=b\text{,}\)</span> then a fixed point has been found, so now assume <span class="process-math">\(g(a)&gt;a\)</span> and <span class="process-math">\(g(b)&lt;b\text{.}\)</span> Then for the continuous function</div>
+<div class="displaymath process-math" id="unit-04-fixed-point-theorem-6-3-1-7">
+\begin{equation*}
+h(x)=g(x)-x
+\end{equation*}
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: Tuples and Dictionaries in Python"><a aria-label="Copy heading and permalink for Subsection: Tuples and Dictionaries in Python" href="#week-01-python-basics-6" tabindex="-1" title="Copy heading and permalink for Subsection: Tuples and Dictionaries in Python">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-7">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Boolean Logic</span>
-</h2>
-<div class="para" id="week-01-python-basics-7-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-7-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=3ddf06e8-6028-423b-bc8a-b4aa0135e39e" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-7-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-7-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">we have <span class="process-math">\(h(a)=g(a)-a&gt;0\)</span> and <span class="process-math">\(h(b)=g(b)-b&lt;0\text{.}\)</span> Hence, by the Intermediate Value Theorem, there is a root <span class="process-math">\(p\in (a,b)\)</span> such that <span class="process-math">\(h(p)=0\text{,}\)</span> that is,</div>
+<div class="displaymath process-math" id="unit-04-fixed-point-theorem-6-3-1-12">
+\begin{equation*}
+g(p)-p=0 \implies g(p)=p
+\end{equation*}
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: Boolean Logic"><a aria-label="Copy heading and permalink for Subsection: Boolean Logic" href="#week-01-python-basics-7" tabindex="-1" title="Copy heading and permalink for Subsection: Boolean Logic">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-8">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">If Statements</span>
-</h2>
-<div class="para" id="week-01-python-basics-8-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-8-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=ee974c23-d6e6-4238-b0c8-b4aa0135e43e" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-8-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-8-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Therefore, <span class="process-math">\(p\)</span> is a fixed point of <span class="process-math">\(g(x)\text{.}\)</span>
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: If Statements"><a aria-label="Copy heading and permalink for Subsection: If Statements" href="#week-01-python-basics-8" tabindex="-1" title="Copy heading and permalink for Subsection: If Statements">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-9">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">For Loops</span>
-</h2>
-<div class="para" id="week-01-python-basics-9-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-9-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=4e0a7cf5-2623-4c53-bf43-b4aa0135e3be" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-9-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-9-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-04-fixed-point-theorem-6-3-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: For Loops"><a aria-label="Copy heading and permalink for Subsection: For Loops" href="#week-01-python-basics-9" tabindex="-1" title="Copy heading and permalink for Subsection: For Loops">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-10">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">While Loops</span>
-</h2>
-<div class="para" id="week-01-python-basics-10-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-10-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=a57a2c85-6456-4edb-9d57-b4aa0137bd45" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-10-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-10-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="unit-04-fixed-point-theorem-6-3-2">
+<div class="para">Next, we will show the uniqueness of the fixed point if the derivative <span class="process-math">\(g'\)</span> exists and <span class="process-math">\(|g'(x)| \le \lambda\)</span> for all <span class="process-math">\(x\in(a,b)\)</span> where <span class="process-math">\(0&lt;\lambda&lt;1\text{.}\)</span> Suppose there is another fix point, say <span class="process-math">\(q\text{,}\)</span> then <span class="process-math">\(g(q)=q\text{.}\)</span> Thus,</div>
+<div class="displaymath process-math" id="unit-04-fixed-point-theorem-6-3-2-7">
+\begin{equation*}
+|p-q|=|g(p)-g(q)|=|g'(\xi)(p-q)|=|g'(\xi)||p-q|\le\lambda|p-q|
+\end{equation*}
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: While Loops"><a aria-label="Copy heading and permalink for Subsection: While Loops" href="#week-01-python-basics-10" tabindex="-1" title="Copy heading and permalink for Subsection: While Loops">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-11">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Functions</span>
-</h2>
-<div class="para" id="week-01-python-basics-11-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-11-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=17be6530-fec9-4cb3-81c7-b4b00024a2e1" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-11-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-11-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">where <span class="process-math">\(\xi\)</span> is a number between <span class="process-math">\(p\)</span> and <span class="process-math">\(q\text{.}\)</span> Obviously, this inequality can hold with <span class="process-math">\(\lambda&lt;1\)</span> only if <span class="process-math">\(q=p\text{.}\)</span> Therefore, the fixed point is unique.</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-04-fixed-point-theorem-6-3-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: Functions"><a aria-label="Copy heading and permalink for Subsection: Functions" href="#week-01-python-basics-11" tabindex="-1" title="Copy heading and permalink for Subsection: Functions">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-12">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Help System in Jupyter Notebooks</span>
-</h2>
-<div class="para" id="week-01-python-basics-12-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-12-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=79bf078d-8c06-4ba7-8c9d-b4aa0135e3f6" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-12-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-12-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: Help System in Jupyter Notebooks"><a aria-label="Copy heading and permalink for Subsection: Help System in Jupyter Notebooks" href="#week-01-python-basics-12" tabindex="-1" title="Copy heading and permalink for Subsection: Help System in Jupyter Notebooks">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-13">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Round-Off Error</span>
-</h2>
-<div class="para" id="week-01-python-basics-13-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-13-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=0cb5fdd2-8843-4379-9a21-b4b00024a24a" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-13-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-13-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: Round-Off Error"><a aria-label="Copy heading and permalink for Subsection: Round-Off Error" href="#week-01-python-basics-13" tabindex="-1" title="Copy heading and permalink for Subsection: Round-Off Error">🔗</a></div>
-</section>
-<section class="subsection" id="week-01-python-basics-14">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Python Exceptions</span>
-</h2>
-<div class="para" id="week-01-python-basics-14-2">
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-python-basics-14-2-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6d31ce5d-76da-4759-95bb-b4aa0137493f" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="week-01-python-basics-14-2-1.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#week-01-python-basics-14-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div aria-hidden="true" class="autopermalink" data-description="Subsection: Python Exceptions"><a aria-label="Copy heading and permalink for Subsection: Python Exceptions" href="#week-01-python-basics-14" tabindex="-1" title="Copy heading and permalink for Subsection: Python Exceptions">🔗</a></div>
-</section><div aria-hidden="true" class="autopermalink" data-description="Section 1.3: Python Basics"><a aria-label="Copy heading and permalink for Section 1.3: Python Basics" href="#week-01-python-basics" tabindex="-1" title="Copy heading and permalink for Section 1.3: Python Basics">🔗</a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Proof 4.3.2.1"><a aria-label="Copy heading and permalink for Proof 4.3.2.1" href="#unit-04-fixed-point-theorem-6-3" tabindex="-1" title="Copy heading and permalink for Proof 4.3.2.1">🔗</a></div>
+</article></details><div aria-hidden="true" class="autopermalink" data-description="Section 4.3: Fixed Point Theorem"><a aria-label="Copy heading and permalink for Section 4.3: Fixed Point Theorem" href="#unit-04-fixed-point-theorem" tabindex="-1" title="Copy heading and permalink for Section 4.3: Fixed Point Theorem">🔗</a></div>
 </section>
 </div>
 <div class="ptx-content-footer" id="ptx-content-footer">
-<a class="previous-button button" href="week-01-jupyter-basics.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Top</span></a><a class="next-button button" href="week-01-numpy-basics.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a>
+<a class="previous-button button" href="unit-04-fixed-point-choose-g.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Top</span></a><a class="next-button button" href="unit-04-convergence-fixed-point-iteration.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer" id="ptx-page-footer">
