@@ -421,7 +421,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Secant Method",
-  "body": " Secant Method   Building on our understanding of Newton’s method, we now introduce the secant method , a practical alternative that avoids the need for an explicit derivative.    The Method   Newton’s method requires the user to supply both the function and its derivative . However, in many real-world situations, computing the derivative may be difficult, expensive, or even impossible—for example, when dealing with data from experiments, simulations, or complex black-box functions. In such cases, the secant method becomes especially useful.  The secant method approximates the derivative using the slope of the secant line through the two most recent iterates: Substituting this into Newton’s update formula, we get the secant method iteration: This method requires two initial guesses, and , but avoids evaluating the derivative altogether. While it typically converges more slowly than Newton’s method, it is often preferred when derivative information is unavailable or costly to obtain.  Geometrically, this formula corresponds to finding the -intercept of the secant line connecting the points and on the graph of .    Secant Method       Secant Method      Apply the secant method to find the root of the function with initial guesses and . Calculate and . Round your answer to four decimal places if necessary.   By the iterative formula for the secant method, we have   Video Breakdown        Error Analysis  To understand the efficiency of the secant method, let’s analyze its convergence behavior. Specifically, we’ll show that it converges superlinearly, but not quadratically like Newton’s method.  Superlinear Convergence of the Secant Method  The secant method has superlinear convergence.   We will not prove this theorem, but provide the main idea. Using a Taylor expansion of and about , we can derive an expression for the error in terms of and . After some algebra, we find where .      Algorithm and Coding  Next, we’ll summarize the steps of the secant method , illustrate its process with a flowchart, and then implement it using Python code.  Secant Method   Given a scalar function , start with two initial guesses and .  For , compute until or a maximum number of iterations is reached.      Flow chart for the secant method: evaluate the function at two recent approximations, update with the secant-line intercept, and test the tolerance.   Secant Method Flow Chart    def secant(f, p0, p1, atol, max_iter): for i in range(max_iter): p2 = p1 - f(p1) * (p1 - p0) \/ (f(p1) - f(p0)) if abs(p2 - p1) <= atol: return p2 else: p0, p1 = p1, p2 raise Exception( f\"Secant method did not converge within {max_iter} iterations. \" \"Try different initial guesses or increase max_iter.\" )  Let’s apply the secant method to find a root of the function using initial guesses p0 = 0 and p1 = 1 , and an error tolerance of . We’ll set max_iter = 20 , assuming the root will be found within that many steps.  p = secant(f=lambda x: x**3 + 2*x**2 + 5*x - 2, p0=0, p1=1, atol=1e-3, max_iter=20) print(f\"The root found by the secant method is {p}.\")    The root found by the secant method is 0.3443892308090592.    The final digits may vary depending on computing precision:  Tips for Choosing Initial Guesses  A good pair of initial guesses for the secant method are two values close to the root and with opposite signs of . You can use a graph of the function or a sign change in the interval to guide your choice.    "
+  "body": " Secant Method   Building on our understanding of Newton’s method, we now introduce the secant method , a practical alternative that avoids the need for an explicit derivative.    The Method   Newton’s method requires the user to supply both the function and its derivative . However, in many real-world situations, computing the derivative may be difficult, expensive, or even impossible—for example, when dealing with data from experiments, simulations, or complex black-box functions. In such cases, the secant method becomes especially useful.  The secant method approximates the derivative using the slope of the secant line through the two most recent iterates: Substituting this into Newton’s update formula, we get the secant method iteration: This method requires two initial guesses, and , but avoids evaluating the derivative altogether. While it typically converges more slowly than Newton’s method, it is often preferred when derivative information is unavailable or costly to obtain.  Geometrically, this formula corresponds to finding the -intercept of the secant line connecting the points and on the graph of .    Secant Method       Secant Method      Apply the secant method to find the root of the function with initial guesses and . Calculate and . Round your answer to four decimal places if necessary.   By the iterative formula for the secant method, we have   Video Breakdown  Dr. Yang walks through this example in the following video.        Error Analysis  To understand the efficiency of the secant method, let’s analyze its convergence behavior. Specifically, we’ll show that it converges superlinearly, but not quadratically like Newton’s method.  Superlinear Convergence of the Secant Method  The secant method has superlinear convergence.   We will not prove this theorem, but provide the main idea. Using a Taylor expansion of and about , we can derive an expression for the error in terms of and . After some algebra, we find where .      Algorithm and Coding  Next, we’ll summarize the steps of the secant method , illustrate its process with a flowchart, and then implement it using Python code.  Secant Method   Given a scalar function , start with two initial guesses and .  For , compute until or a maximum number of iterations is reached.      Flow chart for the secant method: evaluate the function at two recent approximations, update with the secant-line intercept, and test the tolerance.   Secant Method Flow Chart    def secant(f, p0, p1, atol, max_iter): for i in range(max_iter): p2 = p1 - f(p1) * (p1 - p0) \/ (f(p1) - f(p0)) if abs(p2 - p1) <= atol: return p2 else: p0, p1 = p1, p2 raise Exception( f\"Secant method did not converge within {max_iter} iterations. \" \"Try different initial guesses or increase max_iter.\" )  Let’s apply the secant method to find a root of the function using initial guesses p0 = 0 and p1 = 1 , and an error tolerance of . We’ll set max_iter = 20 , assuming the root will be found within that many steps.  p = secant(f=lambda x: x**3 + 2*x**2 + 5*x - 2, p0=0, p1=1, atol=1e-3, max_iter=20) print(f\"The root found by the secant method is {p}.\")    The root found by the secant method is 0.3443892308090592.    The final digits may vary depending on computing precision:  Tips for Choosing Initial Guesses  A good pair of initial guesses for the secant method are two values close to the root and with opposite signs of . You can use a graph of the function or a sign change in the interval to guide your choice.    "
 },
 {
   "id": "unit-03-secant-method-2-1",
@@ -466,7 +466,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "3.2.3",
   "title": "",
-  "body": " Apply the secant method to find the root of the function with initial guesses and . Calculate and . Round your answer to four decimal places if necessary.   By the iterative formula for the secant method, we have   Video Breakdown     "
+  "body": " Apply the secant method to find the root of the function with initial guesses and . Calculate and . Round your answer to four decimal places if necessary.   By the iterative formula for the secant method, we have   Video Breakdown  Dr. Yang walks through this example in the following video.     "
 },
 {
   "id": "unit-03-secant-error-analysis-3",
@@ -592,7 +592,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.4",
   "title": "Convergence of the Fixed Point Iteration",
-  "body": " Convergence of the Fixed Point Iteration   We now investigate whether the sequence defined by the iteration converges to the fixed point , along with its corresponding rate of convergence.  Under the same assumptions of the fixed point theorem, we have This is a contraction by the factor . Therefore, Since , we have as , thus, as .  Note that implies the convergence is linear with rate . Further more, if , then the convergence can be faster than linear—possibly quadratic —depending on higher-order derivatives. (Think about the Newton’s method.)   Apply fixed point iteration to find the root of the equation in the interval with an initial guess . Calculate , , and . Round your answer to four decimal places if necessary.   We need to rewrite equation as a fixed-point problem. One possible rearrangement is: Then we need to verify has a unique fixed point in the interval . By the Fixed Point Theorem, we need to answer the following questions:  Is is continuous on ?   Is for ?    Is for where ?     The first question is easy to answer. The function is a polynomial, so it is continuous everywhere.  To answer the second question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have or . Thus is monotonic in the interval . Since and , we have , therefore, for   To answer the third question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have . Thus is monotonic in the interval . Since and , we have , therefore, for .  Therefore, by the Fixed Point Theorem, has a unique fixed point in the interval . And the sequence generated by the iteration formula converges to the fixed point . By the formula, it is easy to find , and with the initial guess ,   Video Breakdown      "
+  "body": " Convergence of the Fixed Point Iteration   We now investigate whether the sequence defined by the iteration converges to the fixed point , along with its corresponding rate of convergence.  Under the same assumptions of the fixed point theorem, we have This is a contraction by the factor . Therefore, Since , we have as , thus, as .  Note that implies the convergence is linear with rate . Further more, if , then the convergence can be faster than linear—possibly quadratic —depending on higher-order derivatives. (Think about the Newton’s method.)   Apply fixed point iteration to find the root of the equation in the interval with an initial guess . Calculate , , and . Round your answer to four decimal places if necessary.   We need to rewrite equation as a fixed-point problem. One possible rearrangement is: Then we need to verify has a unique fixed point in the interval . By the Fixed Point Theorem, we need to answer the following questions:  Is is continuous on ?   Is for ?    Is for where ?     The first question is easy to answer. The function is a polynomial, so it is continuous everywhere.  To answer the second question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have or . Thus is monotonic in the interval . Since and , we have , therefore, for   To answer the third question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have . Thus is monotonic in the interval . Since and , we have , therefore, for .  Therefore, by the Fixed Point Theorem, has a unique fixed point in the interval . And the sequence generated by the iteration formula converges to the fixed point . By the formula, it is easy to find , and with the initial guess ,   Video Breakdown  Dr. Yang walks through this example in the following video.      "
 },
 {
   "id": "unit-04-convergence-fixed-point-iteration-4",
@@ -619,7 +619,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "4.4.1",
   "title": "",
-  "body": " Apply fixed point iteration to find the root of the equation in the interval with an initial guess . Calculate , , and . Round your answer to four decimal places if necessary.   We need to rewrite equation as a fixed-point problem. One possible rearrangement is: Then we need to verify has a unique fixed point in the interval . By the Fixed Point Theorem, we need to answer the following questions:  Is is continuous on ?   Is for ?    Is for where ?     The first question is easy to answer. The function is a polynomial, so it is continuous everywhere.  To answer the second question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have or . Thus is monotonic in the interval . Since and , we have , therefore, for   To answer the third question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have . Thus is monotonic in the interval . Since and , we have , therefore, for .  Therefore, by the Fixed Point Theorem, has a unique fixed point in the interval . And the sequence generated by the iteration formula converges to the fixed point . By the formula, it is easy to find , and with the initial guess ,   Video Breakdown     "
+  "body": " Apply fixed point iteration to find the root of the equation in the interval with an initial guess . Calculate , , and . Round your answer to four decimal places if necessary.   We need to rewrite equation as a fixed-point problem. One possible rearrangement is: Then we need to verify has a unique fixed point in the interval . By the Fixed Point Theorem, we need to answer the following questions:  Is is continuous on ?   Is for ?    Is for where ?     The first question is easy to answer. The function is a polynomial, so it is continuous everywhere.  To answer the second question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have or . Thus is monotonic in the interval . Since and , we have , therefore, for   To answer the third question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have . Thus is monotonic in the interval . Since and , we have , therefore, for .  Therefore, by the Fixed Point Theorem, has a unique fixed point in the interval . And the sequence generated by the iteration formula converges to the fixed point . By the formula, it is easy to find , and with the initial guess ,   Video Breakdown  Dr. Yang walks through this example in the following video.     "
 },
 {
   "id": "unit-04-fixed-point-algo-coding",
@@ -647,6 +647,159 @@ var ptx_lunr_docs = [
   "number": "4.5.2",
   "title": "Reminder.",
   "body": "Reminder  When choosing a function for fixed-point iteration, make sure:    is continuous on an interval ,     , and     for all in that interval.     You can use a graph or numerical derivative to check this.  "
+},
+{
+  "id": "unit-05-review-linear-algebra",
+  "level": "1",
+  "url": "unit-05-review-linear-algebra.html",
+  "type": "Section",
+  "number": "5.1",
+  "title": "Review of Linear Algebra",
+  "body": "Review of Linear Algebra   Matrix Product   If is an matrix and is a matrix, then the product  is the matrix whose entries are determined as follows: To find the entry in row and column of , single out row from the matrix and column from the matrix . Multiply the corresponding entries from the row and column together, and then add up the resulting products.  The matrix product      The linear system can be written as If we designate these matrices by , , and respectively, then the system becomes The matrix in this equation is called the coefficient matrix of the system. The augmented matrix for the system is obtained by adjoining to as the last column:   "
+},
+{
+  "id": "unit-05-review-linear-algebra-3",
+  "level": "2",
+  "url": "unit-05-review-linear-algebra.html#unit-05-review-linear-algebra-3",
+  "type": "Definition",
+  "number": "5.1.1",
+  "title": "Matrix Product.",
+  "body": "Matrix Product   If is an matrix and is a matrix, then the product  is the matrix whose entries are determined as follows: To find the entry in row and column of , single out row from the matrix and column from the matrix . Multiply the corresponding entries from the row and column together, and then add up the resulting products.  The matrix product     "
+},
+{
+  "id": "unit-05-review-linear-algebra-4",
+  "level": "2",
+  "url": "unit-05-review-linear-algebra.html#unit-05-review-linear-algebra-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "coefficient matrix augmented matrix "
+},
+{
+  "id": "unit-05-gaussian-elimination",
+  "level": "1",
+  "url": "unit-05-gaussian-elimination.html",
+  "type": "Section",
+  "number": "5.2",
+  "title": "Gaussian Elimination with Backward Substitution",
+  "body": "Gaussian Elimination with Backward Substitution   The fundamental direct method for solving systems of linear equations is Gaussian elimination . In this section, we will cover two key steps of the process:   First, how to solve a linear system when the coefficient matrix is already in upper triangular form . This step is known as backward substitution .    Second, how to transform a general linear system into an upper triangular form so that backward substitution can be applied. This transformation process is known as Gaussian elimination .      Backward Substitution  Sometimes, the matrix has a special structure that simplifies the solution process. For example, if is an upper triangular matrix , then solving the system becomes straightforward.   Solve the linear system     Note that the coefficient matrix is upper triangular, we can solve the system using backward substitution . Starting from the last equation, Then substituting the value of in the second equation, Similarly, solving the first equation for by substituting the values of and , we have Therefore, the solution is .     Gaussian Elimination  Now, suppose the matrix does not have any special zero structure. Gaussian elimination is a general method that uses elementary row operations to transform the system into an equivalent upper triangular form. Once in this form, the system can be solved using backward substitution.   Recall there are three types of elementary row operations:  Exchange two rows.  Multiply a row by a nonzero constant.  Add a multiple of a row to another row.    Gaussian elimination are as follows: The diagonal elements , , , , are called pivot elements .    Solve the linear system by Gaussian elimination and backward substitution.      Apply Gaussian elimination to reduce the augmented matrix of the system into an equivalent upper triangular form, After we get the equivalent upper triangular form, we can use backward substitution (see last example) to find the solution is , , and .      Pivoting Strategies   To enhance the stability of Gaussian elimination, it’s important to choose pivot elements that are as large as possible. This minimizes the size of the multipliers, reducing the risk of significant round-off errors caused by finite precision. When a small pivot is multiplied by a large number, it can distort other rows and degrade accuracy. A common strategy is to compare the absolute values of the pivot and the entries below it, and then swap the current row with the one containing the largest value in magnitude, if different. This approach is known as partial pivoting . It works as follows: as the elimination proceeds for , at each stage , choose as the smallest integer for which and interchange rows and . Then proceed with the elimination process.    Apply Gaussian elimination with partial pivoting to solve the following linear system.     Apply Gaussian elimination with partial pivoting to reduce the augmented matrix of the system into an equivalent upper triangular form,   After we get the equivalent upper triangular form, we can use backward substitution to find the solution. Starting from the last equation, Then substituting the value of in the last second equation, Similarly, solve the second equation for and the first equation for ,   Therefore, the solution is , , , and .  Video Breakdown  Dr. Yang walks through this example in the following video.        Algorithm and Coding  Let’s implement Gaussian elimination with backward substitution without pivoting in Python to solve a system of linear equations step by step. You can add partial pivoting by yourself.   import numpy as np def gaussian_elimination(A, b): \"\"\"Performs Gaussian elimination without pivoting\"\"\" A = np.array(A, dtype=np.float64) b = np.array(b, dtype=np.float64) n = b.size for k in range(n-1): for i in range(k+1, n): m = A[i, k] \/ A[k, k] A[i, k:] = A[i, k:] - m * A[k, k:] b[i] = b[i] - m * b[k] return A, b def backward_substitution(U, y): \"\"\"Solves Ux = y for upper triangular matrix U\"\"\" U = np.array(U, dtype=np.float64) y = np.array(y, dtype=np.float64) n = y.size x = np.zeros_like(y) for i in range(n-1, -1, -1): x[i] = (y[i] - np.dot(U[i, i+1:], x[i+1:])) \/ U[i, i] return x  Now, let’s use this implementation to solve the linear system given in Example 2: A=[[2,4,10], [-1,-6, -21], [3,3,7]] b=[-22, 59, -17] U, y = gaussian_elimination(A, b) x = backward_substitution(U, y) print(\"Solution x =\", x)    Solution x = [-2. 8. -5.]     This confirms our implementation works correctly. Alternatively, you can solve the same system more easily using NumPy’s built-in solver: x = np.linalg.solve(A, b) print(\"Solution x =\", x)    Solution x = [-2. 8. -5.]   This built-in method is optimized and should be preferred for general-purpose use unless you’re explicitly learning or implementing algorithms manually.   "
+},
+{
+  "id": "unit-05-gaussian-elimination-2-1",
+  "level": "2",
+  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gaussian elimination upper triangular form backward substitution Gaussian elimination "
+},
+{
+  "id": "unit-05-gaussian-elimination-3-2",
+  "level": "2",
+  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-3-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "upper triangular matrix "
+},
+{
+  "id": "unit-05-gaussian-elimination-3-3",
+  "level": "2",
+  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-3-3",
+  "type": "Example",
+  "number": "5.2.1",
+  "title": "",
+  "body": " Solve the linear system     Note that the coefficient matrix is upper triangular, we can solve the system using backward substitution . Starting from the last equation, Then substituting the value of in the second equation, Similarly, solving the first equation for by substituting the values of and , we have Therefore, the solution is .   "
+},
+{
+  "id": "unit-05-gaussian-elimination-4-2",
+  "level": "2",
+  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-4-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gaussian elimination "
+},
+{
+  "id": "unit-05-gaussian-elimination-4-5",
+  "level": "2",
+  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-4-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "pivot elements "
+},
+{
+  "id": "unit-05-gaussian-elimination-4-6",
+  "level": "2",
+  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-4-6",
+  "type": "Example",
+  "number": "5.2.2",
+  "title": "",
+  "body": "  Solve the linear system by Gaussian elimination and backward substitution.      Apply Gaussian elimination to reduce the augmented matrix of the system into an equivalent upper triangular form, After we get the equivalent upper triangular form, we can use backward substitution (see last example) to find the solution is , , and .   "
+},
+{
+  "id": "unit-05-gaussian-elimination-5-3",
+  "level": "2",
+  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-5-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "partial pivoting "
+},
+{
+  "id": "unit-05-gaussian-elimination-5-4",
+  "level": "2",
+  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-5-4",
+  "type": "Example",
+  "number": "5.2.3",
+  "title": "",
+  "body": "  Apply Gaussian elimination with partial pivoting to solve the following linear system.     Apply Gaussian elimination with partial pivoting to reduce the augmented matrix of the system into an equivalent upper triangular form,   After we get the equivalent upper triangular form, we can use backward substitution to find the solution. Starting from the last equation, Then substituting the value of in the last second equation, Similarly, solve the second equation for and the first equation for ,   Therefore, the solution is , , , and .  Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "unit-05-gaussian-elimination-6-2",
+  "level": "2",
+  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-6-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gaussian elimination with backward substitution "
+},
+{
+  "id": "unit-05-lu-decomposition",
+  "level": "1",
+  "url": "unit-05-lu-decomposition.html",
+  "type": "Section",
+  "number": "5.3",
+  "title": "LU Decomposition",
+  "body": "LU Decomposition  In this section, we demonstrate that the steps involved in Gaussian elimination not only solve a linear system but also reveal a deeper structure of the matrix . Specifically, the elimination process can be viewed as decomposing into the product of two matrices: a lower triangular matrix and an upper triangular matrix , such that This factorization, known as LU decomposition , is a powerful tool in numerical linear algebra. It allows for efficient solutions of linear systems, especially when multiple right-hand sides are involved, and it forms the foundation for many more advanced matrix algorithms. In the LU decomposition, captures the row operations used to eliminate entries below the pivots, while records the multipliers used in those operations. Rigorously, given a square matrix , LU decomposition factors it as: where is a lower triangular matrix in the form of and is an upper triangular matrix in the form of Note that all diagonal entries of are 1 and entries below the diagonal ( for ) are the multipliers used during Gaussian elimination, and the matrix comes from the result of Gaussian elimination.    Find LU decomposition of      Apply Gaussian elimination to reduce the matrix into upper triangular form, The boxed multipliers form the lower triangular part of , while the resulting upper triangular matrix defines the matrix , namely,     Suppose is the coefficient matrix of the linear system By factoring , the system becomes This can be viewed as two successive systems: The first system is solved using forward substitution, since is lower triangular. The second is solved using backward substitution, as is upper triangular.    Use LU decomposition to solve the linear system     By last example, the coefficient matrix can be decomposed into as follows, Then, becomes Solving this system using forward substitution, we obtain , and thus the system becomes Then solving this system for using backward substitution, we have   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+},
+{
+  "id": "unit-05-lu-decomposition-2",
+  "level": "2",
+  "url": "unit-05-lu-decomposition.html#unit-05-lu-decomposition-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "LU decomposition lower triangular matrix upper triangular matrix "
+},
+{
+  "id": "unit-05-lu-decomposition-3",
+  "level": "2",
+  "url": "unit-05-lu-decomposition.html#unit-05-lu-decomposition-3",
+  "type": "Example",
+  "number": "5.3.1",
+  "title": "",
+  "body": "  Find LU decomposition of      Apply Gaussian elimination to reduce the matrix into upper triangular form, The boxed multipliers form the lower triangular part of , while the resulting upper triangular matrix defines the matrix , namely,    "
+},
+{
+  "id": "unit-05-lu-decomposition-5",
+  "level": "2",
+  "url": "unit-05-lu-decomposition.html#unit-05-lu-decomposition-5",
+  "type": "Example",
+  "number": "5.3.2",
+  "title": "",
+  "body": "  Use LU decomposition to solve the linear system     By last example, the coefficient matrix can be decomposed into as follows, Then, becomes Solving this system using forward substitution, we obtain , and thus the system becomes Then solving this system for using backward substitution, we have   Video Breakdown  Dr. Yang walks through this example in the following video.     "
 },
 {
   "id": "appendix-troubleshooting",
