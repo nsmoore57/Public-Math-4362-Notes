@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="week-01-scikit-learn">
+    <title>Introduction to Scikit-Learn</title>
+    <p>
+        For this section, you should be able to find the <c>introduction-to-scikit-learn.ipynb</c> notebook in the <c>demo</c> directory of the course environment folder.
+    </p>
+    <p><interactive
+        iframe="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=39031590-7469-436f-a15c-b4b900ee6355"
+        aspect="1.778"
+    /></p>
+</section>
