@@ -802,6 +802,132 @@ var ptx_lunr_docs = [
   "body": "  Use LU decomposition to solve the linear system     By last example, the coefficient matrix can be decomposed into as follows, Then, becomes Solving this system using forward substitution, we obtain , and thus the system becomes Then solving this system for using backward substitution, we have   Video Breakdown  Dr. Yang walks through this example in the following video.     "
 },
 {
+  "id": "unit-06-jacobi-method",
+  "level": "1",
+  "url": "unit-06-jacobi-method.html",
+  "type": "Section",
+  "number": "6.1",
+  "title": "Jacobi Method",
+  "body": "Jacobi Method   Rewrite the linear system as where is the strictly lower triangular part of , is the diagonal of , and is the strictly upper triangular part of .  Further rewriting as and it forms a fixed point iteration for vectors. Similarly to fixed point iteration, starting with an initial guess , use the following iteration to generate a sequence: where the superscripts denote iteration steps. This is called Jacobi method .  If we write out all vectors and matrices, it becomes Therefore, the equivalent element-wise formula of Jacobi method is     Given , compute the next two iterates and when solving the following linear system by Jacobi iteration. Round the results to four digits.     The iterative formulas of Jacobi method are Let , we obtain the first iterate Then let , we obtain the second iterate   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+},
+{
+  "id": "unit-06-jacobi-method-4",
+  "level": "2",
+  "url": "unit-06-jacobi-method.html#unit-06-jacobi-method-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Jacobi method "
+},
+{
+  "id": "unit-06-jacobi-method-5",
+  "level": "2",
+  "url": "unit-06-jacobi-method.html#unit-06-jacobi-method-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "element-wise formula of Jacobi method "
+},
+{
+  "id": "unit-06-jacobi-method-6",
+  "level": "2",
+  "url": "unit-06-jacobi-method.html#unit-06-jacobi-method-6",
+  "type": "Example",
+  "number": "6.1.1",
+  "title": "",
+  "body": "  Given , compute the next two iterates and when solving the following linear system by Jacobi iteration. Round the results to four digits.     The iterative formulas of Jacobi method are Let , we obtain the first iterate Then let , we obtain the second iterate   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "unit-06-gauss-seidel-method",
+  "level": "1",
+  "url": "unit-06-gauss-seidel-method.html",
+  "type": "Section",
+  "number": "6.2",
+  "title": "Gauss-Seidel Method",
+  "body": "Gauss-Seidel Method   While solving the previous example, you might wonder: Why not use the newly updated values immediately within the same iteration, rather than waiting for the next one? For instance, when computing , we already have the updated value —so why not use it right away? Congratulations! This line of thinking leads to a new algorithm called the Gauss-Seidel method .  To derive it by matrix notation, let's rewrite in a different way, Using this equation, we have the following iterative formula: where the superscripts denote iteration steps.  Similarly to Jacobi method, if we write out all vectors and matrices, it becomes Therefore, the equivalent element-wise formula of Gauss-Seidel method is     Given , compute the next two iterates and when solving the following linear system by Gauss-Seidel iteration. Round the results to four digits.     The iterative formulas of Gauss-Seidel method are Let , we obtain the first iterate Then let , we obtain the second iterate   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+},
+{
+  "id": "unit-06-gauss-seidel-method-3",
+  "level": "2",
+  "url": "unit-06-gauss-seidel-method.html#unit-06-gauss-seidel-method-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gauss-Seidel method "
+},
+{
+  "id": "unit-06-gauss-seidel-method-5",
+  "level": "2",
+  "url": "unit-06-gauss-seidel-method.html#unit-06-gauss-seidel-method-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "element-wise formula of Gauss-Seidel method "
+},
+{
+  "id": "unit-06-gauss-seidel-method-6",
+  "level": "2",
+  "url": "unit-06-gauss-seidel-method.html#unit-06-gauss-seidel-method-6",
+  "type": "Example",
+  "number": "6.2.1",
+  "title": "",
+  "body": "  Given , compute the next two iterates and when solving the following linear system by Gauss-Seidel iteration. Round the results to four digits.     The iterative formulas of Gauss-Seidel method are Let , we obtain the first iterate Then let , we obtain the second iterate   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "unit-06-iteration-methods-convergence",
+  "level": "1",
+  "url": "unit-06-iteration-methods-convergence.html",
+  "type": "Section",
+  "number": "6.3",
+  "title": "Convergence of Iterative Methods",
+  "body": "Convergence of Iterative Methods   The iterative methods do not always converge. Let’s consider the following linear system and the Jacobi iterative formulas are Starting from the initial guess , the first 10 iterates are After 6 steps, the iterates get close to the exact solution and , and stays there, indicating the iteration converges.  Now let's swap the equations in the system and obtain an equivalent linear system, and the Jacobi iterative formulas are Starting from the initial guess , the first 10 iterates are It clearly shows that the iteration diverges and Jacobi method does not work for it.   A square matrix is said to be strictly diagonally dominant if for every row of the matrix, the magnitude of the diagonal entry in a row is larger than the sum of the magnitudes of all the other (non-diagonal) entries in that row. More precisely, an matrix is said to be strictly diagonally dominant if, for each , where .     The Jacobi method and Gauss–Seidel method converge if the coefficient matrix of a linear system is strictly diagonally dominant.      Do you expect the Jacobi iteration in Example 1 and Gauss-Seidel iteration in Example 2 to converge? Why?    The coefficient matrix of the linear system in Example 1 and 2 is The matrix is strictly diagonally dominant since Therefore, by the theorem, both Jacobi iteration and Gauss-Seidel iteration for this linear system converge.  Video Breakdown  Dr. Yang walks through this example in the following video.      "
+},
+{
+  "id": "unit-06-iteration-methods-convergence-5",
+  "level": "2",
+  "url": "unit-06-iteration-methods-convergence.html#unit-06-iteration-methods-convergence-5",
+  "type": "Definition",
+  "number": "6.3.1",
+  "title": "",
+  "body": " A square matrix is said to be strictly diagonally dominant if for every row of the matrix, the magnitude of the diagonal entry in a row is larger than the sum of the magnitudes of all the other (non-diagonal) entries in that row. More precisely, an matrix is said to be strictly diagonally dominant if, for each , where .  "
+},
+{
+  "id": "unit-06-iteration-methods-convergence-6",
+  "level": "2",
+  "url": "unit-06-iteration-methods-convergence.html#unit-06-iteration-methods-convergence-6",
+  "type": "Theorem",
+  "number": "6.3.2",
+  "title": "",
+  "body": "  The Jacobi method and Gauss–Seidel method converge if the coefficient matrix of a linear system is strictly diagonally dominant.   "
+},
+{
+  "id": "unit-06-iteration-methods-convergence-7",
+  "level": "2",
+  "url": "unit-06-iteration-methods-convergence.html#unit-06-iteration-methods-convergence-7",
+  "type": "Example",
+  "number": "6.3.3",
+  "title": "",
+  "body": "  Do you expect the Jacobi iteration in Example 1 and Gauss-Seidel iteration in Example 2 to converge? Why?    The coefficient matrix of the linear system in Example 1 and 2 is The matrix is strictly diagonally dominant since Therefore, by the theorem, both Jacobi iteration and Gauss-Seidel iteration for this linear system converge.  Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "unit-06-iterative-methods-coding",
+  "level": "1",
+  "url": "unit-06-iterative-methods-coding.html",
+  "type": "Section",
+  "number": "6.4",
+  "title": "Algorithms and Coding for Iterative Methods",
+  "body": "Algorithms and Coding for Iterative Methods   We will stop the iteration when the latest iterates and satisfy where represents infinity norm of a vector, which is defined as follows, We can use the built-in function linalg.norm in Python’s Numpy module to calculate the infinity norm of a vector.  Now we code Jacobi method and Gauss-Seidel method: import numpy as np def jacobi(A, b, x0=None, tol=1e-5, max_iter=100, verbose=False): \"\"\" Solves the linear system Ax = b using the Jacobi iterative method. Parameters: A : array Coefficient matrix (assumed to be square). b : array Right-hand side vector. x0 : array (optional) Initial guess for the solution. tol : float (optional) Convergence tolerance. max_iter : int (optional) Maximum number of iterations. verbose : bool (optional) If True, print the solution at each iteration. Returns: x : ndarray Approximate solution vector. \"\"\" A = np.array(A, dtype=np.float64) b = np.array(b, dtype=np.float64) n = b.size x = np.zeros_like(b) if x0 is None else np.array(x0, dtype=np.float64).copy() for k in range(max_iter): x_new = np.zeros_like(x) for i in range(n): s = sum(A[i,j] * x[j] for j in range(n) if j != i) x_new[i] = (b[i] - s) \/ A[i,i] if verbose: print(f\"Iteration {k+1}: x = {np.round(x_new, 6)}\") if np.linalg.norm(x_new - x, ord=np.inf) < tol: return x_new x = x_new raise Exception(f\"Jacobi method did not converge after {max_iter} iterations.\") def gauss_seidel(A, b, x0=None, tol=1e-5, max_iter=100, verbose=False): \"\"\" Solves the linear system Ax = b using the Gauss-Seidel iterative method. Parameters: A : array Coefficient matrix (assumed to be square). b : array Right-hand side vector. x0 : array (optional) Initial guess for the solution. tol : float (optional) Convergence tolerance. max_iter : int (optional) Maximum number of iterations. verbose : bool (optional) If True, print the solution at each iteration. Returns: x : ndarray Approximate solution vector. \"\"\" A = np.array(A, dtype=np.float64) b = np.array(b, dtype=np.float64) n = b.size x = np.zeros_like(b) if x0 is None else np.array(x0, dtype=np.float64).copy() for k in range(max_iter): x_new = np.zeros_like(x) for i in range(n): s1 = sum(A[i,j] * x_new[j] for j in range(n) if j < i) s2 = sum(A[i,j] * x[j] for j in range(n) if j > i) x_new[i] = (b[i] - s1 - s2) \/ A[i,i] if verbose: print(f\"Iteration {k+1}: x = {np.round(x_new, 6)}\") if np.linalg.norm(x_new - x, ord=np.inf) < tol: return x_new x = x_new raise Exception(f\"Gauss-Seidel method did not converge after {max_iter} iterations.\") Let's use the function jacobi() to solve the example in the last section about the convergence: A = [[4, -3], [2,5]] b = [-1, 19] x = jacobi(A, b, verbose=True) print(f\"The solution is {np.round(x, 4)}\")    Iteration 1: x = [-0.25 3.8 ] Iteration 2: x = [2.6 3.9] Iteration 3: x = [2.675 2.76 ] Iteration 4: x = [1.82 2.73] Iteration 5: x = [1.7975 3.072 ] Iteration 6: x = [2.054 3.081] Iteration 7: x = [2.06075 2.9784 ] Iteration 8: x = [1.9838 2.9757] Iteration 9: x = [1.981775 3.00648 ] Iteration 10: x = [2.00486 3.00729] Iteration 11: x = [2.005468 2.998056] Iteration 12: x = [1.998542 2.997813] Iteration 13: x = [1.99836 3.000583] Iteration 14: x = [2.000437 3.000656] Iteration 15: x = [2.000492 2.999825] Iteration 16: x = [1.999869 2.999803] Iteration 17: x = [1.999852 3.000052] Iteration 18: x = [2.000039 3.000059] Iteration 19: x = [2.000044 2.999984] Iteration 20: x = [1.999988 2.999982] Iteration 21: x = [1.999987 3.000005] Iteration 22: x = [2.000004 3.000005] Iteration 23: x = [2.000004 2.999999] The solution is [2. 3.]     After swapping equations in the system, we have A = [[2,5], [4, -3]] b = [19, -1] x = jacobi(A, b, verbose=True) print(f\"The solution is {np.round(x, 4)}\")    Iteration 1: x = [9.5 0.333333] Iteration 2: x = [ 8.666667 13. ] Iteration 3: x = [-23. 11.888889] Iteration 4: x = [-20.222222 -30.333333] Iteration 5: x = [ 85.333333 -26.62963 ] Iteration 6: x = [ 76.074074 114.111111] Iteration 7: x = [-275.777778 101.765432] Iteration 8: x = [-244.91358 -367.37037] Iteration 9: x = [ 927.925926 -326.218107] Iteration 10: x = [ 825.045267 1237.567901] Iteration 11: x = [-3084.419753 1100.39369 ] Iteration 12: x = [-2741.484225 -4112.226337] Iteration 13: x = [10290.065844 -3654.978967] Iteration 14: x = [ 9146.947417 13720.421125] Iteration 15: x = [-34291.552812 12196.263222] Iteration 16: x = [-30481.158055 -45721.737083] Iteration 17: x = [114313.842707 -40641.21074 ] Iteration 18: x = [101612.526851 152418.790276] Iteration 19: x = [-381037.47569 135483.702467] Iteration 20: x = [-338699.756169 -508049.634253] Iteration 21: x = [1270133.585632 -451599.341558] Iteration 22: x = [1129007.853895 1693511.780843] Iteration 23: x = [-4233769.952108 1505344.138527] Iteration 24: x = [-3763350.846318 -5645026.269477] Iteration 25: x = [14112575.173692 -5017800.79509 ] Iteration 26: x = [12544511.487726 18816767.231589] Iteration 27: x = [-47041908.578973 16726015.650302] Iteration 28: x = [-41815029.625754 -62722544.438631] Iteration 29: x = [ 1.56806371e+08 -5.57533725e+07] Iteration 30: x = [1.39383441e+08 2.09075161e+08] Iteration 31: x = [-5.22687893e+08 1.85844588e+08] Iteration 32: x = [-4.64611461e+08 -6.96917191e+08] Iteration 33: x = [ 1.74229299e+09 -6.19481947e+08] Iteration 34: x = [1.54870488e+09 2.32305732e+09] Iteration 35: x = [-5.80764328e+09 2.06493984e+09] Iteration 36: x = [-5.16234958e+09 -7.74352437e+09] Iteration 37: x = [ 1.93588109e+10 -6.88313277e+09] Iteration 38: x = [1.72078319e+10 2.58117479e+10] Iteration 39: x = [-6.45293698e+10 2.29437759e+10] Iteration 40: x = [-5.73594398e+10 -8.60391597e+10] Iteration 41: x = [ 2.15097899e+11 -7.64792531e+10] Iteration 42: x = [1.91198133e+11 2.86797199e+11] Iteration 43: x = [-7.16992998e+11 2.54930844e+11] Iteration 44: x = [-6.37327109e+11 -9.55990664e+11] Iteration 45: x = [ 2.38997666e+12 -8.49769479e+11] Iteration 46: x = [2.12442370e+12 3.18663555e+12] Iteration 47: x = [-7.96658886e+12 2.83256493e+12] Iteration 48: x = [-7.08141232e+12 -1.06221185e+13] Iteration 49: x = [ 2.65552962e+13 -9.44188310e+12] Iteration 50: x = [2.36047077e+13 3.54070616e+13] Iteration 51: x = [-8.85176540e+13 3.14729437e+13] Iteration 52: x = [-7.86823591e+13 -1.18023539e+14] Iteration 53: x = [ 2.95058847e+14 -1.04909812e+14] Iteration 54: x = [2.62274530e+14 3.93411796e+14] Iteration 55: x = [-9.83529489e+14 3.49699374e+14] Iteration 56: x = [-8.74248435e+14 -1.31137265e+15] Iteration 57: x = [ 3.27843163e+15 -1.16566458e+15] Iteration 58: x = [2.91416145e+15 4.37124217e+15] Iteration 59: x = [-1.09281054e+16 3.88554860e+15] Iteration 60: x = [-9.71387150e+15 -1.45708072e+16] Iteration 61: x = [ 3.64270181e+16 -1.29518287e+16] Iteration 62: x = [3.23795717e+16 4.85693575e+16] Iteration 63: x = [-1.21423394e+17 4.31727622e+16] Iteration 64: x = [-1.07931906e+17 -1.61897858e+17] Iteration 65: x = [ 4.04744646e+17 -1.43909207e+17] Iteration 66: x = [3.59773018e+17 5.39659528e+17] Iteration 67: x = [-1.34914882e+18 4.79697358e+17] Iteration 68: x = [-1.19924339e+18 -1.79886509e+18] Iteration 69: x = [ 4.49716273e+18 -1.59899119e+18] Iteration 70: x = [3.99747798e+18 5.99621697e+18] Iteration 71: x = [-1.49905424e+19 5.32997064e+18] Iteration 72: x = [-1.33249266e+19 -1.99873899e+19] Iteration 73: x = [ 4.99684748e+19 -1.77665688e+19] Iteration 74: x = [4.44164220e+19 6.66246331e+19] Iteration 75: x = [-1.66561583e+20 5.92218960e+19] Iteration 76: x = [-1.4805474e+20 -2.2208211e+20] Iteration 77: x = [ 5.55205275e+20 -1.97406320e+20] Iteration 78: x = [4.93515800e+20 7.40273701e+20] Iteration 79: x = [-1.85068425e+21 6.58021067e+20] Iteration 80: x = [-1.64505267e+21 -2.46757900e+21] Iteration 81: x = [ 6.16894750e+21 -2.19340356e+21] Iteration 82: x = [5.48350889e+21 8.22526334e+21] Iteration 83: x = [-2.05631583e+22 7.31134519e+21] Iteration 84: x = [-1.82783630e+22 -2.74175445e+22] Iteration 85: x = [ 6.85438612e+22 -2.43711506e+22] Iteration 86: x = [6.09278766e+22 9.13918149e+22] Iteration 87: x = [-2.28479537e+23 8.12371688e+22] Iteration 88: x = [-2.03092922e+23 -3.04639383e+23] Iteration 89: x = [ 7.61598457e+23 -2.70790563e+23] Iteration 90: x = [6.76976407e+23 1.01546461e+24] Iteration 91: x = [-2.53866152e+24 9.02635209e+23] Iteration 92: x = [-2.25658802e+24 -3.38488203e+24] Iteration 93: x = [ 8.46220508e+24 -3.00878403e+24] Iteration 94: x = [7.52196007e+24 1.12829401e+25] Iteration 95: x = [-2.82073503e+25 1.00292801e+25] Iteration 96: x = [-2.50732002e+25 -3.76098004e+25] Iteration 97: x = [ 9.40245009e+25 -3.34309337e+25] Iteration 98: x = [8.35773341e+25 1.25366001e+26] Iteration 99: x = [-3.13415003e+26 1.11436446e+26] Iteration 100: x = [-2.78591114e+26 -4.17886671e+26] === PYTHON EXCEPTION === Traceback (most recent call last): File \"C:\\Users\\nmoore\\Documents\\Teaching\\Math4362\\tools\\add_python_output.py\", line 48, in execute_python exec(code_string, env_globals, env_globals) ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File \"<string>\", line 3, in <module> File \"<string>\", line 44, in jacobi Exception: Jacobi method did not converge after 100 iterations.     Notice that swapping the equations in the system results in a Jacobi iteration that does not converge. This is bacause the swapped system is not strictly diagonally dominant and therefore there is no guarantee of convergence.  You can apply gauss_seidel() to solve this system by yourself, and you will find Gauss-Seidel method converges in less iterations (when it converges) and its convergence also relies on the strictly diagonal dominance of the coefficient matrix.  You can download the code from Canvas.  "
+},
+{
+  "id": "unit-06-other-iterative-methods",
+  "level": "1",
+  "url": "unit-06-other-iterative-methods.html",
+  "type": "Section",
+  "number": "6.5",
+  "title": "Other Iterative Methods",
+  "body": "Other Iterative Methods  The following video discusses other iterative methods.   "
+},
+{
   "id": "appendix-troubleshooting",
   "level": "1",
   "url": "appendix-troubleshooting.html",
