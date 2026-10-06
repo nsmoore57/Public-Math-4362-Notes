@@ -1,11 +1,110 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
+  "id": "introduction-machine-learning",
+  "level": "1",
+  "url": "introduction-machine-learning.html",
+  "type": "Section",
+  "number": "1.1",
+  "title": "Introduction to Machine Learning",
+  "body": " Introduction to Machine Learning   Artificial intelligence (AI) and machine learning have become ubiquitous topics in recent media, extending beyond tech-focused publications. The future they promise oscillates between dystopian and utopian visions: intelligent chatbots, autonomous vehicles, and virtual assistants on one hand; job scarcity and AI-dominated economies on the other.  As a current or aspiring machine learning practitioner, it’s crucial to discern genuine breakthroughs from exaggerated claims. Your role in shaping this AI-driven future is significant, and this course will equip you to develop AI agents yourself.  To navigate this landscape, we must address several key questions:   What are the actual achievements of machine learning to date?  How impactful are these developments?  What’s the next frontier for AI?  Is the hype surrounding AI justified?   Before delving into these inquiries, it’s essential to establish a clear understanding of artificial intelligence and machine learning. What do these terms mean? How are they interconnected? This lecture aims to provide the necessary context to explore these fundamental concepts and their implications for our future.    What Is Artificial Intelligence?   Artificial intelligence emerged in the 1950s when a small group of computer science pioneers began exploring the idea of whether computers could be made to “think.” This question, with its profound implications, continues to be a subject of investigation today. AI can be succinctly defined as the pursuit of automating intellectual tasks that are typically performed by humans. This broad field includes machine learning but also encompasses various other approaches that do not involve learning. For example, early chess programs operated solely on hardcoded rules created by programmers, without any machine learning components. For quite some time, many experts believed that achieving human-level AI was possible by crafting an extensive set of explicit rules for knowledge manipulation, a method known as symbolic AI. This approach dominated the AI landscape from the 1950s until the late 1980s, reaching its zenith during the expert systems boom of the 1980s.   The relation between AI and machine learning    While symbolic AI was effective for addressing well-defined, logical problems like chess, it struggled with more complex and ambiguous tasks, such as image classification, speech recognition, and language translation, where explicit rules proved difficult to define. This limitation led to the emergence of a new approach: machine learning , which began to take the place of symbolic AI.    What Is Machine Learning?  In Victorian England, Lady Ada Lovelace collaborated closely with Charles Babbage, the inventor of the Analytical Engine, which is considered the first general-purpose mechanical computer. Although innovative and far ahead of its time, the Analytical Engine wasn’t originally conceived as a general-purpose computer when it was designed in the 1830s and 1840s because the idea of general-purpose computation had not yet been developed. Instead, it was intended to automate specific computations in mathematical analysis, hence the name “Analytical Engine.” In 1843, Ada Lovelace commented on this invention, stating, “The Analytical Engine has no pretensions whatever to originate anything. It can do whatever we know how to order it to perform.… Its province is to assist us in making available what we’re already acquainted with.”   Lady Ada Lovelace and Charles Babbage   Photographs of Lady Ada Lovelace and Charles Babbage    This observation was later cited by AI pioneer Alan Turing in his seminal 1950 paper, “Computing Machinery and Intelligence,” where he referred to it as “Lady Lovelace’s objection.” Turing used Lovelace’s remark as a basis for considering whether general-purpose computers could achieve learning and originality, ultimately concluding that they could.   Alan Turing   A photograph of Alan Turing    Machine learning stems from this very question: could a computer transcend the limitations of “what we know how to order it to perform” and independently learn to execute a task? Could it exhibit behavior that surprises us? Instead of programmers manually creating rules for data processing, could a computer automatically learn these rules by analyzing data?  This inquiry leads to a new programming paradigm. In classical programming, which aligns with the symbolic AI approach, humans provide rules (a program) and data to be processed according to these rules, resulting in answers. With machine learning, however, humans supply data along with the expected outcomes, and the system generates the rules. These learned rules can then be applied to new data to produce original outcomes.   Paradigms of classical programming and machine learning   Two flowcharts. The top flow chart represents classical programming, while the bottom flow chart represents machine learning. In classical programming, the programmer provides rules and data and the program produces answers. In machine learning, the programmer provides data and answers, and the system learns rules from this data.    Consider, for instance, how you might develop a spam filter using traditional programming methods:   You would begin by analyzing common characteristics of spam emails, such as frequent words or phrases like “4U,” “credit card,” “free,” and “amazing” in the subject line. You might also observe other patterns in the sender’s name, the email body, and so on.  Based on these observations, you would write algorithms to detect each pattern, and your program would flag emails as spam if they matched several of these patterns.  You would then test your program and refine it by repeating steps 1 and 2 until it performs adequately.  Given the complexity of the problem, your program would likely evolve into a lengthy and intricate set of rules, making it difficult to maintain.   In contrast, a spam filter based on machine learning techniques would automatically learn which words and phrases are strong indicators of spam by identifying patterns that are more frequent in spam emails compared to regular (nonspam, or “ham”) emails. The examples used by the system to learn are known as the training set, with each example being a training instance or sample. In this scenario, the task T is to identify spam in new emails, the experience E is the training data, and the performance measure P must be defined—such as the proportion of correctly classified emails. This measure is known as accuracy, a common metric in classification tasks.  Therefore, a machine-learning system is trained rather than explicitly programmed. It is exposed to numerous examples related to a specific task, and it uncovers statistical patterns within these examples that enable it to develop rules for automating the task. At its core, machine learning involves creating mathematical models to interpret data. “Learning” occurs when these models are equipped with tunable parameters that can adapt based on observed data, allowing the program to “learn” from the data. Once these models have been fitted to past data, they can be used to predict and interpret new data.    Why Use Machine Learning?  Although machine learning began to gain significant momentum in the 1990s, it rapidly emerged as the most popular and successful branch of AI, a growth fueled by advancements in hardware and the availability of vast datasets. While machine learning is closely connected to mathematical statistics, it diverges from traditional statistics in several key aspects. Unlike classical statistical methods, such as Bayesian analysis, which may be impractical for handling large and complex datasets, machine learning is specifically designed to manage and analyze extensive datasets—such as those containing millions of images, each with tens of thousands of pixels.   Fugaku: the world’s fastest supercomputer in 2020   A photograph of Fugaku, the world’s fastest supercomputer in 2020.      Categories of Machine Learning     To effectively utilize machine learning tools, it’s crucial to first understand the problem setting. This involves categorizing the different types of approaches we’ll be discussing.  At its core, machine learning can be divided into two primary categories: supervised learning and unsupervised learning.  Supervised learning focuses on modeling the relationship between the measured features of data and a corresponding label. Once this model is established, it can be used to predict labels for new, unseen data. Supervised learning is further broken down into classification and regression tasks. In classification, the labels are discrete categories, whereas in regression, the labels represent continuous values.   The spam filter is a good example of classification: it is trained with many example emails along with their class (spam or ham), and it must learn how to classify new emails.    Predicting the price of a car is a good example of regression: To train the system, you need to give it many examples of cars, including both their features(mileage, age, brand, etc.) called predictors and their labels (i.e., their prices).    Note that some regression algorithms can be used for classification as well, and vice versa. For example, Logistic Regression is commonly used for classification, as it can output a value that corresponds to the probability of belonging to a given class (e.g., 20% chance of being spam).   Unsupervised learning focuses on modeling the features of a dataset without relying on any labels, often described as “letting the dataset speak for itself.” This approach includes tasks like clustering and dimensionality reduction . Clustering algorithms work by identifying distinct groups or patterns within the data, while dimensionality reduction algorithms aim to find more compact and simplified representations of the data, reducing the number of variables while retaining essential information.   Say you have a lot of data about your blog’s visitors. You may want to run a clustering algorithm to try to detect groups of similar visitors. At no point do you tell the algorithm which group a visitor belongs to: it finds those connections without your help. For example, it might notice that 40% of your visitors are males who love comic books and generally read your blog in the evening, while 20% are young sci-fi lovers who visit during the weekends, and so on.   Additionally, there are semi-supervised learning methods, which bridge the gap between supervised and unsupervised learning. These methods are particularly useful when only partial or incomplete labels are available. For example, photo-hosting services like Google Photos often employ semi-supervised learning techniques to organize and categorize images, leveraging a mix of labeled and unlabeled data to improve accuracy and performance.   Once you upload all your family photos to the service, it automatically recognizes that the same person A shows up in photos 1, 5, and 11, while another person B shows up in photos 2, 5, and 7. This is the unsupervised part of the algorithm (clustering). Now all the system needs is for you to tell it who these people are. Just one label per person, and it is able to name everyone in every photo, which is useful for searching photos.     Wrap Up  This lecture introduced artificial intelligence and machine learning. You are expected to be able to figure out the difference between the classical programming and machine learning, and capable to categorize the given machine learning examples into the proper types, i.e., supervised learning (classification or regression), unsupervised learning, and semi-supervised learning.  This comprehensive introduction provides a solid foundation for understanding AI and machine learning. You should now be able to:   Differentiate between classical programming and machine learning approaches  Categorize machine learning examples into supervised, unsupervised, semi-supervised, or reinforcement learning types  Understand the key components and applications of machine learning   As you delve deeper into machine learning, remember that this rapidly evolving field offers immense opportunities for innovation and impact across various domains. Stay curious, keep learning, and always strive to apply these powerful tools responsibly.   "
+},
+{
+  "id": "figure-relation-ai-machine-learning",
+  "level": "2",
+  "url": "introduction-machine-learning.html#figure-relation-ai-machine-learning",
+  "type": "Figure",
+  "number": "1.1.1",
+  "title": "",
+  "body": " The relation between AI and machine learning   "
+},
+{
+  "id": "figure-ada-charles",
+  "level": "2",
+  "url": "introduction-machine-learning.html#figure-ada-charles",
+  "type": "Figure",
+  "number": "1.1.2",
+  "title": "",
+  "body": " Lady Ada Lovelace and Charles Babbage   Photographs of Lady Ada Lovelace and Charles Babbage   "
+},
+{
+  "id": "figure-alan-turing",
+  "level": "2",
+  "url": "introduction-machine-learning.html#figure-alan-turing",
+  "type": "Figure",
+  "number": "1.1.3",
+  "title": "",
+  "body": " Alan Turing   A photograph of Alan Turing   "
+},
+{
+  "id": "figure-programming-paradigms",
+  "level": "2",
+  "url": "introduction-machine-learning.html#figure-programming-paradigms",
+  "type": "Figure",
+  "number": "1.1.4",
+  "title": "",
+  "body": " Paradigms of classical programming and machine learning   Two flowcharts. The top flow chart represents classical programming, while the bottom flow chart represents machine learning. In classical programming, the programmer provides rules and data and the program produces answers. In machine learning, the programmer provides data and answers, and the system learns rules from this data.   "
+},
+{
+  "id": "figure-fugaku",
+  "level": "2",
+  "url": "introduction-machine-learning.html#figure-fugaku",
+  "type": "Figure",
+  "number": "1.1.5",
+  "title": "",
+  "body": " Fugaku: the world’s fastest supercomputer in 2020   A photograph of Fugaku, the world’s fastest supercomputer in 2020.   "
+},
+{
+  "id": "example-1-1",
+  "level": "2",
+  "url": "introduction-machine-learning.html#example-1-1",
+  "type": "Example",
+  "number": "1.1.6",
+  "title": "",
+  "body": " The spam filter is a good example of classification: it is trained with many example emails along with their class (spam or ham), and it must learn how to classify new emails.  "
+},
+{
+  "id": "example-1-2",
+  "level": "2",
+  "url": "introduction-machine-learning.html#example-1-2",
+  "type": "Example",
+  "number": "1.1.7",
+  "title": "",
+  "body": " Predicting the price of a car is a good example of regression: To train the system, you need to give it many examples of cars, including both their features(mileage, age, brand, etc.) called predictors and their labels (i.e., their prices).  "
+},
+{
+  "id": "regression-classification-note",
+  "level": "2",
+  "url": "introduction-machine-learning.html#regression-classification-note",
+  "type": "Note",
+  "number": "1.1.8",
+  "title": "",
+  "body": " Note that some regression algorithms can be used for classification as well, and vice versa. For example, Logistic Regression is commonly used for classification, as it can output a value that corresponds to the probability of belonging to a given class (e.g., 20% chance of being spam).  "
+},
+{
+  "id": "example-1-3",
+  "level": "2",
+  "url": "introduction-machine-learning.html#example-1-3",
+  "type": "Example",
+  "number": "1.1.9",
+  "title": "",
+  "body": " Say you have a lot of data about your blog’s visitors. You may want to run a clustering algorithm to try to detect groups of similar visitors. At no point do you tell the algorithm which group a visitor belongs to: it finds those connections without your help. For example, it might notice that 40% of your visitors are males who love comic books and generally read your blog in the evening, while 20% are young sci-fi lovers who visit during the weekends, and so on.  "
+},
+{
+  "id": "example-1-4",
+  "level": "2",
+  "url": "introduction-machine-learning.html#example-1-4",
+  "type": "Example",
+  "number": "1.1.10",
+  "title": "",
+  "body": " Once you upload all your family photos to the service, it automatically recognizes that the same person A shows up in photos 1, 5, and 11, while another person B shows up in photos 2, 5, and 7. This is the unsupervised part of the algorithm (clustering). Now all the system needs is for you to tell it who these people are. Just one label per person, and it is able to name everyone in every photo, which is useful for searching photos.  "
+},
+{
   "id": "week-01-install-python-uv",
   "level": "1",
   "url": "week-01-install-python-uv.html",
   "type": "Section",
-  "number": "1.1",
+  "number": "1.2",
   "title": "Installing Python and uv",
   "body": " Installing Python and uv    Install uv , the tool used to manage the course Python environment.  Confirm that the terminal can find uv before syncing the course environment.  Sync the course environment and open jupyter lab    If you already have uv installed, you do not need to reinstall it. You may still run the verification commands below. If a command reports that uv is not found, install uv first and then open a new terminal before continuing.   Video: Installing uv and Opening JupyterLab  This video demonstrates first-time setup: installing or verifying uv , installing the course Python version, synchronizing the course project environment, launching JupyterLab, and confirming the setup in the getting-started notebook.     Step 1: Install uv  First, go to the uv installation page at https:\/\/astral.sh\/uv\/install . Close to the top of the page, you will see the installation command for your operating system. The command for Windows is shown below. For the macOS and Linux command, click the appropriate header right above the command.  Windows installation command for uv.   A screenshot of the uv installer page with the Windows installation command.     On Windows, open PowerShell . On macOS or Linux, open Terminal . Then use the command for your operating system.    Operating system  Command    Windows PowerShell  irm https:\/\/astral.sh\/uv\/install.ps1 | iex    macOS or Linux  curl -LsSf https:\/\/astral.sh\/uv\/install.sh | sh    After the installer finishes, close the terminal and open a new one. This lets your operating system reload the command path.    Step 2: Verify uv  Run the following command in the new terminal.   uv --version   If the command prints a version number, uv is installed. If it says that uv is not recognized or not found, restart the terminal once more. If it still fails, ask for help and include the exact error message.  Successful uv installation version command. Your actual version number may be different.   A screenshot of the uv version command output. The version is 0.11.31       Step 3: Extract the course environment folder  Remember that zip file containing the course environment folder from the introduction? Extract it to your desired location. This directory will be the place where you put the programming files for the course. Remember this location for the next step. Remember this location for the next step.    Step 4: Start the Jupyter Lab Server and Environment  If you are running Windows, double-click the Start_Jupyter_Windows.bat file to start the Jupyter Lab server and environment. If you are running macOS or Linux, use the Start_Jupyter_Mac.command script instead. This should install all the required packages for the course and open the Jupyter Lab interface in your web browser.  The course environment folder with the Start_Jupyter_Windows.bat or Start_Jupyter_Mac.command script.   A screenshot of the course environment folder with the Start_Jupyter_Windows.bat or Start_Jupyter_Mac.command script.       Step 5: Jupyter Lab Should Be Running  Once you have started the Jupyter Lab server and environment, you should see the Jupyter Lab interface in your web browser.  The Jupyter Lab interface in your web browser.   A screenshot of the Jupyter Lab interface in your web browser.       What to do if setup fails  Do not delete random files or reinstall many tools at once. First copy the exact error message, check the troubleshooting appendix, and ask for help in the course help channel or office hours. Setup troubleshooting is something that AI can help with and you have permission to use it for troubleshooting the installation process.  When asking for help, either from an AI assistant or from me, include the command you ran, the folder where you ran it, your operating system, and the exact error text. A screenshot can be useful, but copied text is usually easier to search and diagnose.   "
 },
@@ -14,7 +113,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "week-01-install-python-uv.html#week-01-install-python-uv-2",
   "type": "Objectives",
-  "number": "1.1",
+  "number": "1.2",
   "title": "",
   "body": "  Install uv , the tool used to manage the course Python environment.  Confirm that the terminal can find uv before syncing the course environment.  Sync the course environment and open jupyter lab   "
 },
@@ -23,7 +122,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "week-01-install-python-uv.html#week-01-install-python-uv-5-2-3",
   "type": "Figure",
-  "number": "1.1.1",
+  "number": "1.2.1",
   "title": "",
   "body": " Windows installation command for uv.   A screenshot of the uv installer page with the Windows installation command.   "
 },
@@ -41,7 +140,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "week-01-install-python-uv.html#week-01-install-python-uv-6-4-3",
   "type": "Figure",
-  "number": "1.1.2",
+  "number": "1.2.2",
   "title": "",
   "body": " Successful uv installation version command. Your actual version number may be different.   A screenshot of the uv version command output. The version is 0.11.31   "
 },
@@ -50,7 +149,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "week-01-install-python-uv.html#week-01-install-python-uv-8-2-3",
   "type": "Figure",
-  "number": "1.1.3",
+  "number": "1.2.3",
   "title": "",
   "body": " The course environment folder with the Start_Jupyter_Windows.bat or Start_Jupyter_Mac.command script.   A screenshot of the course environment folder with the Start_Jupyter_Windows.bat or Start_Jupyter_Mac.command script.   "
 },
@@ -59,7 +158,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "week-01-install-python-uv.html#week-01-install-python-uv-9-2-1",
   "type": "Figure",
-  "number": "1.1.4",
+  "number": "1.2.4",
   "title": "",
   "body": " The Jupyter Lab interface in your web browser.   A screenshot of the Jupyter Lab interface in your web browser.   "
 },
@@ -68,7 +167,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "week-01-jupyter-basics.html",
   "type": "Section",
-  "number": "1.2",
+  "number": "1.3",
   "title": "Getting Started with Jupyter Notebooks",
   "body": " Getting Started with Jupyter Notebooks   To start, we'll open a Jupyter Notebook and get familiar with the interface.   Imagine Jupyter Notebook as your personal science journal: you write notes, do calculations, and see results right away, all in one digital book. It’s perfect for numerical analysis because you can test ideas interactively, like trying different numbers in a formula and seeing the output instantly.    How to Open a .ipynb File  An .ipynb file is a file format associated with Jupyter Notebook. After you launch Jupyter Notebook (Check previous page if you do not know how), your web browser (like Chrome or Firefox) will open automatically, showing a list of files and folders in current work directory. It’s running on your computer, not the internet.  In the browser, click on your .ipynb file. It opens like a webpage you can edit!    Understanding the Interface and Running Code  Now that it’s open, let’s explore the screen together. It’s not complicated—think of it as a notebook with pages you can write on.  Menu Bar at the Top  File for saving or opening, Edit for copying, View to hide\/show parts, Insert to add sections, Cell to run things, Kernel to restart if something goes wrong (like turning off and on a calculator), and Help for tips.   Toolbar Just Below  Quick buttons! The floppy disk saves, the + adds a new section (cell), scissors cut, copy\/paste for cells, the play button runs code, the square stops running code, arrows restart, and a dropdown changes cell type (Code for programming, Markdown for notes).   Cells - The Main Part  These are like blank pages in your journal.  Code Cells: For writing instructions to the computer. They have []: on the left—the brackets show if you've run it (e.g., [1]: means the first \"run\").  Markdown Cells: For writing text, like explanations. Use # for big headings, ## for smaller, * for italics, ** for bold, or - for bullet lists.  When you click a cell, it gets a highlighted border.      Output Area  After running a code cell, results appear below.    Kernel  This is the \"brain\" running in the background. If code gets stuck (infinite loop?), go to Kernel > Restart.    How to Run Code   Click into a code cell—it turns highlighted.  Type a simple instruction, like print(\"Hello, world!\") . (Don’t worry, we’ll explain this soon!)  To run: Hold Shift and press Enter. (Or Ctrl + Enter to stay in the cell, or click the play button.)  Watch: The kernel thinks (asterisk in brackets), then shows output.  If it’s your first run, it starts the kernel automatically.     "
 },
@@ -77,864 +176,1719 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "week-01-python-basics.html",
   "type": "Section",
-  "number": "1.3",
+  "number": "1.4",
   "title": "Python Basics",
   "body": " Python Basics   Here we learn the ABCs of Python: doing math, comparing things, and storing information. Think of this as learning to use a calculator that can remember numbers and make decisions. For this section, you should be able to find the PythonTutorial.ipynb notebook in the demo directory of the course environment folder.    Variables and Basic Data Types       Mathematical Operations       Lists       Tuples and Dictionaries in Python       Boolean Logic       If Statements       For Loops       While Loops       Functions       Help System in Jupyter Notebooks       Round-Off Error       Python Exceptions      "
+},
+{
+  "id": "week-02-review-essential-mathematics",
+  "level": "1",
+  "url": "week-02-review-essential-mathematics.html",
+  "type": "Section",
+  "number": "2.1",
+  "title": "Review of Essential Linear Algebra Knowledge",
+  "body": " Review of Essential Linear Algebra Knowledge   We will introduce the basic concepts of linear algebra which will be used in this course. Let’s start with some definitions.    Matrices    A matrix is a rectangular array of numbers. The numbers in the array are called the entries of the matrix.    The size of a matrix  is written in terms of the number of its rows and the number of its columns. A matrix has 2 rows and 3 columns. An matrix is also called a square matrix of order n , and the entries is said to be on the main diagonal of .    Main diagonal of matrix A   Main diagonal of matrix A.     The matrix with one row is called row matrix (or row vector). The matrix with one column is called column matrix (or column vector).   We will use capital bold letters to denote matrices and lowercase letters to denote numerical quantities. The entry that occurs in row i and column j of a matrix will be denoted by . Thus a general matrix might be written as   For row and column vectors, we will use boldface lowercase letters to denote, such as and     Matrix Operations   Matrix Addition  Matrix addition is performed by adding the corresponding entries of two matrices of the same size. In more formal notation, if both and are matrices, then is the matrix obtained by:    Scalar Multiplication  Scalar multiplication is performed by multiplying each entry of a matrix by a scalar. Thus, if is an matrix, then is the matrix obtained by multiplying each entry of by :    Matrix Multiplication   If is an matrix and is an matrix, then the product  is the matrix whose entries are determined as follows: To find the entry in row i and column j of , single out row i from the matrix and column j from the matrix . Multiply the corresponding entries from the row and column together, and then add up the resulting products.    Matrix Multiplication      Matrix Multiplication     Matrix Transpose   If is any matrix, then the transpose of , denoted by , is defined to be the matrix that results by interchanging the rows and columns of ; that is, the first column of is the first row of , the second column of is the second row of , and so forth.      Identity Matrix and Inverses   Identity Matrix   A square matrix with 1's on the main diagonal and zeros elsewhere is called an identity matrix .    Matrix Inverses   If is a square matrix, and if a matrix of the same size can be found such that , then is said to be invertible (or nonsingular ) and is called an inverse of , denoted by . If n such matrix can be found, then is said to be singular .      Vectors    In this course, vectors are denoted by lower case bold letters such as , and all vectors are assumed to be column vectors. Uppercase bold letters, such as , denote matrices. The notation denote a row vector, while the corresponding column vector is written as .    The  norm (also called Euclidean norm ) of the vector is denoted by , and is defined by   The  norm of is denoted by , and is defined by     Given two vectors and , the dot product (also called the Euclidean inner product ) of and is denoted by and is defined by     Note that .    "
+},
+{
+  "id": "definition-2-1",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#definition-2-1",
+  "type": "Definition",
+  "number": "2.1.1",
+  "title": "",
+  "body": " A matrix is a rectangular array of numbers. The numbers in the array are called the entries of the matrix.  "
+},
+{
+  "id": "definition-2-2",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#definition-2-2",
+  "type": "Definition",
+  "number": "2.1.2",
+  "title": "",
+  "body": " The size of a matrix  is written in terms of the number of its rows and the number of its columns. A matrix has 2 rows and 3 columns. An matrix is also called a square matrix of order n , and the entries is said to be on the main diagonal of .  "
+},
+{
+  "id": "figure-main-diagonal",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#figure-main-diagonal",
+  "type": "Figure",
+  "number": "2.1.3",
+  "title": "",
+  "body": " Main diagonal of matrix A   Main diagonal of matrix A.   "
+},
+{
+  "id": "definition-2-3",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#definition-2-3",
+  "type": "Definition",
+  "number": "2.1.4",
+  "title": "",
+  "body": " The matrix with one row is called row matrix (or row vector). The matrix with one column is called column matrix (or column vector).  "
+},
+{
+  "id": "definition-2-5",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#definition-2-5",
+  "type": "Definition",
+  "number": "2.1.5",
+  "title": "",
+  "body": " If is an matrix and is an matrix, then the product  is the matrix whose entries are determined as follows: To find the entry in row i and column j of , single out row i from the matrix and column j from the matrix . Multiply the corresponding entries from the row and column together, and then add up the resulting products.  "
+},
+{
+  "id": "anim-matrix-multiplication-light",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#anim-matrix-multiplication-light",
+  "type": "Figure",
+  "number": "2.1.6",
+  "title": "",
+  "body": " Matrix Multiplication   "
+},
+{
+  "id": "anim-matrix-multiplication-dark",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#anim-matrix-multiplication-dark",
+  "type": "Figure",
+  "number": "2.1.7",
+  "title": "",
+  "body": " Matrix Multiplication   "
+},
+{
+  "id": "definition-2-7",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#definition-2-7",
+  "type": "Definition",
+  "number": "2.1.8",
+  "title": "",
+  "body": " If is any matrix, then the transpose of , denoted by , is defined to be the matrix that results by interchanging the rows and columns of ; that is, the first column of is the first row of , the second column of is the second row of , and so forth.  "
+},
+{
+  "id": "definition-2-4",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#definition-2-4",
+  "type": "Definition",
+  "number": "2.1.9",
+  "title": "",
+  "body": " A square matrix with 1's on the main diagonal and zeros elsewhere is called an identity matrix .  "
+},
+{
+  "id": "definition-2-6",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#definition-2-6",
+  "type": "Definition",
+  "number": "2.1.10",
+  "title": "",
+  "body": " If is a square matrix, and if a matrix of the same size can be found such that , then is said to be invertible (or nonsingular ) and is called an inverse of , denoted by . If n such matrix can be found, then is said to be singular .  "
+},
+{
+  "id": "note-74",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#note-74",
+  "type": "Note",
+  "number": "2.1.11",
+  "title": "",
+  "body": " In this course, vectors are denoted by lower case bold letters such as , and all vectors are assumed to be column vectors. Uppercase bold letters, such as , denote matrices. The notation denote a row vector, while the corresponding column vector is written as .  "
+},
+{
+  "id": "definition-2-8",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#definition-2-8",
+  "type": "Definition",
+  "number": "2.1.12",
+  "title": "",
+  "body": " The  norm (also called Euclidean norm ) of the vector is denoted by , and is defined by   The  norm of is denoted by , and is defined by   "
+},
+{
+  "id": "definition-2-9",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#definition-2-9",
+  "type": "Definition",
+  "number": "2.1.13",
+  "title": "",
+  "body": " Given two vectors and , the dot product (also called the Euclidean inner product ) of and is denoted by and is defined by   "
+},
+{
+  "id": "note-103",
+  "level": "2",
+  "url": "week-02-review-essential-mathematics.html#note-103",
+  "type": "Note",
+  "number": "2.1.14",
+  "title": "",
+  "body": " Note that .  "
 },
 {
   "id": "week-01-numpy-basics",
   "level": "1",
   "url": "week-01-numpy-basics.html",
   "type": "Section",
-  "number": "1.4",
+  "number": "3.1",
   "title": "Introduction to NumPy",
   "body": " Introduction to NumPy   For this section, you should be able to find the Numpy_tutorial.ipynb notebook in the demo directory of the course environment folder.     Basic Array Operations in NumPy       Indexing and Slicing in NumPy      "
 },
 {
-  "id": "week-01-plotly",
+  "id": "week-01-numpy-matrices",
   "level": "1",
-  "url": "week-01-plotly.html",
-  "type": "Section",
-  "number": "1.5",
-  "title": "Plotting with Plotly",
-  "body": " Plotting with Plotly  For this section, you should be able to find the plotly-plotting-introduction.ipynb notebook in the demo directory of the course environment folder.   "
-},
-{
-  "id": "unit-02-errors",
-  "level": "1",
-  "url": "unit-02-errors.html",
-  "type": "Section",
-  "number": "2.1",
-  "title": "Errors",
-  "body": "Errors   Before diving into numerical methods, let’s establish some fundamental concepts.  An iterative method generates a sequence of approximations that ideally converge to the true value as , meaning   Since we cannot compute the exact limit, we stop the iteration at some finite step and take as an approximation of . But how can we assess the quality of this approximation?  To do so, we measure the approximation error , which quantifies how close is to . There are in general two basic types of measured error, absolute error and relative error.   Absolute and Relative Error   Absolute and Relative Error  Suppose is an approximation of , the quantity is called the absolute error , and is called the relative error , provided that .    In an approximation, if the true value is and the approximate value is , then what is the absolute error and relative error?  By definition, it is easy to find that the absolute error is and the relative error is .   Knowing how errors are typically measured, we now move to discuss the order of convergence , which describes how quickly an iterative method approaches the true solution.   Order of Convergence   Order of Convergence  Let be a sequence that converges to . If there exist constants and such that for all , then we say that converges to with order .    It is easy to see can be written as .  If and , the sequence is said to converge linearly , with a rate of convergence given by . In this case, using induction, we can show that Some methods satisfy this bound but do not satisfy for any . These methods are still classified as linearly convergent . A notable example of this is the bisection method .  If , the convergence is said to be superlinear . In particular, when , the convergence is called quadratic convergence .    Suppose you apply an iterative method and obtain the following errors from the first four steps: How would you characterize the order of convergence of this method?  The error is reduced by a factor of 10 in every iteration and so can be written . According to the definition of Order of Convergence, this is linear ( ) convergence with a rate of 0.1.    Suppose you apply an iterative method and obtain the following errors from the first four steps: How would you characterize the order of convergence of this method?  The error is squared in every iteration and so can be written . According to the definition of Order of Convergence, this is quadratic ( ) convergence. Note that it can also be classified as superlinear convergence since . Video Breakdown       If an iterative method approximately squares the error in every two iterations then what is its order of convergence?  We're given that the error in step satisfies . But from the definition of convergence, for a method of order , the error in step also satisfies . Comparing these two expressions, it suggests that and , that is, . Video Breakdown       Stopping Criteria   A key challenge in any iterative method is determining when to stop since the true value is unknown. Given a predefined error tolerance , we commonly use one of the following stopping criteria:  Successive approximations are sufficiently close:    Relative change in approximations is small (when ):    Function value is near zero (indicating a good root approximation):    Maximum number of iterations:      Throughout our numerical experiments, we will test different stopping criteria.   "
-},
-{
-  "id": "unit-02-errors-2-2",
-  "level": "2",
-  "url": "unit-02-errors.html#unit-02-errors-2-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "iterative method "
-},
-{
-  "id": "unit-02-errors-2-5",
-  "level": "2",
-  "url": "unit-02-errors.html#unit-02-errors-2-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "approximation error "
-},
-{
-  "id": "unit-02-absolute-and-relative-error-3",
-  "level": "2",
-  "url": "unit-02-errors.html#unit-02-absolute-and-relative-error-3",
-  "type": "Definition",
-  "number": "2.1.1",
-  "title": "Absolute and Relative Error.",
-  "body": "Absolute and Relative Error  Suppose is an approximation of , the quantity is called the absolute error , and is called the relative error , provided that .  "
-},
-{
-  "id": "unit-02-absolute-and-relative-error-4",
-  "level": "2",
-  "url": "unit-02-errors.html#unit-02-absolute-and-relative-error-4",
-  "type": "Example",
-  "number": "2.1.2",
-  "title": "",
-  "body": " In an approximation, if the true value is and the approximate value is , then what is the absolute error and relative error?  By definition, it is easy to find that the absolute error is and the relative error is .  "
-},
-{
-  "id": "unit-02-absolute-and-relative-error-5",
-  "level": "2",
-  "url": "unit-02-errors.html#unit-02-absolute-and-relative-error-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "order of convergence "
-},
-{
-  "id": "unit-02-order-of-convergence-3",
-  "level": "2",
-  "url": "unit-02-errors.html#unit-02-order-of-convergence-3",
-  "type": "Definition",
-  "number": "2.1.3",
-  "title": "Order of Convergence.",
-  "body": "Order of Convergence  Let be a sequence that converges to . If there exist constants and such that for all , then we say that converges to with order .  "
-},
-{
-  "id": "unit-02-order-of-convergence-4",
-  "level": "2",
-  "url": "unit-02-errors.html#unit-02-order-of-convergence-4",
-  "type": "Remark",
-  "number": "2.1.4",
-  "title": "",
-  "body": " It is easy to see can be written as .  If and , the sequence is said to converge linearly , with a rate of convergence given by . In this case, using induction, we can show that Some methods satisfy this bound but do not satisfy for any . These methods are still classified as linearly convergent . A notable example of this is the bisection method .  If , the convergence is said to be superlinear . In particular, when , the convergence is called quadratic convergence .  "
-},
-{
-  "id": "unit-02-order-of-convergence-5",
-  "level": "2",
-  "url": "unit-02-errors.html#unit-02-order-of-convergence-5",
-  "type": "Example",
-  "number": "2.1.5",
-  "title": "",
-  "body": " Suppose you apply an iterative method and obtain the following errors from the first four steps: How would you characterize the order of convergence of this method?  The error is reduced by a factor of 10 in every iteration and so can be written . According to the definition of Order of Convergence, this is linear ( ) convergence with a rate of 0.1.  "
-},
-{
-  "id": "unit-02-order-of-convergence-6",
-  "level": "2",
-  "url": "unit-02-errors.html#unit-02-order-of-convergence-6",
-  "type": "Example",
-  "number": "2.1.6",
-  "title": "",
-  "body": " Suppose you apply an iterative method and obtain the following errors from the first four steps: How would you characterize the order of convergence of this method?  The error is squared in every iteration and so can be written . According to the definition of Order of Convergence, this is quadratic ( ) convergence. Note that it can also be classified as superlinear convergence since . Video Breakdown     "
-},
-{
-  "id": "unit-02-order-of-convergence-7",
-  "level": "2",
-  "url": "unit-02-errors.html#unit-02-order-of-convergence-7",
-  "type": "Example",
-  "number": "2.1.7",
-  "title": "",
-  "body": " If an iterative method approximately squares the error in every two iterations then what is its order of convergence?  We're given that the error in step satisfies . But from the definition of convergence, for a method of order , the error in step also satisfies . Comparing these two expressions, it suggests that and , that is, . Video Breakdown     "
-},
-{
-  "id": "unit-02-bisection-method",
-  "level": "1",
-  "url": "unit-02-bisection-method.html",
-  "type": "Section",
-  "number": "2.2",
-  "title": "Bisection Method",
-  "body": "Bisection Method  Let’s explore the bisection method , a simple and reliable technique that makes minimal assumptions about the function . This method is rooted in the Intermediate Value Theorem , a fundamental result you may recall from Calculus I. Before diving into the method itself, let’s briefly revisit the theorem: Intermediate Value Theorem  If and is any number between and , then there exists with .    The Method   According to the Intermediate Value Theorem, if a continuous function is defined on the interval and satisfies , then there exists such that . This principle forms the foundation of the bisection method. At each step, the interval is divided into two halves by computing the midpoint. The value of is then evaluated at the midpoint, and we determine which subinterval contains the root based on the sign of the function. The subinterval that does not contain the root is discarded, and the process is repeated on the remaining interval.    Bisection Method       Bisection Method      Apply the bisection method to find the root of the function starting from the interval . Calculate , , and .  First, we need to verify there exist a root in the interval , where and , Since , then there exists such that . Hence, is the midpoint of the interval, that is, Then we evaluate the function at , Therefore, the root is in the left subinterval since the function has different signs at the endpoints ( and ) of left subinterval. Then, is the midpoint of left subinterval, that is, Since the root is between and , therefore,   Video Breakdown       Error Analysis  Now, let’s perform an error analysis for the bisection method to understand how accurately it approximates the root at each step.    Suppose that and . The bisection method generates a sequence approximating a zero of with   Let the sequences and denote the left-end and right-end points of the subintervals generated by the bisection method. Since at each step the interval is halved, we have By mathematical induction, we get Therefore,    The bisection method converges linearly with a rate of convergence by this theorem and the definition of the Order of Convergence.  The bisection method takes iterations to obtain a value that satisfies , where is a predefined error tolerance.   Let’s revisit last example of applying the bisection method to find the root of the function starting from the interval . If the allowed approximation tolerance is , how many iterations at least are required?   By , we have Therefore, it requires at least 3 iterations such that .  Video Breakdown       This example suggests that we need at least 3 iterations to achieve an error tolerance of . We can confirm this using Example 6 , where the first three approximations were computed, with .  For the simple function , the exact positive root is . Therefore, the absolute error at the third iteration is which verifies that the desired accuracy is indeed achieved after 3 iterations.    Algorithm and Coding  Next, we’ll summarize the steps of the bisection algorithm, illustrate its process with a flowchart, and then implement it using Python code.  Bisection Method   Define .  If , then accept as the root and stop.  If , then set . Otherwise, set . Return to step 1.       Bisection Flow Chart   Bisection Flow Chart    def bisection(f, a, b, atol, max_iter): root_found = False if f(a)*f(b) < 0: for i in range(max_iter): p = (a+b)\/2 if b-p < atol: root_found = True return p elif f(b)*f(p) < 0: a = p else: b = p if not root_found: raise Exception( \"Bisection did not converge \" f\"within {max_iter} iterations. \" \"Try a greater max_iter.\" ) else: raise Exception( \"Bisection is not applicable for this problem.\" )  Let’s apply the bisection method to find a root of the function within the interval , using error tolerance of . We also set max_iter = 20 , as we expect the method to converge to a root within 20 iterations.  p = bisection( f=lambda x: x*x*x + 2*x*x + 5*x - 2, a=0, b=2, atol=1e-3, max_iter=20, ) print(f\"The root found by bisection method is {p}.\")    The root found by bisection method is 0.3447265625.     "
-},
-{
-  "id": "unit-02-bisection-method-2-1",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#unit-02-bisection-method-2-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "bisection method Intermediate Value Theorem "
-},
-{
-  "id": "anim-bisection-method-light",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#anim-bisection-method-light",
-  "type": "Figure",
-  "number": "2.2.2",
-  "title": "",
-  "body": " Bisection Method    "
-},
-{
-  "id": "anim-bisection-method-dark",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#anim-bisection-method-dark",
-  "type": "Figure",
-  "number": "2.2.3",
-  "title": "",
-  "body": " Bisection Method   "
-},
-{
-  "id": "unit-02-the-method-5",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#unit-02-the-method-5",
-  "type": "Example",
-  "number": "2.2.4",
-  "title": "",
-  "body": " Apply the bisection method to find the root of the function starting from the interval . Calculate , , and .  First, we need to verify there exist a root in the interval , where and , Since , then there exists such that . Hence, is the midpoint of the interval, that is, Then we evaluate the function at , Therefore, the root is in the left subinterval since the function has different signs at the endpoints ( and ) of left subinterval. Then, is the midpoint of left subinterval, that is, Since the root is between and , therefore,   Video Breakdown     "
-},
-{
-  "id": "unit-02-error-analysis-4",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#unit-02-error-analysis-4",
-  "type": "Theorem",
-  "number": "2.2.5",
-  "title": "",
-  "body": " Suppose that and . The bisection method generates a sequence approximating a zero of with   Let the sequences and denote the left-end and right-end points of the subintervals generated by the bisection method. Since at each step the interval is halved, we have By mathematical induction, we get Therefore,   "
-},
-{
-  "id": "unit-02-error-analysis-5",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#unit-02-error-analysis-5",
-  "type": "Remark",
-  "number": "2.2.6",
-  "title": "",
-  "body": "The bisection method converges linearly with a rate of convergence by this theorem and the definition of the Order of Convergence. "
-},
-{
-  "id": "unit-02-error-analysis-6",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#unit-02-error-analysis-6",
-  "type": "Remark",
-  "number": "2.2.7",
-  "title": "",
-  "body": "The bisection method takes iterations to obtain a value that satisfies , where is a predefined error tolerance. "
-},
-{
-  "id": "unit-02-error-analysis-7",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#unit-02-error-analysis-7",
-  "type": "Example",
-  "number": "2.2.8",
-  "title": "",
-  "body": " Let’s revisit last example of applying the bisection method to find the root of the function starting from the interval . If the allowed approximation tolerance is , how many iterations at least are required?   By , we have Therefore, it requires at least 3 iterations such that .  Video Breakdown     "
-},
-{
-  "id": "unit-02-error-analysis-8",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#unit-02-error-analysis-8",
-  "type": "Remark",
-  "number": "2.2.9",
-  "title": "",
-  "body": " This example suggests that we need at least 3 iterations to achieve an error tolerance of . We can confirm this using Example 6 , where the first three approximations were computed, with .  For the simple function , the exact positive root is . Therefore, the absolute error at the third iteration is which verifies that the desired accuracy is indeed achieved after 3 iterations.  "
-},
-{
-  "id": "unit-02-algorithm-and-coding-3",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#unit-02-algorithm-and-coding-3",
-  "type": "Algorithm",
-  "number": "2.2.10",
-  "title": "Bisection Method.",
-  "body": "Bisection Method   Define .  If , then accept as the root and stop.  If , then set . Otherwise, set . Return to step 1.    "
-},
-{
-  "id": "unit-02-algorithm-and-coding-4",
-  "level": "2",
-  "url": "unit-02-bisection-method.html#unit-02-algorithm-and-coding-4",
-  "type": "Figure",
-  "number": "2.2.11",
-  "title": "",
-  "body": "  Bisection Flow Chart   Bisection Flow Chart  "
-},
-{
-  "id": "unit-03-newtons-method",
-  "level": "1",
-  "url": "unit-03-newtons-method.html",
-  "type": "Section",
-  "number": "3.1",
-  "title": "Newton’s Method",
-  "body": " Newton's Method   Now that we’ve explored the bisection method, let’s move on to a more powerful and faster-converging technique: Newton’s method .    The Method    Newton’s method (also known as the Newton-Raphson method) is an iterative algorithm used to approximate the roots of a real-valued function . Unlike the bisection method, which only requires function evaluations, Newton’s method also uses the derivative to guide each step.  Starting from an initial guess close to the root, the method generates a sequence using the formula Geometrically, this formula corresponds to finding the -intercept of the tangent line to the graph of at the point .    Newton's Method       Newton's Method     When the initial guess is sufficiently close to the actual root and , Newton’s method typically converges very rapidly, at least quadratically , making it much more efficient than bisection for smooth functions. However, this speed comes with a trade-off: Newton’s method may fail to converge if the initial guess is poor or if is zero or undefined during the iteration.   Apply Newton’s method to find the root of the function with an initial guess . Calculate , , and . Round your answer to four decimal places if necessary.   It is easy to find , hence the iterative formula for Newton’s method is Therefore,   Video Breakdown  Dr. Yang walks through this example in the following video.        Error Analysis  Next, we’ll carry out an error analysis for Newton’s method. To do this, we’ll need to use Taylor series . Let’s begin by recalling the definition. Taylor Series  Let be a function with derivatives of all orders throughout some interval containing as an interior point. Then the Taylor series generated by at is where is between and .    Quadratic Convergence of Newton’s Method  Newton’s method has quadratic convergence.    To show Newton’s method has quadratic convergence, we need to show the following inequality holds true:   Suppose is sufficiently close to the root of the function . Then the Taylor series (choose ) generated by at is Hence, But is the root of the function , which means . Solving this equation for yields   By Newton’s method, . Therefore, the left side of becomes Let . Then which proves the desired bound.      Algorithm and Coding  Next, we’ll summarize the steps of Newton’s method, illustrate its process with a flowchart, and then implement it using Python code.  Newton’s Method   Given a scalar differentiable function , start from an initial guess .  For , set until or a maximum number of iterations is reached.      Flow chart for Newton's method: evaluate the function and its derivative at the current approximation, update with the tangent-line intercept, and test the tolerance.   Newton's Method Flow Chart    def newton(f, fprime, p0, atol, max_iter): root_found = False for i in range(max_iter): p1 = p0 - f(p0)\/fprime(p0) if abs(p1 - p0) < atol: root_found = True return p1 else: p0 = p1 if not root_found: raise Exception( f\"Newton's method did not converge within {max_iter} iterations. \" \"Try different initial guesses or increase max_iter.\" )  Let’s apply Newton’s method to find a root of the function with an initial guess p0=1 , using error tolerance . We also set max_iter = 20 , as we expect the method to converge to a root within 20 iterations. We also need the derivative, which in this case is .  p = newton(f=lambda x: x**3 + 2*x**2 + 5*x - 2, fprime=lambda x: 3*x**2 + 4*x + 5, p0=1, atol=1e-3, max_iter=20) print(f\"The root found by Newton's method is {p}.\")    The root found by Newton's method is 0.34438923796780624.    The last few digits of your answer may differ due to variations in computing precision across different machines):  Tips for Choosing an Initial Guess  A good initial guess for Newton’s method is one that is close to the actual root . To choose one:  Try graphing the function to visually identify where it crosses the -axis.  Look for an interval where the function changes sign (like in the bisection method), and pick a point near that change.  If possible, use physical context or analytical insight to estimate where a root might be.  Avoid points where the derivative is zero or very small, as this can cause the method to diverge or behave unpredictably.  Starting with a reasonable guess increases the chances of fast and reliable convergence.    "
-},
-{
-  "id": "unit-03-newtons-method-2-1",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#unit-03-newtons-method-2-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Newton’s method "
-},
-{
-  "id": "unit-03-newton-method-3",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#unit-03-newton-method-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Newton’s method "
-},
-{
-  "id": "anim-newtons-method-light",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#anim-newtons-method-light",
-  "type": "Figure",
-  "number": "3.1.1",
-  "title": "",
-  "body": " Newton's Method    "
-},
-{
-  "id": "anim-newtons-method-dark",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#anim-newtons-method-dark",
-  "type": "Figure",
-  "number": "3.1.2",
-  "title": "",
-  "body": " Newton's Method   "
-},
-{
-  "id": "unit-03-newton-method-6",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#unit-03-newton-method-6",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "quadratically "
-},
-{
-  "id": "unit-03-newton-method-7",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#unit-03-newton-method-7",
-  "type": "Example",
-  "number": "3.1.3",
-  "title": "",
-  "body": " Apply Newton’s method to find the root of the function with an initial guess . Calculate , , and . Round your answer to four decimal places if necessary.   It is easy to find , hence the iterative formula for Newton’s method is Therefore,   Video Breakdown  Dr. Yang walks through this example in the following video.     "
-},
-{
-  "id": "unit-03-newton-error-analysis-2",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#unit-03-newton-error-analysis-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Taylor series Taylor series "
-},
-{
-  "id": "unit-03-newton-error-analysis-3",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#unit-03-newton-error-analysis-3",
-  "type": "Theorem",
-  "number": "3.1.5",
-  "title": "Quadratic Convergence of Newton’s Method.",
-  "body": "Quadratic Convergence of Newton’s Method  Newton’s method has quadratic convergence.    To show Newton’s method has quadratic convergence, we need to show the following inequality holds true:   Suppose is sufficiently close to the root of the function . Then the Taylor series (choose ) generated by at is Hence, But is the root of the function , which means . Solving this equation for yields   By Newton’s method, . Therefore, the left side of becomes Let . Then which proves the desired bound.   "
-},
-{
-  "id": "unit-03-newton-algorithm-and-coding-3",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#unit-03-newton-algorithm-and-coding-3",
-  "type": "Algorithm",
-  "number": "3.1.6",
-  "title": "Newton’s Method.",
-  "body": "Newton’s Method   Given a scalar differentiable function , start from an initial guess .  For , set until or a maximum number of iterations is reached.   "
-},
-{
-  "id": "unit-03-newton-algorithm-and-coding-4",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#unit-03-newton-algorithm-and-coding-4",
-  "type": "Figure",
-  "number": "3.1.7",
-  "title": "",
-  "body": "  Flow chart for Newton's method: evaluate the function and its derivative at the current approximation, update with the tangent-line intercept, and test the tolerance.   Newton's Method Flow Chart  "
-},
-{
-  "id": "unit-03-newton-algorithm-and-coding-11",
-  "level": "2",
-  "url": "unit-03-newtons-method.html#unit-03-newton-algorithm-and-coding-11",
-  "type": "Remark",
-  "number": "3.1.8",
-  "title": "Tips for Choosing an Initial Guess.",
-  "body": "Tips for Choosing an Initial Guess  A good initial guess for Newton’s method is one that is close to the actual root . To choose one:  Try graphing the function to visually identify where it crosses the -axis.  Look for an interval where the function changes sign (like in the bisection method), and pick a point near that change.  If possible, use physical context or analytical insight to estimate where a root might be.  Avoid points where the derivative is zero or very small, as this can cause the method to diverge or behave unpredictably.  Starting with a reasonable guess increases the chances of fast and reliable convergence.  "
-},
-{
-  "id": "unit-03-secant-method",
-  "level": "1",
-  "url": "unit-03-secant-method.html",
+  "url": "week-01-numpy-matrices.html",
   "type": "Section",
   "number": "3.2",
-  "title": "Secant Method",
-  "body": " Secant Method   Building on our understanding of Newton’s method, we now introduce the secant method , a practical alternative that avoids the need for an explicit derivative.    The Method   Newton’s method requires the user to supply both the function and its derivative . However, in many real-world situations, computing the derivative may be difficult, expensive, or even impossible—for example, when dealing with data from experiments, simulations, or complex black-box functions. In such cases, the secant method becomes especially useful.  The secant method approximates the derivative using the slope of the secant line through the two most recent iterates: Substituting this into Newton’s update formula, we get the secant method iteration: This method requires two initial guesses, and , but avoids evaluating the derivative altogether. While it typically converges more slowly than Newton’s method, it is often preferred when derivative information is unavailable or costly to obtain.  Geometrically, this formula corresponds to finding the -intercept of the secant line connecting the points and on the graph of .    Secant Method       Secant Method      Apply the secant method to find the root of the function with initial guesses and . Calculate and . Round your answer to four decimal places if necessary.   By the iterative formula for the secant method, we have   Video Breakdown  Dr. Yang walks through this example in the following video.        Error Analysis  To understand the efficiency of the secant method, let’s analyze its convergence behavior. Specifically, we’ll show that it converges superlinearly, but not quadratically like Newton’s method.  Superlinear Convergence of the Secant Method  The secant method has superlinear convergence.   We will not prove this theorem, but provide the main idea. Using a Taylor expansion of and about , we can derive an expression for the error in terms of and . After some algebra, we find where .      Algorithm and Coding  Next, we’ll summarize the steps of the secant method , illustrate its process with a flowchart, and then implement it using Python code.  Secant Method   Given a scalar function , start with two initial guesses and .  For , compute until or a maximum number of iterations is reached.      Flow chart for the secant method: evaluate the function at two recent approximations, update with the secant-line intercept, and test the tolerance.   Secant Method Flow Chart    def secant(f, p0, p1, atol, max_iter): for i in range(max_iter): p2 = p1 - f(p1) * (p1 - p0) \/ (f(p1) - f(p0)) if abs(p2 - p1) <= atol: return p2 else: p0, p1 = p1, p2 raise Exception( f\"Secant method did not converge within {max_iter} iterations. \" \"Try different initial guesses or increase max_iter.\" )  Let’s apply the secant method to find a root of the function using initial guesses p0 = 0 and p1 = 1 , and an error tolerance of . We’ll set max_iter = 20 , assuming the root will be found within that many steps.  p = secant(f=lambda x: x**3 + 2*x**2 + 5*x - 2, p0=0, p1=1, atol=1e-3, max_iter=20) print(f\"The root found by the secant method is {p}.\")    The root found by the secant method is 0.3443892308090592.    The final digits may vary depending on computing precision:  Tips for Choosing Initial Guesses  A good pair of initial guesses for the secant method are two values close to the root and with opposite signs of . You can use a graph of the function or a sign change in the interval to guide your choice.    "
+  "title": "Dot Products and Matrix Operations in NumPy",
+  "body": " Dot Products and Matrix Operations in NumPy  For this section, you should be able to find the Numpy_matrix_ops.ipynb notebook in the demo directory of the course environment folder.   "
 },
 {
-  "id": "unit-03-secant-method-2-1",
-  "level": "2",
-  "url": "unit-03-secant-method.html#unit-03-secant-method-2-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "secant method "
-},
-{
-  "id": "unit-03-secant-method-description-3",
-  "level": "2",
-  "url": "unit-03-secant-method.html#unit-03-secant-method-description-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "secant method "
-},
-{
-  "id": "anim-secant-method-light",
-  "level": "2",
-  "url": "unit-03-secant-method.html#anim-secant-method-light",
-  "type": "Figure",
-  "number": "3.2.1",
-  "title": "",
-  "body": " Secant Method    "
-},
-{
-  "id": "anim-secant-method-dark",
-  "level": "2",
-  "url": "unit-03-secant-method.html#anim-secant-method-dark",
-  "type": "Figure",
-  "number": "3.2.2",
-  "title": "",
-  "body": " Secant Method   "
-},
-{
-  "id": "unit-03-secant-method-description-7",
-  "level": "2",
-  "url": "unit-03-secant-method.html#unit-03-secant-method-description-7",
-  "type": "Example",
-  "number": "3.2.3",
-  "title": "",
-  "body": " Apply the secant method to find the root of the function with initial guesses and . Calculate and . Round your answer to four decimal places if necessary.   By the iterative formula for the secant method, we have   Video Breakdown  Dr. Yang walks through this example in the following video.     "
-},
-{
-  "id": "unit-03-secant-error-analysis-3",
-  "level": "2",
-  "url": "unit-03-secant-method.html#unit-03-secant-error-analysis-3",
-  "type": "Theorem",
-  "number": "3.2.4",
-  "title": "Superlinear Convergence of the Secant Method.",
-  "body": "Superlinear Convergence of the Secant Method  The secant method has superlinear convergence.   We will not prove this theorem, but provide the main idea. Using a Taylor expansion of and about , we can derive an expression for the error in terms of and . After some algebra, we find where .   "
-},
-{
-  "id": "unit-03-secant-algorithm-and-coding-2",
-  "level": "2",
-  "url": "unit-03-secant-method.html#unit-03-secant-algorithm-and-coding-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "secant method "
-},
-{
-  "id": "unit-03-secant-algorithm-and-coding-3",
-  "level": "2",
-  "url": "unit-03-secant-method.html#unit-03-secant-algorithm-and-coding-3",
-  "type": "Algorithm",
-  "number": "3.2.5",
-  "title": "Secant Method.",
-  "body": "Secant Method   Given a scalar function , start with two initial guesses and .  For , compute until or a maximum number of iterations is reached.   "
-},
-{
-  "id": "unit-03-secant-algorithm-and-coding-4",
-  "level": "2",
-  "url": "unit-03-secant-method.html#unit-03-secant-algorithm-and-coding-4",
-  "type": "Figure",
-  "number": "3.2.6",
-  "title": "",
-  "body": "  Flow chart for the secant method: evaluate the function at two recent approximations, update with the secant-line intercept, and test the tolerance.   Secant Method Flow Chart  "
-},
-{
-  "id": "unit-03-secant-algorithm-and-coding-11",
-  "level": "2",
-  "url": "unit-03-secant-method.html#unit-03-secant-algorithm-and-coding-11",
-  "type": "Remark",
-  "number": "3.2.7",
-  "title": "Tips for Choosing Initial Guesses.",
-  "body": "Tips for Choosing Initial Guesses  A good pair of initial guesses for the secant method are two values close to the root and with opposite signs of . You can use a graph of the function or a sign change in the interval to guide your choice.  "
-},
-{
-  "id": "unit-04-introduction-fixed-point-iteration",
+  "id": "week-01-pandas",
   "level": "1",
-  "url": "unit-04-introduction-fixed-point-iteration.html",
+  "url": "week-01-pandas.html",
+  "type": "Section",
+  "number": "3.3",
+  "title": "Introduction to Pandas",
+  "body": " Introduction to Pandas   For this section, you should be able to find the introduction-to-pandas.ipynb notebook in the demo directory of the course environment folder.    Pandas Series       Pandas DataFrames       Selecting and Filtering Data in Pandas       Vectorized Operations in Pandas       Removing Data in Pandas       Reading and Writing CSV Format with Pandas      "
+},
+{
+  "id": "week-01-seaborn",
+  "level": "1",
+  "url": "week-01-seaborn.html",
+  "type": "Section",
+  "number": "3.4",
+  "title": "Plotting with Seaborn",
+  "body": " Plotting with Seaborn  For this section, you should be able to find the seaborn-plotting-introduction.ipynb notebook in the demo directory of the course environment folder.   "
+},
+{
+  "id": "week-01-scikit-learn",
+  "level": "1",
+  "url": "week-01-scikit-learn.html",
+  "type": "Section",
+  "number": "3.5",
+  "title": "Introduction to Scikit-Learn",
+  "body": " Introduction to Scikit-Learn  For this section, you should be able to find the introduction-to-scikit-learn.ipynb notebook in the demo directory of the course environment folder.   "
+},
+{
+  "id": "week-04-linear-regression-introduction",
+  "level": "1",
+  "url": "week-04-linear-regression-introduction.html",
   "type": "Section",
   "number": "4.1",
-  "title": "Introduction to Fixed-Point Iteration",
-  "body": " Introduction to Fixed-Point Iteration   Many numerical methods for solving equations rely on reformulating the original problem into an equivalent fixed-point problem . That is, instead of solving directly, we rewrite it as: where the solution to this equation is called a fixed point of the function , meaning .  The fixed-point iteration method starts with an initial guess , and generates a sequence: If the sequence converges, then the limit is a solution to , and thus also a root of , assuming and .  This method is simple and forms the basis for many other iterative techniques. However, convergence is not guaranteed for every or initial guess, so analyzing its behavior is crucial.  "
+  "title": "What is Linear Regression?",
+  "body": " What is Linear Regression?   Let’s consider a practical example. Suppose you’re curious about whether wealth influences happiness, so you decide to explore the relationship between a country’s GDP per capita and its citizens’ life satisfaction. To do this, you download the Better Life Index data from the OECD’s website and GDP per capita statistics from the IMF’s website. After merging these datasets, you plot the data for several randomly selected countries.  The relationship between life satisfaction and GDP per capita   The relationship between life satisfaction and GDP per capita.   Looking at the plot, you observe a noticeable trend. Despite the data being somewhat noisy, it appears that life satisfaction tends to increase more or less linearly as a country’s GDP per capita rises. Given this observation, you decide to model life satisfaction as a linear function of GDP per capita. Let’s denote life satisfaction by and GDP per capita by . This gives us a linear model to work with.   This model has two model parameters, and . By tweaking these parameters, you can make your model represent any linear function, as shown in .   A few possible linear models   A few possible linear models.    Before you can use your linear model, you need to determine the values for the parameters and . But how do you know which values will allow your model to perform optimally? To answer this, you must define a performance measure . You can either establish a utility function (also known as a fitness function ) to measure how well your model performs, or you can define a cost function to assess how poorly it performs. In linear regression problems, the cost function typically measures the distance between the model's predictions and the actual training examples, with the goal being to minimize this distance.  This is where the Linear Regression algorithm comes into play. You provide it with your training data, and it identifies the parameters that best fit the linear model to your data—a process known as training the model. In this particular case, the algorithm determines that the optimal parameter values are and .   The linear model that fits the training data best   The linear model that fits the training data best.    With these parameter values, you’re now ready to use the model to make predictions. For example, if you want to estimate the life satisfaction of people in Cyprus and the OECD data doesn’t provide this information, you can use your model to make a prediction. You would look up Cyprus’s GDP per capita, which is $22,587, and then apply your model: , resulting in a predicted life satisfaction score of approximately 5.96.  More generally, a linear model makes predictions by calculating a weighted sum of the input features, plus a constant known as the bias term (or intercept term). This relationship is expressed mathematically as: where is the predicted value, is the number of features, is the -th feature value, is the -th model parameter, and .   Note that is the model’s parameter vector, containing the bias term and the feature weights . And is the instance’s feature vector, containing with always equal to 1.   "
 },
 {
-  "id": "unit-04-introduction-fixed-point-iteration-3",
+  "id": "figure-gdp-life-satisfaction",
   "level": "2",
-  "url": "unit-04-introduction-fixed-point-iteration.html#unit-04-introduction-fixed-point-iteration-3",
+  "url": "week-04-linear-regression-introduction.html#figure-gdp-life-satisfaction",
+  "type": "Figure",
+  "number": "4.1.1",
+  "title": "",
+  "body": " The relationship between life satisfaction and GDP per capita   The relationship between life satisfaction and GDP per capita.   "
+},
+{
+  "id": "figure-linear-models",
+  "level": "2",
+  "url": "week-04-linear-regression-introduction.html#figure-linear-models",
+  "type": "Figure",
+  "number": "4.1.2",
+  "title": "",
+  "body": " A few possible linear models   A few possible linear models.   "
+},
+{
+  "id": "week-04-linear-regression-introduction-6",
+  "level": "2",
+  "url": "week-04-linear-regression-introduction.html#week-04-linear-regression-introduction-6",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "fixed-point problem fixed point "
+  "body": "performance measure utility function fitness function cost function "
 },
 {
-  "id": "unit-04-introduction-fixed-point-iteration-4",
+  "id": "week-04-linear-regression-introduction-7",
   "level": "2",
-  "url": "unit-04-introduction-fixed-point-iteration.html#unit-04-introduction-fixed-point-iteration-4",
+  "url": "week-04-linear-regression-introduction.html#week-04-linear-regression-introduction-7",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "fixed-point iteration "
+  "body": "training "
 },
 {
-  "id": "unit-04-fixed-point-choose-g",
+  "id": "figure-best-fit-linear-model",
+  "level": "2",
+  "url": "week-04-linear-regression-introduction.html#figure-best-fit-linear-model",
+  "type": "Figure",
+  "number": "4.1.3",
+  "title": "",
+  "body": " The linear model that fits the training data best   The linear model that fits the training data best.   "
+},
+{
+  "id": "week-04-linear-regression-introduction-10",
+  "level": "2",
+  "url": "week-04-linear-regression-introduction.html#week-04-linear-regression-introduction-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "bias intercept "
+},
+{
+  "id": "linear-regression-note-1",
+  "level": "2",
+  "url": "week-04-linear-regression-introduction.html#linear-regression-note-1",
+  "type": "Note",
+  "number": "4.1.4",
+  "title": "",
+  "body": " Note that is the model’s parameter vector, containing the bias term and the feature weights . And is the instance’s feature vector, containing with always equal to 1.  "
+},
+{
+  "id": "week-04-the-normal-equation",
   "level": "1",
-  "url": "unit-04-fixed-point-choose-g.html",
+  "url": "week-04-the-normal-equation.html",
   "type": "Section",
   "number": "4.2",
-  "title": "How To Choose <span class=\"process-math\">\\(g(x)\\)<\/span>",
-  "body": " How To Choose   The convergence behavior of fixed-point iteration is highly dependent on the choice of the function . It’s important to recognize that, for a given equation , there isn’t a unique way to define . In fact, we can construct many different functions such that solving is equivalent to solving . For example, we might consider any of the following (and more):   Note that if we choose as in the last case, the fixed-point iteration becomes identical to Newton’s method.  Suppose we have chosen a continuous function and are ready to apply fixed-point iteration. Naturally, several important questions arise:  Does a fixed point exist in the interval ?   If so, is the fixed point unique?    Will the sequence of iterates generated by the method actually converge to ?    If it does converge, how fast is the convergence?     "
+  "title": "The Normal Equation",
+  "body": " The Normal Equation   Now that we’ve introduced the Linear Regression model, the next step is to train it. Training a model involves adjusting its parameters so that it best fits the training data. To do this, we need a way to measure how well—or how poorly—the model fits the data.  For regression problems, a common performance measure is the Root Mean Square Error (RMSE) . RMSE provides an estimate of the typical error made by the model in its predictions, with larger errors being penalized more heavily. This makes RMSE particularly useful, as it gives more weight to significant errors, offering a clear picture of the model's overall accuracy.  The RMSE is calculated by taking the square root of the average of the squared differences between the predicted values and the actual values in the training set. Mathematically, it is expressed as: where is the number of instances in the dataset you are measuring the RMSE on, is the predicted value for -th instance and is its label, i.e., the desired output value for that instance.   If we denote and , then RMSE corresponds to the Euclidean norm (also called norm), which is the Euclidean distance between and .    There are other measures, such as Mean Absolute Error (MAE) , and it corresponds to the norm:    The higher the norm index, the more it focuses on large values and neglects small ones. This is why the RMSE is more sensitive to outliers than the MAE. But when outliers are exponentially rare, the RMSE performs very well and is generally preferred.   Without loss of generality, let’s choose RMSE as the performance measure of a regression model, namely, the cost function of model. To train a Linear Regression model, you need to find the value of that minimizes the RMSE. In practice, it is simpler to minimize the Mean Square Error (MSE) than the RMSE, and it leads to the same result.   To find the value of that minimizes the cost function, there is a closed-form solution— in other words, a mathematical equation that gives the result directly. This is called the Normal Equation . where is a matrix containing all the feature values (excluding labels) of all instances in the dataset. There is one row per instance and the -th row is equal to the transpose of , i.e. .  Then the question ensues: The Normal Equation may not work if the matrix is not invertible, such as if or if some features are redundant. Practically, we use the pseudoinverse of (specifically the Moore-Penrose inverse), denoted by , to replace in Eq , which yields .  The pseudoinverse itself is computed using a standard matrix factorization technique called Singular Value Decomposition (SVD) that can decompose the training set matrix into the matrix multiplication of three matrices . The pseudoinverse is computed as . To compute the matrix , the algorithm takes and sets to zero all values smaller than a tiny threshold value, then it replaces all the non-zero values with their inverse, and finally it transposes the resulting matrix. This approach is more efficient and robust than computing the Normal Equation.  Performing linear regression using Scikit-Learn is quite simple: from sklearn.linear_model import LinearRegression lin_reg = LinearRegression() lin_reg.fit(X, y) lin_reg.intercept_, lin_reg.coef_ lin_reg.predict(X_new)    The LinearRegression class is based on the SVD approach. Both the Normal Equation and the SVD approach get very slow when the number of features grows large. On the positive side, both are linear with regards to the number of instances in the training set, so they handle large training sets efficiently, provided they can fit in memory.   "
 },
 {
-  "id": "unit-04-fixed-point-choose-g-4",
+  "id": "week-04-the-normal-equation-4",
   "level": "2",
-  "url": "unit-04-fixed-point-choose-g.html#unit-04-fixed-point-choose-g-4",
-  "type": "Remark",
+  "url": "week-04-the-normal-equation.html#week-04-the-normal-equation-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Root Mean Square Error (RMSE) "
+},
+{
+  "id": "linear-regression-note-2",
+  "level": "2",
+  "url": "week-04-the-normal-equation.html#linear-regression-note-2",
+  "type": "Note",
   "number": "4.2.1",
   "title": "",
-  "body": "Note that if we choose as in the last case, the fixed-point iteration becomes identical to Newton’s method. "
+  "body": " If we denote and , then RMSE corresponds to the Euclidean norm (also called norm), which is the Euclidean distance between and .   "
 },
 {
-  "id": "unit-04-fixed-point-theorem",
+  "id": "week-04-the-normal-equation-7",
+  "level": "2",
+  "url": "week-04-the-normal-equation.html#week-04-the-normal-equation-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Mean Absolute Error (MAE) "
+},
+{
+  "id": "linear-regression-note-3",
+  "level": "2",
+  "url": "week-04-the-normal-equation.html#linear-regression-note-3",
+  "type": "Note",
+  "number": "4.2.2",
+  "title": "",
+  "body": " The higher the norm index, the more it focuses on large values and neglects small ones. This is why the RMSE is more sensitive to outliers than the MAE. But when outliers are exponentially rare, the RMSE performs very well and is generally preferred.  "
+},
+{
+  "id": "week-04-the-normal-equation-10",
+  "level": "2",
+  "url": "week-04-the-normal-equation.html#week-04-the-normal-equation-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Normal Equation "
+},
+{
+  "id": "week-04-the-normal-equation-12",
+  "level": "2",
+  "url": "week-04-the-normal-equation.html#week-04-the-normal-equation-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Singular Value Decomposition "
+},
+{
+  "id": "linear-regression-note-4",
+  "level": "2",
+  "url": "week-04-the-normal-equation.html#linear-regression-note-4",
+  "type": "Note",
+  "number": "4.2.3",
+  "title": "",
+  "body": " The LinearRegression class is based on the SVD approach. Both the Normal Equation and the SVD approach get very slow when the number of features grows large. On the positive side, both are linear with regards to the number of instances in the training set, so they handle large training sets efficiently, provided they can fit in memory.  "
+},
+{
+  "id": "week-04-gradient-descent",
   "level": "1",
-  "url": "unit-04-fixed-point-theorem.html",
+  "url": "week-04-gradient-descent.html",
   "type": "Section",
   "number": "4.3",
-  "title": "Fixed Point Theorem",
-  "body": " Fixed Point Theorem   To prove that a unique fixed point exists in the interval , we introduce the Fixed Point Theorem. Before stating it, let’s first recall the Mean Value Theorem from Calculus I, as it will play a key role in the proof.   Mean Value Theorem   Suppose that is a continuous function on a closed interval and differentiable on its interior . Then there is at least one number in such that .    Now let’s dive into the Fixed Point Theorem.   Fixed Point Theorem   If is a continuous function on and for all , then has at least one fixed point in . If, in addition, the derivative exists and for all where , then the fixed point is unique.    First, we will proof the existence of fixed point. By hypothesis, we have and . If or , then a fixed point has been found, so now assume and . Then for the continuous function we have and . Hence, by the Intermediate Value Theorem, there is a root such that , that is, Therefore, is a fixed point of .  Next, we will show the uniqueness of the fixed point if the derivative exists and for all where . Suppose there is another fix point, say , then . Thus, where is a number between and . Obviously, this inequality can hold with only if . Therefore, the fixed point is unique.    "
+  "title": "Gradient Descent",
+  "body": " Gradient Descent   Now, let’s explore various methods to train a Linear Regression model, particularly useful when dealing with a large number of features or when the training dataset is too extensive to fit into memory.     How Does Gradient Descent Work?   Gradient Descent is a versatile optimization algorithm capable of finding optimal solutions to many problems. The core idea of Gradient Descent is to iteratively adjust parameters to minimize a cost function. This involves measuring the local gradient of the error function with respect to the parameter vector and moving in the direction of the descending gradient. The process continues until the gradient becomes zero, indicating a minimum has been reached.  The process of Gradient Descent starts with random initialization of , filling it with random values. The parameters are then gradually improved by taking small steps to reduce the cost function (e.g., the Mean Squared Error, MSE) until convergence to a minimum is achieved.  A critical parameter in Gradient Descent is the learning rate , which determines the size of each step. If the learning rate is too small, the algorithm will take many iterations to converge, resulting in a lengthy process. Conversely, if the learning rate is too large, the algorithm might overshoot the minimum, potentially leading to divergence where values become increasingly large and fail to find an optimal solution. Additionally, not all cost functions resemble smooth, regular bowls; they might have irregular terrains with holes, ridges, and plateaus, making convergence challenging.  However, the MSE cost function for Linear Regression is a convex function , meaning any line segment joining two points on the curve never crosses the curve itself. This implies the absence of local minima, with only one global minimum. Moreover, it is a continuous function with a consistent slope, ensuring that Gradient Descent will approach the global minimum.  The MSE cost function resembles a bowl shape, though it can become elongated if features have different scales. The figure below illustrates Gradient Descent on two training sets: one where features are on the same scale (left) and another where feature 1 has much larger values than feature 2 (right).   Gradient Descent with (left) and without (right) feature scaling   Gradient Descent with (left) and without (right) feature scaling.    On the left, Gradient Descent heads straight toward the minimum, achieving it quickly. On the right, it initially moves almost orthogonally to the direction of the global minimum, eventually making a prolonged descent down an almost flat valley. Though it will reach the minimum, this process takes considerably longer.  This example highlights the importance of feature scaling in Gradient Descent. By ensuring features have similar scales, the algorithm converges more efficiently, avoiding the pitfalls of elongated cost function shapes.   When using Gradient Descent, you should ensure that all features have a similar scale (e.g., using Scikit-Learn’s StandardScaler class), or else it will take much longer to converge.     Batch Gradient Descent  To implement Gradient Descent, you need to compute the gradient of the cost function with regards to each model parameter . In other words, you need to calculate how much the cost function will change if you change just a little bit, which is the partial derivative . We can compute the partial derivative of the cost function with respect to parameter :   Instead of computing these partial derivatives individually, you can use compute them all in one go using linear algebra. The gradient vector, denoted , contains all the partial derivatives of the cost function.   The gradient vector points \"uphill\", so once you calculate it, just go in the opposite direction to go towards the minimum. This means subtracting from . This is where the learning rate comes into play: multiply the gradient vector by to determine the size of the step:   You may wonder how to set the number of iterations. If it is too low, you will still be far away from the optimal solution when the algorithm stops, but if it is too high, you will waste time while the model parameters do not change anymore. A simple solution is to set a very large number of iterations but to interrupt the algorithm when the gradient vector becomes tiny, that is, when its norm becomes smaller than a tiny number (called the tolerance )—because this happens when Gradient Descent has (almost) reached the minimum.    Stochastic Gradient Descent  The primary drawback of Batch Gradient Descent is that it requires using the entire training set to compute the gradients at each step. This can make the algorithm quite slow, especially when dealing with large datasets. In contrast, Stochastic Gradient Descent (SGD) takes a different approach by selecting a random subset from the training set at each step and computing the gradient based solely on that subset. This method is significantly faster because it only processes a small amount of data per iteration. Moreover, SGD's efficiency allows it to handle enormous training sets, as it only needs to keep a subset of the dataset in memory at any given time.  However, the randomness inherent in SGD leads to less smooth convergence compared to Batch Gradient Descent. Instead of steadily decreasing towards the minimum, the cost function in SGD fluctuates, decreasing on average but bouncing up and down. While SGD will get close to the minimum, it typically never settles completely, as it continues to oscillate around it. This randomness, while a drawback in terms of precision, can actually be beneficial in certain situations. When the cost function has multiple local minima, SGD's stochastic nature can help the algorithm escape these traps and move towards the global minimum, which is a significant advantage over Batch Gradient Descent.  To balance the benefits of randomness with the need for convergence, a common technique is to gradually reduce the learning rate over time. Initially, larger steps help the algorithm make rapid progress and escape any local minima, but as the learning rate decreases, the steps become smaller, allowing the algorithm to hone in on the global minimum. This process is similar to simulated annealing , a technique inspired by the physical process of slowly cooling molten metal to reduce defects. The rate at which the learning rate decreases is governed by a learning schedule . If the learning rate drops too quickly, the algorithm might get stuck in a local minimum or halt progress prematurely. Conversely, if the learning rate decreases too slowly, the algorithm may continue to jump around the minimum for an extended period, potentially leading to a suboptimal solution if training is stopped too soon.  To perform Linear Regression using SGD with Scikit-Learn, you can use the SGDRegressor class, which defaults to optimizing the MSE cost function. The following code runs for maximum 1000 epochs ( max_iter=1000 ) or until the loss drops by less than 1e-3 during one epoch ( tol=1e-3 ), starting with a learning rate of 0.1 ( eta0=0.1 ), using the default learning schedule—inverse scaling ( learning_rate='invscaling' ), and it does not use any regularization ( penalty=None ): from sklearn.linear_model import SGDRegressor sgd_reg = SGDRegressor(max_iter=1000, tol=1e-3, penalty=None, eta0=0.1) sgd_reg.fit(X, y)    "
 },
 {
-  "id": "unit-04-fixed-point-theorem-4",
+  "id": "standard-gradient-descent-2",
   "level": "2",
-  "url": "unit-04-fixed-point-theorem.html#unit-04-fixed-point-theorem-4",
-  "type": "Theorem",
+  "url": "week-04-gradient-descent.html#standard-gradient-descent-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gradient Descent "
+},
+{
+  "id": "standard-gradient-descent-3",
+  "level": "2",
+  "url": "week-04-gradient-descent.html#standard-gradient-descent-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "random initialization "
+},
+{
+  "id": "standard-gradient-descent-4",
+  "level": "2",
+  "url": "week-04-gradient-descent.html#standard-gradient-descent-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "learning rate "
+},
+{
+  "id": "standard-gradient-descent-5",
+  "level": "2",
+  "url": "week-04-gradient-descent.html#standard-gradient-descent-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "convex function "
+},
+{
+  "id": "figure-gradient-descent-feature-scaling",
+  "level": "2",
+  "url": "week-04-gradient-descent.html#figure-gradient-descent-feature-scaling",
+  "type": "Figure",
   "number": "4.3.1",
-  "title": "Mean Value Theorem.",
-  "body": " Mean Value Theorem   Suppose that is a continuous function on a closed interval and differentiable on its interior . Then there is at least one number in such that .   "
+  "title": "",
+  "body": " Gradient Descent with (left) and without (right) feature scaling   Gradient Descent with (left) and without (right) feature scaling.   "
 },
 {
-  "id": "unit-04-fixed-point-theorem-6",
+  "id": "standard-gradient-descent-9",
   "level": "2",
-  "url": "unit-04-fixed-point-theorem.html#unit-04-fixed-point-theorem-6",
-  "type": "Theorem",
-  "number": "4.3.2",
-  "title": "Fixed Point Theorem.",
-  "body": " Fixed Point Theorem   If is a continuous function on and for all , then has at least one fixed point in . If, in addition, the derivative exists and for all where , then the fixed point is unique.    First, we will proof the existence of fixed point. By hypothesis, we have and . If or , then a fixed point has been found, so now assume and . Then for the continuous function we have and . Hence, by the Intermediate Value Theorem, there is a root such that , that is, Therefore, is a fixed point of .  Next, we will show the uniqueness of the fixed point if the derivative exists and for all where . Suppose there is another fix point, say , then . Thus, where is a number between and . Obviously, this inequality can hold with only if . Therefore, the fixed point is unique.   "
+  "url": "week-04-gradient-descent.html#standard-gradient-descent-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "feature scaling "
 },
 {
-  "id": "unit-04-convergence-fixed-point-iteration",
+  "id": "linear-regression-note-5",
+  "level": "2",
+  "url": "week-04-gradient-descent.html#linear-regression-note-5",
+  "type": "Note",
+  "number": "4.3.2",
+  "title": "",
+  "body": " When using Gradient Descent, you should ensure that all features have a similar scale (e.g., using Scikit-Learn’s StandardScaler class), or else it will take much longer to converge.  "
+},
+{
+  "id": "batch-gradient-descent-2",
+  "level": "2",
+  "url": "week-04-gradient-descent.html#batch-gradient-descent-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "partial derivative "
+},
+{
+  "id": "batch-gradient-descent-5",
+  "level": "2",
+  "url": "week-04-gradient-descent.html#batch-gradient-descent-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "tolerance "
+},
+{
+  "id": "stochastic-gradient-descent-2",
+  "level": "2",
+  "url": "week-04-gradient-descent.html#stochastic-gradient-descent-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Stochastic Gradient Descent (SGD) "
+},
+{
+  "id": "stochastic-gradient-descent-4",
+  "level": "2",
+  "url": "week-04-gradient-descent.html#stochastic-gradient-descent-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "simulated annealing learning schedule "
+},
+{
+  "id": "week-04-polynomial-regression",
   "level": "1",
-  "url": "unit-04-convergence-fixed-point-iteration.html",
+  "url": "week-04-polynomial-regression.html",
   "type": "Section",
   "number": "4.4",
-  "title": "Convergence of the Fixed Point Iteration",
-  "body": " Convergence of the Fixed Point Iteration   We now investigate whether the sequence defined by the iteration converges to the fixed point , along with its corresponding rate of convergence.  Under the same assumptions of the fixed point theorem, we have This is a contraction by the factor . Therefore, Since , we have as , thus, as .  Note that implies the convergence is linear with rate . Further more, if , then the convergence can be faster than linear—possibly quadratic —depending on higher-order derivatives. (Think about the Newton’s method.)   Apply fixed point iteration to find the root of the equation in the interval with an initial guess . Calculate , , and . Round your answer to four decimal places if necessary.   We need to rewrite equation as a fixed-point problem. One possible rearrangement is: Then we need to verify has a unique fixed point in the interval . By the Fixed Point Theorem, we need to answer the following questions:  Is is continuous on ?   Is for ?    Is for where ?     The first question is easy to answer. The function is a polynomial, so it is continuous everywhere.  To answer the second question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have or . Thus is monotonic in the interval . Since and , we have , therefore, for   To answer the third question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have . Thus is monotonic in the interval . Since and , we have , therefore, for .  Therefore, by the Fixed Point Theorem, has a unique fixed point in the interval . And the sequence generated by the iteration formula converges to the fixed point . By the formula, it is easy to find , and with the initial guess ,   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+  "title": "Polynomial Regression",
+  "body": " Polynomial Regression  What if your data is actually more complex than a simple straight line? Surprisingly, you can actually use a linear model to fit nonlinear data. A simple way to do this is to add powers of each feature as new features, then train a linear model on this extended set of features. This technique is called Polynomial Regression.   Let’s look at an example. First, let’s generate some nonlinear data, based on a simple quadratic equation (plus some noise; see ): m = 100 X = 6 * np.random.rand(m, 1) - 3 y = 0.5 * X**2 + X + 2 + np.random.randn(m, 1) sns.scatterplot(x=X.flatten(), y=y.flatten()).set( title=\"Scatter Plot of X vs y\", xlabel=\"X\", ylabel=\"y\" )   Generated nonlinear and noisy dataset   Generated nonlinear and noisy dataset     Clearly, a straight line will never fit this data properly. So let’s use Scikit-Learn’s PolynomialFeatures class to transform our training data, adding the square (2nd-degree polynomial) of each feature in the training set as new features (in this case there is just one feature): from sklearn.preprocessing import PolynomialFeatures poly_features = PolynomialFeatures(degree=2, include_bias=False) X_poly = poly_features.fit_transform(X)  X_poly now contains the original feature of X plus the square of this feature. More concretely, the model structure now takes the form . Now you can fit a LinearRegression model to this extended training data ( ): lin_reg = LinearRegression() lin_reg.fit(X_poly, y) print(f'intercept: {lin_reg.intercept_}, coef: {lin_reg.coef_}')    intercept: [1.92270541], coef: [[1.00730203 0.52949463]]   We can now plot the model predictions over the original data: X_new = np.linspace(-3, 3, 100).reshape(100, 1) X_new_poly = poly_features.transform(X_new) y_new = lin_reg.predict(X_new_poly) sns.scatterplot(x=X.flatten(), y=y.flatten(), color=\"blue\", marker=\".\") sns.lineplot(x=X_new.flatten(), y=y_new.flatten(), color=\"red\", linewidth=2, label=\"Predictions\").set( xlim=(-3, 3), ylim=(0, 10) ) plt.xlabel(\"$x_1$\", fontsize=18) plt.ylabel(\"$y$\", rotation=0, fontsize=18) plt.legend(loc=\"upper left\", fontsize=14) plt.show()   Polynomial Regression model predictions   Polynomial Regression model predictions     Note that when there are multiple features, Polynomial Regression is capable of finding relationships between features (which is something a plain Linear Regression model cannot do). This is made possible by the fact that PolynomialFeatures also adds all combinations of features up to the given degree. For example, if there were two features and , PolynomialFeatures with degree=3 would not only add the features and , but also the combinations and .     "
 },
 {
-  "id": "unit-04-convergence-fixed-point-iteration-4",
+  "id": "figure-quadratic-data",
   "level": "2",
-  "url": "unit-04-convergence-fixed-point-iteration.html#unit-04-convergence-fixed-point-iteration-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "contraction "
-},
-{
-  "id": "unit-04-convergence-fixed-point-iteration-5",
-  "level": "2",
-  "url": "unit-04-convergence-fixed-point-iteration.html#unit-04-convergence-fixed-point-iteration-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "linear "
-},
-{
-  "id": "unit-04-convergence-fixed-point-iteration-6",
-  "level": "2",
-  "url": "unit-04-convergence-fixed-point-iteration.html#unit-04-convergence-fixed-point-iteration-6",
-  "type": "Example",
+  "url": "week-04-polynomial-regression.html#figure-quadratic-data",
+  "type": "Figure",
   "number": "4.4.1",
   "title": "",
-  "body": " Apply fixed point iteration to find the root of the equation in the interval with an initial guess . Calculate , , and . Round your answer to four decimal places if necessary.   We need to rewrite equation as a fixed-point problem. One possible rearrangement is: Then we need to verify has a unique fixed point in the interval . By the Fixed Point Theorem, we need to answer the following questions:  Is is continuous on ?   Is for ?    Is for where ?     The first question is easy to answer. The function is a polynomial, so it is continuous everywhere.  To answer the second question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have or . Thus is monotonic in the interval . Since and , we have , therefore, for   To answer the third question, we need to find the extrema of in the interval . The derivative of is Let it be zero, we have . Thus is monotonic in the interval . Since and , we have , therefore, for .  Therefore, by the Fixed Point Theorem, has a unique fixed point in the interval . And the sequence generated by the iteration formula converges to the fixed point . By the formula, it is easy to find , and with the initial guess ,   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+  "body": " Generated nonlinear and noisy dataset   Generated nonlinear and noisy dataset   "
 },
 {
-  "id": "unit-04-fixed-point-algo-coding",
+  "id": "figure-polynomial-predictions",
+  "level": "2",
+  "url": "week-04-polynomial-regression.html#figure-polynomial-predictions",
+  "type": "Figure",
+  "number": "4.4.2",
+  "title": "",
+  "body": " Polynomial Regression model predictions   Polynomial Regression model predictions   "
+},
+{
+  "id": "linear-regression-note-6",
+  "level": "2",
+  "url": "week-04-polynomial-regression.html#linear-regression-note-6",
+  "type": "Note",
+  "number": "4.4.3",
+  "title": "",
+  "body": " Note that when there are multiple features, Polynomial Regression is capable of finding relationships between features (which is something a plain Linear Regression model cannot do). This is made possible by the fact that PolynomialFeatures also adds all combinations of features up to the given degree. For example, if there were two features and , PolynomialFeatures with degree=3 would not only add the features and , but also the combinations and .  "
+},
+{
+  "id": "week-04-overfitting-and-underfitting",
   "level": "1",
-  "url": "unit-04-fixed-point-algo-coding.html",
+  "url": "week-04-overfitting-and-underfitting.html",
   "type": "Section",
   "number": "4.5",
-  "title": "Algorithm and Coding",
-  "body": " Algorithm and Coding  Let’s now summarize the steps of fixed-point iteration and implement it in Python.  Fixed-Point Iteration   Given a function such that has a solution,   Choose an initial guess .    For , compute: until or a maximum number of iterations is reached.        def fixed_point(g, p0, atol, max_iter): for i in range(max_iter): p1 = g(p0) if abs(p1 - p0) < atol: return p1 p0 = p1 raise Exception(f\"Fixed-point iteration did not converge within {max_iter} iterations.\")  Let’s solve the equation by rewriting it as a fixed-point problem using the same rearrangement as Example 1:   g = lambda x: (2 - x**3 - 2*x**2) \/ 5 p = fixed_point(g, p0=0.3, atol=1e-3, max_iter=20) print(f\"The root found by fixed-point iteration is {p}.\")    The root found by fixed-point iteration is 0.34459818033018197.    Reminder  When choosing a function for fixed-point iteration, make sure:    is continuous on an interval ,     , and     for all in that interval.     You can use a graph or numerical derivative to check this.   "
+  "title": "Overfitting and Underfitting",
+  "body": " Overfitting and Underfitting  If you perform high-degree Polynomial Regression, you will likely fit the training data much better than with plain Linear Regression. For example, applies a 300-degree polynomial model to the preceding training data, and compares the result with a pure linear model and a quadratic model (second-degree polynomial). Notice how the 300-degree polynomial model wiggles around to get as close as possible to the training instances.   High-degree Polynomial Regression   High-degree Polynomial Regression.     When working with models like Polynomial Regression, it’s important to balance the complexity of the model to avoid two key pitfalls: overfitting and underfitting. Overfitting occurs when a model is too complex and captures the noise in the training data, leading to excellent performance on the training set but poor generalization to new data. Underfitting, on the other hand, happens when the model is too simple to capture the underlying patterns in the data, resulting in poor performance on both the training and test sets.  In the case of a high-degree Polynomial Regression model, it may fit the training data almost perfectly but fail to generalize to unseen data, demonstrating overfitting. Conversely, a linear model might be too simplistic to capture the data’s structure, leading to underfitting. In this specific example, a quadratic model strikes the right balance, fitting the data well without being overly complex.  However, in practice, you won’t know the true function that generated the data, so determining the appropriate model complexity is challenging. To address this, you need to estimate how well your model will generalize to new data. The most reliable way to assess this is by testing the model on new, unseen cases.  One approach to evaluate generalization performance is to deploy the model in a real-world setting and monitor its performance over time. However, this method is risky—if the model performs poorly, it could lead to user dissatisfaction or other negative outcomes.  A safer and more common approach is to split your dataset into two parts: a training set and a test set . You train your model on the training set and then evaluate its performance on the test set. The error rate on the test set gives you an estimate of the model’s generalization error , or out-of-sample error . This metric indicates how well your model is likely to perform on data it has not encountered before.  If your model performs well on the training data but poorly on the test data, it’s a sign of overfitting. Conversely, if the model struggles on both the training and test sets, it’s likely underfitting. By carefully evaluating your model’s performance on the test set, you can fine-tune its complexity to achieve the best possible generalization to new data.  To split your data into training set and test set with Scikit-Learn, you can use the function train_test_split() in the module model_selection . The following code picks 20% of the dataset data randomly and set them in test_set , remaining in train_set .  from sklearn.model_selection import train_test_split train_set, test_set = train_test_split(data, test_size=0.2, random_state=42)  "
 },
 {
-  "id": "unit-04-fixed-point-algo-coding-3",
+  "id": "figure-high-degree-polynomials",
   "level": "2",
-  "url": "unit-04-fixed-point-algo-coding.html#unit-04-fixed-point-algo-coding-3",
-  "type": "Algorithm",
+  "url": "week-04-overfitting-and-underfitting.html#figure-high-degree-polynomials",
+  "type": "Figure",
   "number": "4.5.1",
-  "title": "Fixed-Point Iteration.",
-  "body": "Fixed-Point Iteration   Given a function such that has a solution,   Choose an initial guess .    For , compute: until or a maximum number of iterations is reached.      "
+  "title": "",
+  "body": " High-degree Polynomial Regression   High-degree Polynomial Regression.   "
 },
 {
-  "id": "unit-04-fixed-point-algo-coding-9",
+  "id": "week-04-overfitting-and-underfitting-9",
   "level": "2",
-  "url": "unit-04-fixed-point-algo-coding.html#unit-04-fixed-point-algo-coding-9",
-  "type": "Remark",
-  "number": "4.5.2",
-  "title": "Reminder.",
-  "body": "Reminder  When choosing a function for fixed-point iteration, make sure:    is continuous on an interval ,     , and     for all in that interval.     You can use a graph or numerical derivative to check this.  "
+  "url": "week-04-overfitting-and-underfitting.html#week-04-overfitting-and-underfitting-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "training set test set generalization error out-of-sample error "
 },
 {
-  "id": "unit-05-review-linear-algebra",
+  "id": "week-04-linear-regression-regularization",
   "level": "1",
-  "url": "unit-05-review-linear-algebra.html",
+  "url": "week-04-linear-regression-regularization.html",
+  "type": "Section",
+  "number": "4.6",
+  "title": "Regularization",
+  "body": " Regularization   Regularization is a technique used to simplify a model and minimize the risk of overfitting by introducing constraints during the learning process. Overfitting occurs when a model becomes too complex and starts to capture the noise in the training data, leading to poor generalization on new data. Regularization addresses this by imposing penalties on the model’s complexity, encouraging it to remain simpler and more generalizable.  The degree of regularization is controlled by a hyperparameter . Unlike model parameters, which are learned during the training process, hyperparameters are set before training begins and remain fixed throughout. The regularization hyperparameter determines the strength of the constraint applied to the model. If set too high, the model may become too simple, potentially underfitting the data by failing to capture essential patterns.  In the context of linear models, regularization is typically applied by constraining the model’s weights. This can be achieved through various methods, each with its own approach to applying these constraints. We will now look at Ridge Regression, Lasso Regression, and Elastic Net, which implement three different ways to constrain the weights.    Ridge Regression   Ridge Regression (also called Tikhonov regularization) is a regularized version of Linear Regression: a regularization term equal to is added to the cost function. This forces the learning algorithm to not only fit the data but also keep the model weights as small as possible. Note that the regularization term should only be added to the cost function during training. Once the model is trained, you want to use the unregularized performance measure to evaluate the model’s performance.   It is quite common for the cost function used during training to be different from the performance measure used for testing. Apart from regularization, another reason they might be different is that a good training cost function should have optimization-friendly derivatives, while the performance measure used for testing should be as close as possible to the final objective.   The hyperparameter controls how much you want to regularize the model. If , then Ridge Regression is just Linear Regression. If is very large, then all weights end up very close to zero and the result is a flat line going through the data’s mean. presents the Ridge Regression cost function. Note that the bias term is not regularized.   A linear model (left) and a polynomial model (right), both with various levels of Ridge regularization   A linear model (left) and a polynomial model (right), both with various levels of Ridge regularization.     shows several Ridge models trained on some linear data using different values. On the left, plain Ridge models are used, leading to linear predictions. On the right, the data is first expanded using PolynomialFeatures(degree=10) , then it is scaled using a StandardScaler , and finally the Ridge models are applied to the resulting features: this is Polynomial Regression with Ridge regularization. Note how increasing leads to flatter (i.e., less extreme, more reasonable) predictions, thus reducing the model’s variance but increasing its bias.  To perform Ridge Regression with Scikit-Learn, use the following code: from sklearn.linear_model import Ridge ridge_reg = Ridge(alpha=1) ridge_reg.fit(X, y)   If you want to perform Ridge Regression using Stochastic Gradient Descent, use the following code: from sklearn.linear_model import SGDRegressor sgd_reg = SGDRegressor(penalty=\"l2\") sgd_reg.fit(X, y)     Lasso Regression    Least Absolute Shrinkage and Selection Operator Regression (usually simply called Lasso Regression ) is another regularized version of Linear Regression: just like Ridge Regression, it adds a regularization term to the cost function, but it uses the norm of the weight vector instead of half the square of the norm.   An important characteristic of Lasso Regression is that it tends to eliminate the weights of the least important features (i.e., set them to zero).  To perform Lasso Regression with Scikit-Learn, use the following code: from sklearn.linear_model import Lasso lasso_reg = Lasso(alpha=0.1) lasso_reg.fit(X, y)    Note that you could instead use SGDRegressor(penalty=\"l1\") if you want to perform stochastic gradient descent with Lasso regularization instead of batch gradient descent.     Elastic Net    Elastic Net is a middle ground between Ridge Regression and Lasso Regression. The regularization term is a simple mix of both Ridge and Lasso’s regularization terms, and you can control the mix ratio . When , Elastic Net is equivalent to Ridge Regression, and when , it is equivalent to Lasso Regression.   To perform Elastic Net with Scikit-Learn, use the following code: from sklearn.linear_model import ElasticNet elastic_net = ElasticNet(alpha=0.1, l1_ratio=0.5) elastic_net.fit(X, y)     Which Regularization do I Use?  When deciding which regression method to use—whether plain Linear Regression, Ridge Regression, Lasso Regression, or Elastic Net—it’s important to consider the nature of your data and the specific problem you’re trying to solve. Here’s a breakdown of when to use each method:  Plain Linear Regression :  When to Use : Rarely recommended, as it doesn’t include any regularization to prevent overfitting.  Why Avoid : Without regularization, the model may overfit the training data, especially when the dataset has a large number of features or if the features are noisy.    Ridge Regression (L2 Regularization) :  When to Use : A good default choice when you suspect that most features are useful, or when you want to prevent overfitting by penalizing large coefficients.  Why Use : Ridge Regression helps spread the influence across features more evenly, which is particularly useful when you have many features, all of which may contribute to the prediction.    Lasso Regression (L1 Regularization) :  When to Use : Preferable when you believe that only a few features are truly relevant, and you want to perform automatic feature selection by driving the weights of less important features to zero.  Why Use : Lasso can create a sparse model by eliminating irrelevant features, making it easier to interpret and reducing the complexity of the model.    Elastic Net (Combination of L1 and L2 Regularization) :  When to Use : A strong choice when you have many features and suspect that only a subset are relevant, especially if the features are highly correlated or if the number of features exceeds the number of training instances.  Why Use : Elastic Net combines the benefits of Ridge and Lasso Regression, providing more flexibility and stability. It tends to perform better in situations where Lasso might struggle, such as when features are correlated or when there are more features than observations.      By considering the characteristics of your dataset and the goals of your model, you can select the most appropriate regression technique to achieve optimal performance.   "
+},
+{
+  "id": "regularization-introduction-2",
+  "level": "2",
+  "url": "week-04-linear-regression-regularization.html#regularization-introduction-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "hyperparameter "
+},
+{
+  "id": "ridge-regression-3",
+  "level": "2",
+  "url": "week-04-linear-regression-regularization.html#ridge-regression-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "regularization term "
+},
+{
+  "id": "linear-regression-note-7",
+  "level": "2",
+  "url": "week-04-linear-regression-regularization.html#linear-regression-note-7",
+  "type": "Note",
+  "number": "4.6.1",
+  "title": "",
+  "body": " It is quite common for the cost function used during training to be different from the performance measure used for testing. Apart from regularization, another reason they might be different is that a good training cost function should have optimization-friendly derivatives, while the performance measure used for testing should be as close as possible to the final objective.  "
+},
+{
+  "id": "figure-ridge-regularization",
+  "level": "2",
+  "url": "week-04-linear-regression-regularization.html#figure-ridge-regularization",
+  "type": "Figure",
+  "number": "4.6.2",
+  "title": "",
+  "body": " A linear model (left) and a polynomial model (right), both with various levels of Ridge regularization   A linear model (left) and a polynomial model (right), both with various levels of Ridge regularization.   "
+},
+{
+  "id": "lasso-regression-3",
+  "level": "2",
+  "url": "week-04-linear-regression-regularization.html#lasso-regression-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Lasso Regression "
+},
+{
+  "id": "linear-regression-note-8",
+  "level": "2",
+  "url": "week-04-linear-regression-regularization.html#linear-regression-note-8",
+  "type": "Note",
+  "number": "4.6.3",
+  "title": "",
+  "body": " Note that you could instead use SGDRegressor(penalty=\"l1\") if you want to perform stochastic gradient descent with Lasso regularization instead of batch gradient descent.  "
+},
+{
+  "id": "elastic-net-3",
+  "level": "2",
+  "url": "week-04-linear-regression-regularization.html#elastic-net-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Elastic Net "
+},
+{
+  "id": "week-06-estimating-probabilities",
+  "level": "1",
+  "url": "week-06-estimating-probabilities.html",
   "type": "Section",
   "number": "5.1",
-  "title": "Review of Linear Algebra",
-  "body": "Review of Linear Algebra   Matrix Product   If is an matrix and is a matrix, then the product  is the matrix whose entries are determined as follows: To find the entry in row and column of , single out row from the matrix and column from the matrix . Multiply the corresponding entries from the row and column together, and then add up the resulting products.  The matrix product      The linear system can be written as If we designate these matrices by , , and respectively, then the system becomes The matrix in this equation is called the coefficient matrix of the system. The augmented matrix for the system is obtained by adjoining to as the last column:   "
+  "title": "Estimating Probabilities",
+  "body": " Estimating Probabilities   So, how does Logistic Regression work? Similar to a Linear Regression model, a Logistic Regression model calculates a weighted sum of the input features (plus a bias term). However, instead of directly outputting this result as Linear Regression does, Logistic Regression applies the logistic function to this sum:   The logistic, denoted , is a sigmoid function (i.e., S-shaped) that outputs a number between 0 and 1. It is defined as shown in and .    Logistic function   Logistic function.    Once the Logistic Regression model has estimated the probability that an instance belongs to the positive class, it can make its prediction easily. Notice that when , and when , so a Logistic Regression model predicts if is positive and if it is negative.   The score is often referred to as the logit . This term originates from the fact that the logit function, defined as , serves as the inverse of the logistic function. In fact, when you calculate the logit of the estimated probability , you obtain the value . The logit is also known as the log-odds because it represents the logarithm of the ratio between the estimated probability of the positive class and the estimated probability of the negative class.   "
 },
 {
-  "id": "unit-05-review-linear-algebra-3",
+  "id": "week-06-estimating-probabilities-3",
   "level": "2",
-  "url": "unit-05-review-linear-algebra.html#unit-05-review-linear-algebra-3",
-  "type": "Definition",
-  "number": "5.1.1",
-  "title": "Matrix Product.",
-  "body": "Matrix Product   If is an matrix and is a matrix, then the product  is the matrix whose entries are determined as follows: To find the entry in row and column of , single out row from the matrix and column from the matrix . Multiply the corresponding entries from the row and column together, and then add up the resulting products.  The matrix product     "
-},
-{
-  "id": "unit-05-review-linear-algebra-4",
-  "level": "2",
-  "url": "unit-05-review-linear-algebra.html#unit-05-review-linear-algebra-4",
+  "url": "week-06-estimating-probabilities.html#week-06-estimating-probabilities-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "coefficient matrix augmented matrix "
+  "body": "logistic "
 },
 {
-  "id": "unit-05-gaussian-elimination",
+  "id": "figure-logisfig",
+  "level": "2",
+  "url": "week-06-estimating-probabilities.html#figure-logisfig",
+  "type": "Figure",
+  "number": "5.1.1",
+  "title": "",
+  "body": " Logistic function   Logistic function.   "
+},
+{
+  "id": "logistic-regression-note-1",
+  "level": "2",
+  "url": "week-06-estimating-probabilities.html#logistic-regression-note-1",
+  "type": "Note",
+  "number": "5.1.2",
+  "title": "",
+  "body": " The score is often referred to as the logit . This term originates from the fact that the logit function, defined as , serves as the inverse of the logistic function. In fact, when you calculate the logit of the estimated probability , you obtain the value . The logit is also known as the log-odds because it represents the logarithm of the ratio between the estimated probability of the positive class and the estimated probability of the negative class.  "
+},
+{
+  "id": "week-06-training-and-cost-function",
   "level": "1",
-  "url": "unit-05-gaussian-elimination.html",
+  "url": "week-06-training-and-cost-function.html",
   "type": "Section",
   "number": "5.2",
-  "title": "Gaussian Elimination with Backward Substitution",
-  "body": "Gaussian Elimination with Backward Substitution   The fundamental direct method for solving systems of linear equations is Gaussian elimination . In this section, we will cover two key steps of the process:   First, how to solve a linear system when the coefficient matrix is already in upper triangular form . This step is known as backward substitution .    Second, how to transform a general linear system into an upper triangular form so that backward substitution can be applied. This transformation process is known as Gaussian elimination .      Backward Substitution  Sometimes, the matrix has a special structure that simplifies the solution process. For example, if is an upper triangular matrix , then solving the system becomes straightforward.   Solve the linear system     Note that the coefficient matrix is upper triangular, we can solve the system using backward substitution . Starting from the last equation, Then substituting the value of in the second equation, Similarly, solving the first equation for by substituting the values of and , we have Therefore, the solution is .     Gaussian Elimination  Now, suppose the matrix does not have any special zero structure. Gaussian elimination is a general method that uses elementary row operations to transform the system into an equivalent upper triangular form. Once in this form, the system can be solved using backward substitution.   Recall there are three types of elementary row operations:  Exchange two rows.  Multiply a row by a nonzero constant.  Add a multiple of a row to another row.    Gaussian elimination are as follows: The diagonal elements , , , , are called pivot elements .    Solve the linear system by Gaussian elimination and backward substitution.      Apply Gaussian elimination to reduce the augmented matrix of the system into an equivalent upper triangular form, After we get the equivalent upper triangular form, we can use backward substitution (see last example) to find the solution is , , and .      Pivoting Strategies   To enhance the stability of Gaussian elimination, it’s important to choose pivot elements that are as large as possible. This minimizes the size of the multipliers, reducing the risk of significant round-off errors caused by finite precision. When a small pivot is multiplied by a large number, it can distort other rows and degrade accuracy. A common strategy is to compare the absolute values of the pivot and the entries below it, and then swap the current row with the one containing the largest value in magnitude, if different. This approach is known as partial pivoting . It works as follows: as the elimination proceeds for , at each stage , choose as the smallest integer for which and interchange rows and . Then proceed with the elimination process.    Apply Gaussian elimination with partial pivoting to solve the following linear system.     Apply Gaussian elimination with partial pivoting to reduce the augmented matrix of the system into an equivalent upper triangular form,   After we get the equivalent upper triangular form, we can use backward substitution to find the solution. Starting from the last equation, Then substituting the value of in the last second equation, Similarly, solve the second equation for and the first equation for ,   Therefore, the solution is , , , and .  Video Breakdown  Dr. Yang walks through this example in the following video.        Algorithm and Coding  Let’s implement Gaussian elimination with backward substitution without pivoting in Python to solve a system of linear equations step by step. You can add partial pivoting by yourself.   import numpy as np def gaussian_elimination(A, b): \"\"\"Performs Gaussian elimination without pivoting\"\"\" A = np.array(A, dtype=np.float64) b = np.array(b, dtype=np.float64) n = b.size for k in range(n-1): for i in range(k+1, n): m = A[i, k] \/ A[k, k] A[i, k:] = A[i, k:] - m * A[k, k:] b[i] = b[i] - m * b[k] return A, b def backward_substitution(U, y): \"\"\"Solves Ux = y for upper triangular matrix U\"\"\" U = np.array(U, dtype=np.float64) y = np.array(y, dtype=np.float64) n = y.size x = np.zeros_like(y) for i in range(n-1, -1, -1): x[i] = (y[i] - np.dot(U[i, i+1:], x[i+1:])) \/ U[i, i] return x  Now, let’s use this implementation to solve the linear system given in Example 2: A=[[2,4,10], [-1,-6, -21], [3,3,7]] b=[-22, 59, -17] U, y = gaussian_elimination(A, b) x = backward_substitution(U, y) print(\"Solution x =\", x)    Solution x = [-2. 8. -5.]     This confirms our implementation works correctly. Alternatively, you can solve the same system more easily using NumPy’s built-in solver: x = np.linalg.solve(A, b) print(\"Solution x =\", x)    Solution x = [-2. 8. -5.]   This built-in method is optimized and should be preferred for general-purpose use unless you’re explicitly learning or implementing algorithms manually.   "
+  "title": "Training and Cost Function",
+  "body": " Training and Cost Function   Now you know how a Logistic Regression model estimates probabilities and makes predictions. But how is it trained? The objective of training is to set the parameter vector so that the model estimates high probabilities for positive instances ( ) and low probabilities for negative instances ( ). This idea is captured by the cost function shown in for a single training instance . . This cost function makes sense because grows very large when approaches , so the cost will be large if the model estimates a probability close to for a positive instance, and it will also be very large if the model estimates a probability close to for a negative instance. On the other hand, is close to when is close to , so the cost will be close to if the estimated probability is close to for a negative instance or close to for a positive instance, which is precisely what we want.  The cost function over the whole training set is the average cost over all training instances. It can be written in a single expression called the log loss : .  The bad news is that there is no known closed-form equation to compute the value of that minimizes this cost function (there is no equivalent of the Normal Equation). The good news is that this cost function is convex, so Gradient Descent (or any other optimization algorithm) is guaranteed to find the global minimum (if the learning rate is not too large and you wait long enough). The partial derivatives of the cost function with regard to the -th model parameter are given by . Once you have the gradient vector containing all the partial derivatives, you can use it in the Batch Gradient Descent algorithm or Stochastic Gradient Descent algorithm. That’s it: you now know how to train a Logistic Regression model.  "
 },
 {
-  "id": "unit-05-gaussian-elimination-2-1",
+  "id": "week-06-training-and-cost-function-4",
   "level": "2",
-  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-2-1",
+  "url": "week-06-training-and-cost-function.html#week-06-training-and-cost-function-4",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Gaussian elimination upper triangular form backward substitution Gaussian elimination "
+  "body": "log loss "
 },
 {
-  "id": "unit-05-gaussian-elimination-3-2",
-  "level": "2",
-  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-3-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "upper triangular matrix "
-},
-{
-  "id": "unit-05-gaussian-elimination-3-3",
-  "level": "2",
-  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-3-3",
-  "type": "Example",
-  "number": "5.2.1",
-  "title": "",
-  "body": " Solve the linear system     Note that the coefficient matrix is upper triangular, we can solve the system using backward substitution . Starting from the last equation, Then substituting the value of in the second equation, Similarly, solving the first equation for by substituting the values of and , we have Therefore, the solution is .   "
-},
-{
-  "id": "unit-05-gaussian-elimination-4-2",
-  "level": "2",
-  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-4-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Gaussian elimination "
-},
-{
-  "id": "unit-05-gaussian-elimination-4-5",
-  "level": "2",
-  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-4-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "pivot elements "
-},
-{
-  "id": "unit-05-gaussian-elimination-4-6",
-  "level": "2",
-  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-4-6",
-  "type": "Example",
-  "number": "5.2.2",
-  "title": "",
-  "body": "  Solve the linear system by Gaussian elimination and backward substitution.      Apply Gaussian elimination to reduce the augmented matrix of the system into an equivalent upper triangular form, After we get the equivalent upper triangular form, we can use backward substitution (see last example) to find the solution is , , and .   "
-},
-{
-  "id": "unit-05-gaussian-elimination-5-3",
-  "level": "2",
-  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-5-3",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "partial pivoting "
-},
-{
-  "id": "unit-05-gaussian-elimination-5-4",
-  "level": "2",
-  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-5-4",
-  "type": "Example",
-  "number": "5.2.3",
-  "title": "",
-  "body": "  Apply Gaussian elimination with partial pivoting to solve the following linear system.     Apply Gaussian elimination with partial pivoting to reduce the augmented matrix of the system into an equivalent upper triangular form,   After we get the equivalent upper triangular form, we can use backward substitution to find the solution. Starting from the last equation, Then substituting the value of in the last second equation, Similarly, solve the second equation for and the first equation for ,   Therefore, the solution is , , , and .  Video Breakdown  Dr. Yang walks through this example in the following video.     "
-},
-{
-  "id": "unit-05-gaussian-elimination-6-2",
-  "level": "2",
-  "url": "unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-6-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Gaussian elimination with backward substitution "
-},
-{
-  "id": "unit-05-lu-decomposition",
+  "id": "week-06-decision-boundaries",
   "level": "1",
-  "url": "unit-05-lu-decomposition.html",
+  "url": "week-06-decision-boundaries.html",
   "type": "Section",
   "number": "5.3",
-  "title": "LU Decomposition",
-  "body": "LU Decomposition  In this section, we demonstrate that the steps involved in Gaussian elimination not only solve a linear system but also reveal a deeper structure of the matrix . Specifically, the elimination process can be viewed as decomposing into the product of two matrices: a lower triangular matrix and an upper triangular matrix , such that This factorization, known as LU decomposition , is a powerful tool in numerical linear algebra. It allows for efficient solutions of linear systems, especially when multiple right-hand sides are involved, and it forms the foundation for many more advanced matrix algorithms. In the LU decomposition, captures the row operations used to eliminate entries below the pivots, while records the multipliers used in those operations. Rigorously, given a square matrix , LU decomposition factors it as: where is a lower triangular matrix in the form of and is an upper triangular matrix in the form of Note that all diagonal entries of are 1 and entries below the diagonal ( for ) are the multipliers used during Gaussian elimination, and the matrix comes from the result of Gaussian elimination.    Find LU decomposition of      Apply Gaussian elimination to reduce the matrix into upper triangular form, The boxed multipliers form the lower triangular part of , while the resulting upper triangular matrix defines the matrix , namely,     Suppose is the coefficient matrix of the linear system By factoring , the system becomes This can be viewed as two successive systems: The first system is solved using forward substitution, since is lower triangular. The second is solved using backward substitution, as is upper triangular.    Use LU decomposition to solve the linear system     By last example, the coefficient matrix can be decomposed into as follows, Then, becomes Solving this system using forward substitution, we obtain , and thus the system becomes Then solving this system for using backward substitution, we have   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+  "title": "Decision Boundaries",
+  "body": " Decision Boundaries   Let’s use the iris dataset to illustrate Logistic Regression. This is a famous dataset that contains the sepal and petal length and width of 150 iris flowers of three different species: Iris setosa, Iris versicolor, and Iris virginica.   Flowers of three iris plant species   Flowers of three iris plant species.    from sklearn import datasets iris = datasets.load_iris() X = iris[\"data\"][:, 3:] # petal width y = (iris[\"target\"] == 2).astype(int) # 1 if Iris virginica, else 0  Now let’s train a Logistic Regression model:  from sklearn.linear_model import LogisticRegression log_reg = LogisticRegression() log_reg.fit(X, y)  Let’s look at the model’s estimated probabilities for flowers with petal widths varying from 0 cm to 3 cm, see .  X_new = np.linspace(0, 3, 1000).reshape(-1, 1) y_proba = log_reg.predict_proba(X_new) plt.plot(X_new, y_proba[:, 1], \"g-\", label=\"Iris virginica\") plt.plot(X_new, y_proba[:, 0], \"b--\", label=\"Not Iris virginica\") # + more Matplotlib code to make the image look pretty   Estimated probabilities and decision boundary   Estimated probabilities and decision boundary.    The petal width of Iris virginica flowers (represented by triangles) varies from 1.4 cm to 2.5 cm, while other iris species (represented by squares) typically have smaller petal widths, ranging from 0.1 cm to 1.8 cm. There is some overlap between these ranges. When the petal width exceeds about 2 cm, the classifier is very confident that the flower is an Iris virginica , outputting a high probability for that class. Conversely, when the petal width is below 1 cm, the classifier is confident that the flower is not an Iris virginica (assigning a high probability to the “Not Iris virginica ” class). In the range between these extremes, the classifier is less certain. However, if you request a class prediction using the predict method (instead of the predict_proba method), the classifier will return the class it deems most likely. As a result, there is a decision boundary at approximately 1.6 cm, where the probabilities for both classes are equal at 50%. If the petal width is greater than 1.6 cm, the classifier will predict the flower as an Iris virginica ; otherwise, it will predict that it is not, even if its confidence is low.  In , the same dataset is shown, but this time with two features: petal width and length. After training, the Logistic Regression classifier can use these two features to estimate the probability that a new flower belongs to the Iris virginica species. The dashed line indicates the points where the model estimates a 50% probability, representing the model’s decision boundary. Notably, this boundary is linear. Each parallel line on the plot represents points where the model predicts a specific probability, ranging from 15% (bottom left) to 90% (top right). According to the model, any flowers located beyond the top-right line have more than a 90% chance of being classified as Iris virginica .   Linear decision boundary   Linear decision boundary.    Just like the other linear models, Logistic Regression models can be regularized using or penalties. Scikit-Learn actually adds an penalty by default.  The hyperparameter controlling the regularization strength of a Scikit-Learn LogisticRegression model is not alpha (as in other linear models), but its inverse: C . The higher the value of C , the less the model is regularized.  "
 },
 {
-  "id": "unit-05-lu-decomposition-2",
+  "id": "figure-iris-flowers",
   "level": "2",
-  "url": "unit-05-lu-decomposition.html#unit-05-lu-decomposition-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "LU decomposition lower triangular matrix upper triangular matrix "
-},
-{
-  "id": "unit-05-lu-decomposition-3",
-  "level": "2",
-  "url": "unit-05-lu-decomposition.html#unit-05-lu-decomposition-3",
-  "type": "Example",
+  "url": "week-06-decision-boundaries.html#figure-iris-flowers",
+  "type": "Figure",
   "number": "5.3.1",
   "title": "",
-  "body": "  Find LU decomposition of      Apply Gaussian elimination to reduce the matrix into upper triangular form, The boxed multipliers form the lower triangular part of , while the resulting upper triangular matrix defines the matrix , namely,    "
+  "body": " Flowers of three iris plant species   Flowers of three iris plant species.   "
 },
 {
-  "id": "unit-05-lu-decomposition-5",
+  "id": "figure-decisionboundary",
   "level": "2",
-  "url": "unit-05-lu-decomposition.html#unit-05-lu-decomposition-5",
-  "type": "Example",
+  "url": "week-06-decision-boundaries.html#figure-decisionboundary",
+  "type": "Figure",
   "number": "5.3.2",
   "title": "",
-  "body": "  Use LU decomposition to solve the linear system     By last example, the coefficient matrix can be decomposed into as follows, Then, becomes Solving this system using forward substitution, we obtain , and thus the system becomes Then solving this system for using backward substitution, we have   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+  "body": " Estimated probabilities and decision boundary   Estimated probabilities and decision boundary.   "
 },
 {
-  "id": "unit-06-jacobi-method",
+  "id": "week-06-decision-boundaries-11",
+  "level": "2",
+  "url": "week-06-decision-boundaries.html#week-06-decision-boundaries-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "decision boundary "
+},
+{
+  "id": "figure-lindb",
+  "level": "2",
+  "url": "week-06-decision-boundaries.html#figure-lindb",
+  "type": "Figure",
+  "number": "5.3.3",
+  "title": "",
+  "body": " Linear decision boundary   Linear decision boundary.   "
+},
+{
+  "id": "logistic-regression-note-2",
+  "level": "2",
+  "url": "week-06-decision-boundaries.html#logistic-regression-note-2",
+  "type": "Note",
+  "number": "5.3.4",
+  "title": "",
+  "body": "The hyperparameter controlling the regularization strength of a Scikit-Learn LogisticRegression model is not alpha (as in other linear models), but its inverse: C . The higher the value of C , the less the model is regularized. "
+},
+{
+  "id": "week-06-softmax-regression",
   "level": "1",
-  "url": "unit-06-jacobi-method.html",
+  "url": "week-06-softmax-regression.html",
+  "type": "Section",
+  "number": "5.4",
+  "title": "Softmax Regression",
+  "body": " Softmax Regression  What if there are multiple classes?   Whereas binary classifiers distinguish between two classes, multiclass classifiers (also called multinomial classifiers) can distinguish between more than two classes.  One way to create a system that can classify the iris flowers into 3 classes is to train 3 binary classifiers, one for each class. Then when you want to classify a iris flower, you get the decision score from each classifier for that iris flower and you select the class whose classifier outputs the highest score. This is called the one-versus-the-rest (OvR) strategy (also called one-versus-all ).  Now let’s see a different way to generalize Logistic Regression to support multiple classes directly, without having to train and combine multiple binary classifiers. This is called Softmax Regression , or Multinomial Logistic Regression .  The idea is simple: when given an instance , the Softmax Regression model first computes a score for each class , then estimates the probability of each class by applying the softmax function (also called the normalized exponential ) to the scores. The equation to compute should look familiar, as it is just like the equation for Linear Regression prediction: . Note that each class has its own dedicated parameter vector . All these vectors are typically stored as rows in a parameter matrix .  Once you have computed the score of every class for the instance , you can estimate the probability that the instance belongs to class by running the scores through the softmax function, see . The function computes the exponential of every score, then normalizes them (dividing by the sum of all the exponentials). The scores are generally called logits or log-odds (although they are actually unnormalized log-odds). .  Just like the Logistic Regression classifier, the Softmax Regression classifier predicts the class with the highest estimated probability (which is simply the class with the highest score).  The Softmax Regression classifier predicts only one class at a time (i.e., it is multiclass, not multioutput), so it should be used only with mutually exclusive classes, such as different types of plants. You cannot use it to recognize multiple people in one picture.   Training a Softmax Regression Model   Now that you know how the model estimates probabilities and makes predictions, let’s take a look at training. The objective is to have a model that estimates a high probability for the target class (and consequently a low probability for the other classes). Minimizing the cost function shown in , called the cross entropy , should lead to this objective because it penalizes the model when it estimates a low probability for a target class. Cross entropy is frequently used to measure how well a set of estimated class probabilities matches the target classes. where is the target probability that the -th instance belongs to class . In general, it is either equal to or , depending on whether the instance belongs to the class or not.  Notice that when there are just two classes ( ), this cost function is equivalent to the Logistic Regression’s cost function, see .  The gradient vector of this cost function with regard to is   Now you can compute the gradient vector for every class, then use Gradient Descent (or any other optimization algorithm) to find the parameter matrix that minimizes the cost function.   Softmax Regression in Scikit Learn   Let’s use Softmax Regression to classify the iris flowers into all three classes. Scikit- Learn’s LogisticRegression uses one-versus-the-rest by default when you train it on more than two classes, but you can set the multi_class hyperparameter to \"multinomial\" to switch it to Softmax Regression. It also applies regularization by default, which you can control using the hyperparameter C : X = iris[\"data\"][:, (2, 3)] # petal length, petal width y = iris[\"target\"] # LogisticRegression automatically uses softmax for multiclass # classification when the y values are not binary softmax_reg = LogisticRegression(C=10) softmax_reg.fit(X, y)   So the next time you find an iris with petals that are 5 cm long and 2 cm wide, you can ask your model to tell you what type of iris it is, and it will answer Iris virginica (class 2) with 94.2% probability: print(f'prediction: {softmax_reg.predict([[5, 2]])}') print(f'probabilities: {softmax_reg.predict_proba([[5, 2]])}')    prediction: [2] probabilities: [[6.21626370e-07 5.73689802e-02 9.42630398e-01]]      shows the resulting decision boundaries, represented by the background colors. Notice that the decision boundaries between any two classes are linear. The figure also shows the probabilities for the Iris versicolor class, represented by the curved lines (e.g., the line labeled with 0.450 represents the 45% probability boundary). Notice that the model can predict a class that has an estimated probability below 50%. For example, at the point where all decision boundaries meet, all classes have an equal estimated probability of 33%.   Softmax Regression decision boundaries   Softmax Regression decision boundaries.     "
+},
+{
+  "id": "week-06-softmax-regression-2-4",
+  "level": "2",
+  "url": "week-06-softmax-regression.html#week-06-softmax-regression-2-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "one-versus-the-rest one-versus-all "
+},
+{
+  "id": "week-06-softmax-regression-2-5",
+  "level": "2",
+  "url": "week-06-softmax-regression.html#week-06-softmax-regression-2-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Softmax Regression Multinomial Logistic Regression "
+},
+{
+  "id": "week-06-softmax-regression-2-6",
+  "level": "2",
+  "url": "week-06-softmax-regression.html#week-06-softmax-regression-2-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "softmax function normalized exponential "
+},
+{
+  "id": "week-06-softmax-regression-2-7",
+  "level": "2",
+  "url": "week-06-softmax-regression.html#week-06-softmax-regression-2-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "logits log-odds "
+},
+{
+  "id": "logistic-regression-note-3",
+  "level": "2",
+  "url": "week-06-softmax-regression.html#logistic-regression-note-3",
+  "type": "Note",
+  "number": "5.4.1",
+  "title": "",
+  "body": "The Softmax Regression classifier predicts only one class at a time (i.e., it is multiclass, not multioutput), so it should be used only with mutually exclusive classes, such as different types of plants. You cannot use it to recognize multiple people in one picture. "
+},
+{
+  "id": "week-06-softmax-regression-3-3",
+  "level": "2",
+  "url": "week-06-softmax-regression.html#week-06-softmax-regression-3-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "cross entropy "
+},
+{
+  "id": "figure-srdb",
+  "level": "2",
+  "url": "week-06-softmax-regression.html#figure-srdb",
+  "type": "Figure",
+  "number": "5.4.2",
+  "title": "",
+  "body": " Softmax Regression decision boundaries   Softmax Regression decision boundaries.   "
+},
+{
+  "id": "week-06-performance-measures",
+  "level": "1",
+  "url": "week-06-performance-measures.html",
+  "type": "Section",
+  "number": "5.5",
+  "title": "Performance Measures",
+  "body": " Performance Measures   Evaluating a classifier is often significantly trickier than evaluating a regressor, so we will spend a large part on this topic. There are many performance measures available, so get ready to learn many new concepts and acronyms!   Logistic Regression on the MNIST Dataset   In this part, we will use another dataset, MNIST, to show the different performance measures on the binary classifier. MNIST is a set of 70,000 small images of digits handwritten by high school students and employees of the US Census Bureau. Each image is labeled with the digit it represents. This set has been studied so much that it is often called the “hello world” of Machine Learning: whenever people come up with a new classification algorithm they are curious to see how it will perform on MNIST, and anyone who learns Machine Learning tackles this dataset sooner or later.  Scikit-Learn provides many helper functions to download popular datasets. MNIST is one of them. The following code fetches the MNIST dataset: import numpy as np from sklearn.datasets import fetch_openml mnist = fetch_openml('mnist_784', version=1) print(mnist.keys())    dict_keys(['data', 'target', 'frame', 'categories', 'feature_names', 'target_names', 'DESCR', 'details', 'url'])   Datasets loaded by Scikit-Learn generally have a similar dictionary structure, including the following:  A DESCR key describing the dataset  A data key containing an array with one row per instance and one column per feature  A target key containing an array with the labels    Let’s look at these arrays: X, y = np.array(mnist[\"data\"]), np.array(mnist[\"target\"]) print(f'X.shape = {X.shape}') print(f'y.shape = {y.shape}')    X.shape = (70000, 784) y.shape = (70000,)   There are 70,000 images, and each image has 784 features. This is because each image is 28 × 28 pixels, and each feature simply represents one pixel’s intensity, from 0 (white) to 255 (black). Let’s take a peek at one digit from the dataset. All you need to do is grab an instance’s feature vector, reshape it to a 28 × 28 array, and display it using Matplotlib’s imshow() function: import matplotlib as mpl import matplotlib.pyplot as plt some_digit = X[0] some_digit_image = some_digit.reshape(28, 28) plt.imshow(some_digit_image, cmap=\"binary\") plt.axis(\"off\") plt.show()   Image of number five   Image of number five   This looks like a 5, and indeed that’s what the label tells us: print(y[0])    5   Note that the label is a string. Most ML algorithms expect numbers, so let’s cast y to integer: y = y.astype(np.uint8)   To give you a feel for the complexity of the classification task, shows a few more images from the MNIST dataset.   Digits from the MNIST dataset   Digits from the MNIST dataset.    But wait! You should always create a test set and set it aside before inspecting the data closely. The MNIST dataset is actually already split into a training set (the first 60,000 images) and a test set (the last 10,000 images): X_train, X_test, y_train, y_test = X[:60000], X[60000:], y[:60000], y[60000:]   Let’s simplify the problem for now and only try to identify one digit—for example, the number 5. This “5-detector” will be an example of a binary classifier, capable of distinguishing between just two classes, 5 and not-5. Let’s create the target vectors for this classification task: y_train_5 = (y_train == 5) # True for all 5s, False for all other digits y_test_5 = (y_test == 5)   Now let’s use Logistic Regression to train it: from sklearn.linear_model import LogisticRegression log_reg = LogisticRegression(random_state=42) log_reg.fit(X_train, y_train_5)   Now we can use it to detect images of the number 5: print(log_reg.predict([some_digit]))    [ True]   The Logistic Regression guesses that this image represents a 5 (True). Looks like it guessed right in this particular case! Now, let’s evaluate this model’s performance.    Measuring Accuracy Using Cross-Validation   A good way to evaluate a model is to use K-fold cross-validation . shows the idea of K-fold cross-validation: it randomly splits the data set into K distinct subsets called folds, then it trains and evaluates the model K times, picking a different fold for evaluation every time and training on the other folds.   K-fold cross-validation   K-fold cross-validation.    Let’s use the cross_val_score() function to evaluate our model with three folds: from sklearn.model_selection import cross_val_score print(cross_val_score(log_reg, X_train, y_train_5, cv=3, scoring=\"accuracy\"))    [0.97525 0.9732 0.9732 ]   Wow! Above 97% accuracy (ratio of correct predictions) on all cross-validation folds? This looks amazing, doesn’t it? Well, before you get too excited, let’s look at a very dumb classifier that just classifies every single image in the “not-5” class: from sklearn.base import BaseEstimator class Never5Classifier(BaseEstimator): def fit(self, X, y=None): return self def predict(self, X): return np.zeros((len(X), 1), dtype=bool)   Can you guess this model’s accuracy? Let’s find out: never_5_clf = Never5Classifier() print(cross_val_score(never_5_clf, X_train, y_train_5, cv=3, scoring=\"accuracy\"))    [0.91125 0.90855 0.90915]   That’s right, it has over 90% accuracy! This is simply because only about 10% of the images are 5s, so if you always guess that an image is not a 5, you will be right about 90% of the time.  This demonstrates why accuracy is generally not the preferred performance measure for classifiers, especially when you are dealing with skewed datasets (i.e., when some classes are much more frequent than others).    Confusion Matrix   A much better way to evaluate the performance of a classifier is to look at the confusion matrix . The general idea is to count the number of times instances of class A are classified as class B. For example, to know the number of times the classifier confused images of 5s with 3s, you would look in the fifth row and third column of the confusion matrix.  To compute the confusion matrix, you first need to have a set of predictions so that they can be compared to the actual targets. You could make predictions on the test set, but let’s keep it untouched for now (remember that you want to use the test set only at the very end of your project, once you have a classifier that you are ready to launch). Instead, you can use the cross_val_predict() function: from sklearn.model_selection import cross_val_predict y_train_pred = cross_val_predict(log_reg, X_train, y_train_5, cv=3)   Just like the cross_val_score() function, cross_val_predict() performs K-fold cross-validation, but instead of returning the evaluation scores, it returns the predictions made on each test fold.  Now you are ready to get the confusion matrix using the confusion_matrix() function. Just pass it the target classes ( y_train_5 ) and the predicted classes ( y_train_pred ): from sklearn.metrics import confusion_matrix cm = confusion_matrix(y_train_5, y_train_pred) print(cm)    [[54038 541] [ 1026 4395]]   Using seaborn, you can plot the heatmap of this confusion matrix, which helps with the visualization: import seaborn as sns import matplotlib.pyplot as plt sns.heatmap(cm, annot=True, fmt='d', cmap='Blues') plt.xlabel('Predicted') plt.ylabel('Actual') plt.show()   Generated plot from default   A dynamically generated mathematical plot.     Each row in a confusion matrix represents an actual class , while each column represents a predicted class . The first row of this matrix considers non-5 images (the negative class): 54,038 of them were correctly classified as non-5s (they are called true negatives ), while the remaining 541 were wrongly classified as 5s ( false positives ). The second row considers the images of 5s (the positive class ): 1,026 were wrongly classified as non-5s ( false negatives ), while the remaining 4,395 were correctly classified as 5s ( true positives ). A perfect classifier would have only true positives and true negatives, so its confusion matrix would have nonzero values only on its main diagonal (top left to bottom right).  If you are confused about the confusion matrix, may help.   An illustrated confusion matrix   An illustrated confusion matrix.      Precision and Recall   The confusion matrix gives you a lot of information, but sometimes you may prefer a more concise metric. An interesting one to look at is the accuracy of the positive predictions; this is called the precision of the classifier: where is the number of true positives, and is the number of false positives.  A trivial way to have perfect precision is to make one single positive prediction and ensure it is correct (precision = 1\/1 = 100%). But this would not be very useful, since the classifier would ignore all but one positive instance. So precision is typically used along with another metric named recall , also called sensitivity or the true positive rate (TPR): this is the ratio of positive instances that are correctly detected by the classifier: where is the number of false negatives.  Scikit-Learn provides several functions to compute classifier metrics, including precision and recall: from sklearn.metrics import precision_score, recall_score print('precision: ', precision_score(y_train_5, y_train_pred)) print('recall: ', recall_score(y_train_5, y_train_pred))    precision: 0.8903970826580226 recall: 0.8107360265633647     Now your 5-detector does not look as shiny as it did when you looked at its accuracy. When it claims an image represents a 5, it is correct only 89% of the time. Moreover, it only detects 81% of the 5s.  It is often convenient to combine precision and recall into a single metric called the score , in particular if you need a simple way to compare two classifiers. The score is the harmonic mean of precision and recall (see ). Whereas the regular mean treats all values equally, the harmonic mean gives much more weight to low values. As a result, the classifier will only get a high score if both recall and precision are high.   To compute the F1 score, simply call the f1_score() function: from sklearn.metrics import f1_score print('f1 score: ', f1_score(y_train_5, y_train_pred))    f1 score: 0.8487013613980883     The score favors classifiers that have similar precision and recall. This is not always what you want: in some contexts you mostly care about precision, and in other contexts you really care about recall. For example, if you trained a classifier to detect videos that are safe for kids, you would probably prefer a classifier that rejects many good videos (low recall) but keeps only safe ones (high precision), rather than a classifier that has a much higher recall but lets a few really bad videos show up in your product (in such cases, you may even want to add a human pipeline to check the classifier’s video selection). On the other hand, suppose you train a classifier to detect shoplifters in surveillance images: it is probably fine if your classifier has only 30% precision as long as it has 99% recall (sure, the security guards will get a few false alerts, but almost all shoplifters will get caught).  Unfortunately, you can’t have it both ways: increasing precision reduces recall, and vice versa. This is called the precision\/recall trade-off .    Precision\/Recall Trade-off  To understand this trade-off, let’s look at how the LogisticRegression makes its classification decisions. For each instance, it computes a score based on a decision function . If that score is greater than a threshold, it assigns the instance to the positive class; otherwise it assigns it to the negative class. shows a few digits positioned from the lowest score on the left to the highest score on the right. Suppose the decision threshold is positioned at the central arrow (between the two 5s): you will find 4 true positives (actual 5s) on the right of that threshold, and 1 false positive (actually a 6). Therefore, with that threshold, the precision is 80% (4 out of 5). But out of 6 actual 5s, the classifier only detects 4, so the recall is 67% (4 out of 6). If you raise the threshold (move it to the arrow on the right), the false positive (the 6) becomes a true negative, thereby increasing the precision (up to 100% in this case), but one true positive becomes a false negative, decreasing recall down to 50%. Conversely, lowering the threshold increases recall and reduces precision.   An illustrated precision\/recall trade-off   An illustrated precision\/recall trade-off.    Scikit-Learn does not let you set the threshold directly, but it does give you access to the decision scores that it uses to make predictions. Instead of calling the classifier’s predict() method, you can call its decision_function() method, which returns a score for each instance, and then use any threshold you want to make predictions based on those scores: # The index of zero below is used because we've only # selected one digit so we only have 1 score and 1 prediction y_scores = log_reg.decision_function([some_digit]) print('y_scores: ', y_scores[0]) threshold = 0 y_some_digit_pred = (y_scores > threshold) print('predicted: ', y_some_digit_pred[0])    y_scores: 1.9383711710342175 predicted: True     The LogisticRegression uses a threshold equal to 0, so the previous code returns the same result as the predict() method (i.e., True). Let’s raise the threshold: threshold = 10 y_some_digit_pred = (y_scores > threshold) print('predicted: ', y_some_digit_pred[0])    predicted: False   This confirms that raising the threshold decreases recall. The image actually represents a 5, and the classifier detects it when the threshold is 0, but it misses it when the threshold is increased to 10.  How do you decide which threshold to use? First, use the cross_val_predict() function to get the scores of all instances in the training set, but this time specify that you want to return decision scores instead of predictions: y_scores = cross_val_predict(log_reg, X_train, y_train_5, cv=3,method=\"decision_function\") With these scores, use the precision_recall_curve() function to compute precision and recall for all possible thresholds: from sklearn.metrics import precision_recall_curve precisions, recalls, thresholds = precision_recall_curve(y_train_5, y_scores) Finally, use Matplotlib to plot precision and recall as functions of the threshold value: def plot_precision_recall_vs_threshold(precisions, recalls, thresholds): plt.plot(thresholds, precisions[:-1], \"b--\", label=\"Precision\") plt.plot(thresholds, recalls[:-1], \"g-\", label=\"Recall\") # highlight the threshold and add the legend, axis label, and grid plot_precision_recall_vs_threshold(precisions, recalls, thresholds) plt.show()    Precision and recall versus the decision threshold   Precision and recall versus the decision threshold.    Another way to select a good precision\/recall trade-off is to plot precision directly against recall, as shown in .   Precision versus recall   Precision versus recall.    You can see that precision really starts to fall sharply around 90% recall. You will probably want to select a precision\/recall trade-off just before that drop—for example, at around 80% recall. But of course, the choice depends on your project.  Suppose you decide to aim for 95% precision. You look up the first plot and find that you need to use a threshold of about 1.5. To be more precise you can search for the lowest threshold that gives you at least 95% precision ( np.argmax() will give you the first index of the maximum value, which in this case means the first True value): threshold_95_precision = thresholds[np.argmax(precisions >= 0.95)] # ~ 1.5635   To make predictions (on the training set for now), instead of calling the classifier's predict() method, you can run this code: y_train_pred_95 = (y_scores >= threshold_95_precision) Let’s check these predictions’ precision and recall: print('precision: ', precision_score(y_train_5, y_train_pred_95)) print('recall: ', recall_score(y_train_5, y_train_pred_95))    precision: 0.9502121640735502 recall: 0.6196273750230584     Great, you have a 95% precision classifier! As you can see, it is fairly easy to create a classifier with virtually any precision you want: just set a high enough threshold, and you’re done. But wait, not so fast. A high-precision classifier is not very useful if its recall is too low!   If someone says, “Let’s reach 99% precision,” you should ask, “At what recall?”     The ROC Curve   The receiver operating characteristic (ROC) curve is another common tool used with binary classifiers. It is very similar to the precision\/recall curve, but instead of plotting precision versus recall, the ROC curve plots the true positive rate (another name for recall) against the false positive rate (FPR). The FPR is the ratio of negative instances that are incorrectly classified as positive. It is equal to 1 – the true negative rate (TNR), which is the ratio of negative instances that are correctly classified as negative. The TNR is also called specificity . Hence, the ROC curve plots sensitivity (recall) versus 1 – specificity .  To plot the ROC curve, you first use the roc_curve() function to compute the TPR and FPR for various threshold values: from sklearn.metrics import roc_curve fpr, tpr, thresholds = roc_curve(y_train_5, y_scores)   Then you can plot the FPR against the TPR using Matplotlib. This code produces the plot in . def plot_roc_curve(fpr, tpr, label=None): plt.plot(fpr, tpr, linewidth=2, label=label) plt.plot([0, 1], [0, 1], 'k--') # Dashed diagonal # Add axis labels and grid plot_roc_curve(fpr, tpr) plt.show()   ROC curve   ROC curve.     Once again there is a trade-off: the higher the recall (TPR), the more false positives (FPR) the classifier produces. The dotted line represents the ROC curve of a purely random classifier; a good classifier stays as far away from that line as possible (toward the top-left corner).  One way to compare classifiers is to measure the area under the curve (AUC). A perfect classifier will have a ROC AUC equal to 1, whereas a purely random classifier will have a ROC AUC equal to 0.5. Scikit-Learn provides a function to compute the ROC AUC: from sklearn.metrics import roc_auc_score print(roc_auc_score(y_train_5, y_scores))    0.9748672232444352     Since the ROC curve is so similar to the precision\/recall (PR) curve, you may wonder how to decide which one to use. As a rule of thumb, you should prefer the PR curve whenever the positive class is rare or when you care more about the false positives than the false negatives. Otherwise, use the ROC curve. For example, looking at the previous ROC curve (and the ROC AUC score), you may think that the classifier is really good. But this is mostly because there are few positives (5s) compared to the negatives (non-5s). In contrast, the PR curve makes it clear that the classifier has room for improvement (the curve could be closer to the topright corner).   "
+},
+{
+  "id": "figure-mnist-digit",
+  "level": "2",
+  "url": "week-06-performance-measures.html#figure-mnist-digit",
+  "type": "Figure",
+  "number": "5.5.1",
+  "title": "",
+  "body": " Image of number five   Image of number five   "
+},
+{
+  "id": "figure-mnist",
+  "level": "2",
+  "url": "week-06-performance-measures.html#figure-mnist",
+  "type": "Figure",
+  "number": "5.5.2",
+  "title": "",
+  "body": " Digits from the MNIST dataset   Digits from the MNIST dataset.   "
+},
+{
+  "id": "measuring-accuracy-using-cross-validation-3",
+  "level": "2",
+  "url": "week-06-performance-measures.html#measuring-accuracy-using-cross-validation-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "K-fold cross-validation "
+},
+{
+  "id": "figure-kfold",
+  "level": "2",
+  "url": "week-06-performance-measures.html#figure-kfold",
+  "type": "Figure",
+  "number": "5.5.3",
+  "title": "",
+  "body": " K-fold cross-validation   K-fold cross-validation.   "
+},
+{
+  "id": "confusion-matrix-3",
+  "level": "2",
+  "url": "week-06-performance-measures.html#confusion-matrix-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "confusion matrix "
+},
+{
+  "id": "confusion-matrix-6-7",
+  "level": "2",
+  "url": "week-06-performance-measures.html#confusion-matrix-6-7",
+  "type": "Figure",
+  "number": "5.5.4",
+  "title": "",
+  "body": " Generated plot from default   A dynamically generated mathematical plot.   "
+},
+{
+  "id": "confusion-matrix-7",
+  "level": "2",
+  "url": "week-06-performance-measures.html#confusion-matrix-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "actual class predicted class true negatives false positives positive class false negatives true positives "
+},
+{
+  "id": "figure-confusion",
+  "level": "2",
+  "url": "week-06-performance-measures.html#figure-confusion",
+  "type": "Figure",
+  "number": "5.5.5",
+  "title": "",
+  "body": " An illustrated confusion matrix   An illustrated confusion matrix.   "
+},
+{
+  "id": "precision-and-recall-3",
+  "level": "2",
+  "url": "week-06-performance-measures.html#precision-and-recall-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "precision "
+},
+{
+  "id": "precision-and-recall-4",
+  "level": "2",
+  "url": "week-06-performance-measures.html#precision-and-recall-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "recall sensitivity true positive rate "
+},
+{
+  "id": "precision-and-recall-7",
+  "level": "2",
+  "url": "week-06-performance-measures.html#precision-and-recall-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "score "
+},
+{
+  "id": "precision-and-recall-10",
+  "level": "2",
+  "url": "week-06-performance-measures.html#precision-and-recall-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "precision\/recall trade-off "
+},
+{
+  "id": "precision-recall-trade-off-2",
+  "level": "2",
+  "url": "week-06-performance-measures.html#precision-recall-trade-off-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "decision function "
+},
+{
+  "id": "figure-tradeoff",
+  "level": "2",
+  "url": "week-06-performance-measures.html#figure-tradeoff",
+  "type": "Figure",
+  "number": "5.5.6",
+  "title": "",
+  "body": " An illustrated precision\/recall trade-off   An illustrated precision\/recall trade-off.   "
+},
+{
+  "id": "figure-precision-recall-threshold",
+  "level": "2",
+  "url": "week-06-performance-measures.html#figure-precision-recall-threshold",
+  "type": "Figure",
+  "number": "5.5.7",
+  "title": "",
+  "body": " Precision and recall versus the decision threshold   Precision and recall versus the decision threshold.   "
+},
+{
+  "id": "figure-pvr",
+  "level": "2",
+  "url": "week-06-performance-measures.html#figure-pvr",
+  "type": "Figure",
+  "number": "5.5.8",
+  "title": "",
+  "body": " Precision versus recall   Precision versus recall.   "
+},
+{
+  "id": "logistic-regression-note-4",
+  "level": "2",
+  "url": "week-06-performance-measures.html#logistic-regression-note-4",
+  "type": "Note",
+  "number": "5.5.9",
+  "title": "",
+  "body": " If someone says, “Let’s reach 99% precision,” you should ask, “At what recall?”  "
+},
+{
+  "id": "the-roc-curve-3",
+  "level": "2",
+  "url": "week-06-performance-measures.html#the-roc-curve-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "receiver operating characteristic true positive rate false positive rate true negative rate specificity "
+},
+{
+  "id": "figure-roc",
+  "level": "2",
+  "url": "week-06-performance-measures.html#figure-roc",
+  "type": "Figure",
+  "number": "5.5.10",
+  "title": "",
+  "body": " ROC curve   ROC curve.   "
+},
+{
+  "id": "the-roc-curve-7",
+  "level": "2",
+  "url": "week-06-performance-measures.html#the-roc-curve-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "area under the curve "
+},
+{
+  "id": "logistic-regression-note-5",
+  "level": "2",
+  "url": "week-06-performance-measures.html#logistic-regression-note-5",
+  "type": "Note",
+  "number": "5.5.11",
+  "title": "",
+  "body": "Since the ROC curve is so similar to the precision\/recall (PR) curve, you may wonder how to decide which one to use. As a rule of thumb, you should prefer the PR curve whenever the positive class is rare or when you care more about the false positives than the false negatives. Otherwise, use the ROC curve. For example, looking at the previous ROC curve (and the ROC AUC score), you may think that the classifier is really good. But this is mostly because there are few positives (5s) compared to the negatives (non-5s). In contrast, the PR curve makes it clear that the classifier has room for improvement (the curve could be closer to the topright corner). "
+},
+{
+  "id": "week-06-softmax-in-llms",
+  "level": "1",
+  "url": "week-06-softmax-in-llms.html",
+  "type": "Section",
+  "number": "5.6",
+  "title": "Softmax in LLMs",
+  "body": " Softmax in LLMs   Since I am trying to drop in information when what we're doing intersects with Large Language Models, I want to point out that Large Language Models imploy a Softmax-type of approach when generating text. They do not use a Softmax regression or a Logistic regression like we've been discussing here, but they do use the softmax \"idea\" when deciding which token (word) to generate next. The model (which has a very complicated arcitecture that we won't get into here) takes input text and generates scores for all possible tokens that the LLM has in its vocabulary. Then, it uses the same softmax function that we've been using here to convert those scores into probabilities. Finally, instead of selecting the token with the highest probabillity (which is what Softmax regression does), the model randomly selects a token based on the probabilities. That is why you can use the exact same prompt multiple times and get different results each time. The scores define a probability distribution and then the model randomly selects a token based on that distribution. Different runs through the model mean different random tokens are selected each time, leading to different outputs. This is both a strength and a weakness of LLMs. Selecting a random token from the probability distribution makes the model sound more \"human\" and can prevent it from getting stuck in a loops where the same tokens get generated over and over again. On the other hand, it's this randomness that makes the model less predictable and harder to control; leading to the, now infamous, hallucinations that LLMs sometimes generate.  "
+},
+{
+  "id": "sec-probability-basic-concepts",
+  "level": "1",
+  "url": "sec-probability-basic-concepts.html",
   "type": "Section",
   "number": "6.1",
-  "title": "Jacobi Method",
-  "body": "Jacobi Method   Rewrite the linear system as where is the strictly lower triangular part of , is the diagonal of , and is the strictly upper triangular part of .  Further rewriting as and it forms a fixed point iteration for vectors. Similarly to fixed point iteration, starting with an initial guess , use the following iteration to generate a sequence: where the superscripts denote iteration steps. This is called Jacobi method .  If we write out all vectors and matrices, it becomes Therefore, the equivalent element-wise formula of Jacobi method is     Given , compute the next two iterates and when solving the following linear system by Jacobi iteration. Round the results to four digits.     The iterative formulas of Jacobi method are Let , we obtain the first iterate Then let , we obtain the second iterate   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+  "title": "Basic Concepts of Probability",
+  "body": " Basic Concepts of Probability   Basic Definitions of Probability   To introduce the basic concepts of probability theory, let’s consider a simple example. Imagine we have two boxes: one red and one blue. The red box contains 2 apples and 6 oranges, while the blue box holds 3 apples and 1 orange, as illustrated in . Now, suppose we randomly select one of the boxes and then randomly pick a piece of fruit from it. After observing the type of fruit, we return it to the box from which it was taken. We could repeat this process many times. Let’s assume that in this scenario, we choose the red box 40% of the time and the blue box 60% of the time. Additionally, when selecting a piece of fruit from a box, each piece has an equal chance of being chosen.   Two coloured boxes: red (left) and blue (right), each containing fruit (apples shown in green and oranges shown in orange).   Two coloured boxes: red (left) and blue (right), each containing fruit (apples shown in green and oranges shown in orange).    In this example, the identity of the box that will be chosen is a random variable, which we shall denote by . This random variable can take one of two possible values, namely (corresponding to the red box) or (corresponding to the blue box). Similarly, the identity of the fruit is also a random variable and will be denoted by . It can take either of the values (for apple) or (for orange).  To begin with, we shall define the probability of an event to be the fraction of times that event occurs out of the total number of trials, in the limit that the total number of trials goes to infinity. Thus the probability of selecting the red box is and the probability of selecting the blue box is . We write these probabilities as and . Note that, by definition, probabilities must lie in the interval . Also, if the events are mutually exclusive and if they include all possible outcomes (for instance, in this example the box must be either red or blue), then we see that the probabilities for those events must sum to one.  We can now ask questions such as: “What is the overall probability that the selection procedure will pick an apple?”, or “Given that we have chosen an orange, what is the probability that the box we chose was the blue one?”. We can answer questions such as these, and indeed much more complex questions associated with problems in machine learning, once we have equipped ourselves with the two elementary rules of probability, known as the sum rule and the product rule .    Joint Probability    Two random variables X and Y .   Two random variables X and Y.    In order to derive the rules of probability, consider the slightly more general example shown in involving two random variables and (which could for instance be the Box and Fruit variables considered above). We shall suppose that can take any of the values where , and can take the values where . Consider a total of trials in which we sample both of the variables and , and let the number of such trials in which and be . Also, let the number of trials in which takes the value (irrespective of the value that takes) be denoted by , and similarly let the number of trials in which takes the value be denoted by .  The probability that will take the value and will take the value is written and is called the joint probability of and . It is given by the number of points falling in the cell as a fraction of the total number of points, and hence   Here we are implicitly considering the limit . Similarly, the probability that takes the value irrespective of the value of is written as and is given by the fraction of the total number of points that fall in column , so that   Because the number of instances in column in is just the sum of the number of instances in each cell of that column, we have and therefore, from and , we have which is the sum rule of probability. Note that is sometimes called the marginal probability, because it is obtained by marginalizing, or summing out, the other variables (in this case ).    Conditional Probability   If we consider only those instances for which , then the fraction of such instances for which is written and is called the conditional probability of given . It is obtained by finding the fraction of those points in column that fall in cell and hence is given by   From , , and , we can then derive the following relationship which is the product rule of probability.    Notation and Summary   So far we have been quite careful to make a distinction between a random variable, such as the box in the fruit example, and the values that the random variable can take, for example if the box were the red one. Thus the probability that takes the value is denoted . Although this helps to avoid ambiguity, it leads to a rather cumbersome notation, and in many cases there will be no need for such pedantry. Instead, we may simply write to denote a distribution over the random variable , or to denote the distribution evaluated for the particular value , provided that the interpretation is clear from the context  With this more compact notation, we can write the two fundamental rules of probability theory in the following form.   The Rules of Probability     Here is a joint probability and is verbalized as “the probability of and ”. Similarly, the quantity is a conditional probability and is verbalized as “the probability of given ”, whereas the quantity is a marginal probability and is simply “the probability of ”.  We note that if the joint distribution of two variables factorizes into the product of the marginals, so that , then and are said to be independent. From the product rule, we see that , and so the conditional distribution of given is indeed independent of the value of . For instance, in our boxes of fruit example, if each box contained the same fraction of apples and oranges, then , so that the probability of selecting, say, an apple is independent of which box is chosen.   "
 },
 {
-  "id": "unit-06-jacobi-method-4",
+  "id": "figure-fruit-boxes",
   "level": "2",
-  "url": "unit-06-jacobi-method.html#unit-06-jacobi-method-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Jacobi method "
-},
-{
-  "id": "unit-06-jacobi-method-5",
-  "level": "2",
-  "url": "unit-06-jacobi-method.html#unit-06-jacobi-method-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "element-wise formula of Jacobi method "
-},
-{
-  "id": "unit-06-jacobi-method-6",
-  "level": "2",
-  "url": "unit-06-jacobi-method.html#unit-06-jacobi-method-6",
-  "type": "Example",
+  "url": "sec-probability-basic-concepts.html#figure-fruit-boxes",
+  "type": "Figure",
   "number": "6.1.1",
   "title": "",
-  "body": "  Given , compute the next two iterates and when solving the following linear system by Jacobi iteration. Round the results to four digits.     The iterative formulas of Jacobi method are Let , we obtain the first iterate Then let , we obtain the second iterate   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+  "body": " Two coloured boxes: red (left) and blue (right), each containing fruit (apples shown in green and oranges shown in orange).   Two coloured boxes: red (left) and blue (right), each containing fruit (apples shown in green and oranges shown in orange).   "
 },
 {
-  "id": "unit-06-gauss-seidel-method",
+  "id": "ssec-basic-definitions-7",
+  "level": "2",
+  "url": "sec-probability-basic-concepts.html#ssec-basic-definitions-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "sum rule product rule "
+},
+{
+  "id": "figure-random-variable-grid",
+  "level": "2",
+  "url": "sec-probability-basic-concepts.html#figure-random-variable-grid",
+  "type": "Figure",
+  "number": "6.1.2",
+  "title": "",
+  "body": " Two random variables X and Y .   Two random variables X and Y.   "
+},
+{
+  "id": "ssec-joint-probability-5",
+  "level": "2",
+  "url": "sec-probability-basic-concepts.html#ssec-joint-probability-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "joint probability "
+},
+{
+  "id": "ssec-joint-probability-7",
+  "level": "2",
+  "url": "sec-probability-basic-concepts.html#ssec-joint-probability-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "sum rule marginal "
+},
+{
+  "id": "ssec-conditional-probability-3",
+  "level": "2",
+  "url": "sec-probability-basic-concepts.html#ssec-conditional-probability-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "conditional probability "
+},
+{
+  "id": "ssec-conditional-probability-4",
+  "level": "2",
+  "url": "sec-probability-basic-concepts.html#ssec-conditional-probability-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "product rule "
+},
+{
+  "id": "theorem-rules-of-probability",
+  "level": "2",
+  "url": "sec-probability-basic-concepts.html#theorem-rules-of-probability",
+  "type": "Theorem",
+  "number": "6.1.3",
+  "title": "The Rules of Probability.",
+  "body": " The Rules of Probability    "
+},
+{
+  "id": "sec-probability-densities",
   "level": "1",
-  "url": "unit-06-gauss-seidel-method.html",
+  "url": "sec-probability-densities.html",
   "type": "Section",
   "number": "6.2",
-  "title": "Gauss-Seidel Method",
-  "body": "Gauss-Seidel Method   While solving the previous example, you might wonder: Why not use the newly updated values immediately within the same iteration, rather than waiting for the next one? For instance, when computing , we already have the updated value —so why not use it right away? Congratulations! This line of thinking leads to a new algorithm called the Gauss-Seidel method .  To derive it by matrix notation, let's rewrite in a different way, Using this equation, we have the following iterative formula: where the superscripts denote iteration steps.  Similarly to Jacobi method, if we write out all vectors and matrices, it becomes Therefore, the equivalent element-wise formula of Gauss-Seidel method is     Given , compute the next two iterates and when solving the following linear system by Gauss-Seidel iteration. Round the results to four digits.     The iterative formulas of Gauss-Seidel method are Let , we obtain the first iterate Then let , we obtain the second iterate   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+  "title": "Probability densities",
+  "body": " Probability densities   As well as considering probabilities defined over discrete sets of events, we also wish to consider probabilities with respect to continuous variables. We shall limit ourselves to a relatively informal discussion. If the probability of a real-valued variable falling in the interval is given by for , then is called the probability density and probability density function (PDF) over . This is illustrated in . The probability that will lie in an interval is then given by    Probability density over a continuous variable .   Probability density p(x) over a continuous variable x.    Because probabilities are nonnegative, and because the value of must lie somewhere on the real axis, the probability density must satisfy the two conditions    Note that if is a discrete variable, then is sometimes called a probability mass function (PMF) because it can be regarded as a set of ‘probability masses’ concentrated at the allowed values of .  The sum and product rules of probability apply equally to the case of probability densities, or to combinations of discrete and continuous variables. For instance, if and are two real variables, then the sum rule and product rule take the form    "
 },
 {
-  "id": "unit-06-gauss-seidel-method-3",
+  "id": "sec-probability-densities-3",
   "level": "2",
-  "url": "unit-06-gauss-seidel-method.html#unit-06-gauss-seidel-method-3",
+  "url": "sec-probability-densities.html#sec-probability-densities-3",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Gauss-Seidel method "
+  "body": "probability density probability density function (PDF) "
 },
 {
-  "id": "unit-06-gauss-seidel-method-5",
+  "id": "figure-probability-density",
   "level": "2",
-  "url": "unit-06-gauss-seidel-method.html#unit-06-gauss-seidel-method-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "element-wise formula of Gauss-Seidel method "
-},
-{
-  "id": "unit-06-gauss-seidel-method-6",
-  "level": "2",
-  "url": "unit-06-gauss-seidel-method.html#unit-06-gauss-seidel-method-6",
-  "type": "Example",
+  "url": "sec-probability-densities.html#figure-probability-density",
+  "type": "Figure",
   "number": "6.2.1",
   "title": "",
-  "body": "  Given , compute the next two iterates and when solving the following linear system by Gauss-Seidel iteration. Round the results to four digits.     The iterative formulas of Gauss-Seidel method are Let , we obtain the first iterate Then let , we obtain the second iterate   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+  "body": " Probability density over a continuous variable .   Probability density p(x) over a continuous variable x.   "
 },
 {
-  "id": "unit-06-iteration-methods-convergence",
+  "id": "sec-probability-densities-6",
+  "level": "2",
+  "url": "sec-probability-densities.html#sec-probability-densities-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "probability mass function (PMF) "
+},
+{
+  "id": "sec-probability-densities-7",
+  "level": "2",
+  "url": "sec-probability-densities.html#sec-probability-densities-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "sum rule product rule "
+},
+{
+  "id": "sec-expectations-and-covariances",
   "level": "1",
-  "url": "unit-06-iteration-methods-convergence.html",
+  "url": "sec-expectations-and-covariances.html",
   "type": "Section",
   "number": "6.3",
-  "title": "Convergence of Iterative Methods",
-  "body": "Convergence of Iterative Methods   The iterative methods do not always converge. Let’s consider the following linear system and the Jacobi iterative formulas are Starting from the initial guess , the first 10 iterates are After 6 steps, the iterates get close to the exact solution and , and stays there, indicating the iteration converges.  Now let's swap the equations in the system and obtain an equivalent linear system, and the Jacobi iterative formulas are Starting from the initial guess , the first 10 iterates are It clearly shows that the iteration diverges and Jacobi method does not work for it.   A square matrix is said to be strictly diagonally dominant if for every row of the matrix, the magnitude of the diagonal entry in a row is larger than the sum of the magnitudes of all the other (non-diagonal) entries in that row. More precisely, an matrix is said to be strictly diagonally dominant if, for each , where .     The Jacobi method and Gauss–Seidel method converge if the coefficient matrix of a linear system is strictly diagonally dominant.      Do you expect the Jacobi iteration in Example 1 and Gauss-Seidel iteration in Example 2 to converge? Why?    The coefficient matrix of the linear system in Example 1 and 2 is The matrix is strictly diagonally dominant since Therefore, by the theorem, both Jacobi iteration and Gauss-Seidel iteration for this linear system converge.  Video Breakdown  Dr. Yang walks through this example in the following video.      "
+  "title": "Expectations and Covariances",
+  "body": " Expectations and Covariances   Expectation   One of the most important operations involving probabilities is that of finding weighted averages of functions. The average value of some function under a probability distribution is called the expectation of and will be denoted by . For a discrete distribution, it is given by so that the average is weighted by the relative probabilities of the different values of . In the case of continuous variables, expectations are expressed in terms of an integration with respect to the corresponding probability density   Sometimes we will be considering expectations of functions of several variables, in which case we can use a subscript to indicate which variable is being averaged over, so that for instance denotes the average of the function with respect to the distribution of . Note that will be a function of .  We can also consider a conditional expectation with respect to a conditional distribution, so that with an analogous definition for continuous variables.    Variance   The variance of is defined by and provides a measure of how much variability there is in around its mean value . Expanding out the square, we see that the variance can also be written in terms of the expectations of and    In particular, we can consider the variance of the variable itself, which is given by   Another common measure of variability is standard deviation , represented by , which is the square root of the variance, namely,     Covariance  For two random variables and , the covariance is defined by which expresses the extent to which and vary together. If and are independent, then their covariance vanishes.  In the case of two vectors of random variables and , the covariance is a matrix   If we consider the covariance of the components of a vector with each other, then we use a slightly simpler notation .   "
 },
 {
-  "id": "unit-06-iteration-methods-convergence-5",
+  "id": "ssec-expectation-3",
   "level": "2",
-  "url": "unit-06-iteration-methods-convergence.html#unit-06-iteration-methods-convergence-5",
-  "type": "Definition",
-  "number": "6.3.1",
+  "url": "sec-expectations-and-covariances.html#ssec-expectation-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
   "title": "",
-  "body": " A square matrix is said to be strictly diagonally dominant if for every row of the matrix, the magnitude of the diagonal entry in a row is larger than the sum of the magnitudes of all the other (non-diagonal) entries in that row. More precisely, an matrix is said to be strictly diagonally dominant if, for each , where .  "
+  "body": "expectation "
 },
 {
-  "id": "unit-06-iteration-methods-convergence-6",
+  "id": "ssec-variance-3",
   "level": "2",
-  "url": "unit-06-iteration-methods-convergence.html#unit-06-iteration-methods-convergence-6",
-  "type": "Theorem",
-  "number": "6.3.2",
+  "url": "sec-expectations-and-covariances.html#ssec-variance-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
   "title": "",
-  "body": "  The Jacobi method and Gauss–Seidel method converge if the coefficient matrix of a linear system is strictly diagonally dominant.   "
+  "body": "variance "
 },
 {
-  "id": "unit-06-iteration-methods-convergence-7",
+  "id": "ssec-variance-5",
   "level": "2",
-  "url": "unit-06-iteration-methods-convergence.html#unit-06-iteration-methods-convergence-7",
-  "type": "Example",
-  "number": "6.3.3",
+  "url": "sec-expectations-and-covariances.html#ssec-variance-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
   "title": "",
-  "body": "  Do you expect the Jacobi iteration in Example 1 and Gauss-Seidel iteration in Example 2 to converge? Why?    The coefficient matrix of the linear system in Example 1 and 2 is The matrix is strictly diagonally dominant since Therefore, by the theorem, both Jacobi iteration and Gauss-Seidel iteration for this linear system converge.  Video Breakdown  Dr. Yang walks through this example in the following video.     "
+  "body": "standard deviation "
 },
 {
-  "id": "unit-06-iterative-methods-coding",
+  "id": "sec-correlation-and-dependence",
   "level": "1",
-  "url": "unit-06-iterative-methods-coding.html",
+  "url": "sec-correlation-and-dependence.html",
   "type": "Section",
   "number": "6.4",
-  "title": "Algorithms and Coding for Iterative Methods",
-  "body": "Algorithms and Coding for Iterative Methods   We will stop the iteration when the latest iterates and satisfy where represents infinity norm of a vector, which is defined as follows, We can use the built-in function linalg.norm in Python’s Numpy module to calculate the infinity norm of a vector.  Now we code Jacobi method and Gauss-Seidel method: import numpy as np def jacobi(A, b, x0=None, tol=1e-5, max_iter=100, verbose=False): \"\"\" Solves the linear system Ax = b using the Jacobi iterative method. Parameters: A : array Coefficient matrix (assumed to be square). b : array Right-hand side vector. x0 : array (optional) Initial guess for the solution. tol : float (optional) Convergence tolerance. max_iter : int (optional) Maximum number of iterations. verbose : bool (optional) If True, print the solution at each iteration. Returns: x : ndarray Approximate solution vector. \"\"\" A = np.array(A, dtype=np.float64) b = np.array(b, dtype=np.float64) n = b.size x = np.zeros_like(b) if x0 is None else np.array(x0, dtype=np.float64).copy() for k in range(max_iter): x_new = np.zeros_like(x) for i in range(n): s = sum(A[i,j] * x[j] for j in range(n) if j != i) x_new[i] = (b[i] - s) \/ A[i,i] if verbose: print(f\"Iteration {k+1}: x = {np.round(x_new, 6)}\") if np.linalg.norm(x_new - x, ord=np.inf) < tol: return x_new x = x_new raise Exception(f\"Jacobi method did not converge after {max_iter} iterations.\") def gauss_seidel(A, b, x0=None, tol=1e-5, max_iter=100, verbose=False): \"\"\" Solves the linear system Ax = b using the Gauss-Seidel iterative method. Parameters: A : array Coefficient matrix (assumed to be square). b : array Right-hand side vector. x0 : array (optional) Initial guess for the solution. tol : float (optional) Convergence tolerance. max_iter : int (optional) Maximum number of iterations. verbose : bool (optional) If True, print the solution at each iteration. Returns: x : ndarray Approximate solution vector. \"\"\" A = np.array(A, dtype=np.float64) b = np.array(b, dtype=np.float64) n = b.size x = np.zeros_like(b) if x0 is None else np.array(x0, dtype=np.float64).copy() for k in range(max_iter): x_new = np.zeros_like(x) for i in range(n): s1 = sum(A[i,j] * x_new[j] for j in range(n) if j < i) s2 = sum(A[i,j] * x[j] for j in range(n) if j > i) x_new[i] = (b[i] - s1 - s2) \/ A[i,i] if verbose: print(f\"Iteration {k+1}: x = {np.round(x_new, 6)}\") if np.linalg.norm(x_new - x, ord=np.inf) < tol: return x_new x = x_new raise Exception(f\"Gauss-Seidel method did not converge after {max_iter} iterations.\") Let's use the function jacobi() to solve the example in the last section about the convergence: A = [[4, -3], [2,5]] b = [-1, 19] x = jacobi(A, b, verbose=True) print(f\"The solution is {np.round(x, 4)}\")    Iteration 1: x = [-0.25 3.8 ] Iteration 2: x = [2.6 3.9] Iteration 3: x = [2.675 2.76 ] Iteration 4: x = [1.82 2.73] Iteration 5: x = [1.7975 3.072 ] Iteration 6: x = [2.054 3.081] Iteration 7: x = [2.06075 2.9784 ] Iteration 8: x = [1.9838 2.9757] Iteration 9: x = [1.981775 3.00648 ] Iteration 10: x = [2.00486 3.00729] Iteration 11: x = [2.005468 2.998056] Iteration 12: x = [1.998542 2.997813] Iteration 13: x = [1.99836 3.000583] Iteration 14: x = [2.000437 3.000656] Iteration 15: x = [2.000492 2.999825] Iteration 16: x = [1.999869 2.999803] Iteration 17: x = [1.999852 3.000052] Iteration 18: x = [2.000039 3.000059] Iteration 19: x = [2.000044 2.999984] Iteration 20: x = [1.999988 2.999982] Iteration 21: x = [1.999987 3.000005] Iteration 22: x = [2.000004 3.000005] Iteration 23: x = [2.000004 2.999999] The solution is [2. 3.]     After swapping equations in the system, we have A = [[2,5], [4, -3]] b = [19, -1] x = jacobi(A, b, verbose=True) print(f\"The solution is {np.round(x, 4)}\")    Iteration 1: x = [9.5 0.333333] Iteration 2: x = [ 8.666667 13. ] Iteration 3: x = [-23. 11.888889] Iteration 4: x = [-20.222222 -30.333333] Iteration 5: x = [ 85.333333 -26.62963 ] Iteration 6: x = [ 76.074074 114.111111] Iteration 7: x = [-275.777778 101.765432] Iteration 8: x = [-244.91358 -367.37037] Iteration 9: x = [ 927.925926 -326.218107] Iteration 10: x = [ 825.045267 1237.567901] Iteration 11: x = [-3084.419753 1100.39369 ] Iteration 12: x = [-2741.484225 -4112.226337] Iteration 13: x = [10290.065844 -3654.978967] Iteration 14: x = [ 9146.947417 13720.421125] Iteration 15: x = [-34291.552812 12196.263222] Iteration 16: x = [-30481.158055 -45721.737083] Iteration 17: x = [114313.842707 -40641.21074 ] Iteration 18: x = [101612.526851 152418.790276] Iteration 19: x = [-381037.47569 135483.702467] Iteration 20: x = [-338699.756169 -508049.634253] Iteration 21: x = [1270133.585632 -451599.341558] Iteration 22: x = [1129007.853895 1693511.780843] Iteration 23: x = [-4233769.952108 1505344.138527] Iteration 24: x = [-3763350.846318 -5645026.269477] Iteration 25: x = [14112575.173692 -5017800.79509 ] Iteration 26: x = [12544511.487726 18816767.231589] Iteration 27: x = [-47041908.578973 16726015.650302] Iteration 28: x = [-41815029.625754 -62722544.438631] Iteration 29: x = [ 1.56806371e+08 -5.57533725e+07] Iteration 30: x = [1.39383441e+08 2.09075161e+08] Iteration 31: x = [-5.22687893e+08 1.85844588e+08] Iteration 32: x = [-4.64611461e+08 -6.96917191e+08] Iteration 33: x = [ 1.74229299e+09 -6.19481947e+08] Iteration 34: x = [1.54870488e+09 2.32305732e+09] Iteration 35: x = [-5.80764328e+09 2.06493984e+09] Iteration 36: x = [-5.16234958e+09 -7.74352437e+09] Iteration 37: x = [ 1.93588109e+10 -6.88313277e+09] Iteration 38: x = [1.72078319e+10 2.58117479e+10] Iteration 39: x = [-6.45293698e+10 2.29437759e+10] Iteration 40: x = [-5.73594398e+10 -8.60391597e+10] Iteration 41: x = [ 2.15097899e+11 -7.64792531e+10] Iteration 42: x = [1.91198133e+11 2.86797199e+11] Iteration 43: x = [-7.16992998e+11 2.54930844e+11] Iteration 44: x = [-6.37327109e+11 -9.55990664e+11] Iteration 45: x = [ 2.38997666e+12 -8.49769479e+11] Iteration 46: x = [2.12442370e+12 3.18663555e+12] Iteration 47: x = [-7.96658886e+12 2.83256493e+12] Iteration 48: x = [-7.08141232e+12 -1.06221185e+13] Iteration 49: x = [ 2.65552962e+13 -9.44188310e+12] Iteration 50: x = [2.36047077e+13 3.54070616e+13] Iteration 51: x = [-8.85176540e+13 3.14729437e+13] Iteration 52: x = [-7.86823591e+13 -1.18023539e+14] Iteration 53: x = [ 2.95058847e+14 -1.04909812e+14] Iteration 54: x = [2.62274530e+14 3.93411796e+14] Iteration 55: x = [-9.83529489e+14 3.49699374e+14] Iteration 56: x = [-8.74248435e+14 -1.31137265e+15] Iteration 57: x = [ 3.27843163e+15 -1.16566458e+15] Iteration 58: x = [2.91416145e+15 4.37124217e+15] Iteration 59: x = [-1.09281054e+16 3.88554860e+15] Iteration 60: x = [-9.71387150e+15 -1.45708072e+16] Iteration 61: x = [ 3.64270181e+16 -1.29518287e+16] Iteration 62: x = [3.23795717e+16 4.85693575e+16] Iteration 63: x = [-1.21423394e+17 4.31727622e+16] Iteration 64: x = [-1.07931906e+17 -1.61897858e+17] Iteration 65: x = [ 4.04744646e+17 -1.43909207e+17] Iteration 66: x = [3.59773018e+17 5.39659528e+17] Iteration 67: x = [-1.34914882e+18 4.79697358e+17] Iteration 68: x = [-1.19924339e+18 -1.79886509e+18] Iteration 69: x = [ 4.49716273e+18 -1.59899119e+18] Iteration 70: x = [3.99747798e+18 5.99621697e+18] Iteration 71: x = [-1.49905424e+19 5.32997064e+18] Iteration 72: x = [-1.33249266e+19 -1.99873899e+19] Iteration 73: x = [ 4.99684748e+19 -1.77665688e+19] Iteration 74: x = [4.44164220e+19 6.66246331e+19] Iteration 75: x = [-1.66561583e+20 5.92218960e+19] Iteration 76: x = [-1.4805474e+20 -2.2208211e+20] Iteration 77: x = [ 5.55205275e+20 -1.97406320e+20] Iteration 78: x = [4.93515800e+20 7.40273701e+20] Iteration 79: x = [-1.85068425e+21 6.58021067e+20] Iteration 80: x = [-1.64505267e+21 -2.46757900e+21] Iteration 81: x = [ 6.16894750e+21 -2.19340356e+21] Iteration 82: x = [5.48350889e+21 8.22526334e+21] Iteration 83: x = [-2.05631583e+22 7.31134519e+21] Iteration 84: x = [-1.82783630e+22 -2.74175445e+22] Iteration 85: x = [ 6.85438612e+22 -2.43711506e+22] Iteration 86: x = [6.09278766e+22 9.13918149e+22] Iteration 87: x = [-2.28479537e+23 8.12371688e+22] Iteration 88: x = [-2.03092922e+23 -3.04639383e+23] Iteration 89: x = [ 7.61598457e+23 -2.70790563e+23] Iteration 90: x = [6.76976407e+23 1.01546461e+24] Iteration 91: x = [-2.53866152e+24 9.02635209e+23] Iteration 92: x = [-2.25658802e+24 -3.38488203e+24] Iteration 93: x = [ 8.46220508e+24 -3.00878403e+24] Iteration 94: x = [7.52196007e+24 1.12829401e+25] Iteration 95: x = [-2.82073503e+25 1.00292801e+25] Iteration 96: x = [-2.50732002e+25 -3.76098004e+25] Iteration 97: x = [ 9.40245009e+25 -3.34309337e+25] Iteration 98: x = [8.35773341e+25 1.25366001e+26] Iteration 99: x = [-3.13415003e+26 1.11436446e+26] Iteration 100: x = [-2.78591114e+26 -4.17886671e+26] === PYTHON EXCEPTION === Traceback (most recent call last): File \"C:\\Users\\nmoore\\Documents\\Teaching\\Math4362\\tools\\add_python_output.py\", line 48, in execute_python exec(code_string, env_globals, env_globals) ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File \"<string>\", line 3, in <module> File \"<string>\", line 44, in jacobi Exception: Jacobi method did not converge after 100 iterations.     Notice that swapping the equations in the system results in a Jacobi iteration that does not converge. This is bacause the swapped system is not strictly diagonally dominant and therefore there is no guarantee of convergence.  You can apply gauss_seidel() to solve this system by yourself, and you will find Gauss-Seidel method converges in less iterations (when it converges) and its convergence also relies on the strictly diagonal dominance of the coefficient matrix.  You can download the code from Canvas.  "
+  "title": "Correlation and Dependence",
+  "body": " Correlation and Dependence   In statistics, correlation or dependence refers to any statistical relationship between two random variables or bivariate data, whether or not the relationship is causal. Broadly, correlation encompasses any statistical association between variables, though it is often specifically used to describe the extent to which two variables are linearly related. Common examples of correlated phenomena include the relationship between the heights of parents and their children, and the correlation between the price of a good and the quantity consumers are willing to buy, as represented by the demand curve.  Correlations are valuable because they can indicate a predictive relationship that can be practically exploited. For instance, an electrical utility might produce less power on a mild day due to the correlation between electricity demand and weather conditions. In this case, the correlation reflects a causal relationship, as extreme weather directly influences electricity usage for heating or cooling. However, it is important to remember that correlation alone does not imply causation; the presence of a correlation does not necessarily indicate that one variable causes the other. One of my favorite websites for demonstrating this point is which brute-force searches through many databases finding unrelated datasets which are nonetheless highly correlated.   TODO  Finish this with an example. For example, shows a high correlation (r = ?, r^2 = ?) between ...  A figure showing a high correlation between ... and ... (taken from URL)       Formally, random variables are considered dependent if they do not satisfy the condition of probabilistic independence. In everyday language, correlation is often used interchangeably with dependence. However, in a technical context, correlation refers to specific mathematical operations that quantify the relationship between variables and their expected values. Essentially, correlation measures how closely two or more variables are related to one another. Several correlation coefficients exist to quantify this relationship, typically denoted by or . The most widely used is the Pearson correlation coefficient, which measures the degree of linear relationship between two variables, even if one variable is a nonlinear function of the other. The correlation coefficient between two random variables and is defined as    shows several sets of points, with the Pearson correlation coefficient of and for each set. The correlation reflects the noisiness and direction of a linear relationship (top row), but not the slope of that relationship (middle), nor many aspects of nonlinear relationships (bottom).   Several sets of points, with the Pearson correlation coefficient of and for each set.   Several sets of (x, y) points, with the Pearson correlation coefficient of x and y for each set.     The figure in the center has a slope of but in that case the correlation coefficient is undefined because the variance of is zero.   "
 },
 {
-  "id": "unit-06-other-iterative-methods",
+  "id": "sec-correlation-and-dependence-3",
+  "level": "2",
+  "url": "sec-correlation-and-dependence.html#sec-correlation-and-dependence-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "correlation dependence "
+},
+{
+  "id": "sec-correlation-and-dependence-4-2-1",
+  "level": "2",
+  "url": "sec-correlation-and-dependence.html#sec-correlation-and-dependence-4-2-1",
+  "type": "Remark",
+  "number": "6.4.1",
+  "title": "TODO.",
+  "body": " TODO  Finish this with an example. For example, shows a high correlation (r = ?, r^2 = ?) between ...  A figure showing a high correlation between ... and ... (taken from URL)    "
+},
+{
+  "id": "figure-correlation",
+  "level": "2",
+  "url": "sec-correlation-and-dependence.html#figure-correlation",
+  "type": "Figure",
+  "number": "6.4.3",
+  "title": "",
+  "body": " Several sets of points, with the Pearson correlation coefficient of and for each set.   Several sets of (x, y) points, with the Pearson correlation coefficient of x and y for each set.   "
+},
+{
+  "id": "sec-correlation-and-dependence-8",
+  "level": "2",
+  "url": "sec-correlation-and-dependence.html#sec-correlation-and-dependence-8",
+  "type": "Note",
+  "number": "6.4.4",
+  "title": "",
+  "body": " The figure in the center has a slope of but in that case the correlation coefficient is undefined because the variance of is zero.  "
+},
+{
+  "id": "sec-bayes-theorem",
   "level": "1",
-  "url": "unit-06-other-iterative-methods.html",
+  "url": "sec-bayes-theorem.html",
   "type": "Section",
   "number": "6.5",
-  "title": "Other Iterative Methods",
-  "body": "Other Iterative Methods  The following video discusses other iterative methods.   "
+  "title": "Bayes’ Theorem",
+  "body": "Bayes' Theorem   Recall the two fundamental rules of probability theory in (note: you can click on the reference to see the theorem inline here in the notes). From the product rule, together with the symmetry property , we immediately obtain the following relationship between conditional probabilities which is called Bayes’ theorem .  Using the sum rule, the denominator in Bayes’ theorem can be expressed in terms of the quantities appearing in the numerator We can view the denominator in Bayes’ theorem as being the normalization constant required to ensure that the sum of the conditional probability on the left-hand side of over all values of equals one.  Let us now return to our example involving boxes of fruit.   Two coloured boxes each containing fruit (apples shown in green and oranges shown in orange)   Two coloured boxes each containing fruit (apples shown in green and oranges shown in orange).    Recall We have seen that the probabilities of selecting either the red or the blue boxes are given by And also we can write out all four conditional probabilities for the type of fruit, given the selected box   Suppose we are told that a piece of fruit has been selected and it is an orange, and we would like to know which box it came from. This requires that we evaluate the probability distribution over boxes conditioned on the identity of the fruit, whereas the probabilities in give the probability distribution over the fruit conditioned on the identity of the box. We can solve the problem of reversing the conditional probability by using Bayes’ theorem to give The probabilities in the numerator are given in and , now let’s find the probability in the denominator: Plugging in yields From the sum rule, it then follows that .  We can provide an important interpretation of Bayes’ theorem as follows: If we had been asked which box had been chosen before being told the identity of the selected item of fruit, then the most complete information we have available is provided by the probability . We call this the prior probability because it is the probability available before we observe the identity of the fruit. Once we are told that the fruit is an orange, we can then use Bayes’ theorem to compute the probability , which we shall call the posterior probability because it is the probability obtained after we have observed . The quantity on the right-hand side of is evaluated for the observed data set and can be viewed as a function of the parameter , in which case it is called the likelihood function . Note that in this example, the prior probability of selecting the red box was , so that we were more likely to select the blue box than the red one. However, once we have observed that the piece of selected fruit is an orange, we find that the posterior probability of the red box is now , so that it is now more likely that the box we selected was in fact the red one. This result accords with our intuition, as the proportion of oranges is much higher in the red box than it is in the blue box, and so the observation that the fruit was an orange provides significant evidence favouring the red box. In fact, the evidence is sufficiently strong that it outweighs the prior and makes it more likely that the red box was chosen rather than the blue one.  "
+},
+{
+  "id": "sec-bayes-theorem-3",
+  "level": "2",
+  "url": "sec-bayes-theorem.html#sec-bayes-theorem-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Bayes’ theorem "
+},
+{
+  "id": "figure-box",
+  "level": "2",
+  "url": "sec-bayes-theorem.html#figure-box",
+  "type": "Figure",
+  "number": "6.5.1",
+  "title": "",
+  "body": " Two coloured boxes each containing fruit (apples shown in green and oranges shown in orange)   Two coloured boxes each containing fruit (apples shown in green and oranges shown in orange).   "
+},
+{
+  "id": "sec-bayes-theorem-9",
+  "level": "2",
+  "url": "sec-bayes-theorem.html#sec-bayes-theorem-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "prior probability posterior probability likelihood function "
+},
+{
+  "id": "sec-probabilistic-model",
+  "level": "1",
+  "url": "sec-probabilistic-model.html",
+  "type": "Section",
+  "number": "7.1",
+  "title": "Probabilistic Model",
+  "body": "Probabilistic Model   Naive Bayes classifiers are a family of classifiers that are quite similar to the linear models discussed in the previous section. However, they tend to be even faster in training. The price paid for this efficiency is that naive Bayes models often provide generalization performance that is slightly worse than that of linear classifiers like LogisticRegression.  Naive Bayes Classifiers work using . Refresh yourself on that material briefly so that you can expand on that idea in the coming sections.   Now we can set up the probabilistic model for Naive Bayes classifiers. Abstractly, naive Bayes is a conditional probability model: given a problem instance to be classified, represented by a vector representing some features (independent variables), it assigns to this instance probabilities for each of possible outcomes or classes . Using Bayes’ theorem, the conditional probability can be decomposed as   In plain English, using Bayesian probability terminology, the above equation can be written as In practice, there is interest only in the numerator of that fraction, because the denominator does not depend on and the values of the features are given, so that the denominator is effectively constant.  To simplify the formula, the “naive” conditional independence assumptions come into play: assume that all features in are mutually independent, conditional on the category . Under this assumption, The is simplified to where denotes proportionality.  The discussion so far has derived the independent feature model, that is, the naive Bayes probability model. The naive Bayes classifier combines this model with a decision rule. One common rule is to pick the hypothesis that is most probable; this is known as the maximum a posteriori or MAP decision rule. The corresponding classifier, a Bayes classifier, is the function that assigns a class label for some as follows:   "
+},
+{
+  "id": "sec-probabilistic-model-6",
+  "level": "2",
+  "url": "sec-probabilistic-model.html#sec-probabilistic-model-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "maximum a posteriori MAP "
+},
+{
+  "id": "sec-probability-distributions",
+  "level": "1",
+  "url": "sec-probability-distributions.html",
+  "type": "Section",
+  "number": "7.2",
+  "title": "Probability Distributions",
+  "body": "Probability Distributions   A class’s prior may be calculated by assuming equiprobable classes (i.e., ), or by calculating an estimate for the class probability from the training set (i.e., ). Scikit-Learn estimates it using the second way, i.e. the relative frequency of class in the training set.  The assumptions on distributions of features are called the “event model” of the naive Bayes classifier. When dealing with continuous data, a typical assumption is that the continuous values associated with each class are distributed according to a normal (or Gaussian) distribution. For discrete features like the ones encountered in document classification (include spam filtering), multinomial and Bernoulli distributions are popular.   Gaussian Distribution  For the case of a single real-valued variable , the Gaussian distribution is defined by where is the mean and is the variance.   Single Variable Gaussian Distribution       Matrix Multiplication    Because we are assuming each conditional probability is mutually indepedent from all the others, when you extend the Gaussian distribution into multiple dimensions, the joint probability distribution is the product of the individual conditional distributions. In other words, there is a separate Gaussian distribution for each dimension. A two-dimensional Gaussian distribution is shown below.   Bivariable Gaussian Distribution      Bivariable Gaussian Distribution    In Naive Bayes classifiers, suppose the training data contains a continuous attribute, . We first segment the data by the class, and then compute the mean and variance of in each class. Let be the mean and be the variance of the values in associated with class . Suppose we have collected some observation value . Then, the probability distribution of given a class , , can be computed by    Bernoulli Distribution  The Bernoulli distribution is defined by where is a single binary random variable, namely, or , and denotes the probability of .  In Naive Bayes classifiers, this model is popular for document classification tasks. If is a binary expressing the occurrence or absence of the -th term from the vocabulary, the probability distribution of given a class , , can be computed by where is the probability of class generating the term . This event model is especially popular for classifying short texts. It has the benefit of explicitly modelling the absence of terms.   Multinomial Distribution  The multinomial distribution is defined by where is the number of times event was observed in a particular instance, is the sum of all , and is the probability that event i occurs.  In Naive Bayes classifiers, the likelihood of a feature vector is given by where is the probability of event in the class .  If a given class and feature value never occur together in the training data, then the frequency-based probability estimate will be zero, because the probability estimate is directly proportional to the number of occurrences of a feature’s value. This is problematic because it will wipe out all information in the other probabilities when they are multiplied. Therefore, it is often desirable to incorporate a small-sample correction, called pseudocount, in all probability estimates such that no probability is ever set to be exactly zero: where is the number of times feature appears in a sample of class in the training set, and is the total count of all features for class . is the pseudocount. This way of regularizing naive Bayes is called Laplace smoothing when the , and Lidstone smoothing in the general case.   "
+},
+{
+  "id": "anim-gaussian-1D-light",
+  "level": "2",
+  "url": "sec-probability-distributions.html#anim-gaussian-1D-light",
+  "type": "Figure",
+  "number": "7.2.1",
+  "title": "",
+  "body": " Single Variable Gaussian Distribution    "
+},
+{
+  "id": "anim-gaussian-1D-dark",
+  "level": "2",
+  "url": "sec-probability-distributions.html#anim-gaussian-1D-dark",
+  "type": "Figure",
+  "number": "7.2.2",
+  "title": "",
+  "body": " Matrix Multiplication   "
+},
+{
+  "id": "anim-gaussian-2D-light",
+  "level": "2",
+  "url": "sec-probability-distributions.html#anim-gaussian-2D-light",
+  "type": "Figure",
+  "number": "7.2.3",
+  "title": "",
+  "body": " Bivariable Gaussian Distribution   "
+},
+{
+  "id": "anim-gaussian-2D-dark",
+  "level": "2",
+  "url": "sec-probability-distributions.html#anim-gaussian-2D-dark",
+  "type": "Figure",
+  "number": "7.2.4",
+  "title": "",
+  "body": " Bivariable Gaussian Distribution   "
+},
+{
+  "id": "ssec-multinomial-distribution-4",
+  "level": "2",
+  "url": "sec-probability-distributions.html#ssec-multinomial-distribution-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Laplace smoothing Lidstone smoothing "
+},
+{
+  "id": "sec-naive-bayes-classifiers",
+  "level": "1",
+  "url": "sec-naive-bayes-classifiers.html",
+  "type": "Section",
+  "number": "7.3",
+  "title": "Naive Bayes Classifiers in Scikit-Learn",
+  "body": "Naive Bayes Classifiers in Scikit-Learn   There are three kinds of naive Bayes classifiers implemented in scikit-learn: GaussianNB , BernoulliNB , and MultinomialNB . GaussianNB can be applied to any continuous data, while BernoulliNB assumes binary data and MultinomialNB assumes count data (that is, that each feature represents an integer count of something, like how often a word appears in a sentence). BernoulliNB and MultinomialNB are mostly used in text data classification.  We begin with the standard imports: import numpy as np import matplotlib.pyplot as plt import seaborn as sns; sns.set()    Gaussian Naive Bayes  In this classifier, the assumption is that data from each label is drawn from a simple Gaussian distribution. Imagine that you have the following data: from sklearn.datasets import make_blobs X, y = make_blobs(100, 2, centers=2, random_state=2, cluster_std=1.5) plt.scatter(X[:, 0], X[:, 1], c=y, s=50, cmap='RdBu');   Two groups of blobs   Two groups of blobs     One extremely fast way to create a simple model is to assume that the data is described by a Gaussian distribution with no covariance between dimensions. This model can be fit by simply finding the mean and standard deviation of the points within each label, which is all you need to define such a distribution. The result of this naive Gaussian assumption is shown in the following figure:  The result of the naive Gaussian assumption   The result of the naive Gaussian assumption.     The ellipses here represent the Gaussian generative model for each label, with larger probability toward the center of the ellipses. With this generative model in place for each class, we have a simple recipe to compute the likelihood for any data point, and thus we can quickly compute the posterior and determine which label is the most probable for a given point.  This procedure is implemented in Scikit-Learn’s sklearn.naive_bayes.GaussianNB estimator: from sklearn.naive_bayes import GaussianNB model = GaussianNB() model.fit(X, y);   Now let’s generate some new data and predict the label: rng = np.random.RandomState(0) Xnew = [-6, -14] + [14, 18] * rng.rand(2000, 2) ynew = model.predict(Xnew) Now we can plot this new data to get an idea of where the decision boundary is: plt.scatter(X[:, 0], X[:, 1], c=y, s=50, cmap='RdBu') lim = plt.axis() plt.scatter(Xnew[:, 0], Xnew[:, 1], c=ynew, s=20, cmap='RdBu', alpha=0.1) plt.axis(lim);   Decision boundary of the Gaussian naive Bayes classifier   Decision boundary of the Gaussian naive Bayes classifier     We see a slightly curved boundary in the classifications—in general, the boundary in Gaussian naive Bayes is quadratic.  A nice piece of this Bayesian formalism is that it naturally allows for probabilistic classification, which we can compute using the predict_proba method() : yprob = model.predict_proba(Xnew) print(yprob[-8:].round(2))    [[0.89 0.11] [1. 0. ] [1. 0. ] [1. 0. ] [1. 0. ] [1. 0. ] [0. 1. ] [0.15 0.85]]     The columns give the posterior probabilities of the first and second label, respectively. If you are looking for estimates of uncertainty in your classification, Bayesian approaches like this can be a useful approach.  Of course, the final classification will only be as good as the model assumptions that lead to it, which is why Gaussian naive Bayes often does not produce very good results. Still, in many cases—especially as the number of features becomes large—this assumption is not detrimental enough to prevent Gaussian naive Bayes from being a useful method.   Multinomial Naive Bayes  In this classifier, we model the data distribution with a best-fit multinomial distribution. One place where multinomial naive Bayes is often used is in text classification, where the features are related to word counts or frequencies within the documents to be classified. Here we will use the sparse word count features from the 20 Newsgroups corpus to show how we might classify these short documents into categories.  Let’s download the data and take a look at the target names: from sklearn.datasets import fetch_20newsgroups data = fetch_20newsgroups() # We'll print 1-by-1 here to keep a reasonable line width for name in data.target_names: print(name)    alt.atheism comp.graphics comp.os.ms-windows.misc comp.sys.ibm.pc.hardware comp.sys.mac.hardware comp.windows.x misc.forsale rec.autos rec.motorcycles rec.sport.baseball rec.sport.hockey sci.crypt sci.electronics sci.med sci.space soc.religion.christian talk.politics.guns talk.politics.mideast talk.politics.misc talk.religion.misc   For simplicity here, we will select just a few of these categories, and download the training and testing set: categories = ['talk.religion.misc', 'soc.religion.christian', 'sci.space', 'comp.graphics'] train = fetch_20newsgroups(subset='train', categories=categories) test = fetch_20newsgroups(subset='test', categories=categories)   Here is a representative entry from the data: print(train.data[5])    From: dmcgee@uluhe.soest.hawaii.edu (Don McGee) Subject: Federal Hearing Originator: dmcgee@uluhe Organization: School of Ocean and Earth Science and Technology Distribution: usa Lines: 10 Fact or rumor....? Madalyn Murray O'Hare an atheist who eliminated the use of the bible reading and prayer in public schools 15 years ago is now going to appear before the FCC with a petition to stop the reading of the Gospel on the airways of America. And she is also campaigning to remove Christmas programs, songs, etc from the public schools. If it is true then mail to Federal Communications Commission 1919 H Street Washington DC 20054 expressing your opposition to her request. Reference Petition number 2493.     In order to use this data for machine learning, we need to be able to convert the content of each string into a vector of numbers. For this we will use the CountVectorizer in the module sklearn.feature_extraction.text . Count vectorizer converts a collection of text documents to a matrix of token counts. For example, from sklearn.feature_extraction.text import CountVectorizer corpus = [ 'This is the first document.', 'This document is the second document.', 'And this is the third one.', 'Is this the first document?', ] vectorizer = CountVectorizer() X = vectorizer.fit_transform(corpus) The code above converts the corpus to matrix of some features. To know what the features are, run the code below: print(vectorizer.get_feature_names_out())    ['and' 'document' 'first' 'is' 'one' 'second' 'the' 'third' 'this']   So we have 9 features totally. Then we can see the converted matrix: print(X.toarray())    [[0 1 1 1 0 0 1 0 1] [0 2 0 1 0 1 1 0 1] [1 0 0 1 1 0 1 1 1] [0 1 1 1 0 0 1 0 1]]     There are some issues with this approach, however: the raw word counts lead to features which put too much weight on words that appear very frequently, and this can be sub-optimal in some classification algorithms. One approach to fix this is known as term frequency-inverse document frequency (TF–IDF) which weights the word counts by a measure of how often they appear in the documents. The module sklearn.feature_extraction.text has this built-in utility TfidfVectorizer . You will use it in the lab assignment of next week. For now, let’s keep using the simple one. The next step is to create a pipeline that attaches CountVectorizer to a multinomial naive Bayes classifier: from sklearn.feature_extraction.text import CountVectorizer from sklearn.naive_bayes import MultinomialNB from sklearn.pipeline import make_pipeline model = make_pipeline(CountVectorizer(), MultinomialNB())   With this pipeline, we can apply the model to the training data, and predict labels for the test data: model.fit(train.data, train.target) labels = model.predict(test.data)   Now that we have predicted the labels for the test data, we can evaluate them to learn about the performance of the estimator. For example, here is the confusion matrix between the true and predicted labels for the test data: from sklearn.metrics import confusion_matrix mat = confusion_matrix(test.target, labels) sns.heatmap(mat, square=True, annot=True, fmt='d', cbar=False,cmap=\"YlGnBu\", xticklabels=train.target_names, yticklabels=train.target_names) plt.xlabel('Predicted label') plt.ylabel('Actual label') plt.show()   Confusion matrix of the example   Confusion matrix of the example     Evidently, even this very simple classifier can successfully separate space talk from computer talk, but it gets confused between talk about religion and talk about Christianity. This is perhaps an expected area of confusion!    Bernoulli Naive Bayes  In this classifier, we model the data distribution with a Bernoulli distribution. The syntax is similar to Multinomial Naive Bayes, so we will skip the details. from sklearn.naive_bayes import BernoulliNB     GaussianNB can be applied to any continuous data, while BernoulliNB assumes binary data and MultinomialNB assumes count data. BernoulliNB and MultinomialNB are mostly used in text data classification. MultinomialNB and BernoulliNB have a single parameter, alpha , which controls model complexity. A large alpha means more smoothing, resulting in less complex models. The algorithm’s performance is relatively robust to the setting of alpha , meaning that setting alpha is not critical for good performance. However, tuning it usually improves accuracy somewhat. GaussianNB is mostly used on very high-dimensional data, while the other two variants of naive Bayes are widely used for sparse count data such as text. MultinomialNB usually performs better than BernoulliNB , particularly on datasets with a relatively large number of nonzero features (i.e., large documents). Naive Bayes models are great baseline models and are often used on very large datasets, where training even a linear model might take too long.    "
+},
+{
+  "id": "figure-two-blobs",
+  "level": "2",
+  "url": "sec-naive-bayes-classifiers.html#figure-two-blobs",
+  "type": "Figure",
+  "number": "7.3.1",
+  "title": "",
+  "body": " Two groups of blobs   Two groups of blobs   "
+},
+{
+  "id": "figure-gaussian-nb",
+  "level": "2",
+  "url": "sec-naive-bayes-classifiers.html#figure-gaussian-nb",
+  "type": "Figure",
+  "number": "7.3.2",
+  "title": "",
+  "body": " The result of the naive Gaussian assumption   The result of the naive Gaussian assumption.   "
+},
+{
+  "id": "figure-gaussian-boundary",
+  "level": "2",
+  "url": "sec-naive-bayes-classifiers.html#figure-gaussian-boundary",
+  "type": "Figure",
+  "number": "7.3.3",
+  "title": "",
+  "body": " Decision boundary of the Gaussian naive Bayes classifier   Decision boundary of the Gaussian naive Bayes classifier   "
+},
+{
+  "id": "figure-confusion-matrix",
+  "level": "2",
+  "url": "sec-naive-bayes-classifiers.html#figure-confusion-matrix",
+  "type": "Figure",
+  "number": "7.3.4",
+  "title": "",
+  "body": " Confusion matrix of the example   Confusion matrix of the example   "
+},
+{
+  "id": "naive-bayes-note",
+  "level": "2",
+  "url": "sec-naive-bayes-classifiers.html#naive-bayes-note",
+  "type": "Note",
+  "number": "7.3.5",
+  "title": "",
+  "body": "  GaussianNB can be applied to any continuous data, while BernoulliNB assumes binary data and MultinomialNB assumes count data. BernoulliNB and MultinomialNB are mostly used in text data classification. MultinomialNB and BernoulliNB have a single parameter, alpha , which controls model complexity. A large alpha means more smoothing, resulting in less complex models. The algorithm’s performance is relatively robust to the setting of alpha , meaning that setting alpha is not critical for good performance. However, tuning it usually improves accuracy somewhat. GaussianNB is mostly used on very high-dimensional data, while the other two variants of naive Bayes are widely used for sparse count data such as text. MultinomialNB usually performs better than BernoulliNB , particularly on datasets with a relatively large number of nonzero features (i.e., large documents). Naive Bayes models are great baseline models and are often used on very large datasets, where training even a linear model might take too long.  "
+},
+{
+  "id": "sec-linear-svm-classification",
+  "level": "1",
+  "url": "sec-linear-svm-classification.html",
+  "type": "Section",
+  "number": "8.1",
+  "title": "Linear SVM Classification",
+  "body": "Linear SVM Classification    A Support Vector Machine (SVM) is a robust and versatile Machine Learning model that can handle linear and nonlinear classification, regression, and even outlier detection. As one of the most widely used models in Machine Learning, it’s an essential tool for anyone working in the field. SVMs are especially effective for classifying complex datasets of small to medium size.   The fundamental concept behind SVMs is best illustrated with visual examples. depicts a portion of the iris dataset that we discussed in the context of Logistic Regression. In this dataset, the two classes can be clearly separated with a straight line, indicating that they are linearly separable. The left plot shows the decision boundaries of three different linear classifiers. The model with the dashed decision boundary performs poorly, failing to separate the classes correctly. The other two models perfectly classify the training set, but their decision boundaries are so close to the data points that they might not generalize well to new data.  In contrast, the solid line in the right plot represents the decision boundary of an SVM classifier. This boundary not only separates the two classes but also maintains the maximum possible distance from the nearest training instances. An SVM classifier can be visualized as finding the widest possible “street” (represented by the parallel dashed lines) between the classes. This approach is known as large margin classification .   Large margin classification   Large margin classification.    Notice that adding more training instances “off the street” will not affect the decision boundary at all: it is fully determined (or “supported”) by the instances located on the edge of the street. These instances are called the support vectors (they are highlighted in ).  SVMs are sensitive to the feature scales, as you can see in : in the left plot, the vertical scale is much larger than the horizontal scale, so the widest possible street is close to horizontal. After feature scaling (e.g., using Scikit-Learn’s StandardScaler ), the decision boundary in the right plot looks much better.   Sensitivity to feature scales   Sensitivity to feature scales    If we strictly impose that all instances must be off the street and on the correct side, this is called hard margin classification . There are two main issues with hard margin classification. First, it only works if the data is linearly separable. Second, it is sensitive to outliers. shows the iris dataset with just one additional outlier: on the left, it is impossible to find a hard margin; on the right, the decision boundary ends up very different from the one we saw without the outlier, and it will probably not generalize as well.   Hard margin sensitivity to outliers   Hard margin sensitivity to outliers    To avoid these issues, use a more flexible model. The objective is to find a good balance between keeping the street as large as possible and limiting the margin violations (i.e., instances that end up in the middle of the street or even on the wrong side). This is called soft margin classification . When creating an SVM model using Scikit-Learn, we can specify a number of hyperparameters. C is one of those hyperparameters. If we set it to a low value, then we end up with the model on the left of . With a high value, we get the model on the right. Margin violations are bad. It’s usually better to have few of them. However, in this case the model on the left has a lot of margin violations but will probably generalize better.   Large margin (left) versus fewer margin violations (right)   Large margin (left) versus fewer margin violations (right)     If your SVM model is overfitting, you can try regularizing it by reducing C .    The following Scikit-Learn code loads the iris dataset, scales the features, and then trains a linear SVM model (using the LinearSVC class with C=1 and the hinge loss function, described shortly) to detect Iris virginica flowers: import numpy as np from sklearn import datasets from sklearn.pipeline import Pipeline from sklearn.preprocessing import StandardScaler from sklearn.svm import LinearSVC iris = datasets.load_iris() X = iris[\"data\"][:, (2, 3)] # petal length, petal width y = (iris[\"target\"] == 2).astype(np.float64) # Iris virginica svm_clf = Pipeline([ (\"scaler\", StandardScaler()), (\"linear_svc\", LinearSVC(C=1, loss=\"hinge\")), ]) svm_clf.fit(X, y) The resulting model is represented on the left in the output figure.  Then, as usual, you can use the model to make predictions. Remember that this is a binary classifier so the predict method will return either 0 or 1 , whichever value cooresponds to the predicted class. print(svm_clf.predict([[5.5, 1.7]]))    [1.]      Unlike Logistic Regression classifiers, SVM classifiers do not output probabilities for each class.   The LinearSVC class regularizes the bias term, so you should center the training set first by subtracting its mean. This is automatic if you scale the data using the StandardScaler . Also make sure you set the loss hyperparameter to “hinge”, as it is not the default value. Finally, for better performance, you should set the dual hyperparameter to False , unless there are more features than training instances (we will discuss duality later).  Instead of using the LinearSVC class, we could use the SVC class with a linear kernel. When creating the SVC model, we would write SVC(kernel=\"linear\", C=1) .  "
+},
+{
+  "id": "sec-linear-svm-classification-2-2",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#sec-linear-svm-classification-2-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Support Vector Machine (SVM) "
+},
+{
+  "id": "sec-linear-svm-classification-4",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#sec-linear-svm-classification-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "large margin classification "
+},
+{
+  "id": "figure-large-margin-classification",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#figure-large-margin-classification",
+  "type": "Figure",
+  "number": "8.1.1",
+  "title": "",
+  "body": " Large margin classification   Large margin classification.   "
+},
+{
+  "id": "sec-linear-svm-classification-6",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#sec-linear-svm-classification-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "support vectors "
+},
+{
+  "id": "figure-sensitivity-feature-scales",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#figure-sensitivity-feature-scales",
+  "type": "Figure",
+  "number": "8.1.2",
+  "title": "",
+  "body": " Sensitivity to feature scales   Sensitivity to feature scales   "
+},
+{
+  "id": "sec-linear-svm-classification-9",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#sec-linear-svm-classification-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "hard margin classification "
+},
+{
+  "id": "figure-hard-margin-outliers",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#figure-hard-margin-outliers",
+  "type": "Figure",
+  "number": "8.1.3",
+  "title": "",
+  "body": " Hard margin sensitivity to outliers   Hard margin sensitivity to outliers   "
+},
+{
+  "id": "sec-linear-svm-classification-11",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#sec-linear-svm-classification-11",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "soft margin classification "
+},
+{
+  "id": "figure-regularization",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#figure-regularization",
+  "type": "Figure",
+  "number": "8.1.4",
+  "title": "",
+  "body": " Large margin (left) versus fewer margin violations (right)   Large margin (left) versus fewer margin violations (right)   "
+},
+{
+  "id": "svm-note-1",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#svm-note-1",
+  "type": "Note",
+  "number": "8.1.5",
+  "title": "",
+  "body": " If your SVM model is overfitting, you can try regularizing it by reducing C .  "
+},
+{
+  "id": "svm-note-2",
+  "level": "2",
+  "url": "sec-linear-svm-classification.html#svm-note-2",
+  "type": "Note",
+  "number": "8.1.6",
+  "title": "",
+  "body": " Unlike Logistic Regression classifiers, SVM classifiers do not output probabilities for each class.  "
+},
+{
+  "id": "sec-nonlinear-svm-classification",
+  "level": "1",
+  "url": "sec-nonlinear-svm-classification.html",
+  "type": "Section",
+  "number": "8.2",
+  "title": "Nonlinear SVM Classification",
+  "body": "Nonlinear SVM Classification   Although linear SVM classifiers are efficient and work surprisingly well in many cases, many datasets are not even close to being linearly separable. One approach to handling nonlinear datasets is to add more features, such as polynomial features; in some cases this can result in a linearly separable dataset. Consider the left plot in : it represents a simple dataset with just one feature, . This dataset is not linearly separable, as you can see. But if you add a second feature , the resulting 2D dataset is perfectly linearly separable.   Adding features to make a dataset linearly separable.   Adding features to make a dataset linearly separable.     Implementing the Polynomial Kernel   To implement this idea using Scikit-Learn, create a Pipeline containing a PolynomialFeatures transformer, followed by a StandardScaler and a LinearSVC . Let’s test this on the moons dataset: this is a toy dataset for binary classification in which the data points are shaped as two interleaving half circles. You can generate this dataset using the make_moons() function: from sklearn.datasets import make_moons from sklearn.pipeline import Pipeline from sklearn.preprocessing import PolynomialFeatures X, y = make_moons(n_samples=100, noise=0.15) polynomial_svm_clf = Pipeline([ (\"poly_features\", PolynomialFeatures(degree=3)), (\"scaler\", StandardScaler()), (\"svm_clf\", LinearSVC(C=10, loss=\"hinge\")) ]) polynomial_svm_clf.fit(X, y)   Adding polynomial features is simple to implement and can work great with all sorts of Machine Learning algorithms (not just SVMs). That said, at a low polynomial degree, this method cannot deal with very complex datasets, and with a high polynomial degree it creates a huge number of features, making the model too slow.  Fortunately, when using SVMs you can apply an almost miraculous mathematical technique called the kernel trick (explained in a moment). The kernel trick makes it possible to get the same result as if you had added many polynomial features, even with very high-degree polynomials, without actually having to add them. So there is no combinatorial explosion of the number of features because you don’t actually add any features. This trick is implemented by the SVC class. Let’s test it on the moons dataset: from sklearn.svm import SVC poly_kernel_svm_clf = Pipeline([ (\"scaler\", StandardScaler()), (\"svm_clf\", SVC(kernel=\"poly\", degree=3, coef0=1, C=5)) ]) poly_kernel_svm_clf.fit(X, y)   This code trains an SVM classifier using a third-degree polynomial kernel. It is represented on the left in . On the right is another SVM classifier using a 10th degree polynomial kernel. Obviously, if your model is overfitting, you might want to reduce the polynomial degree. Conversely, if it is underfitting, you can try increasing it. The hyperparameter coef0 controls how much the model is influenced by high degree polynomials versus low-degree polynomials.   SVM classifiers with a polynomial kernel   SVM classifiers with a polynomial kernel    A common approach to finding the right hyperparameter values is to use grid search (Will be introduced in the lab of next week). It is often faster to first do a very coarse grid search, then a finer grid search around the best values found. Having a good sense of what each hyperparameter actually does can also help you search in the right part of the hyperparameter space.    Similarity Features and Gaussian RBF Kernel  Another technique to tackle nonlinear problems is to add features computed using a similarity function , which measures how much each instance resembles a particular landmark . For example, let's take the 1D dataset discussed earlier and add two landmarks to it at and (see the left plot in ). Next, let's define the similarity function to be the Gaussian Radial Basis Function (RBF) with . This is a bell-shaped function varying from (very far away from the landmark) to (at the landmark). Now we are ready to compute the new features. For example, let’s look at the instance : it is located at a distance of from the first landmark and 2 from the second landmark. Therefore its new features are and . The plot on the right in shows the transformed dataset (dropping the original features). As you can see, it is now linearly separable.   Similarity features using the Gaussian RBF.   Similarity features using the Gaussian RBF.    You may wonder how to select the landmarks. The simplest approach is to create a landmark at the location of each and every instance in the dataset. Doing that creates many dimensions and thus increases the chances that the transformed training set will be linearly separable. The downside is that a training set with instances and features gets transformed into a training set with instances and features (assuming you drop the original features). If your training set is very large, you end up with an equally large number of features.   Just like the polynomial features method, the similarity features method can be useful with any Machine Learning algorithm, but it may be computationally expensive to compute all the additional features, especially on large training sets. Once again the kernel trick does its SVM magic, making it possible to obtain a similar result as if you had added many similarity features. Let's try the SVC class with the Gaussian RBF kernel: rbf_kernel_svm_clf = Pipeline([ (\"scaler\", StandardScaler()), (\"svm_clf\", SVC(kernel=\"rbf\", gamma=5, C=0.001)) ]) rbf_kernel_svm_clf.fit(X, y) This model is represented at the bottom left in . The other plots show models trained with different values of hyperparameters gamma ( ) and C . Increasing gamma makes the bell-shaped curve narrower. As a result, each instance’s range of influence is smaller: the decision boundary ends up being more irregular, wiggling around individual instances. Conversely, a small gamma value makes the bell-shaped curve wider: instances have a larger range of influence, and the decision boundary ends up smoother. So acts like a regularization hyperparameter: if your model is overfitting, you should reduce it; if it is underfitting, you should increase it (similar to the C hyperparameter).   SVM classifiers using an RBF kernel.   SVM classifiers using an RBF kernel.    Other kernels exist but are used much more rarely. Some kernels are specialized for specific data structures. String kernels are sometimes used when classifying text documents or DNA sequences. We will not discuss them here.  With so many kernels to choose from, how can you decide which one to use? As a rule of thumb, you should always try the linear kernel first ( LinearSVC is much faster than SVC(kernel=\"linear\") ), especially if the training set is very large or if it has plenty of features. If the training set is not too large, you should also try the Gaussian RBF kernel; it works well in most cases. Then if you have spare time and computing power, you can experiment with a few other kernels, using cross-validation and grid search. You'd want to experiment like that especially if there are kernels specialized for your training set's data structure.   "
+},
+{
+  "id": "figure-higher-dimensions",
+  "level": "2",
+  "url": "sec-nonlinear-svm-classification.html#figure-higher-dimensions",
+  "type": "Figure",
+  "number": "8.2.1",
+  "title": "",
+  "body": " Adding features to make a dataset linearly separable.   Adding features to make a dataset linearly separable.   "
+},
+{
+  "id": "ssec-implementing-polynomial-kernel-5",
+  "level": "2",
+  "url": "sec-nonlinear-svm-classification.html#ssec-implementing-polynomial-kernel-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "kernel trick "
+},
+{
+  "id": "figure-polynomial-kernel",
+  "level": "2",
+  "url": "sec-nonlinear-svm-classification.html#figure-polynomial-kernel",
+  "type": "Figure",
+  "number": "8.2.2",
+  "title": "",
+  "body": " SVM classifiers with a polynomial kernel   SVM classifiers with a polynomial kernel   "
+},
+{
+  "id": "ssec-similarity-features-and-gaussian-rbf-kernel-2",
+  "level": "2",
+  "url": "sec-nonlinear-svm-classification.html#ssec-similarity-features-and-gaussian-rbf-kernel-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "similarity function landmark Radial Basis Function (RBF) "
+},
+{
+  "id": "figure-similarity-features-gaussian-rbf",
+  "level": "2",
+  "url": "sec-nonlinear-svm-classification.html#figure-similarity-features-gaussian-rbf",
+  "type": "Figure",
+  "number": "8.2.3",
+  "title": "",
+  "body": " Similarity features using the Gaussian RBF.   Similarity features using the Gaussian RBF.   "
+},
+{
+  "id": "figure-rbf-kernel",
+  "level": "2",
+  "url": "sec-nonlinear-svm-classification.html#figure-rbf-kernel",
+  "type": "Figure",
+  "number": "8.2.4",
+  "title": "",
+  "body": " SVM classifiers using an RBF kernel.   SVM classifiers using an RBF kernel.   "
+},
+{
+  "id": "ssec-similarity-features-and-gaussian-rbf-kernel-8",
+  "level": "2",
+  "url": "sec-nonlinear-svm-classification.html#ssec-similarity-features-and-gaussian-rbf-kernel-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "String kernels "
+},
+{
+  "id": "svm-note-3",
+  "level": "2",
+  "url": "sec-nonlinear-svm-classification.html#svm-note-3",
+  "type": "Note",
+  "number": "8.2.5",
+  "title": "",
+  "body": "With so many kernels to choose from, how can you decide which one to use? As a rule of thumb, you should always try the linear kernel first ( LinearSVC is much faster than SVC(kernel=\"linear\") ), especially if the training set is very large or if it has plenty of features. If the training set is not too large, you should also try the Gaussian RBF kernel; it works well in most cases. Then if you have spare time and computing power, you can experiment with a few other kernels, using cross-validation and grid search. You'd want to experiment like that especially if there are kernels specialized for your training set's data structure. "
+},
+{
+  "id": "svm-regression",
+  "level": "1",
+  "url": "svm-regression.html",
+  "type": "Section",
+  "number": "8.3",
+  "title": "SVM Regression",
+  "body": "SVM Regression   As mentioned earlier, the SVM algorithm is versatile: not only does it support linear and nonlinear classification, but it also supports linear and nonlinear regression. To use SVMs for regression instead of classification, the trick is to reverse the objective: instead of trying to fit the largest possible street between two classes while limiting margin violations, SVM Regression tries to fit as many instances as possible on the street while limiting margin violations (i.e., instances off the street). The width of the street is controlled by a hyperparameter, . shows two linear SVM Regression models trained on some random linear data, one with a large margin ( ) and the other with a small margin ( ).   SVM Regression   SVM Regression    Adding more training instances within the margin does not affect the model’s predictions; thus, the model is said to be -insensitive.   You can use Scikit-Learn’s LinearSVR class to perform linear SVM Regression. The following code produces the model represented on the left in (the training data should be scaled and centered first): from sklearn.svm import LinearSVR svm_reg = LinearSVR(epsilon=1.5) svm_reg.fit(X, y)   To tackle nonlinear regression tasks, you can use a kernelized SVM model. shows SVM Regression on a random quadratic training set, using a second-degree polynomial kernel. There is little regularization in the left plot (i.e., a large C value), and much more regularization in the right plot (i.e., a small C value).   SVM Regression using a second-degree polynomial kernel   SVM Regression using a second-degree polynomial kernel    The following code uses Scikit-Learn’s SVR class (which supports the kernel trick) to produce the model represented on the left in : from sklearn.svm import SVR svm_poly_reg = SVR(kernel=\"poly\", degree=2, C=100, epsilon=0.1) svm_poly_reg.fit(X, y) The SVR class is the regression equivalent of the SVC class, and the LinearSVR class is the regression equivalent of the LinearSVC class. The LinearSVR class scales linearly with the size of the training set (just like the LinearSVC class), while the SVR class gets much too slow when the training set grows large (just like the SVC class).  "
+},
+{
+  "id": "svm-regression-3",
+  "level": "2",
+  "url": "svm-regression.html#svm-regression-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "SVM Regression "
+},
+{
+  "id": "figure-svm-regression",
+  "level": "2",
+  "url": "svm-regression.html#figure-svm-regression",
+  "type": "Figure",
+  "number": "8.3.1",
+  "title": "",
+  "body": " SVM Regression   SVM Regression   "
+},
+{
+  "id": "figure-svm-polynomial-regression",
+  "level": "2",
+  "url": "svm-regression.html#figure-svm-polynomial-regression",
+  "type": "Figure",
+  "number": "8.3.2",
+  "title": "",
+  "body": " SVM Regression using a second-degree polynomial kernel   SVM Regression using a second-degree polynomial kernel   "
+},
+{
+  "id": "dive-into-svms",
+  "level": "1",
+  "url": "dive-into-svms.html",
+  "type": "Section",
+  "number": "8.4",
+  "title": "Dive into SVMs",
+  "body": "Dive into SVMs   This section explains how SVMs make predictions and how their training algorithms work, starting with linear SVM classifiers. First, a word about notations. In Linear Regression we used the convention of putting all the model parameters in one vector , including the bias term and the input feature weights to , and adding a bias input to all instances. In this section we will use a convention that is more convenient (and more common) when dealing with SVMs: the bias term will be called , and the vector contains only feature weights. No bias feature will be added to the input feature vectors.   Decision Function and Predictions   The linear SVM classifier model predicts the class of a new instance by simply computing the decision function . If the result is positive, the predicted class is the positive class ( ), and otherwise it is the negative class ( ):  shows the decision function that corresponds to the model in the left in : it is a 2D plane because this dataset has two features (petal width and petal length). The decision boundary is the set of points where the decision function is equal to : it is the intersection of two planes, which is a straight line (represented by the thick solid line). The dashed lines represent the points where the decision function is equal to 1 or -1: they are parallel and at equal distance to the decision boundary, and they form a margin around it. Training a linear SVM classifier means finding the values of and that make this margin as wide as possible while avoiding margin violations (hard margin) or limiting them (soft margin).   Decision function for the iris dataset.   Decision function for the iris dataset.     Training Objective  Consider the slope of the decision function: it is equal to the norm of the weight vector, . If we divide this slope by , the points where the decision function is equal to are going to be twice as far away from the decision boundary. In other words, dividing the slope by will multiply the margin by . This may be easier to visualize in 2D, as shown in . The smaller the weight vector , the larger the margin.   A smaller weight vector results in a larger margin   A smaller weight vector results in a larger margint    So we want to minimize to get a large margin. If we also want to avoid any margin violations (hard margin), then we need the decision function to be greater than 1 for all positive training instances and lower than for negative training instances. If we define for negative instances (if ) and for positive instances (if ), then we can express this constraint as for all instances.  We can therefore express the hard margin linear SVM classifier objective as the following constrained optimization problem:   We are minimizing , which is equal to , rather than minimizing . Indeed, has a nice, simple derivative (it is just ), while is not differentiable at . Optimization algorithms work much better on differentiable functions.  To get the soft margin objective, we need to introduce a slack variable for each instance: measures how much the -th instance is allowed to violate the margin. We now have two conflicting objectives: make the slack variables as small as possible to reduce the margin violations, and make as small as possible to increase the margin. This is where the C hyperparameter comes in: it allows us to define the tradeoff between these two objectives. This gives us the updated constrained optimization problem:    Quadratic Programming  The hard margin and soft margin problems are both convex quadratic optimization problems with linear constraints. Such problems are known as Quadratic Programming (QP) problems. Many off-the-shelf solvers are available to solve QP problems by using a variety of techniques that are outside the scope of this course.  The general problem formulation is given by where is an -dimensional vector ( is the number of parameters), is an matrix, is an -dimensional vector, is an matrix ( is the number of constraints), and is an -dimensional vector.  You can easily verify that if you set the QP parameters in the following way, you get the hard margin linear SVM classifier objective:  , where is the number of features ( is for the bias term).  , where is the number of training instances.  is the identity matrix, except with a zero in the top-left cell (to ignore the bias term).    The -th row of matrix is .    One way to train a hard margin linear SVM classifier is to use an off-the-shelf QP solver and pass it the preceding parameters. The resulting vector will contain the bias term and the feature weights for . Similarly, you can use a QP solver to solve the soft margin problem.  To use the kernel trick, we are going to look at a different constrained optimization problem.   The Dual Problem  Given a constrained optimization problem, known as the primal problem, it is possible to express a different but closely related problem, called its dual problem . The solution to the dual problem typically gives a lower bound to the solution of the primal problem, but under some conditions it can have the same solution as the primal problem. Luckily, the SVM problem happens to meet these conditions, so you can choose to solve the primal problem or the dual problem; both will have the same solution. shows the dual form of the linear SVM objective.   Once you find the vector that minimizes this equation (using a QP solver), use to compute and that minimize the primal problem. where is the number of positive .  The dual problem is faster to solve than the primal one when the number of training instances is smaller than the number of features. More importantly, the dual problem makes the kernel trick possible, while the primal does not. So what is this kernel trick, anyway?   Kernelized SVMs  Suppose you want to apply a second-degree polynomial transformation to a two-dimensional training set (such as the moons training set), then train a linear SVM classifier on the transformed training set. shows the second-degree polynomial mapping function that you want to apply. Notice that the transformed vector is 3D instead of 2D. Now let’s look at what happens to a couple of 2D vectors, and , if we apply this second-degree polynomial mapping and then compute the dot product of the transformed vectors: The dot product of the transformed vectors is equal to the square of the dot product of the original vectors: .  Here is the key insight: if you apply the transformation to all training instances, then the dual problem (see ) will contain the dot product . But if is the second-degree polynomial transformation defined in , then you can replace this dot product of transformed vectors simply by . So, you don’t need to transform the training instances at all; just replace the dot product by its square in . The result will be strictly the same as if you had gone through the trouble of transforming the training set then fitting a linear SVM algorithm, but this trick makes the whole process much more computationally efficient.  The function is a second-degree polynomial kernel. In Machine Learning, a kernel is a function capable of computing the dot product , based only on the original vectors and , without having to compute (or even to know about) the transformation . lists some of the most commonly used kernels.   Once the optimization problem is solved, the output of decision function for a given sample becomes: and the predicted class correspond to its sign. We only need to sum over the support vectors (i.e. the samples that lie within the margin) because the dual coefficients are zero for the other samples.   Hinge Loss for LinearSVC   can be equivalently formulated as where we make use of the hinge loss , see the solid blue line in . This is the form that is directly optimized by LinearSVC , but unlike the dual form, this one does not involve inner products between samples, so the famous kernel trick cannot be applied. This is why only the linear kernel is supported by LinearSVC .   Hinge loss and squared hinge loss   Hinge loss and squared hinge loss    Suppose that you need to draw a very fine decision boundary. In that case, you wish to punish larger errors more significantly than smaller errors. Squared hinge loss may then be what you are looking for. Squared hinge loss is nothing else but a square of the output of the hinge loss function. It generates a loss function as illustrated by red dashed line in , compared to regular hinge loss. As you can see, larger errors are punished more significantly than with traditional hinge, whereas smaller errors are punished slightly lighter.   "
+},
+{
+  "id": "figure-iris-decision-function",
+  "level": "2",
+  "url": "dive-into-svms.html#figure-iris-decision-function",
+  "type": "Figure",
+  "number": "8.4.1",
+  "title": "",
+  "body": " Decision function for the iris dataset.   Decision function for the iris dataset.   "
+},
+{
+  "id": "figure-small-weight-large-margin",
+  "level": "2",
+  "url": "dive-into-svms.html#figure-small-weight-large-margin",
+  "type": "Figure",
+  "number": "8.4.2",
+  "title": "",
+  "body": " A smaller weight vector results in a larger margin   A smaller weight vector results in a larger margint   "
+},
+{
+  "id": "svm-note-4",
+  "level": "2",
+  "url": "dive-into-svms.html#svm-note-4",
+  "type": "Note",
+  "number": "8.4.3",
+  "title": "",
+  "body": "We are minimizing , which is equal to , rather than minimizing . Indeed, has a nice, simple derivative (it is just ), while is not differentiable at . Optimization algorithms work much better on differentiable functions. "
+},
+{
+  "id": "quadratic-programming-2",
+  "level": "2",
+  "url": "dive-into-svms.html#quadratic-programming-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Quadratic Programming (QP) "
+},
+{
+  "id": "ssec-svm-dual-problem-2",
+  "level": "2",
+  "url": "dive-into-svms.html#ssec-svm-dual-problem-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "dual problem "
+},
+{
+  "id": "ssec-hinge-loss-for-linearsvc-2",
+  "level": "2",
+  "url": "dive-into-svms.html#ssec-hinge-loss-for-linearsvc-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "hinge loss "
+},
+{
+  "id": "figure-hinge-loss",
+  "level": "2",
+  "url": "dive-into-svms.html#figure-hinge-loss",
+  "type": "Figure",
+  "number": "8.4.4",
+  "title": "",
+  "body": " Hinge loss and squared hinge loss   Hinge loss and squared hinge loss   "
+},
+{
+  "id": "appendix-ai-use-policy",
+  "level": "1",
+  "url": "appendix-ai-use-policy.html",
+  "type": "Appendix",
+  "number": "A",
+  "title": "AI Use Policy",
+  "body": " AI Use Policy   AI tools may be used in this course only according to the label attached to the activity or problem. The label text carries the meaning; colors or icons are only visual aids.   Course labels    AI Not Permitted : complete the marked work without AI assistance.    AI Not Permitted. Students must complete the marked work without AI assistance.      AI Debugging Only : AI may help you understand error messages or ask guiding questions, but it may not generate a full solution.    AI Debugging Only. Students may use AI to understand errors, diagnose problems, and ask guiding questions, but not generate a full solution.      AI Permitted with Disclosure : AI may be used as a tutor or coding assistant if you disclose its use and understand the submitted work.    AI Permitted with Disclosure. Students may use AI as a tutor or coding assistant, but must disclose its use and understand the submitted work.       Required disclosure Every submitted notebook must answer whether AI was used, what tool was used, what purpose it served, which problems were affected, the relevant prompt or conversation excerpt, and what you changed, verified, or rejected from the AI output.  Responsibility Disclosure does not excuse incorrect or poorly understood work. You are responsible for understanding and being able to explain every piece of code and writing that you submit.  "
+},
+{
+  "id": "appendix-ai-use-policy-4-2-1-1",
+  "level": "2",
+  "url": "appendix-ai-use-policy.html#appendix-ai-use-policy-4-2-1-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "AI Not Permitted "
+},
+{
+  "id": "appendix-ai-use-policy-4-2-2-1",
+  "level": "2",
+  "url": "appendix-ai-use-policy.html#appendix-ai-use-policy-4-2-2-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "AI Debugging Only "
+},
+{
+  "id": "appendix-ai-use-policy-4-2-3-1",
+  "level": "2",
+  "url": "appendix-ai-use-policy.html#appendix-ai-use-policy-4-2-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "AI Permitted with Disclosure "
 },
 {
   "id": "appendix-troubleshooting",
   "level": "1",
   "url": "appendix-troubleshooting.html",
   "type": "Appendix",
-  "number": "A",
+  "number": "B",
   "title": "Troubleshooting",
   "body": " Troubleshooting   Setup problems    Confirm that you are in the course project folder before running uv sync or uv run jupyter lab .    Copy the exact error message when asking for help.    If JupyterLab opens in the wrong folder, stop it and relaunch from the course project folder.      Notebook problems    If Python says a name is not defined, check whether the cell that creates that variable has been run.    If output looks stale, restart the kernel and rerun the notebook from the top.    If a plot does not appear, check that the plotting cell ran and that it calls plt.show() when needed.      Standard Programming Tips   If something isn't behaving the way you expect, try putting \"print\" statements into your code to track what the different variables are doing. That is usually helpful in helping you pinpoint where the code is doing something that you don't expect.  If you can, work through the process by hand on a simple example and then see if the computer is getting the same results. This can be tedious, but it's very helpful to compare what the answer should be with what the computer variables have stored.  Throughout the course, you'll develop and practice the ability to \"think like the computer\". That is, you'll learn how to walk yourself through the code the same way the computer runs it. This \"thinking mode\" will help you spot errors. Just remind yourself to think \"What does this line of code do? What does the next line of code do?\". When you're trying to \"think like a computer\" to debug your code, you want to think about what the computer is actually doing, not what you want it to do at each step. A large part of programming is holding both of those things in mind at the same time: \"What do I want this line of code to do?\" and \"What does this line of code actually do?\" When those two questions don't have the same answer, you have a problem (a \"bug\" in computer science talk).     When asking for help It's fine to ask me or your classmates for help, but asking for programming help can be a little tricky. If you don't give the person (or AI) helping you enough information, they won't be able to help you effectively. Here are some tips for asking for help:  Copy the exact error message  Give all the relevant cells that are causing the issue  Let me know what you've tried so far  There are two main types of issues you'll come across while programming for numerical analysis:  Code errors: your code crashes, produces an error of some kind. These errors are errors with the actual written lines of code. You aren't giving valid instructions to the computer or you are trying to do something that code wasn't designed to handle (dividing by zero for example).  Math errors: your code runs fine without errors, etc. but it gives you incorrect output. These errors mean your code is functional, it's just not \"doing the right thing\".  This is an important distinction because it helps others know whether this is an error with syntax (getting your correct idea into the programming language correctly) or an error with your idea or algorithm.  If your error is a math error, state what the expected output is and what the actual output is. This can help narrow down the issue.  Sometimes what look like math errors are actually code errors so the above aren't hard and fast rules. Sometimes python is silently doing something you don't expect and that causes code which runs fine but doesn't give the right answer. All that to say \"debugging\" (that is, fixing code which isn't working) almost always takes longer than writing it in the first place. This is very typical so expect that fixing your code will be part of the process. That also means we might need to have a back and forth exchange because some of it is experimentation about where the error might be.    "
+},
+{
+  "id": "appendix-author-ai-disclosure",
+  "level": "1",
+  "url": "appendix-author-ai-disclosure.html",
+  "type": "Appendix",
+  "number": "C",
+  "title": "Author AI-Use Disclosure",
+  "body": " Author AI-Use Disclosure  This document was prepared by Nicholas S. Moore, PhD with assistance from AI tools for drafting, editing, formatting, and checking course materials. The instructor reviewed the final content and remains responsible for the mathematical explanations, examples, policies, and instructional decisions.  "
+},
+{
+  "id": "instr-future-semester-changes",
+  "level": "1",
+  "url": "instr-future-semester-changes.html",
+  "type": "Appendix",
+  "number": "D",
+  "title": "Changes for Future Semesters",
+  "body": " Changes for Future Semesters   Change wording on last question of Week 2 Quiz. I think it's throwing students for a loop because it says to choose the statement that matches the formulas. They skip the \"Select all that apply\" part. Reword to make it clearer that students should select all statements that apply.  Switch to regular homework. I don't like the quiz model. Especially if they only get to take it once and they don't get to review their answers. It's tough for them to learn from their mistakes that way.  Week 3 Lab needs work, update it to use more Seaborn, more pandas, more numpy. Also consider adding some scikit learn stuff into it as well. I modified the notes and videos, but didn't modify the lab at all.   "
+},
+{
+  "id": "instr-helpful-snippets",
+  "level": "1",
+  "url": "instr-helpful-snippets.html",
+  "type": "Appendix",
+  "number": "E",
+  "title": "Helpful Snippets",
+  "body": " Helpful Snippets   Light\/Dark Mode Toggle  Use xml:id that ends in either -light or -dark to assign an element to the light or dark mode.  The following should change depending on the current theme:   TEST: Light Mode Animation is Active       TEST: Dark Mode Animation is Active      "
+},
+{
+  "id": "test-animation-light",
+  "level": "2",
+  "url": "instr-helpful-snippets.html#test-animation-light",
+  "type": "Figure",
+  "number": "E.0.1",
+  "title": "",
+  "body": " TEST: Light Mode Animation is Active    "
+},
+{
+  "id": "test-animation-dark",
+  "level": "2",
+  "url": "instr-helpful-snippets.html#test-animation-dark",
+  "type": "Figure",
+  "number": "E.0.2",
+  "title": "",
+  "body": " TEST: Dark Mode Animation is Active   "
 }
 ]
 

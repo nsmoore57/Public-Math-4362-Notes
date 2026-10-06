@@ -33,9 +33,9 @@ lang: "en-US",
 </script><script data-pretext-mathjax="true" defer="" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta content="Authored in PreTeXt" name="Keywords"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="book" property="og:type"/>
-<meta content="MATH 4362: Introduction to Numerical Analysis" name="twitter:title"/>
-<meta content="MATH 4362: Introduction to Numerical Analysis" property="og:title"/>
-<meta content="MATH 4362: Introduction to Numerical Analysis" property="book:title"/>
+<meta content="Math 6375: Machine Learning I" name="twitter:title"/>
+<meta content="Math 6375: Machine Learning I" property="og:title"/>
+<meta content="Math 6375: Machine Learning I" property="book:title"/>
 <meta content="Fall 2026 Course Notes" name="twitter:description"/>
 <meta content="Fall 2026 Course Notes" property="og:description"/>
 <meta content="summary" name="twitter:card"/>
@@ -75,7 +75,7 @@ eBookConfig.enable_chatcodes =  false;
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header class="ptx-masthead" id="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
-<div class="heading ptx-banner-heading"><a href="math-4362-introduction-to-numerical-analysis.html"><span class="title">MATH 4362: Introduction to Numerical Analysis</span> <span class="subtitle">Fall 2026 Course Notes</span></a></div>
+<div class="heading ptx-banner-heading"><a href="root-1-2.html"><span class="title">Math 6375: Machine Learning I</span> <span class="subtitle">Fall 2026 Course Notes</span></a></div>
 <p class="byline">Nicholas S. Moore, PhD</p>
 </div></div></header><nav class="ptx-navbar navbar" id="ptx-navbar"><div class="ptx-navbar-contents">
 <button aria-controls="ptx-sidebar" class="toc-toggle button" id="ptx-toc-toggle" title="Contents" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Contents</span></button><div class="ptx-search-box">
@@ -122,7 +122,7 @@ eBookConfig.enable_chatcodes =  false;
 <legend>Assistive technologies</legend>
 <label for="ptx-readability-accessible-permalinks"><input id="ptx-readability-accessible-permalinks" type="checkbox"/><span>🔗</span><span>Expose permalinks</span></label>
 </fieldset>
-<div class="ptx-readability-options-group"><button class="ptx-readability-reset-button button" id="ptx-readability-reset-button" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="week-01-install-python-uv.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="up-button button" href="unit-01-python.html" title="Up"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Up</span></a><a class="next-button button" href="week-01-python-basics.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></span>
+<div class="ptx-readability-options-group"><button class="ptx-readability-reset-button button" id="ptx-readability-reset-button" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="week-01-install-python-uv.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="up-button button" href="week-01-python.html" title="Up"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Up</span></a><a class="next-button button" href="week-01-python-basics.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></span>
 </div></nav><div class="hidden-content process-math" id="latex-macros" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -137,19 +137,29 @@ eBookConfig.enable_chatcodes =  false;
 <div class="ptx-sidebar" id="ptx-sidebar" role="complementary"><nav aria-label="Contents" class="ptx-toc depth2 focused" data-max-levels="2" data-preexpanded-levels="0" id="ptx-toc" tabindex="-1"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a class="internal" href="frontmatter.html"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a class="internal" href="unit-01-python.html"><span class="codenumber">1</span> <span class="title">Unit 1: Python for Numerical Mathematics</span></a></div>
-<ul class="structural toc-item-list contains-active" id="ptx-toc-group-unit-01-python">
-<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-01-python-2.html"><span class="title">Introduction</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-install-python-uv.html"><span class="codenumber">1.1</span> <span class="title">Installing Python and uv</span></a></div></li>
+<div class="toc-title-box"><a class="internal" href="week-01-python.html"><span class="codenumber">1</span> <span class="title">Week 1: Intro to Machine Learning and Python</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-week-01-python">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="week-01-python-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="introduction-machine-learning.html"><span class="codenumber">1.1</span> <span class="title">Introduction to Machine Learning</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-introduction-machine-learning">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="introduction-machine-learning.html#what-is-artificial-intelligence"><span class="title">What Is Artificial Intelligence?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="introduction-machine-learning.html#what-is-machine-learning"><span class="title">What Is Machine Learning?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="introduction-machine-learning.html#why-use-machine-learning"><span class="title">Why Use Machine Learning?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="introduction-machine-learning.html#categories-machine-learning"><span class="title">Categories of Machine Learning</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="introduction-machine-learning.html#introduction-wrap-up"><span class="title">Wrap Up</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-install-python-uv.html"><span class="codenumber">1.2</span> <span class="title">Installing Python and uv</span></a></div></li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html"><span class="codenumber">1.2</span> <span class="title">Getting Started with Jupyter Notebooks</span></a></div>
+<div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html"><span class="codenumber">1.3</span> <span class="title">Getting Started with Jupyter Notebooks</span></a></div>
 <ul class="structural toc-item-list active" id="ptx-toc-group-week-01-jupyter-basics">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html#week-01-jupyter-basics-3"><span class="title">How to Open a .ipynb File</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-jupyter-basics.html#week-01-jupyter-basics-4"><span class="title">Understanding the Interface and Running Code</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a class="internal" href="week-01-python-basics.html"><span class="codenumber">1.3</span> <span class="title">Python Basics</span></a></div>
+<div class="toc-title-box"><a class="internal" href="week-01-python-basics.html"><span class="codenumber">1.4</span> <span class="title">Python Basics</span></a></div>
 <ul class="structural toc-item-list" id="ptx-toc-group-week-01-python-basics">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-3"><span class="title">Variables and Basic Data Types</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-4"><span class="title">Mathematical Operations</span></a></div></li>
@@ -165,105 +175,191 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-python-basics.html#week-01-python-basics-14"><span class="title">Python Exceptions</span></a></div></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="week-02-linear-algebra-essentials.html"><span class="codenumber">2</span> <span class="title">Week 2: Linear Algebra Essentials</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-02-linear-algebra-essentials">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="week-02-linear-algebra-essentials-2.html"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a class="internal" href="week-01-numpy-basics.html"><span class="codenumber">1.4</span> <span class="title">Introduction to NumPy</span></a></div>
+<div class="toc-title-box"><a class="internal" href="week-02-review-essential-mathematics.html"><span class="codenumber">2.1</span> <span class="title">Review of Essential Linear Algebra Knowledge</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-02-review-essential-mathematics">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-02-review-essential-mathematics.html#linalg-review-matrices"><span class="title">Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-02-review-essential-mathematics.html#linalg-review-matrix-ops"><span class="title">Matrix Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-02-review-essential-mathematics.html#linalg-review-inverses"><span class="title">Identity Matrix and Inverses</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-02-review-essential-mathematics.html#linalg-review-vectors"><span class="title">Vectors</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="week-03-python-packages.html"><span class="codenumber">3</span> <span class="title">Week 3: Lab: NumPy, Pandas, Plotly, and Scikit-Learn</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-03-python-packages">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="week-03-python-packages-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week-01-numpy-basics.html"><span class="codenumber">3.1</span> <span class="title">Introduction to NumPy</span></a></div>
 <ul class="structural toc-item-list" id="ptx-toc-group-week-01-numpy-basics">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-numpy-basics.html#week-01-numpy-basics-3"><span class="title">Basic Array Operations in NumPy</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-numpy-basics.html#week-01-numpy-basics-4"><span class="title">Indexing and Slicing in NumPy</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-plotly.html"><span class="codenumber">1.5</span> <span class="title">Plotting with Plotly</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-numpy-matrices.html"><span class="codenumber">3.2</span> <span class="title">Dot Products and Matrix Operations in NumPy</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week-01-pandas.html"><span class="codenumber">3.3</span> <span class="title">Introduction to Pandas</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-01-pandas">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-pandas.html#week-01-pandas-3"><span class="title">Pandas Series</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-pandas.html#week-01-pandas-4"><span class="title">Pandas DataFrames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-pandas.html#week-01-pandas-5"><span class="title">Selecting and Filtering Data in Pandas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-pandas.html#week-01-pandas-6"><span class="title">Vectorized Operations in Pandas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-pandas.html#week-01-pandas-7"><span class="title">Removing Data in Pandas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-01-pandas.html#week-01-pandas-8"><span class="title">Reading and Writing CSV Format with Pandas</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-seaborn.html"><span class="codenumber">3.4</span> <span class="title">Plotting with Seaborn</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-01-scikit-learn.html"><span class="codenumber">3.5</span> <span class="title">Introduction to Scikit-Learn</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a class="internal" href="unit-02-root-finding.html"><span class="codenumber">2</span> <span class="title">Unit 2: Errors and Bisection Method</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-02-root-finding">
-<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-02-root-finding-2.html"><span class="title">Introduction</span></a></div></li>
+<div class="toc-title-box"><a class="internal" href="week-04-linear-regression.html"><span class="codenumber">4</span> <span class="title">Week 4: Linear Regression</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-04-linear-regression">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="week-04-linear-regression-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-04-linear-regression-introduction.html"><span class="codenumber">4.1</span> <span class="title">What is Linear Regression?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-04-the-normal-equation.html"><span class="codenumber">4.2</span> <span class="title">The Normal Equation</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a class="internal" href="unit-02-errors.html"><span class="codenumber">2.1</span> <span class="title">Errors</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-02-errors">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-errors.html#unit-02-absolute-and-relative-error"><span class="title">Absolute and Relative Error</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-errors.html#unit-02-order-of-convergence"><span class="title">Order of Convergence</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-errors.html#unit-02-stopping-criteria"><span class="title">Stopping Criteria</span></a></div></li>
+<div class="toc-title-box"><a class="internal" href="week-04-gradient-descent.html"><span class="codenumber">4.3</span> <span class="title">Gradient Descent</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-04-gradient-descent">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-04-gradient-descent.html#standard-gradient-descent"><span class="title">How Does Gradient Descent Work?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-04-gradient-descent.html#batch-gradient-descent"><span class="title">Batch Gradient Descent</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-04-gradient-descent.html#stochastic-gradient-descent"><span class="title">Stochastic Gradient Descent</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-04-polynomial-regression.html"><span class="codenumber">4.4</span> <span class="title">Polynomial Regression</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-04-overfitting-and-underfitting.html"><span class="codenumber">4.5</span> <span class="title">Overfitting and Underfitting</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html"><span class="codenumber">2.2</span> <span class="title">Bisection Method</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-02-bisection-method">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-the-method"><span class="title">The Method</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-error-analysis"><span class="title">Error Analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a class="internal" href="unit-03-newton-secant-methods.html"><span class="codenumber">3</span> <span class="title">Unit 3: Newton’s Method and Secant Method</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-03-newton-secant-methods">
-<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-03-newton-secant-methods-2.html"><span class="title">Introduction</span></a></div></li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a class="internal" href="unit-03-newtons-method.html"><span class="codenumber">3.1</span> <span class="title">Newton’s Method</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-03-newtons-method">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-newtons-method.html#unit-03-newton-method"><span class="title">The Method</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-newtons-method.html#unit-03-newton-error-analysis"><span class="title">Error Analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-newtons-method.html#unit-03-newton-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a class="internal" href="unit-03-secant-method.html"><span class="codenumber">3.2</span> <span class="title">Secant Method</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-03-secant-method">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-secant-method.html#unit-03-secant-method-description"><span class="title">The Method</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-secant-method.html#unit-03-secant-error-analysis"><span class="title">Error Analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-03-secant-method.html#unit-03-secant-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
+<div class="toc-title-box"><a class="internal" href="week-04-linear-regression-regularization.html"><span class="codenumber">4.6</span> <span class="title">Regularization</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-04-linear-regression-regularization">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-04-linear-regression-regularization.html#ridge-regression"><span class="title">Ridge Regression</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-04-linear-regression-regularization.html#lasso-regression"><span class="title">Lasso Regression</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-04-linear-regression-regularization.html#elastic-net"><span class="title">Elastic Net</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-04-linear-regression-regularization.html#which-regularization-to-use"><span class="title">Which Regularization do I Use?</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-iteration.html"><span class="codenumber">4</span> <span class="title">Unit 4: Fixed Point Iteration</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-04-fixed-point-iteration">
-<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-iteration-2.html"><span class="title">Introduction</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-introduction-fixed-point-iteration.html"><span class="codenumber">4.1</span> <span class="title">Introduction to Fixed-Point Iteration</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-choose-g.html"><span class="codenumber">4.2</span> <span class="title">How To Choose <span class="process-math">\(g(x)\)</span></span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-theorem.html"><span class="codenumber">4.3</span> <span class="title">Fixed Point Theorem</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-convergence-fixed-point-iteration.html"><span class="codenumber">4.4</span> <span class="title">Convergence of the Fixed Point Iteration</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-04-fixed-point-algo-coding.html"><span class="codenumber">4.5</span> <span class="title">Algorithm and Coding</span></a></div></li>
-</ul>
-</li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination-lu.html"><span class="codenumber">5</span> <span class="title">Unit 5: Gaussian Elimination and LU Decomposition</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-05-gaussian-elimination-lu">
-<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination-lu-2.html"><span class="title">Introduction</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-05-review-linear-algebra.html"><span class="codenumber">5.1</span> <span class="title">Review of Linear Algebra</span></a></div></li>
+<div class="toc-title-box"><a class="internal" href="week-06-logistic-regression.html"><span class="codenumber">5</span> <span class="title">Week 6: Logistic Regression</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-06-logistic-regression">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="week-06-logistic-regression-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-06-estimating-probabilities.html"><span class="codenumber">5.1</span> <span class="title">Estimating Probabilities</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-06-training-and-cost-function.html"><span class="codenumber">5.2</span> <span class="title">Training and Cost Function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-06-decision-boundaries.html"><span class="codenumber">5.3</span> <span class="title">Decision Boundaries</span></a></div></li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination.html"><span class="codenumber">5.2</span> <span class="title">Gaussian Elimination with Backward Substitution</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-05-gaussian-elimination">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-3"><span class="title">Backward Substitution</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-4"><span class="title">Gaussian Elimination</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-5"><span class="title">Pivoting Strategies</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-6"><span class="title">Algorithm and Coding</span></a></div></li>
+<div class="toc-title-box"><a class="internal" href="week-06-softmax-regression.html"><span class="codenumber">5.4</span> <span class="title">Softmax Regression</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-06-softmax-regression">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-06-softmax-regression.html#week-06-softmax-regression-2"><span class="title">What if there are multiple classes?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-06-softmax-regression.html#week-06-softmax-regression-3"><span class="title">Training a Softmax Regression Model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-06-softmax-regression.html#week-06-softmax-regression-4"><span class="title">Softmax Regression in Scikit Learn</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-05-lu-decomposition.html"><span class="codenumber">5.3</span> <span class="title">LU Decomposition</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="week-06-performance-measures.html"><span class="codenumber">5.5</span> <span class="title">Performance Measures</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-06-performance-measures">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-06-performance-measures.html#Logistic-Regression-MNIST"><span class="title">Logistic Regression on the MNIST Dataset</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-06-performance-measures.html#measuring-accuracy-using-cross-validation"><span class="title">Measuring Accuracy Using Cross-Validation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-06-performance-measures.html#confusion-matrix"><span class="title">Confusion Matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-06-performance-measures.html#precision-and-recall"><span class="title">Precision and Recall</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-06-performance-measures.html#precision-recall-trade-off"><span class="title">Precision/Recall Trade-off</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="week-06-performance-measures.html#the-roc-curve"><span class="title">The ROC Curve</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="week-06-softmax-in-llms.html"><span class="codenumber">5.6</span> <span class="title">Softmax in LLMs</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a class="internal" href="unit-06-iterative-methods.html"><span class="codenumber">6</span> <span class="title">Unit 6: Iterative Methods</span></a></div>
-<ul class="structural toc-item-list" id="ptx-toc-group-unit-06-iterative-methods">
-<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-06-iterative-methods-2.html"><span class="title">Introduction</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-jacobi-method.html"><span class="codenumber">6.1</span> <span class="title">Jacobi Method</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-gauss-seidel-method.html"><span class="codenumber">6.2</span> <span class="title">Gauss-Seidel Method</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-iteration-methods-convergence.html"><span class="codenumber">6.3</span> <span class="title">Convergence of Iterative Methods</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-iterative-methods-coding.html"><span class="codenumber">6.4</span> <span class="title">Algorithms and Coding for Iterative Methods</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-other-iterative-methods.html"><span class="codenumber">6.5</span> <span class="title">Other Iterative Methods</span></a></div></li>
+<div class="toc-title-box"><a class="internal" href="week-08-probability-theory.html"><span class="codenumber">6</span> <span class="title">Week 8: Probability Theory</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-08-probability-theory">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="week-08-probability-theory-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="sec-probability-basic-concepts.html"><span class="codenumber">6.1</span> <span class="title">Basic Concepts of Probability</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-sec-probability-basic-concepts">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-probability-basic-concepts.html#ssec-basic-definitions"><span class="title">Basic Definitions of Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-probability-basic-concepts.html#ssec-joint-probability"><span class="title">Joint Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-probability-basic-concepts.html#ssec-conditional-probability"><span class="title">Conditional Probability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-probability-basic-concepts.html#ssec-notation-and-summary"><span class="title">Notation and Summary</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-troubleshooting.html"><span class="codenumber">A.</span> <span class="title">Troubleshooting</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="sec-probability-densities.html"><span class="codenumber">6.2</span> <span class="title">Probability densities</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="sec-expectations-and-covariances.html"><span class="codenumber">6.3</span> <span class="title">Expectations and Covariances</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-sec-expectations-and-covariances">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-expectations-and-covariances.html#ssec-expectation"><span class="title">Expectation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-expectations-and-covariances.html#ssec-variance"><span class="title">Variance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-expectations-and-covariances.html#ssec-covariance"><span class="title">Covariance</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="sec-correlation-and-dependence.html"><span class="codenumber">6.4</span> <span class="title">Correlation and Dependence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="sec-bayes-theorem.html"><span class="codenumber">6.5</span> <span class="title">Bayes’ Theorem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="week-09-bayesian-classification.html"><span class="codenumber">7</span> <span class="title">Week 9: Bayesian Classification</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-09-bayesian-classification">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="week-09-bayesian-classification-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="sec-probabilistic-model.html"><span class="codenumber">7.1</span> <span class="title">Probabilistic Model</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="sec-probability-distributions.html"><span class="codenumber">7.2</span> <span class="title">Probability Distributions</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-sec-probability-distributions">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-probability-distributions.html#ssec-gaussian-distribution"><span class="title">Gaussian Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-probability-distributions.html#ssec-bernoulli-distribution"><span class="title">Bernoulli Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-probability-distributions.html#ssec-multinomial-distribution"><span class="title">Multinomial Distribution</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="sec-naive-bayes-classifiers.html"><span class="codenumber">7.3</span> <span class="title">Naive Bayes Classifiers in Scikit-Learn</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-sec-naive-bayes-classifiers">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-naive-bayes-classifiers.html#ssec-gaussian-naive-bayes"><span class="title">Gaussian Naive Bayes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-naive-bayes-classifiers.html#ssec-multinomial-naive-bayes"><span class="title">Multinomial Naive Bayes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-naive-bayes-classifiers.html#ssec-bernoulli-naive-bayes"><span class="title">Bernoulli Naive Bayes</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="week-11-svm.html"><span class="codenumber">8</span> <span class="title">Week 11: Support Vector Machines</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-week-11-svm">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="yang-support-vector-machines-introduction.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="sec-linear-svm-classification.html"><span class="codenumber">8.1</span> <span class="title">Linear SVM Classification</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="sec-nonlinear-svm-classification.html"><span class="codenumber">8.2</span> <span class="title">Nonlinear SVM Classification</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-sec-nonlinear-svm-classification">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-nonlinear-svm-classification.html#ssec-implementing-polynomial-kernel"><span class="title">Implementing the Polynomial Kernel</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="sec-nonlinear-svm-classification.html#ssec-similarity-features-and-gaussian-rbf-kernel"><span class="title">Similarity Features and Gaussian RBF Kernel</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="svm-regression.html"><span class="codenumber">8.3</span> <span class="title">SVM Regression</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="dive-into-svms.html"><span class="codenumber">8.4</span> <span class="title">Dive into SVMs</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-dive-into-svms">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="dive-into-svms.html#decision-function-and-predictions"><span class="title">Decision Function and Predictions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="dive-into-svms.html#training-objective"><span class="title">Training Objective</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="dive-into-svms.html#quadratic-programming"><span class="title">Quadratic Programming</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="dive-into-svms.html#ssec-svm-dual-problem"><span class="title">The Dual Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="dive-into-svms.html#ssec-kernelized-svms"><span class="title">Kernelized SVMs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="dive-into-svms.html#ssec-hinge-loss-for-linearsvc"><span class="title">Hinge Loss for LinearSVC</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-ai-use-policy.html"><span class="codenumber">A.</span> <span class="title">AI Use Policy</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-troubleshooting.html"><span class="codenumber">B.</span> <span class="title">Troubleshooting</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-author-ai-disclosure.html"><span class="codenumber">C.</span> <span class="title">Author AI-Use Disclosure</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="instr-future-semester-changes.html"><span class="codenumber">D.</span> <span class="title">Changes for Future Semesters</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="instr-helpful-snippets.html"><span class="codenumber">E.</span> <span class="title">Helpful Snippets</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div class="ptx-content" id="ptx-content">
 <section class="section" id="week-01-jupyter-basics">
 <h1 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Getting Started with Jupyter Notebooks</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Getting Started with Jupyter Notebooks</span>
 </h1>
 <section class="introduction" id="week-01-jupyter-basics-2">
 <div class="para" id="week-01-jupyter-basics-2-1">To start, we’ll open a Jupyter Notebook and get familiar with the interface. <div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="week-01-jupyter-basics-2-1-1" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6677af14-1a9f-48dd-9fa5-b4aa01362fcb" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
@@ -356,7 +452,7 @@ eBookConfig.enable_chatcodes =  false;
 </ol>
 <div aria-hidden="true" class="autopermalink" data-description="Paragraphs: How to Run Code"><a aria-label="Copy heading and permalink for Paragraphs: How to Run Code" href="#week-01-jupyter-basics-4-8" tabindex="-1" title="Copy heading and permalink for Paragraphs: How to Run Code">🔗</a></div>
 </section><div aria-hidden="true" class="autopermalink" data-description="Subsection: Understanding the Interface and Running Code"><a aria-label="Copy heading and permalink for Subsection: Understanding the Interface and Running Code" href="#week-01-jupyter-basics-4" tabindex="-1" title="Copy heading and permalink for Subsection: Understanding the Interface and Running Code">🔗</a></div>
-</section><div aria-hidden="true" class="autopermalink" data-description="Section 1.2: Getting Started with Jupyter Notebooks"><a aria-label="Copy heading and permalink for Section 1.2: Getting Started with Jupyter Notebooks" href="#week-01-jupyter-basics" tabindex="-1" title="Copy heading and permalink for Section 1.2: Getting Started with Jupyter Notebooks">🔗</a></div>
+</section><div aria-hidden="true" class="autopermalink" data-description="Section 1.3: Getting Started with Jupyter Notebooks"><a aria-label="Copy heading and permalink for Section 1.3: Getting Started with Jupyter Notebooks" href="#week-01-jupyter-basics" tabindex="-1" title="Copy heading and permalink for Section 1.3: Getting Started with Jupyter Notebooks">🔗</a></div>
 </section>
 </div>
 <div class="ptx-content-footer" id="ptx-content-footer">
