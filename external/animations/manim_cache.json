@@ -1,5 +1,7 @@
 {
   "bisection-method.py": "a97e67fba44ed4626ad84f376e1ce7d23e8ff508854ba1d72ebc6d7757ac0dee",
   "newtons-method.py": "b9f1af19fafca18ec956db53833de2572faf05ebd7959e0925bc8e859e6c72b0",
-  "secant-method.py": "bdf7b8b29f4591121c55a1bd4a5a028bb107dd5c2efdc8443105ea6e07f75ef9"
+  "secant-method.py": "bdf7b8b29f4591121c55a1bd4a5a028bb107dd5c2efdc8443105ea6e07f75ef9",
+  "simpson-quadrature.py": "48d980c14a9c04c527e0f6ca2e4807bfe6ffe1592079d092ee026ae80beeea87",
+  "trapezoid-quadrature.py": "06e16f1d65f7fa17bd1477fd7dcd623c461376236d5b9bc54e040127456188eb"
 }

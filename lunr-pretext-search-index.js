@@ -772,7 +772,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "5.3",
   "title": "LU Decomposition",
-  "body": "LU Decomposition  In this section, we demonstrate that the steps involved in Gaussian elimination not only solve a linear system but also reveal a deeper structure of the matrix . Specifically, the elimination process can be viewed as decomposing into the product of two matrices: a lower triangular matrix and an upper triangular matrix , such that This factorization, known as LU decomposition , is a powerful tool in numerical linear algebra. It allows for efficient solutions of linear systems, especially when multiple right-hand sides are involved, and it forms the foundation for many more advanced matrix algorithms. In the LU decomposition, captures the row operations used to eliminate entries below the pivots, while records the multipliers used in those operations. Rigorously, given a square matrix , LU decomposition factors it as: where is a lower triangular matrix in the form of and is an upper triangular matrix in the form of Note that all diagonal entries of are 1 and entries below the diagonal ( for ) are the multipliers used during Gaussian elimination, and the matrix comes from the result of Gaussian elimination.    Find LU decomposition of      Apply Gaussian elimination to reduce the matrix into upper triangular form, The boxed multipliers form the lower triangular part of , while the resulting upper triangular matrix defines the matrix , namely,     Suppose is the coefficient matrix of the linear system By factoring , the system becomes This can be viewed as two successive systems: The first system is solved using forward substitution, since is lower triangular. The second is solved using backward substitution, as is upper triangular.    Use LU decomposition to solve the linear system     By last example, the coefficient matrix can be decomposed into as follows, Then, becomes Solving this system using forward substitution, we obtain , and thus the system becomes Then solving this system for using backward substitution, we have   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+  "body": "LU Decomposition  In this section, we demonstrate that the steps involved in Gaussian elimination not only solve a linear system but also reveal a deeper structure of the matrix . Specifically, the elimination process can be viewed as decomposing into the product of two matrices: a lower triangular matrix and an upper triangular matrix , such that This factorization, known as LU decomposition , is a powerful tool in numerical linear algebra. It allows for efficient solutions of linear systems, especially when multiple right-hand sides are involved, and it forms the foundation for many more advanced matrix algorithms. In the LU decomposition, captures the row operations used to eliminate entries below the pivots, while records the multipliers used in those operations. Rigorously, given a square matrix , LU decomposition factors it as: where is a lower triangular matrix in the form of and is an upper triangular matrix in the form of Note that all diagonal entries of are 1 and entries below the diagonal ( for ) are the multipliers used during Gaussian elimination, and the matrix comes from the result of Gaussian elimination.    Find LU decomposition of      Apply Gaussian elimination to reduce the matrix into upper triangular form, The boxed multipliers form the lower triangular part of , while the resulting upper triangular matrix defines the matrix , namely,     Suppose is the coefficient matrix of the linear system By factoring , the system becomes This can be viewed as two successive systems: The first system is solved using forward substitution, since is lower triangular. The second is solved using backward substitution, as is upper triangular.    Use LU decomposition to solve the linear system     Video Breakdown    By last example, the coefficient matrix can be decomposed into as follows, Then, becomes Solving this system using forward substitution, we obtain , and thus the system becomes Then solving this system for using backward substitution, we have     "
 },
 {
   "id": "unit-05-lu-decomposition-2",
@@ -799,7 +799,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "5.3.2",
   "title": "",
-  "body": "  Use LU decomposition to solve the linear system     By last example, the coefficient matrix can be decomposed into as follows, Then, becomes Solving this system using forward substitution, we obtain , and thus the system becomes Then solving this system for using backward substitution, we have   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+  "body": "  Use LU decomposition to solve the linear system     Video Breakdown    By last example, the coefficient matrix can be decomposed into as follows, Then, becomes Solving this system using forward substitution, we obtain , and thus the system becomes Then solving this system for using backward substitution, we have    "
 },
 {
   "id": "unit-06-jacobi-method",
@@ -916,7 +916,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "6.4",
   "title": "Algorithms and Coding for Iterative Methods",
-  "body": "Algorithms and Coding for Iterative Methods   We will stop the iteration when the latest iterates and satisfy where represents infinity norm of a vector, which is defined as follows, We can use the built-in function linalg.norm in Python’s Numpy module to calculate the infinity norm of a vector.  Now we code Jacobi method and Gauss-Seidel method: import numpy as np def jacobi(A, b, x0=None, tol=1e-5, max_iter=100, verbose=False): \"\"\" Solves the linear system Ax = b using the Jacobi iterative method. Parameters: A : array Coefficient matrix (assumed to be square). b : array Right-hand side vector. x0 : array (optional) Initial guess for the solution. tol : float (optional) Convergence tolerance. max_iter : int (optional) Maximum number of iterations. verbose : bool (optional) If True, print the solution at each iteration. Returns: x : ndarray Approximate solution vector. \"\"\" A = np.array(A, dtype=np.float64) b = np.array(b, dtype=np.float64) n = b.size x = np.zeros_like(b) if x0 is None else np.array(x0, dtype=np.float64).copy() for k in range(max_iter): x_new = np.zeros_like(x) for i in range(n): s = sum(A[i,j] * x[j] for j in range(n) if j != i) x_new[i] = (b[i] - s) \/ A[i,i] if verbose: print(f\"Iteration {k+1}: x = {np.round(x_new, 6)}\") if np.linalg.norm(x_new - x, ord=np.inf) < tol: return x_new x = x_new raise Exception(f\"Jacobi method did not converge after {max_iter} iterations.\") def gauss_seidel(A, b, x0=None, tol=1e-5, max_iter=100, verbose=False): \"\"\" Solves the linear system Ax = b using the Gauss-Seidel iterative method. Parameters: A : array Coefficient matrix (assumed to be square). b : array Right-hand side vector. x0 : array (optional) Initial guess for the solution. tol : float (optional) Convergence tolerance. max_iter : int (optional) Maximum number of iterations. verbose : bool (optional) If True, print the solution at each iteration. Returns: x : ndarray Approximate solution vector. \"\"\" A = np.array(A, dtype=np.float64) b = np.array(b, dtype=np.float64) n = b.size x = np.zeros_like(b) if x0 is None else np.array(x0, dtype=np.float64).copy() for k in range(max_iter): x_new = np.zeros_like(x) for i in range(n): s1 = sum(A[i,j] * x_new[j] for j in range(n) if j < i) s2 = sum(A[i,j] * x[j] for j in range(n) if j > i) x_new[i] = (b[i] - s1 - s2) \/ A[i,i] if verbose: print(f\"Iteration {k+1}: x = {np.round(x_new, 6)}\") if np.linalg.norm(x_new - x, ord=np.inf) < tol: return x_new x = x_new raise Exception(f\"Gauss-Seidel method did not converge after {max_iter} iterations.\") Let's use the function jacobi() to solve the example in the last section about the convergence: A = [[4, -3], [2,5]] b = [-1, 19] x = jacobi(A, b, verbose=True) print(f\"The solution is {np.round(x, 4)}\")    Iteration 1: x = [-0.25 3.8 ] Iteration 2: x = [2.6 3.9] Iteration 3: x = [2.675 2.76 ] Iteration 4: x = [1.82 2.73] Iteration 5: x = [1.7975 3.072 ] Iteration 6: x = [2.054 3.081] Iteration 7: x = [2.06075 2.9784 ] Iteration 8: x = [1.9838 2.9757] Iteration 9: x = [1.981775 3.00648 ] Iteration 10: x = [2.00486 3.00729] Iteration 11: x = [2.005468 2.998056] Iteration 12: x = [1.998542 2.997813] Iteration 13: x = [1.99836 3.000583] Iteration 14: x = [2.000437 3.000656] Iteration 15: x = [2.000492 2.999825] Iteration 16: x = [1.999869 2.999803] Iteration 17: x = [1.999852 3.000052] Iteration 18: x = [2.000039 3.000059] Iteration 19: x = [2.000044 2.999984] Iteration 20: x = [1.999988 2.999982] Iteration 21: x = [1.999987 3.000005] Iteration 22: x = [2.000004 3.000005] Iteration 23: x = [2.000004 2.999999] The solution is [2. 3.]     After swapping equations in the system, we have A = [[2,5], [4, -3]] b = [19, -1] x = jacobi(A, b, verbose=True) print(f\"The solution is {np.round(x, 4)}\")    Iteration 1: x = [9.5 0.333333] Iteration 2: x = [ 8.666667 13. ] Iteration 3: x = [-23. 11.888889] Iteration 4: x = [-20.222222 -30.333333] Iteration 5: x = [ 85.333333 -26.62963 ] Iteration 6: x = [ 76.074074 114.111111] Iteration 7: x = [-275.777778 101.765432] Iteration 8: x = [-244.91358 -367.37037] Iteration 9: x = [ 927.925926 -326.218107] Iteration 10: x = [ 825.045267 1237.567901] Iteration 11: x = [-3084.419753 1100.39369 ] Iteration 12: x = [-2741.484225 -4112.226337] Iteration 13: x = [10290.065844 -3654.978967] Iteration 14: x = [ 9146.947417 13720.421125] Iteration 15: x = [-34291.552812 12196.263222] Iteration 16: x = [-30481.158055 -45721.737083] Iteration 17: x = [114313.842707 -40641.21074 ] Iteration 18: x = [101612.526851 152418.790276] Iteration 19: x = [-381037.47569 135483.702467] Iteration 20: x = [-338699.756169 -508049.634253] Iteration 21: x = [1270133.585632 -451599.341558] Iteration 22: x = [1129007.853895 1693511.780843] Iteration 23: x = [-4233769.952108 1505344.138527] Iteration 24: x = [-3763350.846318 -5645026.269477] Iteration 25: x = [14112575.173692 -5017800.79509 ] Iteration 26: x = [12544511.487726 18816767.231589] Iteration 27: x = [-47041908.578973 16726015.650302] Iteration 28: x = [-41815029.625754 -62722544.438631] Iteration 29: x = [ 1.56806371e+08 -5.57533725e+07] Iteration 30: x = [1.39383441e+08 2.09075161e+08] Iteration 31: x = [-5.22687893e+08 1.85844588e+08] Iteration 32: x = [-4.64611461e+08 -6.96917191e+08] Iteration 33: x = [ 1.74229299e+09 -6.19481947e+08] Iteration 34: x = [1.54870488e+09 2.32305732e+09] Iteration 35: x = [-5.80764328e+09 2.06493984e+09] Iteration 36: x = [-5.16234958e+09 -7.74352437e+09] Iteration 37: x = [ 1.93588109e+10 -6.88313277e+09] Iteration 38: x = [1.72078319e+10 2.58117479e+10] Iteration 39: x = [-6.45293698e+10 2.29437759e+10] Iteration 40: x = [-5.73594398e+10 -8.60391597e+10] Iteration 41: x = [ 2.15097899e+11 -7.64792531e+10] Iteration 42: x = [1.91198133e+11 2.86797199e+11] Iteration 43: x = [-7.16992998e+11 2.54930844e+11] Iteration 44: x = [-6.37327109e+11 -9.55990664e+11] Iteration 45: x = [ 2.38997666e+12 -8.49769479e+11] Iteration 46: x = [2.12442370e+12 3.18663555e+12] Iteration 47: x = [-7.96658886e+12 2.83256493e+12] Iteration 48: x = [-7.08141232e+12 -1.06221185e+13] Iteration 49: x = [ 2.65552962e+13 -9.44188310e+12] Iteration 50: x = [2.36047077e+13 3.54070616e+13] Iteration 51: x = [-8.85176540e+13 3.14729437e+13] Iteration 52: x = [-7.86823591e+13 -1.18023539e+14] Iteration 53: x = [ 2.95058847e+14 -1.04909812e+14] Iteration 54: x = [2.62274530e+14 3.93411796e+14] Iteration 55: x = [-9.83529489e+14 3.49699374e+14] Iteration 56: x = [-8.74248435e+14 -1.31137265e+15] Iteration 57: x = [ 3.27843163e+15 -1.16566458e+15] Iteration 58: x = [2.91416145e+15 4.37124217e+15] Iteration 59: x = [-1.09281054e+16 3.88554860e+15] Iteration 60: x = [-9.71387150e+15 -1.45708072e+16] Iteration 61: x = [ 3.64270181e+16 -1.29518287e+16] Iteration 62: x = [3.23795717e+16 4.85693575e+16] Iteration 63: x = [-1.21423394e+17 4.31727622e+16] Iteration 64: x = [-1.07931906e+17 -1.61897858e+17] Iteration 65: x = [ 4.04744646e+17 -1.43909207e+17] Iteration 66: x = [3.59773018e+17 5.39659528e+17] Iteration 67: x = [-1.34914882e+18 4.79697358e+17] Iteration 68: x = [-1.19924339e+18 -1.79886509e+18] Iteration 69: x = [ 4.49716273e+18 -1.59899119e+18] Iteration 70: x = [3.99747798e+18 5.99621697e+18] Iteration 71: x = [-1.49905424e+19 5.32997064e+18] Iteration 72: x = [-1.33249266e+19 -1.99873899e+19] Iteration 73: x = [ 4.99684748e+19 -1.77665688e+19] Iteration 74: x = [4.44164220e+19 6.66246331e+19] Iteration 75: x = [-1.66561583e+20 5.92218960e+19] Iteration 76: x = [-1.4805474e+20 -2.2208211e+20] Iteration 77: x = [ 5.55205275e+20 -1.97406320e+20] Iteration 78: x = [4.93515800e+20 7.40273701e+20] Iteration 79: x = [-1.85068425e+21 6.58021067e+20] Iteration 80: x = [-1.64505267e+21 -2.46757900e+21] Iteration 81: x = [ 6.16894750e+21 -2.19340356e+21] Iteration 82: x = [5.48350889e+21 8.22526334e+21] Iteration 83: x = [-2.05631583e+22 7.31134519e+21] Iteration 84: x = [-1.82783630e+22 -2.74175445e+22] Iteration 85: x = [ 6.85438612e+22 -2.43711506e+22] Iteration 86: x = [6.09278766e+22 9.13918149e+22] Iteration 87: x = [-2.28479537e+23 8.12371688e+22] Iteration 88: x = [-2.03092922e+23 -3.04639383e+23] Iteration 89: x = [ 7.61598457e+23 -2.70790563e+23] Iteration 90: x = [6.76976407e+23 1.01546461e+24] Iteration 91: x = [-2.53866152e+24 9.02635209e+23] Iteration 92: x = [-2.25658802e+24 -3.38488203e+24] Iteration 93: x = [ 8.46220508e+24 -3.00878403e+24] Iteration 94: x = [7.52196007e+24 1.12829401e+25] Iteration 95: x = [-2.82073503e+25 1.00292801e+25] Iteration 96: x = [-2.50732002e+25 -3.76098004e+25] Iteration 97: x = [ 9.40245009e+25 -3.34309337e+25] Iteration 98: x = [8.35773341e+25 1.25366001e+26] Iteration 99: x = [-3.13415003e+26 1.11436446e+26] Iteration 100: x = [-2.78591114e+26 -4.17886671e+26] === PYTHON EXCEPTION === Traceback (most recent call last): File \"C:\\Users\\nsmoo\\AppData\\Local\\uv\\cache\\environments-v2\\math-4362-course-notes-cp3.13.11-ace1a3bea5e4df9d\\Lib\\site-packages\\ptx_builder\\code_runner.py\", line 71, in execute_python exec(code_string, env_globals, env_globals) ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File \"<string>\", line 3, in <module> File \"<string>\", line 44, in jacobi Exception: Jacobi method did not converge after 100 iterations.     Notice that swapping the equations in the system results in a Jacobi iteration that does not converge. This is bacause the swapped system is not strictly diagonally dominant and therefore there is no guarantee of convergence.  You can apply gauss_seidel() to solve this system by yourself, and you will find Gauss-Seidel method converges in less iterations (when it converges) and its convergence also relies on the strictly diagonal dominance of the coefficient matrix.  You can download the code from Canvas.  "
+  "body": "Algorithms and Coding for Iterative Methods   We will stop the iteration when the latest iterates and satisfy where represents infinity norm of a vector, which is defined as follows, We can use the built-in function linalg.norm in Python’s Numpy module to calculate the infinity norm of a vector.  Now we code Jacobi method and Gauss-Seidel method: import numpy as np def jacobi(A, b, x0=None, tol=1e-5, max_iter=100, verbose=False): \"\"\" Solves the linear system Ax = b using the Jacobi iterative method. Parameters: A : array Coefficient matrix (assumed to be square). b : array Right-hand side vector. x0 : array (optional) Initial guess for the solution. tol : float (optional) Convergence tolerance. max_iter : int (optional) Maximum number of iterations. verbose : bool (optional) If True, print the solution at each iteration. Returns: x : ndarray Approximate solution vector. \"\"\" A = np.array(A, dtype=np.float64) b = np.array(b, dtype=np.float64) n = b.size x = np.zeros_like(b) if x0 is None else np.array(x0, dtype=np.float64).copy() for k in range(max_iter): x_new = np.zeros_like(x) for i in range(n): s = sum(A[i,j] * x[j] for j in range(n) if j != i) x_new[i] = (b[i] - s) \/ A[i,i] if verbose: print(f\"Iteration {k+1}: x = {np.round(x_new, 6)}\") if np.linalg.norm(x_new - x, ord=np.inf) < tol: return x_new x = x_new raise Exception(f\"Jacobi method did not converge after {max_iter} iterations.\") def gauss_seidel(A, b, x0=None, tol=1e-5, max_iter=100, verbose=False): \"\"\" Solves the linear system Ax = b using the Gauss-Seidel iterative method. Parameters: A : array Coefficient matrix (assumed to be square). b : array Right-hand side vector. x0 : array (optional) Initial guess for the solution. tol : float (optional) Convergence tolerance. max_iter : int (optional) Maximum number of iterations. verbose : bool (optional) If True, print the solution at each iteration. Returns: x : ndarray Approximate solution vector. \"\"\" A = np.array(A, dtype=np.float64) b = np.array(b, dtype=np.float64) n = b.size x = np.zeros_like(b) if x0 is None else np.array(x0, dtype=np.float64).copy() for k in range(max_iter): x_new = np.zeros_like(x) for i in range(n): s1 = sum(A[i,j] * x_new[j] for j in range(n) if j < i) s2 = sum(A[i,j] * x[j] for j in range(n) if j > i) x_new[i] = (b[i] - s1 - s2) \/ A[i,i] if verbose: print(f\"Iteration {k+1}: x = {np.round(x_new, 6)}\") if np.linalg.norm(x_new - x, ord=np.inf) < tol: return x_new x = x_new raise Exception(f\"Gauss-Seidel method did not converge after {max_iter} iterations.\") Let's use the function jacobi() to solve the example in the last section about the convergence: A = [[4, -3], [2,5]] b = [-1, 19] x = jacobi(A, b, verbose=True) print(f\"The solution is {np.round(x, 4)}\")    Iteration 1: x = [-0.25 3.8 ] Iteration 2: x = [2.6 3.9] Iteration 3: x = [2.675 2.76 ] Iteration 4: x = [1.82 2.73] Iteration 5: x = [1.7975 3.072 ] Iteration 6: x = [2.054 3.081] Iteration 7: x = [2.06075 2.9784 ] Iteration 8: x = [1.9838 2.9757] Iteration 9: x = [1.981775 3.00648 ] Iteration 10: x = [2.00486 3.00729] Iteration 11: x = [2.005468 2.998056] Iteration 12: x = [1.998542 2.997813] Iteration 13: x = [1.99836 3.000583] Iteration 14: x = [2.000437 3.000656] Iteration 15: x = [2.000492 2.999825] Iteration 16: x = [1.999869 2.999803] Iteration 17: x = [1.999852 3.000052] Iteration 18: x = [2.000039 3.000059] Iteration 19: x = [2.000044 2.999984] Iteration 20: x = [1.999988 2.999982] Iteration 21: x = [1.999987 3.000005] Iteration 22: x = [2.000004 3.000005] Iteration 23: x = [2.000004 2.999999] The solution is [2. 3.]     After swapping equations in the system, we have A = [[2,5], [4, -3]] b = [19, -1] x = jacobi(A, b, verbose=True) print(f\"The solution is {np.round(x, 4)}\")    Iteration 1: x = [9.5 0.333333] Iteration 2: x = [ 8.666667 13. ] Iteration 3: x = [-23. 11.888889] Iteration 4: x = [-20.222222 -30.333333] Iteration 5: x = [ 85.333333 -26.62963 ] Iteration 6: x = [ 76.074074 114.111111] Iteration 7: x = [-275.777778 101.765432] Iteration 8: x = [-244.91358 -367.37037] Iteration 9: x = [ 927.925926 -326.218107] Iteration 10: x = [ 825.045267 1237.567901] Iteration 11: x = [-3084.419753 1100.39369 ] Iteration 12: x = [-2741.484225 -4112.226337] Iteration 13: x = [10290.065844 -3654.978967] Iteration 14: x = [ 9146.947417 13720.421125] Iteration 15: x = [-34291.552812 12196.263222] Iteration 16: x = [-30481.158055 -45721.737083] Iteration 17: x = [114313.842707 -40641.21074 ] Iteration 18: x = [101612.526851 152418.790276] Iteration 19: x = [-381037.47569 135483.702467] Iteration 20: x = [-338699.756169 -508049.634253] Iteration 21: x = [1270133.585632 -451599.341558] Iteration 22: x = [1129007.853895 1693511.780843] Iteration 23: x = [-4233769.952108 1505344.138527] Iteration 24: x = [-3763350.846318 -5645026.269477] Iteration 25: x = [14112575.173692 -5017800.79509 ] Iteration 26: x = [12544511.487726 18816767.231589] Iteration 27: x = [-47041908.578973 16726015.650302] Iteration 28: x = [-41815029.625754 -62722544.438631] Iteration 29: x = [ 1.56806371e+08 -5.57533725e+07] Iteration 30: x = [1.39383441e+08 2.09075161e+08] Iteration 31: x = [-5.22687893e+08 1.85844588e+08] Iteration 32: x = [-4.64611461e+08 -6.96917191e+08] Iteration 33: x = [ 1.74229299e+09 -6.19481947e+08] Iteration 34: x = [1.54870488e+09 2.32305732e+09] Iteration 35: x = [-5.80764328e+09 2.06493984e+09] Iteration 36: x = [-5.16234958e+09 -7.74352437e+09] Iteration 37: x = [ 1.93588109e+10 -6.88313277e+09] Iteration 38: x = [1.72078319e+10 2.58117479e+10] Iteration 39: x = [-6.45293698e+10 2.29437759e+10] Iteration 40: x = [-5.73594398e+10 -8.60391597e+10] Iteration 41: x = [ 2.15097899e+11 -7.64792531e+10] Iteration 42: x = [1.91198133e+11 2.86797199e+11] Iteration 43: x = [-7.16992998e+11 2.54930844e+11] Iteration 44: x = [-6.37327109e+11 -9.55990664e+11] Iteration 45: x = [ 2.38997666e+12 -8.49769479e+11] Iteration 46: x = [2.12442370e+12 3.18663555e+12] Iteration 47: x = [-7.96658886e+12 2.83256493e+12] Iteration 48: x = [-7.08141232e+12 -1.06221185e+13] Iteration 49: x = [ 2.65552962e+13 -9.44188310e+12] Iteration 50: x = [2.36047077e+13 3.54070616e+13] Iteration 51: x = [-8.85176540e+13 3.14729437e+13] Iteration 52: x = [-7.86823591e+13 -1.18023539e+14] Iteration 53: x = [ 2.95058847e+14 -1.04909812e+14] Iteration 54: x = [2.62274530e+14 3.93411796e+14] Iteration 55: x = [-9.83529489e+14 3.49699374e+14] Iteration 56: x = [-8.74248435e+14 -1.31137265e+15] Iteration 57: x = [ 3.27843163e+15 -1.16566458e+15] Iteration 58: x = [2.91416145e+15 4.37124217e+15] Iteration 59: x = [-1.09281054e+16 3.88554860e+15] Iteration 60: x = [-9.71387150e+15 -1.45708072e+16] Iteration 61: x = [ 3.64270181e+16 -1.29518287e+16] Iteration 62: x = [3.23795717e+16 4.85693575e+16] Iteration 63: x = [-1.21423394e+17 4.31727622e+16] Iteration 64: x = [-1.07931906e+17 -1.61897858e+17] Iteration 65: x = [ 4.04744646e+17 -1.43909207e+17] Iteration 66: x = [3.59773018e+17 5.39659528e+17] Iteration 67: x = [-1.34914882e+18 4.79697358e+17] Iteration 68: x = [-1.19924339e+18 -1.79886509e+18] Iteration 69: x = [ 4.49716273e+18 -1.59899119e+18] Iteration 70: x = [3.99747798e+18 5.99621697e+18] Iteration 71: x = [-1.49905424e+19 5.32997064e+18] Iteration 72: x = [-1.33249266e+19 -1.99873899e+19] Iteration 73: x = [ 4.99684748e+19 -1.77665688e+19] Iteration 74: x = [4.44164220e+19 6.66246331e+19] Iteration 75: x = [-1.66561583e+20 5.92218960e+19] Iteration 76: x = [-1.4805474e+20 -2.2208211e+20] Iteration 77: x = [ 5.55205275e+20 -1.97406320e+20] Iteration 78: x = [4.93515800e+20 7.40273701e+20] Iteration 79: x = [-1.85068425e+21 6.58021067e+20] Iteration 80: x = [-1.64505267e+21 -2.46757900e+21] Iteration 81: x = [ 6.16894750e+21 -2.19340356e+21] Iteration 82: x = [5.48350889e+21 8.22526334e+21] Iteration 83: x = [-2.05631583e+22 7.31134519e+21] Iteration 84: x = [-1.82783630e+22 -2.74175445e+22] Iteration 85: x = [ 6.85438612e+22 -2.43711506e+22] Iteration 86: x = [6.09278766e+22 9.13918149e+22] Iteration 87: x = [-2.28479537e+23 8.12371688e+22] Iteration 88: x = [-2.03092922e+23 -3.04639383e+23] Iteration 89: x = [ 7.61598457e+23 -2.70790563e+23] Iteration 90: x = [6.76976407e+23 1.01546461e+24] Iteration 91: x = [-2.53866152e+24 9.02635209e+23] Iteration 92: x = [-2.25658802e+24 -3.38488203e+24] Iteration 93: x = [ 8.46220508e+24 -3.00878403e+24] Iteration 94: x = [7.52196007e+24 1.12829401e+25] Iteration 95: x = [-2.82073503e+25 1.00292801e+25] Iteration 96: x = [-2.50732002e+25 -3.76098004e+25] Iteration 97: x = [ 9.40245009e+25 -3.34309337e+25] Iteration 98: x = [8.35773341e+25 1.25366001e+26] Iteration 99: x = [-3.13415003e+26 1.11436446e+26] Iteration 100: x = [-2.78591114e+26 -4.17886671e+26] === PYTHON EXCEPTION === Traceback (most recent call last): File \"C:\\Users\\nmoore\\Documents\\Teaching\\Math4362\\tools\\add_python_output.py\", line 48, in execute_python exec(code_string, env_globals, env_globals) ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ File \"<string>\", line 3, in <module> File \"<string>\", line 44, in jacobi Exception: Jacobi method did not converge after 100 iterations.     Notice that swapping the equations in the system results in a Jacobi iteration that does not converge. This is bacause the swapped system is not strictly diagonally dominant and therefore there is no guarantee of convergence.  You can apply gauss_seidel() to solve this system by yourself, and you will find Gauss-Seidel method converges in less iterations (when it converges) and its convergence also relies on the strictly diagonal dominance of the coefficient matrix.  You can download the code from Canvas.  "
 },
 {
   "id": "unit-06-other-iterative-methods",
@@ -926,6 +926,303 @@ var ptx_lunr_docs = [
   "number": "6.5",
   "title": "Other Iterative Methods",
   "body": "Other Iterative Methods  The following video discusses other iterative methods.   "
+},
+{
+  "id": "sec-general-interp-framework",
+  "level": "1",
+  "url": "sec-general-interp-framework.html",
+  "type": "Section",
+  "number": "7.1",
+  "title": "A General Framework for Interpolation",
+  "body": " A General Framework for Interpolation   Given a set of data points , our goal is to construct a polynomial that passes through all these points. First, it’s important to know that such a polynomial exists and is unique, provided that the values are distinct. This is guaranteed by the following theorem:  If the points are distinct, then for real values , there exists a unique polynomial of degree at most such that   We'll skip the proof here. Once we construct the Lagrange interpolating polynomial, the intuition behind the theorem will become more apparent.  We generally express the interpolating polynomial in terms of a linear combination of basis functions: where are known basis functions and are unknown coefficients to be determined. Since must interpolate the data points , we impose the condition: This leads to a system of equations: Or in matrix form:   Why is Interpolation Useful?    "
+},
+{
+  "id": "sec-general-interp-framework-3-3",
+  "level": "2",
+  "url": "sec-general-interp-framework.html#sec-general-interp-framework-3-3",
+  "type": "Theorem",
+  "number": "7.1.1",
+  "title": "",
+  "body": " If the points are distinct, then for real values , there exists a unique polynomial of degree at most such that   "
+},
+{
+  "id": "lagrange-form-interpolation",
+  "level": "1",
+  "url": "lagrange-form-interpolation.html",
+  "type": "Section",
+  "number": "7.2",
+  "title": "Lagrange Form",
+  "body": " Lagrange Form   To simplify this system, we seek basis functions that make the coefficient matrix the identity matrix. This happens when each basis function satisfies: The Lagrange basis functions achieve this: This formula ensures that: Using these basis functions, the coefficient matrix becomes the identity: So the coefficients satisfy , and the interpolating polynomial becomes: . This is the Lagrange form of the interpolating polynomial.    Find the interpolating polynomial using Lagrange basis functions for the data:      Therefore,   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+},
+{
+  "id": "lagrange-form-interpolation-3",
+  "level": "2",
+  "url": "lagrange-form-interpolation.html#lagrange-form-interpolation-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Lagrange basis functions Lagrange form "
+},
+{
+  "id": "lagrange-form-interpolation-4",
+  "level": "2",
+  "url": "lagrange-form-interpolation.html#lagrange-form-interpolation-4",
+  "type": "Example",
+  "number": "7.2.1",
+  "title": "",
+  "body": "  Find the interpolating polynomial using Lagrange basis functions for the data:      Therefore,   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "newton-form-interpolation",
+  "level": "1",
+  "url": "newton-form-interpolation.html",
+  "type": "Section",
+  "number": "7.3",
+  "title": "Newton’s Form",
+  "body": " Newton’s Form   While Lagrange interpolation provides a straightforward way to construct the interpolating polynomial, it becomes inefficient when new data points are added or when recalculations are needed. Newton’s form addresses this by organizing the interpolation process to make updates and evaluations more efficient.  The Newton basis functions up to degree are defined as: Using these basis functions, the interpolating polynomial is expressed as: . Suppose we think of the -values, , as evaluations of an unknown function at , that is, . Substituting each into the interpolant, we determine the coefficients step-by-step:  Substituting : Substituting gives: thus, Substituting and simplifying yields: . This can be further simplified to: , where we introduce the concept of divided differences .   Divided Differences  Given data points , , the divided differences are defined recursively by: for .   Let’s write the first 3 divided differences, and they are exactly , , and . Thus, the coefficient is simply the -th divided difference: Using divided differences, polynomial interpolation in Newton’s form can be written as: .  A natural question arises: How do we use all of these recurrences and formulas in practice? The answer lies in constructing a divided difference table as follows: Note that the entries along the top-right diagonal correspond to the coefficients of Newton’s interpolating polynomial.    Find the interpolating polynomial using Newton’s basis functions for the data:     We want to compute . We will construct a divided difference table to find all divided differences easier: Therefore, which is the same polynomial we had in Example 1.  Video Breakdown  Dr. Yang walks through this example in the following video.        Suppose we add another data point to the data pairs in last example. Find the interpolating polynomial using the results of last example.    We now have 4 points and we want to compute   We will reuse the divided difference table in last example and add the new point and other cells accordingly: Therefore,   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+},
+{
+  "id": "newton-form-interpolation-3",
+  "level": "2",
+  "url": "newton-form-interpolation.html#newton-form-interpolation-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Newton’s form "
+},
+{
+  "id": "newton-form-interpolation-5",
+  "level": "2",
+  "url": "newton-form-interpolation.html#newton-form-interpolation-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "divided differences "
+},
+{
+  "id": "newton-form-interpolation-6",
+  "level": "2",
+  "url": "newton-form-interpolation.html#newton-form-interpolation-6",
+  "type": "Definition",
+  "number": "7.3.1",
+  "title": "Divided Differences.",
+  "body": " Divided Differences  Given data points , , the divided differences are defined recursively by: for .  "
+},
+{
+  "id": "newton-form-interpolation-9",
+  "level": "2",
+  "url": "newton-form-interpolation.html#newton-form-interpolation-9",
+  "type": "Example",
+  "number": "7.3.2",
+  "title": "",
+  "body": "  Find the interpolating polynomial using Newton’s basis functions for the data:     We want to compute . We will construct a divided difference table to find all divided differences easier: Therefore, which is the same polynomial we had in Example 1.  Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "newton-form-interpolation-10",
+  "level": "2",
+  "url": "newton-form-interpolation.html#newton-form-interpolation-10",
+  "type": "Example",
+  "number": "7.3.3",
+  "title": "",
+  "body": "  Suppose we add another data point to the data pairs in last example. Find the interpolating polynomial using the results of last example.    We now have 4 points and we want to compute   We will reuse the divided difference table in last example and add the new point and other cells accordingly: Therefore,   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "interp-error-analyis",
+  "level": "1",
+  "url": "interp-error-analyis.html",
+  "type": "Section",
+  "number": "7.4",
+  "title": "Error Analysis",
+  "body": " Error Analysis  The theorem below, presented without proof, determines the error in polynomial interpolation.  Polynomial Interpolation Error   Let be distinct numbers in the interval and . Then for each , there is a number between such that     The theorem below determines the upper bound for the absolute error in polynomial interpolation with equally spaced nodes.    Let be distinct numbers in the interval with equal space and let . Then for any ,      Since , it falls into one of the subintervals: let . Consider the product . Let and . Then the product becomes with the restriction . Using calculus, we can find the maximum of the product is , which is obtained when is the midpoint and thus . Then Therefore,      Find an upper bound for the absolute error when is approximated by its interpolating polynomial on . The interpolating polynomial uses 5 equally spaced nodes in including the endpoints.    First of all, as it uses 5 equally spaced nodes, that is, , we have and . Then by last theorem, we have Then we need to find . Since , it is easy to find , and thus . Therefore, .  Video Breakdown  Dr. Yang walks through this example in the following video.      "
+},
+{
+  "id": "interp-error-analyis-3",
+  "level": "2",
+  "url": "interp-error-analyis.html#interp-error-analyis-3",
+  "type": "Theorem",
+  "number": "7.4.1",
+  "title": "Polynomial Interpolation Error.",
+  "body": "Polynomial Interpolation Error   Let be distinct numbers in the interval and . Then for each , there is a number between such that    "
+},
+{
+  "id": "interp-error-analyis-5",
+  "level": "2",
+  "url": "interp-error-analyis.html#interp-error-analyis-5",
+  "type": "Theorem",
+  "number": "7.4.2",
+  "title": "",
+  "body": "  Let be distinct numbers in the interval with equal space and let . Then for any ,      Since , it falls into one of the subintervals: let . Consider the product . Let and . Then the product becomes with the restriction . Using calculus, we can find the maximum of the product is , which is obtained when is the midpoint and thus . Then Therefore,   "
+},
+{
+  "id": "interp-error-analyis-6",
+  "level": "2",
+  "url": "interp-error-analyis.html#interp-error-analyis-6",
+  "type": "Example",
+  "number": "7.4.3",
+  "title": "",
+  "body": "  Find an upper bound for the absolute error when is approximated by its interpolating polynomial on . The interpolating polynomial uses 5 equally spaced nodes in including the endpoints.    First of all, as it uses 5 equally spaced nodes, that is, , we have and . Then by last theorem, we have Then we need to find . Since , it is easy to find , and thus . Therefore, .  Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "interpolation-algorithms-coding",
+  "level": "1",
+  "url": "interpolation-algorithms-coding.html",
+  "type": "Section",
+  "number": "7.5",
+  "title": "Algorithm and Coding",
+  "body": " Algorithm and Coding   In this section, we’ll focus on implementing Newton’s polynomial interpolation. As a practice, you’re encouraged to try coding Lagrange interpolation yourself.  There are two main steps involved:  Compute the coefficients of Newton’s interpolating polynomial.  Use those coefficients to evaluate the polynomial at new -values.     Step 1: Compute Newton Coefficients  We will use the divided difference table to find the general pattern of c[i] in stage k : The following Python function computes the coefficients c using this recursive structure: def divdif(x,y): c = y.copy() for k in range(1, x.size): c_old = c.copy() for i in range(k, x.size): c[i] = (c_old[i]-c_old[i-1])\/(x[i]-x[i-k]) return c    Step 2: Evaluate Newton’s Interpolating Polynomial  After computing the coefficients, we can evaluate the polynomial at any desired -value:  def newton_interpolation(x, y, xx): yy = 0 c = divdif(x, y) for k in range(x.size): p = 1 for i in range(k): p *= (xx - x[i]) yy += c[k]*p return yy   Step 3: Using the Interpolant  Let’s use this code to interpolate a set of points from Example 2 and evaluate the result at :  x = np.array([-1, 1, 2]) y = np.array([-6, -2, 6]) xx = 0 yy = newton_interpolation(x, y, xx) print(f\"The value evaluated at {xx} is {yy}.\")    The value evaluated at 0 is -6.    To visualize the interpolant, we can evaluate it at multiple points and plot the result: xx = np.linspace(-1, 2, 20) yy = newton_interpolation(x, y, xx) plt.plot(x, y, 'o') plt.plot(xx, yy, '-') plt.xlabel('x') plt.ylabel('y') plt.title('Polynomial Interpolation') plt.grid(True) plt.show()   Newton interpolation result   The interpolant evaluated at 20 equally spaced points between -1 and 2. The interpolant is a polynomial that passes through the given points.      Now let’s explore a classical issue with high-degree polynomial interpolation called Runge’s phenomenon . This occurs when interpolating with many equispaced points, leading to large oscillations near the interval’s endpoints.  We’ll test this by interpolating 11 data points from Runge’s function and plotting the result: x = np.linspace(-5, 5, 11) f = lambda x: 1\/(1+x**2) y = f(x) x_fine = np.linspace(-5, 5, 100) y_newton = newton_interpolation(x, y, x_fine) plt.plot(x, y, 'o', label='Data points', markersize=8) plt.plot(x_fine, y_newton, '-', label='Newton Interpolation') plt.xlabel('x') plt.ylabel('y') plt.title('Polynomial Interpolation') plt.legend(loc='upper center') plt.grid(True) plt.show()   Data points and interpolant for Runge's Function   A polynomial is plotted which exactly passes through the data points, but it shows large oscillations towards the end of the interval     As seen, the interpolant performs well near the center of the interval, but exhibits strong oscillations toward the endpoints. This behavior highlights the limitations of high-degree polynomial interpolation, which we’ll address later using cubic spline interpolation .  "
+},
+{
+  "id": "interpolation-algorithms-coding-7-5-2",
+  "level": "2",
+  "url": "interpolation-algorithms-coding.html#interpolation-algorithms-coding-7-5-2",
+  "type": "Figure",
+  "number": "7.5.1",
+  "title": "",
+  "body": " Newton interpolation result   The interpolant evaluated at 20 equally spaced points between -1 and 2. The interpolant is a polynomial that passes through the given points.   "
+},
+{
+  "id": "interpolation-algorithms-coding-8",
+  "level": "2",
+  "url": "interpolation-algorithms-coding.html#interpolation-algorithms-coding-8",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Runge’s phenomenon "
+},
+{
+  "id": "interpolation-algorithms-coding-9-3",
+  "level": "2",
+  "url": "interpolation-algorithms-coding.html#interpolation-algorithms-coding-9-3",
+  "type": "Figure",
+  "number": "7.5.2",
+  "title": "",
+  "body": " Data points and interpolant for Runge's Function   A polynomial is plotted which exactly passes through the data points, but it shows large oscillations towards the end of the interval   "
+},
+{
+  "id": "interpolation-algorithms-coding-10",
+  "level": "2",
+  "url": "interpolation-algorithms-coding.html#interpolation-algorithms-coding-10",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "cubic spline interpolation "
+},
+{
+  "id": "sec-computing-hermite-poly",
+  "level": "1",
+  "url": "sec-computing-hermite-poly.html",
+  "type": "Section",
+  "number": "8.1",
+  "title": "Computing Hermite Polynomial",
+  "body": " Computing Hermite Polynomial   To incorporate derivative information at the data points, let’s explore the connection between derivatives and divided differences. We know that: Taking limit for both sides as , we have More generally, we have Therefore, to utilize the derivative information, we can build a divided difference table by duplicating each data point as follows,     Find the Hermite polynomial given the following data:    We need to construct a divided difference table by duplicating each data point as follows, Note that the blue numbers are the derivatives given in the dataset.  Now we can treat this table as a standard divided difference table in Newton’s interpolation. Using what we have learned in last lecture, we can complete the table as follows, Then we can find the Hermite polynomial using the same approach as in Newton’s interpolation method.  Treat the duplicated points as distinct points, resulting in a total of 6 points, and the resulting polynomial will have a degree of 5.   Video Breakdown  Dr. Yang walks through this example in the following video.      Similarly, we can derive higher-order divided difference at a single point is .   Find the Hermite polynomial given the following data:    We need to construct a divided difference table by duplicating each data point twice (why?) as follows, Note that the blue numbers are the first derivatives and red second derivative given in the dataset.  Now we can treat this table as a standard divided difference table in Newton’s interpolation. Let’s complete it, Then we can find the Hermite polynomial using the same approach as in Newton’s interpolation method.   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+},
+{
+  "id": "sec-computing-hermite-poly-4",
+  "level": "2",
+  "url": "sec-computing-hermite-poly.html#sec-computing-hermite-poly-4",
+  "type": "Example",
+  "number": "8.1.1",
+  "title": "",
+  "body": "  Find the Hermite polynomial given the following data:    We need to construct a divided difference table by duplicating each data point as follows, Note that the blue numbers are the derivatives given in the dataset.  Now we can treat this table as a standard divided difference table in Newton’s interpolation. Using what we have learned in last lecture, we can complete the table as follows, Then we can find the Hermite polynomial using the same approach as in Newton’s interpolation method.  Treat the duplicated points as distinct points, resulting in a total of 6 points, and the resulting polynomial will have a degree of 5.   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "sec-computing-hermite-poly-6",
+  "level": "2",
+  "url": "sec-computing-hermite-poly.html#sec-computing-hermite-poly-6",
+  "type": "Example",
+  "number": "8.1.3",
+  "title": "",
+  "body": " Find the Hermite polynomial given the following data:    We need to construct a divided difference table by duplicating each data point twice (why?) as follows, Note that the blue numbers are the first derivatives and red second derivative given in the dataset.  Now we can treat this table as a standard divided difference table in Newton’s interpolation. Let’s complete it, Then we can find the Hermite polynomial using the same approach as in Newton’s interpolation method.   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "sec-hermite-algo-coding",
+  "level": "1",
+  "url": "sec-hermite-algo-coding.html",
+  "type": "Section",
+  "number": "8.2",
+  "title": "Algorithm and Coding",
+  "body": " Algorithm and Coding   The following functions compute the Hermite interpolating polynomial given the x coordinates, y coordinates, and the first derivatives yprime . You can develop your own code for higher-order cases.  def hermite_divdif(x,y,yprime): n = x.size z = np.zeros(2*n) c = np.zeros(2*n) for i in range(n): z[2*i] = x[i] z[2*i+1] = x[i] c[0] = y[0] c[1] = yprime[0] for i in range(1,n): c[2*i] = (y[i]-y[i-1])\/(x[i]-x[i-1]) c[2*i+1] = yprime[i] for k in range(2, 2*n): c_old = c.copy() for i in range(k, 2*n): c[i] = (c_old[i]-c_old[i-1])\/(z[i]-z[i-k]) return c def hermite_interpolation(x, y, yprime, xx): yy = 0 c = hermite_divdif(x, y, yprime) n = x.size z = np.zeros(2*n) for i in range(n): z[2*i] = x[i] z[2*i+1] = x[i] for k in range(2*n): p = 1 for i in range(k): p *= (xx - z[i]) yy += c[k]*p return yy  Let’s use this code to find the Hermite polynomial given the following data:   x = np.array([0, 3.14, 6.28]) y = np.array([0, 0, 0]) yprime = np.array([1, -1, 1]) xx = np.linspace(0, 6.28, 100) yy = hermite_interpolation(x, y, yprime, xx) plt.plot(x, y, 'o') plt.plot(xx, yy, '-')   Generated plot from default   A dynamically generated mathematical plot.    "
+},
+{
+  "id": "sec-hermite-algo-coding-7",
+  "level": "2",
+  "url": "sec-hermite-algo-coding.html#sec-hermite-algo-coding-7",
+  "type": "Figure",
+  "number": "8.2.1",
+  "title": "",
+  "body": " Generated plot from default   A dynamically generated mathematical plot.   "
+},
+{
+  "id": "sec-cubic-spline-interpolation",
+  "level": "1",
+  "url": "sec-cubic-spline-interpolation.html",
+  "type": "Section",
+  "number": "9.1",
+  "title": "Cubic Spline Interpolation",
+  "body": "Cubic Spline Interpolation  Video Introductions  The following videos are from my graduate course in Numerical Analysis, but are relevant for this course as well and don't have anything too advanced in them. There is occasional mention of the textbook for that course where the details can be found. I'm not going to put the details here beyond showing you how you implement it by hand and how you can use the scipy python package. There are several resources available online for more information.     The most common type of piecewise polynomial interpolation, cubic spline interpolation, fits a cubic polynomial to each interval between data points. These polynomials are chosen so that the resulting curve is continuous, and the first and second derivatives are also continuous at the knots, ensuring a smooth transition. This makes splines particularly useful for applications like computer graphics, data visualization, and numerical analysis, where a smooth and accurate representation of data is needed.  Given a set of data points , where , cubic spline interpolation constructs a piecewise function that each piece defined on the interval is a cubic polynomial of the form: where are coefficients specific to the interval , and there are such polynomials for the intervals.  The goal is to determine the coefficients such that the spline satisfies the following conditions:   Interpolation Condition : The spline must pass through each data point:    Continuity of the Function : At each interior knot (for ), the polynomials on adjacent intervals must meet:    Continuity of the First Derivative : The first derivatives must be equal at the knots:    Continuity of the Second Derivative : The second derivatives must also be equal at the knots:    Boundary Conditions : To uniquely determine the spline, two additional conditions are needed, typically applied at the endpoints and . Common choices include:   Free boundary condition : Second derivatives at the endpoints are zero: . In this case, the spline is called a natural spline .   Clamped boundary condition : First derivatives at the endpoints are specified: and . In this case, the spline is called a clamped spline .       Find the natural cubic spline that interpolates the data , , .   Since we have three data points, there are two cubic polynomials to determine. The first one is between the first point and the second point , defined as follows: The second piece is between the second point and the third point , defined as follows: We have 8 unknowns to determine, so we need to find 8 equations to solve for them.  By the interpolation conditions, we have Next, to apply the continuity conditions for the first and second derivatives, we need the derivatives for each piece: Then the continuity conditions implies: The last condition involves boundary conditions. As we are finding a natural cubic spline, it applies free boundary conditions, which means the second derivatives at the endpoints are zero, that is, Now we have found all 8 equations. Let’s group them together: We will use Python to solve this system of equations. To do so, we first express the system of equations as a matrix equation. where Let’s use Python to solve this system: import numpy as np A = np.array([ [1,0,0,0,0,0,0,0], [1,1,1,1,0,0,0,0], [0,0,0,0,1,1,1,1], [0,0,0,0,1,2,4,8], [0,1,2,3,0,-1,-2,-3], [0,0,2,6,0,0,-2,-6], [0,0,2,0,0,0,0,0], [0,0,0,0,0,0,2,12]]) b = np.array([1,-1,-1,0,0,0,0,0]) x = np.linalg.solve(A, b) print(x)    [ 1.00000000e+00 -2.75000000e+00 1.11022302e-16 7.50000000e-01 2.50000000e+00 -7.25000000e+00 4.50000000e+00 -7.50000000e-01]     Therefore, the polynomials are and the cubic spline is   Video Breakdown  Dr. Yang walks through this example in the following video.       The following is a clamped cubic spline defined on : and and . Find , , and .   Let’s denote the first piece as and second , then we have and the first derivatives and the second derivatives There is only one knot, , so we have three continuity conditions: And we have two boundary conditions: However, since there are only three unknowns ( , , and ) we only need three equations to determine their values. From the two boundary condition equations, we can directly solve for and , obtaining and . Then, using the first of the three continuity condition equations, we can solve for , which gives .  Video Breakdown  Dr. Yang walks through this example in the following video.      "
+},
+{
+  "id": "sec-cubic-spline-interpolation-5",
+  "level": "2",
+  "url": "sec-cubic-spline-interpolation.html#sec-cubic-spline-interpolation-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Interpolation Condition Continuity of the Function Continuity of the First Derivative Continuity of the Second Derivative Boundary Conditions Free boundary condition natural spline Clamped boundary condition clamped spline "
+},
+{
+  "id": "sec-cubic-spline-interpolation-6",
+  "level": "2",
+  "url": "sec-cubic-spline-interpolation.html#sec-cubic-spline-interpolation-6",
+  "type": "Example",
+  "number": "9.1.1",
+  "title": "",
+  "body": " Find the natural cubic spline that interpolates the data , , .   Since we have three data points, there are two cubic polynomials to determine. The first one is between the first point and the second point , defined as follows: The second piece is between the second point and the third point , defined as follows: We have 8 unknowns to determine, so we need to find 8 equations to solve for them.  By the interpolation conditions, we have Next, to apply the continuity conditions for the first and second derivatives, we need the derivatives for each piece: Then the continuity conditions implies: The last condition involves boundary conditions. As we are finding a natural cubic spline, it applies free boundary conditions, which means the second derivatives at the endpoints are zero, that is, Now we have found all 8 equations. Let’s group them together: We will use Python to solve this system of equations. To do so, we first express the system of equations as a matrix equation. where Let’s use Python to solve this system: import numpy as np A = np.array([ [1,0,0,0,0,0,0,0], [1,1,1,1,0,0,0,0], [0,0,0,0,1,1,1,1], [0,0,0,0,1,2,4,8], [0,1,2,3,0,-1,-2,-3], [0,0,2,6,0,0,-2,-6], [0,0,2,0,0,0,0,0], [0,0,0,0,0,0,2,12]]) b = np.array([1,-1,-1,0,0,0,0,0]) x = np.linalg.solve(A, b) print(x)    [ 1.00000000e+00 -2.75000000e+00 1.11022302e-16 7.50000000e-01 2.50000000e+00 -7.25000000e+00 4.50000000e+00 -7.50000000e-01]     Therefore, the polynomials are and the cubic spline is   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "sec-cubic-spline-interpolation-7",
+  "level": "2",
+  "url": "sec-cubic-spline-interpolation.html#sec-cubic-spline-interpolation-7",
+  "type": "Example",
+  "number": "9.1.2",
+  "title": "",
+  "body": " The following is a clamped cubic spline defined on : and and . Find , , and .   Let’s denote the first piece as and second , then we have and the first derivatives and the second derivatives There is only one knot, , so we have three continuity conditions: And we have two boundary conditions: However, since there are only three unknowns ( , , and ) we only need three equations to determine their values. From the two boundary condition equations, we can directly solve for and , obtaining and . Then, using the first of the three continuity condition equations, we can solve for , which gives .  Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "unit-09-spline-interpolation-4",
+  "level": "1",
+  "url": "unit-09-spline-interpolation-4.html",
+  "type": "Section",
+  "number": "9.2",
+  "title": "Algorithm and Coding",
+  "body": " Algorithm and Coding   As discussed in the previous section, solving the equations for a cubic spline, even for just three data points, can be complex and time-consuming. Thankfully, a general algorithm exists for efficiently solving the equations for both natural and clamped splines, regardless of the number of data points. Instead of delving into the details of this algorithm, we will utilize the CubicSpline function from Python’s SciPy module to compute the cubic spline. For more information, refer to the documentation here .  Let’s compute the cubic spline interpolation for the data points , , , and using both natural (free) and clamped boundary conditions, with clamped conditions and . We’ll use the CubicSpline function from Python’s SciPy module to perform the calculations. import numpy as np from scipy.interpolate import CubicSpline import matplotlib.pyplot as plt x = np.array([0, 1, 2, 3]) y = np.array([1, -1, 0, 0.5]) natural_spline = CubicSpline(x, y, bc_type='natural') clamped_spline = CubicSpline(x, y, bc_type=((1, 0.5), (1, -1))) x_fine = np.linspace(0, 3, 100) y_natural = natural_spline(x_fine) y_clamped = clamped_spline(x_fine) plt.plot(x, y, 'o', label='Data points', markersize=8) plt.plot(x_fine, y_natural, '-', label='Natural Spline') plt.plot(x_fine, y_clamped, '--', label='Clamped Spline (S\\'(0)=0.5, S\\'(3)=-1)') plt.xlabel('x') plt.ylabel('y') plt.title('Cubic Spline Interpolation') plt.legend(loc='upper center') plt.grid(True) plt.show()   Plotting the differences between a natural cubic spline and a clamped cubic spline   Plotting the differences between a natural cubic spline and a clamped cubic spline     Observe the differences between the natural and clamped splines at the endpoints. Can you distinguish which spline is which if they are not labeled? The natural spline appears straight (no curvature) at the endpoints because the second derivatives over there are zero, while clamped spline shows possible curvature at the endpoints.  Recall Runge’s phenomenon, discussed in the context of Lagrange and Newton polynomial interpolations, where high-degree polynomials oscillate wildly. We can now use cubic spline interpolation to mitigate this issue. x = np.linspace(-5, 5, 11) f = lambda x: 1\/(1+x**2) y = f(x) x_fine = np.linspace(-5, 5, 100) y_newton = newton_interpolation(x, y, x_fine) cs = CubicSpline(x, y, bc_type='natural') y_cs = cs(x_fine) plt.plot(x, y, 'o', label='Data points', markersize=8) plt.plot(x_fine, y_newton, '-', label='Newton interpolation') plt.plot(x_fine, y_cs, '--', label='Natural cubic spline') plt.xlabel('x') plt.ylabel('y') plt.title('Interpolations for Runge\\'s function') plt.legend(loc='upper center') plt.grid(True) plt.show()   Cubic spline vs standard Polynomial Interpolation on Runge's function   Cubic spline vs standard Polynomial Interpolation on Runge's function     Observe that the cubic spline provides an excellent fit to Runge’s function at this scale.  "
+},
+{
+  "id": "unit-09-spline-interpolation-4-4-9",
+  "level": "2",
+  "url": "unit-09-spline-interpolation-4.html#unit-09-spline-interpolation-4-4-9",
+  "type": "Figure",
+  "number": "9.2.1",
+  "title": "",
+  "body": " Plotting the differences between a natural cubic spline and a clamped cubic spline   Plotting the differences between a natural cubic spline and a clamped cubic spline   "
+},
+{
+  "id": "unit-09-spline-interpolation-4-5",
+  "level": "2",
+  "url": "unit-09-spline-interpolation-4.html#unit-09-spline-interpolation-4-5",
+  "type": "Remark",
+  "number": "9.2.2",
+  "title": "",
+  "body": "Observe the differences between the natural and clamped splines at the endpoints. Can you distinguish which spline is which if they are not labeled? The natural spline appears straight (no curvature) at the endpoints because the second derivatives over there are zero, while clamped spline shows possible curvature at the endpoints. "
+},
+{
+  "id": "unit-09-spline-interpolation-4-6-2",
+  "level": "2",
+  "url": "unit-09-spline-interpolation-4.html#unit-09-spline-interpolation-4-6-2",
+  "type": "Figure",
+  "number": "9.2.3",
+  "title": "",
+  "body": " Cubic spline vs standard Polynomial Interpolation on Runge's function   Cubic spline vs standard Polynomial Interpolation on Runge's function   "
 },
 {
   "id": "appendix-troubleshooting",
