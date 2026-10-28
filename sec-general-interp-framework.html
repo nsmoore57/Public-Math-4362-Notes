@@ -192,9 +192,9 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list" id="ptx-toc-group-unit-02-bisection-method">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-the-method"><span class="title">The Method</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-error-analysis"><span class="title">Error Analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-02-algorithm-and-coding.html"><span class="codenumber">2.3</span> <span class="title">Algorithm and Coding</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -255,7 +255,17 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-gauss-seidel-method.html"><span class="codenumber">6.2</span> <span class="title">Gauss-Seidel Method</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-iteration-methods-convergence.html"><span class="codenumber">6.3</span> <span class="title">Convergence of Iterative Methods</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-iterative-methods-coding.html"><span class="codenumber">6.4</span> <span class="title">Algorithms and Coding for Iterative Methods</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-other-iterative-methods.html"><span class="codenumber">6.5</span> <span class="title">Other Iterative Methods</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="other-iterative-methods.html"><span class="codenumber">6.5</span> <span class="title">Other Iterative Methods for Linear Systems</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-other-iterative-methods">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#weighted-jacobi"><span class="title">Weighted Jacobi</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#successive-over-relaxation"><span class="title">Successive over-relaxation (SOR)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#relaxation-and-stationary-methods"><span class="title">Relaxation and stationary methods</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#krylov-subspace-methods"><span class="title">Krylov subspace methods</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#preconditioning"><span class="title">Preconditioning</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#further-reference"><span class="title">Further reference</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
@@ -277,6 +287,14 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="sec-hermite-algo-coding.html"><span class="codenumber">8.2</span> <span class="title">Algorithm and Coding</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a class="internal" href="unit-09-spline-interpolation.html"><span class="codenumber">9</span> <span class="title">Spline Interpolation</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-09-spline-interpolation">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-09-spline-interpolation-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="sec-cubic-spline-interpolation.html"><span class="codenumber">9.1</span> <span class="title">Cubic Spline Interpolation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-09-spline-interpolation-4.html"><span class="codenumber">9.2</span> <span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-troubleshooting.html"><span class="codenumber">A.</span> <span class="title">Troubleshooting</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div class="ptx-content" id="ptx-content">
@@ -286,32 +304,36 @@ eBookConfig.enable_chatcodes =  false;
 </h1>
 <div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="sec-general-interp-framework-2" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=4c9ec00f-120f-4428-9520-b4e400ff3204" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
 <div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="sec-general-interp-framework-2.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div class="para" id="sec-general-interp-framework-3">Given a set of data points <span class="process-math">\(\{(x_i, y_i)\}_{i=0}^n\text{,}\)</span> our goal is to construct a polynomial that passes through all these points. First, it’s important to know that such a polynomial exists and is unique, provided that the <span class="process-math">\(x_i\)</span> values are distinct. This is guaranteed by the following theorem: 
-<article class="theorem theorem-like" id="sec-general-interp-framework-3-3"><h2 class="heading">
+<div class="para" id="sec-general-interp-framework-3">Given a set of data points <span class="process-math">\(\{(x_i, y_i)\}_{i=0}^n\text{,}\)</span> our goal is to construct a polynomial that passes through all these points. First, it’s important to know that such a polynomial exists and is unique, provided that the <span class="process-math">\(x_i\)</span> values are distinct. This is guaranteed by the following theorem:<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-general-interp-framework-3" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-general-interp-framework-4">
+<article class="theorem theorem-like" id="sec-general-interp-framework-4-1"><h2 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h2>If the points <span class="process-math">\(x_0, x_1, \dots, x_n\)</span> are distinct, then for real values <span class="process-math">\(y_0, y_1, \dots, y_n\text{,}\)</span> there exists a unique polynomial <span class="process-math">\(p_n(x)\)</span> of degree at most <span class="process-math">\(n\)</span> such that<div class="displaymath process-math" id="sec-general-interp-framework-3-3-1-5">
+</h2>If the points <span class="process-math">\(x_0, x_1, \dots, x_n\)</span> are distinct, then for real values <span class="process-math">\(y_0, y_1, \dots, y_n\text{,}\)</span> there exists a unique polynomial <span class="process-math">\(p_n(x)\)</span> of degree at most <span class="process-math">\(n\)</span> such that<div class="displaymath process-math" id="sec-general-interp-framework-4-1-1-5">
 \begin{equation*}
 p_n(x_i) = y_i \quad \text{for } i = 0, 1, \dots, n.
 \end{equation*}
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Theorem 7.1.1"><a aria-label="Copy heading and permalink for Theorem 7.1.1" href="#sec-general-interp-framework-3-3" tabindex="-1" title="Copy heading and permalink for Theorem 7.1.1">🔗</a></div>
-</article> We’ll skip the proof here. Once we construct the Lagrange interpolating polynomial, the intuition behind the theorem will become more apparent.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-general-interp-framework-3" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Theorem 7.1.1"><a aria-label="Copy heading and permalink for Theorem 7.1.1" href="#sec-general-interp-framework-4-1" tabindex="-1" title="Copy heading and permalink for Theorem 7.1.1">🔗</a></div>
+</article><div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-general-interp-framework-4" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical" id="sec-general-interp-framework-4">
+<div class="para" id="sec-general-interp-framework-5">We’ll skip the proof here. Once we construct the Lagrange interpolating polynomial, the intuition behind the theorem will become more apparent.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-general-interp-framework-5" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-general-interp-framework-6">
 <div class="para">We generally express the interpolating polynomial in terms of a linear combination of basis functions:</div>
-<div class="displaymath process-math" id="sec-general-interp-framework-4-1">
+<div class="displaymath process-math" id="sec-general-interp-framework-6-1">
 \begin{equation*}
 p_n(x) = \sum_{k=0}^{n} c_k \, \phi_k(x),
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(\phi_k(x)\)</span> are known basis functions and <span class="process-math">\(c_k\)</span> are unknown coefficients to be determined. Since <span class="process-math">\(p_n(x)\)</span> must interpolate the data points <span class="process-math">\((x_i, y_i)\text{,}\)</span> we impose the condition:</div>
-<div class="displaymath process-math" id="sec-general-interp-framework-4-6">
+<div class="displaymath process-math" id="sec-general-interp-framework-6-6">
 \begin{equation*}
 p_n(x_i) = y_i \quad \text{for } i = 0, 1, \dots, n.
 \end{equation*}
 </div>
 <div class="para">This leads to a system of equations:</div>
-<div class="displaymath process-math" id="sec-general-interp-framework-4-7">
+<div class="displaymath process-math" id="sec-general-interp-framework-6-7">
 \begin{align*}
 c_0 \phi_0(x_0) + c_1 \phi_1(x_0) + \cdots + c_n \phi_n(x_0) \amp= y_0\\
 c_0 \phi_0(x_1) + c_1 \phi_1(x_1) + \cdots + c_n \phi_n(x_1) \amp= y_1\\
@@ -320,7 +342,7 @@ c_0 \phi_0(x_n) + c_1 \phi_1(x_n) + \cdots + c_n \phi_n(x_n) \amp= y_n
 \end{align*}
 </div>
 <div class="para">Or in matrix form:</div>
-<div class="displaymath process-math" id="sec-general-interp-framework-4-8">
+<div class="displaymath process-math" id="sec-general-interp-framework-6-8">
 \begin{equation*}
 \begin{bmatrix}
 \phi_0(x_0) \amp \phi_1(x_0) \amp \cdots \amp \phi_n(x_0) \\
@@ -342,12 +364,12 @@ y_n
 \end{bmatrix}
 \end{equation*}
 </div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-general-interp-framework-4" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-general-interp-framework-6" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<section class="paragraphs" id="sec-general-interp-framework-5"><h2 class="heading"><span class="title">Why is Interpolation Useful?</span></h2>
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="sec-general-interp-framework-5-2" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=303dd827-6ddc-43f1-b88b-b3af0103dc5b" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="sec-general-interp-framework-5-2.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Paragraphs: Why is Interpolation Useful?"><a aria-label="Copy heading and permalink for Paragraphs: Why is Interpolation Useful?" href="#sec-general-interp-framework-5" tabindex="-1" title="Copy heading and permalink for Paragraphs: Why is Interpolation Useful?">🔗</a></div>
+<section class="paragraphs" id="sec-general-interp-framework-7"><h2 class="heading"><span class="title">Why is Interpolation Useful?</span></h2>
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="sec-general-interp-framework-7-2" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=303dd827-6ddc-43f1-b88b-b3af0103dc5b" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="sec-general-interp-framework-7-2.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraphs: Why is Interpolation Useful?"><a aria-label="Copy heading and permalink for Paragraphs: Why is Interpolation Useful?" href="#sec-general-interp-framework-7" tabindex="-1" title="Copy heading and permalink for Paragraphs: Why is Interpolation Useful?">🔗</a></div>
 </section><div aria-hidden="true" class="autopermalink" data-description="Section 7.1: A General Framework for Interpolation"><a aria-label="Copy heading and permalink for Section 7.1: A General Framework for Interpolation" href="#sec-general-interp-framework" tabindex="-1" title="Copy heading and permalink for Section 7.1: A General Framework for Interpolation">🔗</a></div>
 </section>
 </div>

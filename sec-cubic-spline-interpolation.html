@@ -15,7 +15,7 @@
 <!--******************************************-->
 <head xmlns:book="https://ogp.me/ns/book#" xmlns:og="http://ogp.me/ns#">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>Other Iterative Methods</title>
+<title>Cubic Spline Interpolation</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
@@ -122,7 +122,7 @@ eBookConfig.enable_chatcodes =  false;
 <legend>Assistive technologies</legend>
 <label for="ptx-readability-accessible-permalinks"><input id="ptx-readability-accessible-permalinks" type="checkbox"/><span>🔗</span><span>Expose permalinks</span></label>
 </fieldset>
-<div class="ptx-readability-options-group"><button class="ptx-readability-reset-button button" id="ptx-readability-reset-button" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="unit-06-iterative-methods-coding.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="up-button button" href="unit-06-iterative-methods.html" title="Up"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Up</span></a><a class="next-button button" href="unit-07-lagrange-newtons-form.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></span>
+<div class="ptx-readability-options-group"><button class="ptx-readability-reset-button button" id="ptx-readability-reset-button" type="button"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="unit-09-spline-interpolation-2.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="up-button button" href="unit-09-spline-interpolation.html" title="Up"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Up</span></a><a class="next-button button" href="unit-09-spline-interpolation-4.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></span>
 </div></nav><div class="hidden-content process-math" id="latex-macros" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -192,9 +192,9 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural toc-item-list" id="ptx-toc-group-unit-02-bisection-method">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-the-method"><span class="title">The Method</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-error-analysis"><span class="title">Error Analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="unit-02-bisection-method.html#unit-02-algorithm-and-coding"><span class="title">Algorithm and Coding</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-02-algorithm-and-coding.html"><span class="codenumber">2.3</span> <span class="title">Algorithm and Coding</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -247,15 +247,25 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-05-lu-decomposition.html"><span class="codenumber">5.3</span> <span class="title">LU Decomposition</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-chapter contains-active">
+<li class="toc-item toc-chapter">
 <div class="toc-title-box"><a class="internal" href="unit-06-iterative-methods.html"><span class="codenumber">6</span> <span class="title">Iterative Methods</span></a></div>
-<ul class="structural toc-item-list contains-active" id="ptx-toc-group-unit-06-iterative-methods">
+<ul class="structural toc-item-list" id="ptx-toc-group-unit-06-iterative-methods">
 <li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-06-iterative-methods-2.html"><span class="title">Introduction</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-jacobi-method.html"><span class="codenumber">6.1</span> <span class="title">Jacobi Method</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-gauss-seidel-method.html"><span class="codenumber">6.2</span> <span class="title">Gauss-Seidel Method</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-iteration-methods-convergence.html"><span class="codenumber">6.3</span> <span class="title">Convergence of Iterative Methods</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-06-iterative-methods-coding.html"><span class="codenumber">6.4</span> <span class="title">Algorithms and Coding for Iterative Methods</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a class="internal" href="unit-06-other-iterative-methods.html"><span class="codenumber">6.5</span> <span class="title">Other Iterative Methods</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a class="internal" href="other-iterative-methods.html"><span class="codenumber">6.5</span> <span class="title">Other Iterative Methods for Linear Systems</span></a></div>
+<ul class="structural toc-item-list" id="ptx-toc-group-other-iterative-methods">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#weighted-jacobi"><span class="title">Weighted Jacobi</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#successive-over-relaxation"><span class="title">Successive over-relaxation (SOR)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#relaxation-and-stationary-methods"><span class="title">Relaxation and stationary methods</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#krylov-subspace-methods"><span class="title">Krylov subspace methods</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#preconditioning"><span class="title">Preconditioning</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a class="internal" href="other-iterative-methods.html#further-reference"><span class="title">Further reference</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -277,22 +287,348 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="sec-hermite-algo-coding.html"><span class="codenumber">8.2</span> <span class="title">Algorithm and Coding</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a class="internal" href="unit-09-spline-interpolation.html"><span class="codenumber">9</span> <span class="title">Spline Interpolation</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-unit-09-spline-interpolation">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a class="internal" href="unit-09-spline-interpolation-2.html"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a class="internal" href="sec-cubic-spline-interpolation.html"><span class="codenumber">9.1</span> <span class="title">Cubic Spline Interpolation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a class="internal" href="unit-09-spline-interpolation-4.html"><span class="codenumber">9.2</span> <span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a class="internal" href="appendix-troubleshooting.html"><span class="codenumber">A.</span> <span class="title">Troubleshooting</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div class="ptx-content" id="ptx-content">
-<section class="section" id="unit-06-other-iterative-methods">
+<section class="section" id="sec-cubic-spline-interpolation">
 <h1 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Other Iterative Methods</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cubic Spline Interpolation</span>
 </h1>
-<div class="para" id="unit-06-other-iterative-methods-2">The following video discusses other iterative methods.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#unit-06-other-iterative-methods-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+<section class="paragraphs" id="sec-cubic-spline-interpolation-2"><h2 class="heading"><span class="title">Video Introductions.</span></h2>
+<div class="para" id="sec-cubic-spline-interpolation-2-2">The following videos are from my graduate course in Numerical Analysis, but are relevant for this course as well and don’t have anything too advanced in them. There is occasional mention of the textbook for that course where the details can be found. I’m not going to put the details here beyond showing you how you implement it by hand and how you can use the <code class="code-inline tex2jax_ignore">scipy</code> python package. There are several resources available online for more information.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-2-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="unit-06-other-iterative-methods-3" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=c0746c17-b042-4033-b336-b4da00de8608" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
-<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="unit-06-other-iterative-methods-3.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
-<div aria-hidden="true" class="autopermalink" data-description="Section 6.5: Other Iterative Methods"><a aria-label="Copy heading and permalink for Section 6.5: Other Iterative Methods" href="#unit-06-other-iterative-methods" tabindex="-1" title="Copy heading and permalink for Section 6.5: Other Iterative Methods">🔗</a></div>
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="sec-cubic-spline-interpolation-2-3" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=874a5e9a-4926-4a63-8d3d-b3e200ee61dc" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="sec-cubic-spline-interpolation-2-3.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="sec-cubic-spline-interpolation-2-4" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=6fcb9797-daee-49df-8e73-b3e200ee6228" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="sec-cubic-spline-interpolation-2-4.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraphs: Video Introductions"><a aria-label="Copy heading and permalink for Paragraphs: Video Introductions" href="#sec-cubic-spline-interpolation-2" tabindex="-1" title="Copy heading and permalink for Paragraphs: Video Introductions">🔗</a></div>
+</section>
+<div class="para" id="sec-cubic-spline-interpolation-3">The most common type of piecewise polynomial interpolation, cubic spline interpolation, fits a cubic polynomial to each interval between data points. These polynomials are chosen so that the resulting curve is continuous, and the first and second derivatives are also continuous at the knots, ensuring a smooth transition. This makes splines particularly useful for applications like computer graphics, data visualization, and numerical analysis, where a smooth and accurate representation of data is needed.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-3" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-cubic-spline-interpolation-4">
+<div class="para">Given a set of <span class="process-math">\(n+1\)</span> data points <span class="process-math">\((x_0, y_0), (x_1, y_1), \dots, (x_n, y_n)\text{,}\)</span> where <span class="process-math">\(x_0 \lt x_1 \lt \dots \lt x_n\text{,}\)</span> cubic spline interpolation constructs a piecewise function <span class="process-math">\(S(x)\)</span> that each piece defined on the interval <span class="process-math">\([x_i, x_{i+1}]\)</span> is a cubic polynomial of the form:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-4-6">
+\begin{equation*}
+S_i(x) = a_i + b_i x + c_i x^2 + d_i x^3,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(a_i, b_i, c_i, d_i\)</span> are coefficients specific to the interval <span class="process-math">\([x_i, x_{i+1}]\text{,}\)</span> and there are <span class="process-math">\(n\)</span> such polynomials for the <span class="process-math">\(n\)</span> intervals.</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-4" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-cubic-spline-interpolation-5">
+<div class="para">The goal is to determine the coefficients such that the spline satisfies the following conditions:</div>
+<ul class="disc" id="sec-cubic-spline-interpolation-5-1">
+<li id="sec-cubic-spline-interpolation-5-1-1">
+<div class="para logical" id="sec-cubic-spline-interpolation-5-1-1-1">
+<div class="para">
+<dfn class="terminology">Interpolation Condition</dfn>: The spline must pass through each data point:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-5-1-1-1-2">
+\begin{equation*}
+S_i(x_i) = y_i \quad \text{and} \quad S_i(x_{i+1}) = y_{i+1}.
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-5-1-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#sec-cubic-spline-interpolation-5-1-1" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-cubic-spline-interpolation-5-1-2">
+<div class="para logical" id="sec-cubic-spline-interpolation-5-1-2-1">
+<div class="para">
+<dfn class="terminology">Continuity of the Function</dfn>: At each interior knot <span class="process-math">\(x_i\)</span> (for <span class="process-math">\(i = 1, 2, \dots, n-1\)</span> ), the polynomials on adjacent intervals must meet:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-5-1-2-1-4">
+\begin{equation*}
+S_{i}(x_{i+1}) = S_{i+1}(x_{i+1}).
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-5-1-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#sec-cubic-spline-interpolation-5-1-2" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-cubic-spline-interpolation-5-1-3">
+<div class="para logical" id="sec-cubic-spline-interpolation-5-1-3-1">
+<div class="para">
+<dfn class="terminology">Continuity of the First Derivative</dfn>: The first derivatives must be equal at the knots:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-5-1-3-1-2">
+\begin{equation*}
+S'_{i}(x_{i+1}) = S'_{i+1}(x_{i+1}).
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-5-1-3-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#sec-cubic-spline-interpolation-5-1-3" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-cubic-spline-interpolation-5-1-4">
+<div class="para logical" id="sec-cubic-spline-interpolation-5-1-4-1">
+<div class="para">
+<dfn class="terminology">Continuity of the Second Derivative</dfn>: The second derivatives must also be equal at the knots:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-5-1-4-1-2">
+\begin{equation*}
+S''_{i}(x_{i+1}) = S''_{i+1}(x_{i+1}).
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-5-1-4-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#sec-cubic-spline-interpolation-5-1-4" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-cubic-spline-interpolation-5-1-5">
+<div class="para logical" id="sec-cubic-spline-interpolation-5-1-5-1">
+<div class="para">
+<dfn class="terminology">Boundary Conditions</dfn>: To uniquely determine the spline, two additional conditions are needed, typically applied at the endpoints <span class="process-math">\(x_0\)</span> and <span class="process-math">\(x_n\text{.}\)</span> Common choices include:</div>
+<ul class="circle" id="sec-cubic-spline-interpolation-5-1-5-1-4">
+<li id="sec-cubic-spline-interpolation-5-1-5-1-4-1">
+<div class="para" id="sec-cubic-spline-interpolation-5-1-5-1-4-1-1">
+<dfn class="terminology">Free boundary condition</dfn>: Second derivatives at the endpoints are zero: <span class="process-math">\(S''(x_0) = S''(x_n) = 0\text{.}\)</span> In this case, the spline is called a <dfn class="terminology">natural spline</dfn>.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-5-1-5-1-4-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#sec-cubic-spline-interpolation-5-1-5-1-4-1" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-cubic-spline-interpolation-5-1-5-1-4-2">
+<div class="para" id="sec-cubic-spline-interpolation-5-1-5-1-4-2-1">
+<dfn class="terminology">Clamped boundary condition</dfn>: First derivatives at the endpoints are specified: <span class="process-math">\(S'(x_0) = f'_0\)</span> and <span class="process-math">\(S'(x_n) = f'_n\text{.}\)</span> In this case, the spline is called a <dfn class="terminology">clamped spline</dfn>.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-5-1-5-1-4-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#sec-cubic-spline-interpolation-5-1-5-1-4-2" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-5-1-5-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Item"><a aria-label="Copy heading and permalink for Item" href="#sec-cubic-spline-interpolation-5-1-5" tabindex="-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-5" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec-cubic-spline-interpolation-6"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para" id="sec-cubic-spline-interpolation-6-1-1">Find the natural cubic spline that interpolates the data <span class="process-math">\((0,1)\text{,}\)</span> <span class="process-math">\((1,-1)\text{,}\)</span> <span class="process-math">\((2,0)\text{.}\)</span><div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-6-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl" id="sec-cubic-spline-interpolation-6-2"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="sec-cubic-spline-interpolation-6-2-1">
+<div class="para">Since we have three data points, there are two cubic polynomials to determine. The first one is between the first point <span class="process-math">\((0,1)\)</span> and the second point <span class="process-math">\((1,-1)\text{,}\)</span> defined as follows:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-1-3">
+\begin{equation*}
+S_0(x)=a_0+b_0x+c_0x^2+d_0x^3
+\end{equation*}
+</div>
+<div class="para">The second piece is between the second point <span class="process-math">\((1,-1)\)</span> and the third point <span class="process-math">\((2,0)\text{,}\)</span> defined as follows:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-1-6">
+\begin{equation*}
+S_1(x)=a_1+b_1x+c_1x^2+d_1x^3
+\end{equation*}
+</div>
+<div class="para">We have 8 unknowns to determine, so we need to find 8 equations to solve for them.</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-6-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-cubic-spline-interpolation-6-2-2">
+<div class="para">By the interpolation conditions, we have</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-2-1">
+\begin{align*}
+S_0(0)=1 \amp \Rightarrow a_0=1\\
+S_0(1)=-1 \amp \Rightarrow a_0+b_0+c_0+d_0=-1\\
+S_1(1)=-1 \amp \Rightarrow a_1+b_1+c_1+d_1=-1\\
+S_1(2)=0 \amp \Rightarrow a_1+2b_1+4c_1+8d_1=0.
+\end{align*}
+</div>
+<div class="para">Next, to apply the continuity conditions for the first and second derivatives, we need the derivatives for each piece:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-2-2">
+\begin{align*}
+S_0'(x) \amp = b_0+2c_0x+3d_0x^2\\
+S_1'(x) \amp = b_1+2c_1x+3d_1x^2\\
+S_0''(x) \amp = 2c_0+6d_0x\\
+S_1''(x) \amp = 2c_1+6d_1x.
+\end{align*}
+</div>
+<div class="para">Then the continuity conditions implies:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-2-3">
+\begin{align*}
+S_0'(1)=S_1'(1)  \amp \Rightarrow b_0+2c_0+3d_0=b_1+2c_1+3d_1\\
+S_0''(1)=S_1''(1)  \amp \Rightarrow 2c_0+6d_0=2c_1+6d_1.
+\end{align*}
+</div>
+<div class="para">The last condition involves boundary conditions. As we are finding a natural cubic spline, it applies free boundary conditions, which means the second derivatives at the endpoints are zero, that is,</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-2-4">
+\begin{align*}
+S_0''(0)=0 \amp \Rightarrow 2c_0=0\\
+S_1''(2)=0 \amp \Rightarrow 2c_1+12d_1=0.
+\end{align*}
+</div>
+<div class="para">Now we have found all 8 equations. Let’s group them together:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-2-5">
+\begin{align*}
+a_0 \amp = 1\\
+a_0+b_0+c_0+d_0 \amp = -1\\
+a_1+b_1+c_1+d_1 \amp = -1\\
+a_1+2b_1+4c_1+8d_1 \amp = 0\\
+b_0+2c_0+3d_0 \amp = b_1+2c_1+3d_1\\
+2c_0+6d_0 \amp = 2c_1+6d_1\\
+2c_0 \amp = 0\\
+2c_1+12d_1 \amp = 0
+\end{align*}
+</div>
+<div class="para">We will use Python to solve this system of equations. To do so, we first express the system of equations as a matrix equation.</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-2-6">
+\begin{equation*}
+A\boldsymbol{x}=\boldsymbol{b}
+\end{equation*}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-2-7">
+\begin{equation*}
+A=\begin{bmatrix}
+1 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+1 \amp 1 \amp 1 \amp 1 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 1 \amp 1 \amp 1 \\
+0 \amp 0 \amp 0 \amp 0 \amp 1 \amp 2 \amp 4 \amp 8 \\
+0 \amp 1 \amp 2 \amp 3 \amp 0 \amp-1 \amp-2 \amp-3 \\
+0 \amp 0 \amp 2 \amp 6 \amp 0 \amp 0 \amp-2 \amp-6 \\
+0 \amp 0 \amp 2 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 2 \amp 12
+\end{bmatrix},\quad \boldsymbol{x}=\begin{bmatrix}
+a_0 \\ b_0 \\ c_0 \\ d_0 \\ a_1 \\ b_1 \\ c_1 \\ d_1
+\end{bmatrix},\quad \boldsymbol{b}=\begin{bmatrix}
+1 \\ -1 \\ -1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
+\end{bmatrix}.
+\end{equation*}
+</div>
+<div class="para">Let’s use Python to solve this system: <div class="code-box"><pre class="program clipboardable"><code class="language-py">import numpy as np
+
+A = np.array([
+    [1,0,0,0,0,0,0,0],
+    [1,1,1,1,0,0,0,0],
+    [0,0,0,0,1,1,1,1],
+    [0,0,0,0,1,2,4,8],
+    [0,1,2,3,0,-1,-2,-3],
+    [0,0,2,6,0,0,-2,-6],
+    [0,0,2,0,0,0,0,0],
+    [0,0,0,0,0,0,2,12]])
+
+b = np.array([1,-1,-1,0,0,0,0,0])
+
+x = np.linalg.solve(A, b)
+print(x)
+</code></pre></div>
+<article class="assemblage assemblage-like" id="sec-cubic-spline-interpolation-6-2-2-9"><div class="code-box"><pre class="console clipboardable">[ 1.   -2.75  0.    0.75  2.5  -7.25  4.5  -0.75]
+</pre></div>
+<div aria-hidden="true" class="autopermalink" data-description="Assemblage"><a aria-label="Copy heading and permalink for Assemblage" href="#sec-cubic-spline-interpolation-6-2-2-9" tabindex="-1" title="Copy heading and permalink for Assemblage">🔗</a></div>
+</article>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-6-2-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-cubic-spline-interpolation-6-2-3">
+<div class="para">Therefore, the polynomials are</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-3-1">
+\begin{align*}
+S_0(x) \amp = 1-2.75x+0.75x^3\\
+S_1(x) \amp = 2.5-7.25x+4.5x^2-0.75x^3.
+\end{align*}
+</div>
+<div class="para">and the cubic spline is</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-6-2-3-2">
+\begin{equation*}
+S(x)=\begin{cases}
+1-2.75x+0.75x^3, \amp \text{if } 0 \le x \lt 1 \\
+2.5-7.25x+4.5x^2-0.75x^3, \amp \text{if } 1 \le x \le 2
+\end{cases}
+\end{equation*}
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-6-2-3" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="paragraphs" id="sec-cubic-spline-interpolation-6-2-4"><h3 class="heading"><span class="title">Video Breakdown.</span></h3>
+<div class="para" id="sec-cubic-spline-interpolation-6-2-4-2">Dr. Yang walks through this example in the following video.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-6-2-4-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="sec-cubic-spline-interpolation-6-2-4-3" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=14677f96-21c6-41d7-92f1-b33a015c2223" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="sec-cubic-spline-interpolation-6-2-4-3.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraphs: Video Breakdown"><a aria-label="Copy heading and permalink for Paragraphs: Video Breakdown" href="#sec-cubic-spline-interpolation-6-2-4" tabindex="-1" title="Copy heading and permalink for Paragraphs: Video Breakdown">🔗</a></div>
+</section><div aria-hidden="true" class="autopermalink" data-description="Solution 9.1.1.1"><a aria-label="Copy heading and permalink for Solution 9.1.1.1" href="#sec-cubic-spline-interpolation-6-2" tabindex="-1" title="Copy heading and permalink for Solution 9.1.1.1">🔗</a></div>
+</div></details>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Example 9.1.1"><a aria-label="Copy heading and permalink for Example 9.1.1" href="#sec-cubic-spline-interpolation-6" tabindex="-1" title="Copy heading and permalink for Example 9.1.1">🔗</a></div>
+</article>
+<article class="example example-like" id="sec-cubic-spline-interpolation-7"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9.1.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h2>
+<div class="para logical" id="sec-cubic-spline-interpolation-7-1-1">
+<div class="para">The following is a clamped cubic spline defined on <span class="process-math">\([0,3]\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-7-1-1-2">
+\begin{equation*}
+S(x)=\begin{cases}
+1+ax-3x^2+x^3, \amp \text{if } 0 \le x \lt 2 \\
+b-22x+cx^2-x^3, \amp \text{if } 2 \le x \le 3
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\(S'(0)=2\)</span> and <span class="process-math">\(S'(3)=5\text{.}\)</span> Find <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\text{.}\)</span>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-7-1-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl" id="sec-cubic-spline-interpolation-7-2"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="sec-cubic-spline-interpolation-7-2-1">
+<div class="para">Let’s denote the first piece as <span class="process-math">\(S_0(x)\)</span> and second <span class="process-math">\(S_1(x)\text{,}\)</span> then we have</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-7-2-1-3">
+\begin{align*}
+S_0(x) \amp = 1+ax-3x^2+x^3\\
+S_1(x) \amp = b-22x+cx^2-x^3
+\end{align*}
+</div>
+<div class="para">and the first derivatives</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-7-2-1-4">
+\begin{align*}
+S'_0(x) \amp = a-6x+3x^2\\
+S'_1(x) \amp = -22+2cx-3x^2
+\end{align*}
+</div>
+<div class="para">and the second derivatives</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-7-2-1-5">
+\begin{align*}
+S''_0(x) \amp = -6+6x\\
+S''_1(x) \amp = 2c-6x
+\end{align*}
+</div>
+<div class="para">There is only one knot, <span class="process-math">\(x=2\text{,}\)</span> so we have three continuity conditions:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-7-2-1-7">
+\begin{align*}
+S_0(2)  = S_1(2) \amp \Rightarrow 1+2a-12+8=b-44+4c-8\\
+S'_0(2)  = S'_1(2) \amp \Rightarrow a-12+12=-22+4c-12\\
+S''_0(2)  = S''_1(2) \amp \Rightarrow -6+12=2c-12
+\end{align*}
+</div>
+<div class="para">And we have two boundary conditions:</div>
+<div class="displaymath process-math" id="sec-cubic-spline-interpolation-7-2-1-8">
+\begin{align*}
+S'_0(0) = 2 \amp \Rightarrow a = 2\\
+S'_1(3) = 5 \amp \Rightarrow -22+6c-27 = 5
+\end{align*}
+</div>
+<div class="para">However, since there are only three unknowns ( <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> ) we only need three equations to determine their values. From the two boundary condition equations, we can directly solve for <span class="process-math">\(a\)</span> and <span class="process-math">\(c\text{,}\)</span> obtaining <span class="process-math">\(a = 2\)</span> and <span class="process-math">\(c = 9\text{.}\)</span> Then, using the first of the three continuity condition equations, we can solve for <span class="process-math">\(b\text{,}\)</span> which gives <span class="process-math">\(b = 17\text{.}\)</span>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-7-2-1" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="paragraphs" id="sec-cubic-spline-interpolation-7-2-2"><h3 class="heading"><span class="title">Video Breakdown.</span></h3>
+<div class="para" id="sec-cubic-spline-interpolation-7-2-2-2">Dr. Yang walks through this example in the following video.<div aria-hidden="true" class="autopermalink" data-description="Paragraph"><a aria-label="Copy heading and permalink for Paragraph" href="#sec-cubic-spline-interpolation-7-2-2-2" tabindex="-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="interactive-iframe-container"><iframe allow="fullscreen" allowfullscreen="" id="sec-cubic-spline-interpolation-7-2-2-3" src="https://wtamu.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=fc312877-c3e9-47a8-8f84-b33a015c2220" style="max-width: 100%; width: 100%; aspect-ratio:1.778" title="Panopto course video"></iframe></div>
+<div class="interactive-iframe-container__opener"><a aria-label="Open in new tab" href="sec-cubic-spline-interpolation-7-2-2-3.html" target="_blank" title="Open in new tab"><span aria-hidden="true" class="icon material-symbols-outlined"></span></a></div>
+<div aria-hidden="true" class="autopermalink" data-description="Paragraphs: Video Breakdown"><a aria-label="Copy heading and permalink for Paragraphs: Video Breakdown" href="#sec-cubic-spline-interpolation-7-2-2" tabindex="-1" title="Copy heading and permalink for Paragraphs: Video Breakdown">🔗</a></div>
+</section><div aria-hidden="true" class="autopermalink" data-description="Solution 9.1.2.1"><a aria-label="Copy heading and permalink for Solution 9.1.2.1" href="#sec-cubic-spline-interpolation-7-2" tabindex="-1" title="Copy heading and permalink for Solution 9.1.2.1">🔗</a></div>
+</div></details>
+</div>
+<div aria-hidden="true" class="autopermalink" data-description="Example 9.1.2"><a aria-label="Copy heading and permalink for Example 9.1.2" href="#sec-cubic-spline-interpolation-7" tabindex="-1" title="Copy heading and permalink for Example 9.1.2">🔗</a></div>
+</article><div aria-hidden="true" class="autopermalink" data-description="Section 9.1: Cubic Spline Interpolation"><a aria-label="Copy heading and permalink for Section 9.1: Cubic Spline Interpolation" href="#sec-cubic-spline-interpolation" tabindex="-1" title="Copy heading and permalink for Section 9.1: Cubic Spline Interpolation">🔗</a></div>
 </section>
 </div>
 <div class="ptx-content-footer" id="ptx-content-footer">
-<a class="previous-button button" href="unit-06-iterative-methods-coding.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Top</span></a><a class="next-button button" href="unit-07-lagrange-newtons-form.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a>
+<a class="previous-button button" href="unit-09-spline-interpolation-2.html" title="Previous"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span aria-hidden="true" class="icon material-symbols-outlined"></span><span class="name">Top</span></a><a class="next-button button" href="unit-09-spline-interpolation-4.html" title="Next"><span class="name">Next</span><span aria-hidden="true" class="icon material-symbols-outlined"></span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer" id="ptx-page-footer">
