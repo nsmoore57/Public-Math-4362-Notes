@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Term Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="external/wtamu-pretext-theme/wtamu-theme.css">
+<link rel="stylesheet" type="text/css" href="external/ai-course-policy-badges/templates/pretext/ai-badge-problem-document.css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer data-pretext-mathjax="true" onerror="this.dataset.loadFailed = 'true';" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="MATH 4362: Introduction to Numerical Analysis">
+<meta property="og:title" content="MATH 4362: Introduction to Numerical Analysis">
+<meta property="book:title" content="MATH 4362: Introduction to Numerical Analysis">
+<meta name="twitter:description" content="Fall 2026 Course Notes">
+<meta property="og:description" content="Fall 2026 Course Notes">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.54"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.54"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.4.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7e2ee203f2ecd6c8.bundle.js"></script><script src="_static/prefix-23.7d27cb317c36911a.bundle.js"></script><script src="_static/prefix-runestone.35a40fea06647cf2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-runestone.7062ede5334282a6.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="math-4362-introduction-to-numerical-analysis.html"><span class="title">MATH 4362: Introduction to Numerical Analysis</span> <span class="subtitle">Fall 2026 Course Notes</span></a></div>
+<p class="byline">Nicholas S. Moore, PhD</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-embed-button" class="ptx-embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><dialog class="ptx-dialog ptx-embed-popup" id="ptx-embed-popup"><div class="ptx-embed-popup-controls">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<button class="ptx-embed-close-button button" id="ptx-embed-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-embed-code-container">
+<textarea class="ptx-embed-code-textbox" id="ptx-embed-code-textbox" readonly aria-label="Embed"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button autofocus="autofocus" class="ptx-embed-copy-button button" id="ptx-embed-copy-button" title="Copy"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div></dialog><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="unit-10-quadrature-rules-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="math-4362-introduction-to-numerical-analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="appendix-troubleshooting.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="unit-01-python.html" class="internal"><span class="codenumber">1</span> <span class="title">Python for Numerical Mathematics</span></a></div>
+<ul id="ptx-toc-group-unit-01-python" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-01-python-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="week-01-install-python-uv.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Installing Python and uv</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="week-01-jupyter-basics.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Getting Started with Jupyter Notebooks</span></a></div>
+<ul id="ptx-toc-group-week-01-jupyter-basics" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-jupyter-basics.html#week-01-jupyter-basics-3" class="internal"><span class="title">How to Open a .ipynb File</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-jupyter-basics.html#week-01-jupyter-basics-4" class="internal"><span class="title">Understanding the Interface and Running Code</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="week-01-python-basics.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Python Basics</span></a></div>
+<ul id="ptx-toc-group-week-01-python-basics" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-3" class="internal"><span class="title">Variables and Basic Data Types</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-4" class="internal"><span class="title">Mathematical Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-5" class="internal"><span class="title">Lists</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-6" class="internal"><span class="title">Tuples and Dictionaries in Python</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-7" class="internal"><span class="title">Boolean Logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-8" class="internal"><span class="title">If Statements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-9" class="internal"><span class="title">For Loops</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-10" class="internal"><span class="title">While Loops</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-11" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-12" class="internal"><span class="title">Help System in Jupyter Notebooks</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-13" class="internal"><span class="title">Round-Off Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-python-basics.html#week-01-python-basics-14" class="internal"><span class="title">Python Exceptions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="week-01-numpy-basics.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Introduction to NumPy</span></a></div>
+<ul id="ptx-toc-group-week-01-numpy-basics" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-numpy-basics.html#week-01-numpy-basics-3" class="internal"><span class="title">Basic Array Operations in NumPy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="week-01-numpy-basics.html#week-01-numpy-basics-4" class="internal"><span class="title">Indexing and Slicing in NumPy</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="week-01-plotly.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Plotting with Plotly</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="unit-02-root-finding.html" class="internal"><span class="codenumber">2</span> <span class="title">Errors and Bisection Method</span></a></div>
+<ul id="ptx-toc-group-unit-02-root-finding" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-02-root-finding-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unit-02-errors.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Errors</span></a></div>
+<ul id="ptx-toc-group-unit-02-errors" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-02-errors.html#unit-02-absolute-and-relative-error" class="internal"><span class="title">Absolute and Relative Error</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-02-errors.html#unit-02-order-of-convergence" class="internal"><span class="title">Order of Convergence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-02-errors.html#unit-02-stopping-criteria" class="internal"><span class="title">Stopping Criteria</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unit-02-bisection-method.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Bisection Method</span></a></div>
+<ul id="ptx-toc-group-unit-02-bisection-method" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-02-bisection-method.html#unit-02-the-method" class="internal"><span class="title">The Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-02-bisection-method.html#unit-02-error-analysis" class="internal"><span class="title">Error Analysis</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-02-algorithm-and-coding.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="unit-03-newton-secant-methods.html" class="internal"><span class="codenumber">3</span> <span class="title">Newton’s Method and Secant Method</span></a></div>
+<ul id="ptx-toc-group-unit-03-newton-secant-methods" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-03-newton-secant-methods-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unit-03-newtons-method.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Newton’s Method</span></a></div>
+<ul id="ptx-toc-group-unit-03-newtons-method" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-03-newtons-method.html#unit-03-newton-method" class="internal"><span class="title">The Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-03-newtons-method.html#unit-03-newton-error-analysis" class="internal"><span class="title">Error Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-03-newtons-method.html#unit-03-newton-algorithm-and-coding" class="internal"><span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unit-03-secant-method.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Secant Method</span></a></div>
+<ul id="ptx-toc-group-unit-03-secant-method" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-03-secant-method.html#unit-03-secant-method-description" class="internal"><span class="title">The Method</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-03-secant-method.html#unit-03-secant-error-analysis" class="internal"><span class="title">Error Analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-03-secant-method.html#unit-03-secant-algorithm-and-coding" class="internal"><span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="unit-04-fixed-point-iteration.html" class="internal"><span class="codenumber">4</span> <span class="title">Fixed Point Iteration</span></a></div>
+<ul id="ptx-toc-group-unit-04-fixed-point-iteration" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-04-fixed-point-iteration-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-04-introduction-fixed-point-iteration.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Introduction to Fixed-Point Iteration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-04-fixed-point-choose-g.html" class="internal"><span class="codenumber">4.2</span> <span class="title">How To Choose <span class="process-math">\(g(x)\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-04-fixed-point-theorem.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Fixed Point Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-04-convergence-fixed-point-iteration.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Convergence of the Fixed Point Iteration</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-04-fixed-point-algo-coding.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="unit-05-gaussian-elimination-lu.html" class="internal"><span class="codenumber">5</span> <span class="title">Gaussian Elimination and LU Decomposition</span></a></div>
+<ul id="ptx-toc-group-unit-05-gaussian-elimination-lu" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-05-gaussian-elimination-lu-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-05-review-linear-algebra.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Review of Linear Algebra</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="unit-05-gaussian-elimination.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Gaussian Elimination with Backward Substitution</span></a></div>
+<ul id="ptx-toc-group-unit-05-gaussian-elimination" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-3" class="internal"><span class="title">Backward Substitution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-4" class="internal"><span class="title">Gaussian Elimination</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-5" class="internal"><span class="title">Pivoting Strategies</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="unit-05-gaussian-elimination.html#unit-05-gaussian-elimination-6" class="internal"><span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-05-lu-decomposition.html" class="internal"><span class="codenumber">5.3</span> <span class="title">LU Decomposition</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="unit-06-iterative-methods.html" class="internal"><span class="codenumber">6</span> <span class="title">Iterative Methods</span></a></div>
+<ul id="ptx-toc-group-unit-06-iterative-methods" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-06-iterative-methods-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-06-jacobi-method.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Jacobi Method</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-06-gauss-seidel-method.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Gauss-Seidel Method</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-06-iteration-methods-convergence.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Convergence of Iterative Methods</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-06-iterative-methods-coding.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Algorithms and Coding for Iterative Methods</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="other-iterative-methods.html" class="internal"><span class="codenumber">6.5</span> <span class="title">Other Iterative Methods for Linear Systems</span></a></div>
+<ul id="ptx-toc-group-other-iterative-methods" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="other-iterative-methods.html#weighted-jacobi" class="internal"><span class="title">Weighted Jacobi</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="other-iterative-methods.html#successive-over-relaxation" class="internal"><span class="title">Successive over-relaxation (SOR)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="other-iterative-methods.html#relaxation-and-stationary-methods" class="internal"><span class="title">Relaxation and stationary methods</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="other-iterative-methods.html#krylov-subspace-methods" class="internal"><span class="title">Krylov subspace methods</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="other-iterative-methods.html#preconditioning" class="internal"><span class="title">Preconditioning</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="other-iterative-methods.html#further-reference" class="internal"><span class="title">Further reference</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="unit-07-lagrange-newtons-form.html" class="internal"><span class="codenumber">7</span> <span class="title">Lagrange and Newton’s Form</span></a></div>
+<ul id="ptx-toc-group-unit-07-lagrange-newtons-form" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-07-lagrange-newtons-form-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-general-interp-framework.html" class="internal"><span class="codenumber">7.1</span> <span class="title">A General Framework for Interpolation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="lagrange-form-interpolation.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Lagrange Form</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="newton-form-interpolation.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Newton’s Form</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="interp-error-analyis.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Error Analysis</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="interpolation-algorithms-coding.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="unit-08-hermite-interpolation.html" class="internal"><span class="codenumber">8</span> <span class="title">Hermite Interpolation</span></a></div>
+<ul id="ptx-toc-group-unit-08-hermite-interpolation" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-08-hermite-interpolation-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-computing-hermite-poly.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Computing Hermite Polynomial</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-hermite-algo-coding.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="unit-09-spline-interpolation.html" class="internal"><span class="codenumber">9</span> <span class="title">Spline Interpolation</span></a></div>
+<ul id="ptx-toc-group-unit-09-spline-interpolation" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-09-spline-interpolation-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-cubic-spline-interpolation.html" class="internal"><span class="codenumber">9.1</span> <span class="title">Cubic Spline Interpolation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-09-spline-interpolation-4.html" class="internal"><span class="codenumber">9.2</span> <span class="title">Algorithm and Coding</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="unit-10-quadrature-rules.html" class="internal"><span class="codenumber">10</span> <span class="title">Basic Quadrature Rules</span></a></div>
+<ul id="ptx-toc-group-unit-10-quadrature-rules" class="structural toc-item-list">
+<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="unit-10-quadrature-rules-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-quadrature-framework.html" class="internal"><span class="codenumber">10.1</span> <span class="title">A General Framework for Quadrature</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-newton-cotes-quadrature.html" class="internal"><span class="codenumber">10.2</span> <span class="title">Newton-Cotes Rules</span></a></div>
+<ul id="ptx-toc-group-sec-newton-cotes-quadrature" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-newton-cotes-quadrature.html#ssec-trapezoid-rule" class="internal"><span class="title">Trapezoidal Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-newton-cotes-quadrature.html#ssec-simpsons-rule" class="internal"><span class="title">Simpson’s Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-quadrature-order-of-accuracy.html" class="internal"><span class="codenumber">10.3</span> <span class="title">Order of Accuracy</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="unit-10-quadrature-rules-6.html" class="internal"><span class="codenumber">10.4</span> <span class="title">Gaussian Quadrature</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter active"><div class="toc-title-box"><a href="term-project-overview.html" class="internal"><span class="codenumber">11</span> <span class="title">Term Project</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-troubleshooting.html" class="internal"><span class="codenumber">A.</span> <span class="title">Troubleshooting</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="chapter" id="term-project-overview">
+<h1 class="heading">
+<span class="type">Unit</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Term Project</span>
+</h1>
+<ul class="disc" id="term-project-overview-2">
+<li id="term-project-overview-2-1">
+<div class="para" id="term-project-overview-2-1-1">In this module, you will apply the numerical algorithms and methods learned throughout the course to complete a <em class="alert">term project</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#term-project-overview-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#term-project-overview-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="term-project-overview-2-2">
+<div class="para" id="term-project-overview-2-2-1">A list of project topics and corresponding datasets is provided below. You must <em class="alert">select ONE topic</em> and its associated dataset to work on. <em class="alert">Working on any topic not included in the list will result in a score of zero for the term project.</em> You should focus exclusively on your chosen topic and dataset. Working on multiple topics or datasets will not result in extra credit.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#term-project-overview-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#term-project-overview-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="term-project-overview-2-3">
+<div class="para" id="term-project-overview-2-3-1">Upon completing your project, <em class="alert">you are required to prepare a term paper using this template</em>: <a class="external" href="https://nsmoore57.github.io/Public-Math-4362-Notes/project/MATH_4362_Term_Paper_Template.docx" target="_blank">Math 4362 Term Paper Template</a>. Failure to adhere to this template will result in a zero for the term project. The report must not exceed a 3-page limit.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#term-project-overview-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#term-project-overview-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="term-project-overview-2-4">
+<div class="para" id="term-project-overview-2-4-1">Once your paper is finalized, convert it into PDF and submit it to the <em class="alert">designated dropbox in WTClass</em> for evaluation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#term-project-overview-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#term-project-overview-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<article class="project project-like" id="gas-equation"><h2 class="heading">
+<span class="type">Project</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.0.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Gas Equation.</span>
+</h2>
+<div class="para logical" id="gas-equation-2-1">
+<div class="para">The ideal gas equation relates the volume (<span class="process-math">\(V\)</span> in L), temperature (<span class="process-math">\(T\)</span> in K), pressure (<span class="process-math">\(P\)</span> in atm), and the amount of gas (number of moles <span class="process-math">\(n\)</span>) by:</div>
+<div class="displaymath process-math" id="gas-equation-2-1-5">
+\begin{equation*}
+P = \frac{nRT}{V}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(R = 0.08206 \, (\text{L atm})/(\text{mol K})\)</span> is the gas constant.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#gas-equation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="gas-equation-2-2">
+<div class="para">The van der Waals equation gives the relationship between these quantities for a real gas by:</div>
+<div class="displaymath process-math" id="gas-equation-2-2-1">
+\begin{equation*}
+\left(P + \frac{n^2a}{V^2}\right) (V - nb) = nRT
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are constants that are specific for each gas.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#gas-equation-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="gas-equation-2-3">Apply an appropriate numerical method to calculate the volume of 2 mol CO₂ at a temperature of 50°C, and pressure of 6 atm. For CO₂, <span class="process-math">\(a = 3.59 \, (\text{L}^2 \text{atm})/\text{mol}^2\text{,}\)</span> and <span class="process-math">\(b = 0.0427 \text{ L}/\text{mol}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#gas-equation-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Project 11.0.1: The Gas Equation"><a tabindex="-1" href="#gas-equation" title="Copy heading and permalink for Project 11.0.1: The Gas Equation" aria-label="Copy heading and permalink for Project 11.0.1: The Gas Equation">🔗</a></div>
+</article>
+<article class="project project-like" id="viewing-angle-and-distance"><h2 class="heading">
+<span class="type">Project</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.0.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Viewing Angle and Distance.</span>
+</h2>
+<div class="para" id="viewing-angle-and-distance-2-1">A group of students is seated at a distance <span class="process-math">\(x\)</span> ft from the screen while watching a movie. One of them estimates the distance to be about 16 yards but isn’t certain. Another student uses a protractor to measure the viewing angle, finding it to be <span class="process-math">\(\theta = 35^\circ\text{.}\)</span> Determine the exact distance <span class="process-math">\(x\)</span> ft (rounded to two decimal places) based on the configuration shown in the figure.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#viewing-angle-and-distance-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/inherited/view_angle.png" class="contained" alt="View Angle Diagram"></div>
+<div class="autopermalink" aria-hidden="true" data-description="Project 11.0.2: Viewing Angle and Distance"><a tabindex="-1" href="#viewing-angle-and-distance" title="Copy heading and permalink for Project 11.0.2: Viewing Angle and Distance" aria-label="Copy heading and permalink for Project 11.0.2: Viewing Angle and Distance">🔗</a></div>
+</article>
+<article class="project project-like" id="water-flow-in-a-river"><h2 class="heading">
+<span class="type">Project</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.0.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Water Flow in a River.</span>
+</h2>
+<div class="para" id="water-flow-in-a-river-2-1">At the beginning of each month (starting on January 1st), the water flow speed <span class="process-math">\(v\)</span> in a river is measured. The first measurement day is designated as day 1, and the final day—January 1st of the following year—is day 366. The measured data are shown in the table below: <div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b1 r1 l0 t1 lines">Day</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">1</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">32</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">60</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">91</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">121</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">152</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">182</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">213</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">244</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">274</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">305</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">335</th>
+<th scope="col" class="c m b1 r0 l0 t1 lines">366</th>
+</tr>
+<tr>
+<th scope="row" class="c m b1 r1 l0 t0 lines">
+<span class="process-math">\(v\)</span>(m/s)</th>
+<td class="c m b1 r0 l0 t0 lines">2.0</td>
+<td class="c m b1 r0 l0 t0 lines">2.2</td>
+<td class="c m b1 r0 l0 t0 lines">2.5</td>
+<td class="c m b1 r0 l0 t0 lines">2.7</td>
+<td class="c m b1 r0 l0 t0 lines">5.0</td>
+<td class="c m b1 r0 l0 t0 lines">4.7</td>
+<td class="c m b1 r0 l0 t0 lines">4.1</td>
+<td class="c m b1 r0 l0 t0 lines">3.8</td>
+<td class="c m b1 r0 l0 t0 lines">3.7</td>
+<td class="c m b1 r0 l0 t0 lines">2.8</td>
+<td class="c m b1 r0 l0 t0 lines">2.5</td>
+<td class="c m b1 r0 l0 t0 lines">2.3</td>
+<td class="c m b1 r0 l0 t0 lines">2.0</td>
+</tr>
+</table></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#water-flow-in-a-river-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="water-flow-in-a-river-2-2">Using the data, estimate the water flow speed on January 15th, May 20th, September 10th, and December 5th. What are your observations?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#water-flow-in-a-river-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Project 11.0.3: Water Flow in a River"><a tabindex="-1" href="#water-flow-in-a-river" title="Copy heading and permalink for Project 11.0.3: Water Flow in a River" aria-label="Copy heading and permalink for Project 11.0.3: Water Flow in a River">🔗</a></div>
+</article>
+<article class="project project-like" id="newtons-second-law"><h2 class="heading">
+<span class="type">Project</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.0.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Newton’s Second Law.</span>
+</h2>
+<div class="para logical" id="newtons-second-law-2-1">
+<div class="para">A block of mass <span class="process-math">\(m=20 \text{ kg}\)</span> is being pulled by a cable as shown. The force that is required to move the box is given by:</div>
+<div class="displaymath process-math" id="newtons-second-law-2-1-2">
+\begin{equation*}
+F=\frac{(\mu mg\cos 15^{\circ} +mg\sin 15^{\circ})\sqrt{x^2+h^2}}{x+\mu h}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(h=8 \text{ m}\text{,}\)</span> <span class="process-math">\(\mu=0.45\)</span> is the friction coefficient, and <span class="process-math">\(g=9.81 \text{ m/s}^2\text{.}\)</span> Determine the distance <span class="process-math">\(x\)</span> when the pulling force is equal to <span class="process-math">\(230 \text{ N}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#newtons-second-law-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/inherited/pulling.png" class="contained" alt="Pulling Block"></div>
+<div class="autopermalink" aria-hidden="true" data-description="Project 11.0.4: Newton’s Second Law"><a tabindex="-1" href="#newtons-second-law" title="Copy heading and permalink for Project 11.0.4: Newton’s Second Law" aria-label="Copy heading and permalink for Project 11.0.4: Newton’s Second Law">🔗</a></div>
+</article>
+<article class="project project-like" id="scale"><h2 class="heading">
+<span class="type">Project</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.0.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Scale.</span>
+</h2>
+<div class="para" id="scale-2-1">A scale is made of two springs, as shown in the figure. The springs are nonlinear such that the force they apply is given by <span class="process-math">\(F_S = K_1 u +K_2 u^3\text{,}\)</span> where the <span class="process-math">\(K\)</span>’s are constants and <span class="process-math">\(u=L-L_0\)</span> is the elongation of the spring (<span class="process-math">\(L=\sqrt{a^2+(b+x)^2}\)</span> and <span class="process-math">\(L_0=\sqrt{a^2+b^2}\)</span> are the current and initial lengths of the springs, respectively). Initially, the springs are not stretched. When an object is attached to the ring, the springs stretch and the ring is displaced downward a distance <span class="process-math">\(x\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#scale-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/inherited/scale.png" class="contained" alt="Scale"></div> 
+<div class="para logical" id="scale-2-3">
+<div class="para">The weight of the object can be expressed in terms of the distance <span class="process-math">\(x\)</span> by:</div>
+<div class="displaymath process-math" id="scale-2-3-2">
+\begin{equation*}
+W = 2F_S \frac{b+x}{L}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#scale-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="scale-2-4">For the given scale <span class="process-math">\(a=0.22 \text{ m}\text{,}\)</span> <span class="process-math">\(b=0.08 \text{ m}\text{,}\)</span> and the springs’ constants are <span class="process-math">\(K_1=1600 \text{ N/m}\)</span> and <span class="process-math">\(K_2=100000 \text{ N/m}^3\text{.}\)</span> Plot <span class="process-math">\(W\)</span> as a function of <span class="process-math">\(x\)</span> for <span class="process-math">\(0 \le x \le 0.25\text{.}\)</span> Determine the distance <span class="process-math">\(x\)</span> when a <span class="process-math">\(400 \text{ N}\)</span> object is attached to the scale.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#scale-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Project 11.0.5: Scale"><a tabindex="-1" href="#scale" title="Copy heading and permalink for Project 11.0.5: Scale" aria-label="Copy heading and permalink for Project 11.0.5: Scale">🔗</a></div>
+</article>
+<article class="project project-like" id="stone-skipping"><h2 class="heading">
+<span class="type">Project</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.0.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Stone Skipping.</span>
+</h2>
+<div class="para logical" id="stone-skipping-2-1">
+<div class="para">An estimate of the minimum velocity required for a round flat stone to skip when it hits the water is given by (Lyderic Bocquet, "The Physics of Stone Skipping", Am. J. Phys., vol. 71, no. 2, February 2003)</div>
+<div class="displaymath process-math" id="stone-skipping-2-1-1">
+\begin{equation*}
+V=\frac{\sqrt{\frac{16 M g}{\pi C \rho_w d^2}}}{\sqrt{1-\frac{8 M \tan ^2 \beta}{\pi d^3 C \rho_w \sin \theta}}}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(M\)</span> and <span class="process-math">\(d\)</span> are the stone mass and diameter, <span class="process-math">\(\rho_w\)</span> is the water density, <span class="process-math">\(C\)</span> is a coefficient, <span class="process-math">\(\theta\)</span> is the tilt angle of the stone, <span class="process-math">\(\beta\)</span> is the incidence angle, and <span class="process-math">\(g=9.81 \mathrm{~m} / \mathrm{s}^2\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#stone-skipping-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="stone-skipping-2-2">Determine <span class="process-math">\(d\)</span> if <span class="process-math">\(V=0.8 \mathrm{~m} / \mathrm{s}\text{.}\)</span> (Assume that <span class="process-math">\(M=0.1 \mathrm{~kg}, C=1\text{,}\)</span> <span class="process-math">\(\rho_w=1000 \mathrm{~kg} / \mathrm{m}^3\text{,}\)</span> and <span class="process-math">\(\beta=\theta=10^{\circ}\text{.}\)</span>)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#stone-skipping-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Project 11.0.6: Stone Skipping"><a tabindex="-1" href="#stone-skipping" title="Copy heading and permalink for Project 11.0.6: Stone Skipping" aria-label="Copy heading and permalink for Project 11.0.6: Stone Skipping">🔗</a></div>
+</article>
+<article class="project project-like" id="diode"><h2 class="heading">
+<span class="type">Project</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.0.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Diode.</span>
+</h2>
+<div class="para" id="diode-2-1">The diode in the circuit shown is forward biased.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#diode-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/inherited/diode.png" class="contained" alt="Diode"></div> 
+<div class="para logical" id="diode-2-3">
+<div class="para">The current <span class="process-math">\(I\)</span> flowing through the diode is given by:</div>
+<div class="displaymath process-math" id="diode-2-3-2">
+\begin{equation*}
+I=I_S\left(e^{\frac{q v_D}{k T}}-1\right)
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(v_D\)</span> is the voltage drop across the diode, <span class="process-math">\(T\)</span> is the temperature in kelvins, <span class="process-math">\(I_S=10^{-12} \mathrm{~A}\)</span> is the saturation current, <span class="process-math">\(q=1.6 \times 10^{-19}\)</span> coulombs is the elementary charge value, and <span class="process-math">\(k=1.38 \times 10^{-23}\)</span> joule <span class="process-math">\(/ \mathrm{K}\)</span> is Boltzmann’s constant. The current <span class="process-math">\(I\)</span> flowing through the circuit (the same as the current in the diode) is given also by:</div>
+<div class="displaymath process-math" id="diode-2-3-10">
+\begin{equation*}
+I=\frac{v_S-v_D}{R}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#diode-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="diode-2-4">Determine <span class="process-math">\(v_D\)</span> if <span class="process-math">\(v_S=2 \mathrm{~V}\text{,}\)</span> <span class="process-math">\(T=297 \mathrm{~K}\text{,}\)</span> and <span class="process-math">\(R=1000 \ \Omega\)</span> (Substitute <span class="process-math">\(I\)</span> from one equation into the other equation and solve the resulting nonlinear equation.)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#diode-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Project 11.0.7: Diode"><a tabindex="-1" href="#diode" title="Copy heading and permalink for Project 11.0.7: Diode" aria-label="Copy heading and permalink for Project 11.0.7: Diode">🔗</a></div>
+</article>
+<article class="project project-like" id="temperature-at-equilibrium"><h2 class="heading">
+<span class="type">Project</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11.0.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Temperature at Equilibrium.</span>
+</h2>
+<div class="para" id="temperature-at-equilibrium-2-1">Consider the problem of determining the temperature at interior points of a thin square plate, given the temperature along its edges, under the assumption that the system is in thermal equilibrium. This problem can be discretized in a straightforward way that leads directly to a system of linear equations. The key physical principle is the <dfn class="terminology">mean value property</dfn>:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#temperature-at-equilibrium-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="temperature-at-equilibrium-2-2">At equilibrium, the temperature at any interior point is equal to the average temperature of its neighboring points.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#temperature-at-equilibrium-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="temperature-at-equilibrium-2-3">To solve this numerically, divide the square plate into a uniform grid of small square cells, as illustrated below for a coarse case: <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r1 l1 t1 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t1 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t1 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t1 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t1 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t1 lines"><span class="process-math">\(1\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{11}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{12}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{13}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{14}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{21}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{22}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{23}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{24}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{31}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{32}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{33}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{34}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{41}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{42}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{43}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(x_{44}\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines"><span class="process-math">\(1\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(0\)</span></td>
+</tr>
+</table></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#temperature-at-equilibrium-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="temperature-at-equilibrium-2-4">Boundary cells (marked with numbers) have known temperatures: <em class="alert">1</em> on the top and left edges, <em class="alert">0</em> on the bottom and right edges. Interior cells (marked <span class="process-math">\(x_{ij}\)</span>) represent unknown temperatures to be determined.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#temperature-at-equilibrium-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical" id="temperature-at-equilibrium-2-5">
+<div class="para">According to the mean value property, the temperature at each interior point equals the average of its four adjacent neighbors (up, left, down, right). This yields one equation per interior point:</div>
+<div class="displaymath process-math" id="temperature-at-equilibrium-2-5-1">
+\begin{align*}
+x_{11} &amp;= \frac{1}{4}(1 + 1 + x_{12} + x_{21})\\
+x_{12} &amp;= \frac{1}{4}(1 + x_{11} + x_{22} + x_{13})\\
+x_{13} &amp;= \frac{1}{4}(1 + x_{12} + x_{23} + x_{14})\\
+x_{14} &amp;= \frac{1}{4}(1 + x_{13} + x_{24} + 0)\\
+x_{21} &amp;= \frac{1}{4}(x_{11} + 1 + x_{31} + x_{22})\\
+x_{22} &amp;= \frac{1}{4}(x_{12} + x_{21} + x_{32} + x_{23})\\
+x_{23} &amp;= \frac{1}{4}(x_{13} + x_{22} + x_{33} + x_{24})\\
+x_{24} &amp;= \frac{1}{4}(x_{14} + x_{23} + x_{34} + 0)\\
+x_{31} &amp;= \frac{1}{4}(x_{21} + 1 + x_{41} + x_{32})\\
+x_{32} &amp;= \frac{1}{4}(x_{22} + x_{31} + x_{42} + x_{33})\\
+x_{33} &amp;= \frac{1}{4}(x_{23} + x_{32} + x_{43} + x_{34})\\
+x_{34} &amp;= \frac{1}{4}(x_{24} + x_{33} + x_{44} + 0)\\
+x_{41} &amp;= \frac{1}{4}(x_{31} + 1 + 0 + x_{42})\\
+x_{42} &amp;= \frac{1}{4}(x_{32} + x_{41} + 0 + x_{43})\\
+x_{43} &amp;= \frac{1}{4}(x_{33} + x_{42} + 0 + x_{44})\\
+x_{44} &amp;= \frac{1}{4}(x_{34} + x_{43} + 0 + 0)
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#temperature-at-equilibrium-2-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="temperature-at-equilibrium-2-6">The coarse grid above produces a system of linear equations that can be solved iteratively. After solving, the temperature field can be visualized using: <div class="code-box"><pre class="program clipboardable"><code class="language-py">import matplotlib.pyplot as plt
+plt.imshow(x, cmap='hot', origin='lower')
+plt.colorbar()
+plt.show()
+</code></pre></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#temperature-at-equilibrium-2-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="temperature-at-equilibrium-2-7">However, results from such a coarse mesh are approximate. Finer grids provide more accurate solutions.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#temperature-at-equilibrium-2-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="temperature-at-equilibrium-2-8">You are asked to implement a 100×100 grid to compute the equilibrium temperature distribution and generate a high-resolution heatmap of the equilibrium temperature distribution.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#temperature-at-equilibrium-2-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Project 11.0.8: Temperature at Equilibrium"><a tabindex="-1" href="#temperature-at-equilibrium" title="Copy heading and permalink for Project 11.0.8: Temperature at Equilibrium" aria-label="Copy heading and permalink for Project 11.0.8: Temperature at Equilibrium">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Unit 11: Term Project"><a tabindex="-1" href="#term-project-overview" title="Copy heading and permalink for Unit 11: Term Project" aria-label="Copy heading and permalink for Unit 11: Term Project">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="unit-10-quadrature-rules-6.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="appendix-troubleshooting.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

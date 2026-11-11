@@ -1234,6 +1234,258 @@ var ptx_lunr_docs = [
   "body": " Cubic spline vs standard Polynomial Interpolation on Runge's function   Cubic spline vs standard Polynomial Interpolation on Runge's function   "
 },
 {
+  "id": "sec-quadrature-framework",
+  "level": "1",
+  "url": "sec-quadrature-framework.html",
+  "type": "Section",
+  "number": "10.1",
+  "title": "A General Framework for Quadrature",
+  "body": "A General Framework for Quadrature   A quadrature rule is a numerical method used to approximate the definite integral of a function. It works by approximating the integral of a function over an interval as a weighted sum of function evaluations at specific points, called nodes or quadrature points . Mathematically, it is expressed as: where are the nodes, are the weights associated with each node, and is the number of nodes used in the approximation. Different quadrature rules arise by choosing different nodes or varying the number of nodes.  "
+},
+{
+  "id": "sec-quadrature-framework-3",
+  "level": "2",
+  "url": "sec-quadrature-framework.html#sec-quadrature-framework-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "quadrature rule nodes quadrature points "
+},
+{
+  "id": "sec-newton-cotes-quadrature",
+  "level": "1",
+  "url": "sec-newton-cotes-quadrature.html",
+  "type": "Section",
+  "number": "10.2",
+  "title": "Newton-Cotes Rules",
+  "body": "Newton-Cotes Rules    Newton-Cotes rules are characterized by using equally spaced nodes and are based on low degree polynomial interpolation. The idea is to construct the polynomial interpolant and compute as an approximation to . Given nodes , the Lagrange form of the interpolant is . From the interpolation error formula, we have , where . We write to indicate that depends on . Integrating both sides gives The integral of the interpolating polynomial yields the quadrature rule:   We will see two popular Newton-Cotes quadrature rules, trapezoidal rule and Simpson’s rule, in next part.   Trapezoidal Rule   Let . Take two nodes, , , and set . Then and thus, Hence, we have Now let’s simplify the error term We will use Mean Value Theorem for Definite Integrals for this computation. Recall the theorem is   Mean Value Theorem for Definite Integrals  If is continuous on and is integrable function that does not change sign on , then there exists in such that     Note that the function does not change sign on the interval and it is integrable, so this function serves the role of in the theorem above. The other term, , serves the role of . Applying the theorem, we get where we kept the same notation , somewhat inappropriately, as we moved from inside to the outside of the integral. Finally, observe that . Putting all the pieces together, we will get where , , , and is a number between and . This is called Trapezoidal Rule .   Estimate the following integral using the trapezoidal rule. Round the result to four decimal places .    Let . Then by the trapezoidal rule, we have , , and , and thus,   Video Breakdown  Dr. Yang walks through this example in the following video.       Simpson’s Rule   Let . Take three equally spaced nodes, , , and , where . Then and thus, Hence, we have This is called Simpson’s Rule .  Note that the error term cannot be evaluated using Mean Value Theorem for Definite Integrals directly, since the function changes sign on . However, a clever application of integration by parts transforms the integral to an integral where Mean Value Theorem for Definite Integrals is applicable (we will skip details here), and the integral simplifies as for some .   Estimate the following integral using the Simpson’s rule. Round the result to four decimal places .    Let . Then by the Simpson’s rule, we have , , , and , and thus,   Video Breakdown  Dr. Yang walks through this example in the following video.       "
+},
+{
+  "id": "ssec-trapezoid-rule-4-1",
+  "level": "2",
+  "url": "sec-newton-cotes-quadrature.html#ssec-trapezoid-rule-4-1",
+  "type": "Theorem",
+  "number": "10.2.1",
+  "title": "Mean Value Theorem for Definite Integrals.",
+  "body": "Mean Value Theorem for Definite Integrals  If is continuous on and is integrable function that does not change sign on , then there exists in such that   "
+},
+{
+  "id": "ssec-trapezoid-rule-5",
+  "level": "2",
+  "url": "sec-newton-cotes-quadrature.html#ssec-trapezoid-rule-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Trapezoidal Rule "
+},
+{
+  "id": "ssec-trapezoid-rule-6",
+  "level": "2",
+  "url": "sec-newton-cotes-quadrature.html#ssec-trapezoid-rule-6",
+  "type": "Example",
+  "number": "10.2.2",
+  "title": "",
+  "body": " Estimate the following integral using the trapezoidal rule. Round the result to four decimal places .    Let . Then by the trapezoidal rule, we have , , and , and thus,   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "ssec-simpsons-rule-3",
+  "level": "2",
+  "url": "sec-newton-cotes-quadrature.html#ssec-simpsons-rule-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Simpson’s Rule "
+},
+{
+  "id": "ssec-simpsons-rule-5",
+  "level": "2",
+  "url": "sec-newton-cotes-quadrature.html#ssec-simpsons-rule-5",
+  "type": "Example",
+  "number": "10.2.3",
+  "title": "",
+  "body": " Estimate the following integral using the Simpson’s rule. Round the result to four decimal places .    Let . Then by the Simpson’s rule, we have , , , and , and thus,   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "sec-quadrature-order-of-accuracy",
+  "level": "1",
+  "url": "sec-quadrature-order-of-accuracy.html",
+  "type": "Section",
+  "number": "10.3",
+  "title": "Order of Accuracy",
+  "body": "Order of Accuracy   The order of accuracy of a quadrature rule refers to the highest degree of polynomial that the rule integrates exactly.   The order of accuracy , or degree of precision , of a quadrature formula is the largest positive integer such that the formula is exact for when .    Show that trapezoidal and Simpson’s rules have order of accuracy of 1 and 3, respectively.  Proof  We will find highest degree of the polynomials the trapezoidal and Simpson’s rules can integrate exactly.  For trapezoidal rule, we have Therefore, the trapezoidal rule has order of accuracy of 1.  For Simpson’s rule, we have Therefore, the Simpson’s rule has order of accuracy of 3.    These conclusions are obvious if you use the error terms of these two rules. (Why?)  "
+},
+{
+  "id": "sec-quadrature-order-of-accuracy-3",
+  "level": "2",
+  "url": "sec-quadrature-order-of-accuracy.html#sec-quadrature-order-of-accuracy-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "order of accuracy "
+},
+{
+  "id": "sec-quadrature-order-of-accuracy-4",
+  "level": "2",
+  "url": "sec-quadrature-order-of-accuracy.html#sec-quadrature-order-of-accuracy-4",
+  "type": "Definition",
+  "number": "10.3.1",
+  "title": "",
+  "body": " The order of accuracy , or degree of precision , of a quadrature formula is the largest positive integer such that the formula is exact for when .  "
+},
+{
+  "id": "sec-quadrature-order-of-accuracy-5",
+  "level": "2",
+  "url": "sec-quadrature-order-of-accuracy.html#sec-quadrature-order-of-accuracy-5",
+  "type": "Example",
+  "number": "10.3.2",
+  "title": "",
+  "body": " Show that trapezoidal and Simpson’s rules have order of accuracy of 1 and 3, respectively.  Proof  We will find highest degree of the polynomials the trapezoidal and Simpson’s rules can integrate exactly.  For trapezoidal rule, we have Therefore, the trapezoidal rule has order of accuracy of 1.  For Simpson’s rule, we have Therefore, the Simpson’s rule has order of accuracy of 3.   "
+},
+{
+  "id": "sec-quadrature-order-of-accuracy-6",
+  "level": "2",
+  "url": "sec-quadrature-order-of-accuracy.html#sec-quadrature-order-of-accuracy-6",
+  "type": "Note",
+  "number": "10.3.3",
+  "title": "",
+  "body": "These conclusions are obvious if you use the error terms of these two rules. (Why?) "
+},
+{
+  "id": "unit-10-quadrature-rules-6",
+  "level": "1",
+  "url": "unit-10-quadrature-rules-6.html",
+  "type": "Section",
+  "number": "10.4",
+  "title": "Gaussian Quadrature",
+  "body": "Gaussian Quadrature   Newton-Cotes formulas are derived by integrating interpolating polynomials based on equally spaced nodes, which simplifies the formulation of composite rules. However, equally spaced nodes are not always optimal for accuracy.   Gaussian quadrature aims to maximize the accuracy of the numerical quadrature rule: , by optimally selecting the nodes and weights . Unlike Newton-Cotes formulas, which label nodes starting from , Gaussian quadrature typically starts with . This notational difference is standard in the literature, as it simplifies the presentation of the corresponding theoretical equations.   Let and . Find the optimal and for the Gaussian quadrature rule.   When and , the quadrature rule becomes There are four parameters to determine: . We need four constraints. Let’s require the rule to integrate the following functions exactly: , and . Solving the equations gives: . Therefore the quadrature rule is:   The two nodes are not equally spaced over the interval .  This quadrature rule achieves degree 3 accuracy using only two nodes . For comparison, Simpson’s rule also has degree 3 accuracy, but it requires three nodes.  In general, Gaussian quadrature achieves a degree of accuracy using only nodes, making it highly efficient.      As you can see, even for , finding the nodes and weights manually is not straightforward. As the number of nodes increases, solving the system to determine the and becomes increasingly complex. The good news is that there’s a more efficient approach. The nodes used in Gaussian quadrature are the roots of the Legendre polynomials , a family of orthogonal polynomials. The first few Legendre polynomials are: You may have encountered these types of polynomials when studying the Gram-Schmidt process in Linear Algebra, as they form an orthogonal basis on . Once the nodes are determined (as the roots of these polynomials), the corresponding weights can be computed using , where are the Lagrange basis functions associated with the nodes .  To summarize, the Gauss-Legendre quadrature rule for the integral of over is where are the roots of the -th Legendre polynomial, and the weights are computed using .  We can easily find the nodes and weights using roots_legendre function in Python’s Scipy module. import numpy as np from scipy.special import roots_legendre n = 3 roots, weights = roots_legendre(n) print(\"The roots are: \"+\", \".join([f\"x{i+1} = {x}\" for i, x in enumerate(roots)])) print(\"The weights are: \"+\", \".join([f\"w{i+1} = {x}\" for i, x in enumerate(weights)]))    The roots are: x1 = -0.7745966692414834, x2 = 0.0, x3 = 0.7745966692414834 The weights are: w1 = 0.5555555555555558, w2 = 0.8888888888888883, w3 = 0.5555555555555558     You can download the code from Canvas.  Now let’s use these results of to solve the following question.   Approximate using Gauss-Legendre quadrature with nodes. Round both the nodes and weights to four decimal places before performing the calculation. Then, round the final result to four decimal places .    Use the nodes and weights obtained above and using four-digit rounding, we have   Video Breakdown  Dr. Yang walks through this example in the following video.      To integrate a function over an interval instead of , we use a change of variables. With the substitution , the integral transforms as The right-hand side can then be approximated using Gaussian quadrature as described previously.    Approximate using Gauss-Legendre quadrature with nodes. Round the final result to four decimal places . The nodes and weights for Gauss-Legendre quadrature rule of are given as follows (rounding to four digits),   roots        weights          We need to use the substitution to transform the old integral over to a new integral over . For , Therefore,   Video Breakdown  Dr. Yang walks through this example in the following video.      "
+},
+{
+  "id": "unit-10-quadrature-rules-6-4",
+  "level": "2",
+  "url": "unit-10-quadrature-rules-6.html#unit-10-quadrature-rules-6-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gaussian quadrature "
+},
+{
+  "id": "unit-10-quadrature-rules-6-5",
+  "level": "2",
+  "url": "unit-10-quadrature-rules-6.html#unit-10-quadrature-rules-6-5",
+  "type": "Example",
+  "number": "10.4.1",
+  "title": "",
+  "body": " Let and . Find the optimal and for the Gaussian quadrature rule.   When and , the quadrature rule becomes There are four parameters to determine: . We need four constraints. Let’s require the rule to integrate the following functions exactly: , and . Solving the equations gives: . Therefore the quadrature rule is:   The two nodes are not equally spaced over the interval .  This quadrature rule achieves degree 3 accuracy using only two nodes . For comparison, Simpson’s rule also has degree 3 accuracy, but it requires three nodes.  In general, Gaussian quadrature achieves a degree of accuracy using only nodes, making it highly efficient.     "
+},
+{
+  "id": "unit-10-quadrature-rules-6-7",
+  "level": "2",
+  "url": "unit-10-quadrature-rules-6.html#unit-10-quadrature-rules-6-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Gauss-Legendre quadrature rule "
+},
+{
+  "id": "unit-10-quadrature-rules-6-11",
+  "level": "2",
+  "url": "unit-10-quadrature-rules-6.html#unit-10-quadrature-rules-6-11",
+  "type": "Example",
+  "number": "10.4.3",
+  "title": "",
+  "body": " Approximate using Gauss-Legendre quadrature with nodes. Round both the nodes and weights to four decimal places before performing the calculation. Then, round the final result to four decimal places .    Use the nodes and weights obtained above and using four-digit rounding, we have   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "unit-10-quadrature-rules-6-13",
+  "level": "2",
+  "url": "unit-10-quadrature-rules-6.html#unit-10-quadrature-rules-6-13",
+  "type": "Example",
+  "number": "10.4.4",
+  "title": "",
+  "body": "  Approximate using Gauss-Legendre quadrature with nodes. Round the final result to four decimal places . The nodes and weights for Gauss-Legendre quadrature rule of are given as follows (rounding to four digits),   roots        weights          We need to use the substitution to transform the old integral over to a new integral over . For , Therefore,   Video Breakdown  Dr. Yang walks through this example in the following video.     "
+},
+{
+  "id": "term-project-overview",
+  "level": "1",
+  "url": "term-project-overview.html",
+  "type": "Unit",
+  "number": "11",
+  "title": "Term Project",
+  "body": " Term Project     In this module, you will apply the numerical algorithms and methods learned throughout the course to complete a term project .    A list of project topics and corresponding datasets is provided below. You must select ONE topic and its associated dataset to work on. Working on any topic not included in the list will result in a score of zero for the term project. You should focus exclusively on your chosen topic and dataset. Working on multiple topics or datasets will not result in extra credit.    Upon completing your project, you are required to prepare a term paper using this template : Math 4362 Term Paper Template . Failure to adhere to this template will result in a zero for the term project. The report must not exceed a 3-page limit.    Once your paper is finalized, convert it into PDF and submit it to the designated dropbox in WTClass for evaluation.      The Gas Equation   The ideal gas equation relates the volume ( in L), temperature ( in K), pressure ( in atm), and the amount of gas (number of moles ) by: where is the gas constant.  The van der Waals equation gives the relationship between these quantities for a real gas by: where and are constants that are specific for each gas.  Apply an appropriate numerical method to calculate the volume of 2 mol CO₂ at a temperature of 50°C, and pressure of 6 atm. For CO₂, , and .     Viewing Angle and Distance   A group of students is seated at a distance ft from the screen while watching a movie. One of them estimates the distance to be about 16 yards but isn’t certain. Another student uses a protractor to measure the viewing angle, finding it to be . Determine the exact distance ft (rounded to two decimal places) based on the configuration shown in the figure.   View Angle Diagram      Water Flow in a River   At the beginning of each month (starting on January 1st), the water flow speed in a river is measured. The first measurement day is designated as day 1, and the final day—January 1st of the following year—is day 366. The measured data are shown in the table below:   Day  1  32  60  91  121  152  182  213  244  274  305  335  366    (m\/s)  2.0  2.2  2.5  2.7  5.0  4.7  4.1  3.8  3.7  2.8  2.5  2.3  2.0     Using the data, estimate the water flow speed on January 15th, May 20th, September 10th, and December 5th. What are your observations?     Newton’s Second Law   A block of mass is being pulled by a cable as shown. The force that is required to move the box is given by: where , is the friction coefficient, and . Determine the distance when the pulling force is equal to .   Pulling Block      Scale   A scale is made of two springs, as shown in the figure. The springs are nonlinear such that the force they apply is given by , where the ’s are constants and is the elongation of the spring ( and are the current and initial lengths of the springs, respectively). Initially, the springs are not stretched. When an object is attached to the ring, the springs stretch and the ring is displaced downward a distance .   Scale   The weight of the object can be expressed in terms of the distance by:   For the given scale , , and the springs’ constants are and . Plot as a function of for . Determine the distance when a object is attached to the scale.     Stone Skipping   An estimate of the minimum velocity required for a round flat stone to skip when it hits the water is given by (Lyderic Bocquet, \"The Physics of Stone Skipping\", Am. J. Phys., vol. 71, no. 2, February 2003) where and are the stone mass and diameter, is the water density, is a coefficient, is the tilt angle of the stone, is the incidence angle, and .  Determine if . (Assume that , , and .)     Diode   The diode in the circuit shown is forward biased.   Diode   The current flowing through the diode is given by: where is the voltage drop across the diode, is the temperature in kelvins, is the saturation current, coulombs is the elementary charge value, and joule is Boltzmann’s constant. The current flowing through the circuit (the same as the current in the diode) is given also by: .  Determine if , , and (Substitute from one equation into the other equation and solve the resulting nonlinear equation.)     Temperature at Equilibrium   Consider the problem of determining the temperature at interior points of a thin square plate, given the temperature along its edges, under the assumption that the system is in thermal equilibrium. This problem can be discretized in a straightforward way that leads directly to a system of linear equations. The key physical principle is the mean value property :  At equilibrium, the temperature at any interior point is equal to the average temperature of its neighboring points.  To solve this numerically, divide the square plate into a uniform grid of small square cells, as illustrated below for a coarse case:                                                    Boundary cells (marked with numbers) have known temperatures: 1 on the top and left edges, 0 on the bottom and right edges. Interior cells (marked ) represent unknown temperatures to be determined.  According to the mean value property, the temperature at each interior point equals the average of its four adjacent neighbors (up, left, down, right). This yields one equation per interior point:   The coarse grid above produces a system of linear equations that can be solved iteratively. After solving, the temperature field can be visualized using: import matplotlib.pyplot as plt plt.imshow(x, cmap='hot', origin='lower') plt.colorbar() plt.show()   However, results from such a coarse mesh are approximate. Finer grids provide more accurate solutions.  You are asked to implement a 100×100 grid to compute the equilibrium temperature distribution and generate a high-resolution heatmap of the equilibrium temperature distribution.    "
+},
+{
+  "id": "gas-equation",
+  "level": "2",
+  "url": "term-project-overview.html#gas-equation",
+  "type": "Project",
+  "number": "11.0.1",
+  "title": "The Gas Equation.",
+  "body": " The Gas Equation   The ideal gas equation relates the volume ( in L), temperature ( in K), pressure ( in atm), and the amount of gas (number of moles ) by: where is the gas constant.  The van der Waals equation gives the relationship between these quantities for a real gas by: where and are constants that are specific for each gas.  Apply an appropriate numerical method to calculate the volume of 2 mol CO₂ at a temperature of 50°C, and pressure of 6 atm. For CO₂, , and .   "
+},
+{
+  "id": "viewing-angle-and-distance",
+  "level": "2",
+  "url": "term-project-overview.html#viewing-angle-and-distance",
+  "type": "Project",
+  "number": "11.0.2",
+  "title": "Viewing Angle and Distance.",
+  "body": " Viewing Angle and Distance   A group of students is seated at a distance ft from the screen while watching a movie. One of them estimates the distance to be about 16 yards but isn’t certain. Another student uses a protractor to measure the viewing angle, finding it to be . Determine the exact distance ft (rounded to two decimal places) based on the configuration shown in the figure.   View Angle Diagram    "
+},
+{
+  "id": "water-flow-in-a-river",
+  "level": "2",
+  "url": "term-project-overview.html#water-flow-in-a-river",
+  "type": "Project",
+  "number": "11.0.3",
+  "title": "Water Flow in a River.",
+  "body": " Water Flow in a River   At the beginning of each month (starting on January 1st), the water flow speed in a river is measured. The first measurement day is designated as day 1, and the final day—January 1st of the following year—is day 366. The measured data are shown in the table below:   Day  1  32  60  91  121  152  182  213  244  274  305  335  366    (m\/s)  2.0  2.2  2.5  2.7  5.0  4.7  4.1  3.8  3.7  2.8  2.5  2.3  2.0     Using the data, estimate the water flow speed on January 15th, May 20th, September 10th, and December 5th. What are your observations?   "
+},
+{
+  "id": "newtons-second-law",
+  "level": "2",
+  "url": "term-project-overview.html#newtons-second-law",
+  "type": "Project",
+  "number": "11.0.4",
+  "title": "Newton’s Second Law.",
+  "body": " Newton’s Second Law   A block of mass is being pulled by a cable as shown. The force that is required to move the box is given by: where , is the friction coefficient, and . Determine the distance when the pulling force is equal to .   Pulling Block    "
+},
+{
+  "id": "scale",
+  "level": "2",
+  "url": "term-project-overview.html#scale",
+  "type": "Project",
+  "number": "11.0.5",
+  "title": "Scale.",
+  "body": " Scale   A scale is made of two springs, as shown in the figure. The springs are nonlinear such that the force they apply is given by , where the ’s are constants and is the elongation of the spring ( and are the current and initial lengths of the springs, respectively). Initially, the springs are not stretched. When an object is attached to the ring, the springs stretch and the ring is displaced downward a distance .   Scale   The weight of the object can be expressed in terms of the distance by:   For the given scale , , and the springs’ constants are and . Plot as a function of for . Determine the distance when a object is attached to the scale.   "
+},
+{
+  "id": "stone-skipping",
+  "level": "2",
+  "url": "term-project-overview.html#stone-skipping",
+  "type": "Project",
+  "number": "11.0.6",
+  "title": "Stone Skipping.",
+  "body": " Stone Skipping   An estimate of the minimum velocity required for a round flat stone to skip when it hits the water is given by (Lyderic Bocquet, \"The Physics of Stone Skipping\", Am. J. Phys., vol. 71, no. 2, February 2003) where and are the stone mass and diameter, is the water density, is a coefficient, is the tilt angle of the stone, is the incidence angle, and .  Determine if . (Assume that , , and .)   "
+},
+{
+  "id": "diode",
+  "level": "2",
+  "url": "term-project-overview.html#diode",
+  "type": "Project",
+  "number": "11.0.7",
+  "title": "Diode.",
+  "body": " Diode   The diode in the circuit shown is forward biased.   Diode   The current flowing through the diode is given by: where is the voltage drop across the diode, is the temperature in kelvins, is the saturation current, coulombs is the elementary charge value, and joule is Boltzmann’s constant. The current flowing through the circuit (the same as the current in the diode) is given also by: .  Determine if , , and (Substitute from one equation into the other equation and solve the resulting nonlinear equation.)   "
+},
+{
+  "id": "temperature-at-equilibrium",
+  "level": "2",
+  "url": "term-project-overview.html#temperature-at-equilibrium",
+  "type": "Project",
+  "number": "11.0.8",
+  "title": "Temperature at Equilibrium.",
+  "body": " Temperature at Equilibrium   Consider the problem of determining the temperature at interior points of a thin square plate, given the temperature along its edges, under the assumption that the system is in thermal equilibrium. This problem can be discretized in a straightforward way that leads directly to a system of linear equations. The key physical principle is the mean value property :  At equilibrium, the temperature at any interior point is equal to the average temperature of its neighboring points.  To solve this numerically, divide the square plate into a uniform grid of small square cells, as illustrated below for a coarse case:                                                    Boundary cells (marked with numbers) have known temperatures: 1 on the top and left edges, 0 on the bottom and right edges. Interior cells (marked ) represent unknown temperatures to be determined.  According to the mean value property, the temperature at each interior point equals the average of its four adjacent neighbors (up, left, down, right). This yields one equation per interior point:   The coarse grid above produces a system of linear equations that can be solved iteratively. After solving, the temperature field can be visualized using: import matplotlib.pyplot as plt plt.imshow(x, cmap='hot', origin='lower') plt.colorbar() plt.show()   However, results from such a coarse mesh are approximate. Finer grids provide more accurate solutions.  You are asked to implement a 100×100 grid to compute the equilibrium temperature distribution and generate a high-resolution heatmap of the equilibrium temperature distribution.   "
+},
+{
   "id": "appendix-troubleshooting",
   "level": "1",
   "url": "appendix-troubleshooting.html",
